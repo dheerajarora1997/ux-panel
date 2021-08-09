@@ -16,6 +16,7 @@
    <link href="../static/backend/css/main.css" rel="stylesheet" />
    <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
    <!--<link href="../static/backend/css/config.css" rel="stylesheet" />-->
+   <link rel="" href="https://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
    <style>
       .save-btn.ajax-process:before{
          content: '\f110';
@@ -25,6 +26,11 @@
          -webkit-animation: fa-spin 2s infinite linear;
          font: normal normal normal 14px/1 FontAwesome;
       }
+      .label{background: rgb(76, 121, 220, .7); display: inline; padding: .2em .6em .3em; font-size: 75%; font-weight: 700; line-height: 1; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .25em;}
+      .bootstrap-tagsinput{border-width: 0 0 1px; background: #fff; padding: 5px; box-shadow: none; border-radius: 0; padding-left: 0; width: 100%; min-height: 55px;}
+      .bootstrap-tagsinput input{outline: none; border: none; padding-left: 0;}
+      /* .bootstrap-tagsinput:not(.focus) span+input {display: none;}
+      .bootstrap-tagsinput.focus input {display: inline;} */
    </style>
 </head>
 
@@ -573,7 +579,7 @@
                                              class="h6 heading-highlight border-bottom text-secondary mt-3 mb-0 py-2 position-relative">
                                              View/Edit details of the Sender ID and Entity ID for SMS's within India
                                           </div>
-                                          <div class="row align-items-end">
+                                          <div class="row align-items-start">
                                              <div class="col-12 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block">
                                                 <div class="form-group mb-1 bmd-form-group">
                                                    <label class="text-dark" for="tran-sen-id">Transactional Sender
@@ -582,13 +588,13 @@
                                              </div>
                                              <div class="col-12 col-sm-9 col-md-9 col-lg-6">
                                                 <div class="form-group mb-1 bmd-form-group">
-                                                   <label for="tran-sen-id" class="bmd-label-floating">Enter the
-                                                      transactional sender ID</label>
-                                                   <input type="text" class="form-control" id="tran-sen-id">
+                                                   <!-- <label for="tran-sen-id" class="bmd-label-floating">Enter the
+                                                      transactional sender ID</label> -->
+                                                   <input type="text" class="form-control" id="tran-sen-id" placeholder="Transactional Sender ID" data-role="tagsinput">
                                                 </div>
                                              </div>
                                           </div>
-                                          <div class="row align-items-end">
+                                          <div class="row align-items-start">
                                              <div class="col-12 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block">
                                                 <div class="form-group mb-1 bmd-form-group">
                                                    <label class="text-dark" for="pro-sen-id">Promotional Sender
@@ -597,13 +603,13 @@
                                              </div>
                                              <div class="col-12 col-sm-9 col-md-9 col-lg-6">
                                                 <div class="form-group mb-1">
-                                                   <label for="pro-sen-id" class="bmd-label-floating">Enter the
-                                                      promotional sender ID</label>
-                                                   <input type="email" class="form-control" id="pro-sen-id">
+                                                   <!-- <label for="pro-sen-id" class="bmd-label-floating">Enter the
+                                                      promotional sender ID</label> -->
+                                                   <input type="email" class="form-control" id="pro-sen-id" data-role="tagsinput" placeholder="Enter the promotional sender ID">
                                                 </div>
                                              </div>
                                           </div>
-                                          <div class="row align-items-end">
+                                          <div class="row align-items-start">
                                              <div class="col-12 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block">
                                                 <div class="form-group mb-1 bmd-form-group">
                                                    <label for="label-101" class="text-dark">OTP Sender ID</label>
@@ -611,13 +617,13 @@
                                              </div>
                                              <div class="col-12 col-sm-9 col-md-9 col-lg-6">
                                                 <div class="form-group mb-1">
-                                                   <label for="label-101" class="bmd-label-floating">Enter the Sender Id
-                                                      For OTP</label>
-                                                   <input type="email" class="form-control" id="label-101">
+                                                   <!-- <label for="label-101" class="bmd-label-floating">Enter the Sender Id
+                                                      For OTP</label> -->
+                                                   <input type="email" class="form-control" id="label-101" placeholder="OTP Sender ID">
                                                 </div>
                                              </div>
                                           </div>
-                                          <div class="row align-items-end">
+                                          <div class="row align-items-start">
                                              <div class="col-12 col-sm-3 col-md-3 col-lg-3 d-none d-sm-block">
                                                 <div class="form-group mb-1 bmd-form-group">
                                                    <label for="label-102" class="text-dark">Entity ID</label>
@@ -625,9 +631,9 @@
                                              </div>
                                              <div class="col-12 col-sm-9 col-md-9 col-lg-6">
                                                 <div class="form-group mb-1">
-                                                   <label for="label-102" class="bmd-label-floating">Enter the Entity Id
-                                                      registered on DLT</label>
-                                                   <input type="text" class="form-control" id="label-102">
+                                                   <!-- <label for="label-102" class="bmd-label-floating">Enter the Entity Id
+                                                      registered on DLT</label> -->
+                                                   <input type="text" class="form-control" id="label-102" placeholder="Enter  the Entity Id registered on DLT">
                                                 </div>
                                              </div>
                                           </div>
@@ -2586,6 +2592,7 @@
    <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
    <script src="../static/backend/js/plugins/nouislider.min.js"></script>
    <script src="../static/backend/js/plugins/ckeditor.js"></script>
+   <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
    <!--  Theme JS Files  -->
    <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
    <script src="../static/backend/js/bootstrap-select.js"></script>
