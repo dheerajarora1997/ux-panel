@@ -79,9 +79,15 @@
                             padding-left: 20px !important;
                         }
                     }
-                    // &:nth-child(odd){
-                    //     background:
-                    // }
+                    &.collapse td{
+                        padding-left: 20px !important;
+                        &:before{
+                            width: 0;
+                        }
+                        &.has-checkbox{
+                            padding: 0;
+                        }
+                    }
                 }
             }
 
