@@ -29,13 +29,24 @@
     }
 
     tbody tr {
-        &.grid-table-row{
+        &.grid-table-row {
             border-top: 11px solid #f1f3f4;
+
             .table-des {
                 max-width: 290px;
                 white-space: normal;
             }
+            &.has-selected{
+                opacity: .7;
+                &+.collapse{
+                    opacity: .7;
+                }
+            }
 
+        }
+
+        &:not(.grid-table-row) td {
+            background: #fafafa;
         }
 
     }
@@ -79,12 +90,15 @@
                             padding-left: 20px !important;
                         }
                     }
-                    &.collapse td{
+
+                    &.collapse td {
                         padding-left: 20px !important;
-                        &:before{
+
+                        &:before {
                             width: 0;
                         }
-                        &.has-checkbox{
+
+                        &.has-checkbox {
                             padding: 0;
                         }
                     }
