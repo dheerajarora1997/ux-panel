@@ -8,11 +8,10 @@
 
  .ticket-left-panel{
      overflow: hidden;
-     overflow-y: auto;
      min-height: 529px;
      max-height: 529px;
-     scrollbar-width: thin;
      &:hover{
          overflow: overlay;
+         scrollbar-width: thin;
      }
  }

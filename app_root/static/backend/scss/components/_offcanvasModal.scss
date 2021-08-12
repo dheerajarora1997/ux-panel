@@ -149,7 +149,7 @@ $modal-sm : 300px;
             // ----------------------
             position: absolute;
             right: 28px;
-            top: 25px;
+            top: 20px;
             border: 0;
             background: none;
             cursor: pointer;
@@ -160,6 +160,7 @@ $modal-sm : 300px;
             justify-content: center;
             align-items: center;
             padding: .25rem;
+            width: 31px;
             &:hover{
                 background: rgba(0,0,0,.1);
                 color: red;
