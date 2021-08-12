@@ -7,7 +7,7 @@
   // Our parent element can be arbitrary since tooltips are by default inserted as a sibling of their target element.
   // So reset our font and text properties to avoid inheriting weird values.
   @include reset-text();
-  font-size: $tooltip-font-size;
+  font-size: 12.5px;
   // Allow breaking very long words so they don't overflow the tooltip's bounds
   word-wrap: break-word;
   opacity: 0;
@@ -38,7 +38,7 @@
     &::before {
       top: 0;
       border-width: $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-      border-top-color: $tooltip-arrow-color;
+      border-top-color: $secondary;
     }
   }
 }
@@ -54,7 +54,7 @@
     &::before {
       right: 0;
       border-width: ($tooltip-arrow-width / 2) $tooltip-arrow-height ($tooltip-arrow-width / 2) 0;
-      border-right-color: $tooltip-arrow-color;
+      border-right-color: $secondary;
     }
   }
 }
@@ -68,7 +68,7 @@
     &::before {
       bottom: 0;
       border-width: 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-      border-bottom-color: $tooltip-arrow-color;
+      border-bottom-color: $secondary;
     }
   }
 }
@@ -84,7 +84,7 @@
     &::before {
       left: 0;
       border-width: ($tooltip-arrow-width / 2) 0 ($tooltip-arrow-width / 2) $tooltip-arrow-height;
-      border-left-color: $tooltip-arrow-color;
+      border-left-color: $secondary;
     }
   }
 }
@@ -107,9 +107,9 @@
 // Wrapper for the tooltip content
 .tooltip-inner {
   max-width: $tooltip-max-width;
-  padding: 6px ​15px;
+  padding: 3px 8px;
   color: $tooltip-color;
   text-align: center;
-  background-color: $tooltip-bg;
+  background-color: $secondary;
   @include border-radius($tooltip-border-radius);
 }

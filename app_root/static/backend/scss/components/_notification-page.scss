@@ -20,7 +20,7 @@
                 font-weight: 500;
             }
             p{
-                font-size: 12px; 
+                font-size: 12px;
             }
         }
     }
@@ -111,8 +111,8 @@
                 font-weight: 400;
             &.active{
                 color: #1a1a1a !important;
-               
-            }        
+
+            }
             }
         }
         .link-readall{
@@ -128,19 +128,19 @@
                     }
                 }
             }
-        } 
+        }
     }
 }
 .modal-title{
     font-size: 16px;
     span{
-        line-height: 1.9;
+        line-height: 1.6;
         &.badge{
             line-height: 1;
             padding: 3px 12px;
         }
     }
-   
+
 }
 .modal-dialog {
     .modal-content {

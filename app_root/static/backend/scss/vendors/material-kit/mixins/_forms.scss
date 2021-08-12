@@ -55,7 +55,7 @@
 @mixin bmd-form-color($label-color, $label-color-focus, $border-color, $line-color) {
   [class^='bmd-label'],
   [class*=' bmd-label'] {
-    color: $label-color;
+    // color: $label-color;
   }
 
   // override BS and keep the border-color normal/grey so that overlaid focus animation draws attention
@@ -150,7 +150,7 @@
 
     [class^='bmd-label'],
     [class*=' bmd-label'] {
-      color: $label-color-focus;
+      // color: $label-color-focus;
     }
 
     .bmd-label-placeholder {

@@ -1,0 +1,86 @@
+/* bootstrap-tagsinput v0.8.0 */
+.bootstrap-tagsinput {
+    border: 1px solid #d2d2d2;
+    border-width: 0 0 1px;
+    background: #fff;
+    padding: 5px;
+    padding-left: 0;
+    border-radius: 0;
+    width: 100%;
+    display: block;
+    color: #495057;
+    max-width: 100%;
+    line-height: 22px;
+    cursor: text;
+    box-shadow: none;
+    outline: 0;
+    max-width: inherit;
+    .tag {
+        margin-right: 2px;
+        color: #fff;
+        margin-bottom: 6px;
+        display: inline-block;
+        padding: 6px;
+        cursor: pointer;
+        & [data-role="remove"] {
+            margin-left: 8px;
+            cursor: pointer;
+            &:after {
+            content: "x";
+            padding: 0px 2px;
+            }
+        }
+    }
+    input {
+        outline: none;
+        border: none;
+        padding-left: 0;
+        min-width: 220px;
+        text-overflow: initial;
+        &[placeholder]{
+            &::-webkit-input-placeholder {
+                color: #999;
+              }
+              &::-moz-placeholder {
+                color: #999;
+              }
+              &:-ms-input-placeholder {
+                color: #999;
+              }
+              &:-moz-placeholder {
+                color: #999;
+              }
+        }
+    }
+    &.has-tags input{
+        width: auto;
+        max-width: 50px;
+        min-width: 50px;
+        &::-webkit-input-placeholder {
+            color: transparent;
+          }
+          &::-moz-placeholder {
+            color: transparent;
+          }
+          &:-ms-input-placeholder {
+            color: transparent;
+          }
+          &:-moz-placeholder {
+            color: transparent;
+          }
+    }
+
+    .label {
+        background: rgba(76,121,220, .9);
+        display: inline;
+        padding: 0.2em 0.6em 0.3em;
+        font-size: 75%;
+        font-weight: normal;
+        line-height: 1;
+        color: #fff;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: 0.5em;
+    }
+}

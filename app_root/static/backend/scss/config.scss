@@ -1,13 +1,11 @@
 /* vertical menu list */
 @import
     'vendors/material-kit/variables',
-    'vendors/sumo-select/sumoselect.min.css',
-    'vendors/bootstrap-input-tags/bootstrap-tagsinput.css',
     'abstracts/variables',
     'vendors/material-kit/mixins',
     'abstracts/mixins',
     'vendors/include-media',
-    'vendors/bootstrap-input-tags/bootstrap-tagsinput',
+    'vendors/bootstrap-tagsinput/bootstrap-tagsinput',
     'components/verticalmenulist',
     'components/tabcontent',
     'components/searchicon',
@@ -15,5 +13,6 @@
     'components/offcanvasModal',
     'components/configtabcontent',
     'components/skeleton-loader',
-    'components/notifyAlert';
+    'components/notifyAlert',
+    'components/alert-modal';
 

@@ -1,4 +1,4 @@
-.popover, .tooltip-inner {
+.popover {
     line-height: 1.4em;
     background: $white-color;
     border: none;
@@ -45,4 +45,7 @@
 
 .popover-body{
     font-size:0.8rem;
+    p:last-child{
+        margin-bottom: 0;
+    }
 }

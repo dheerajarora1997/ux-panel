@@ -14,36 +14,35 @@
     opacity: 0;
     transition: opacity, transform .2s ease;
     @include transform-translate-y(5px);
-    font-size: $tooltip-font-size;
+    font-size: 12.5px;
+
+    .tooltip-inner{
+        background: $secondary;
+    }
 
     &.bs-tooltip-top,
     &.bs-tooltip-auto[x-placement^="top"]{
         & .arrow::before{
-            border-top-color: $white-color;
+            border-top-color: $secondary;
         }
     }
 
     &.bs-tooltip-right,
     &.bs-tooltip-auto[x-placement^="right"]{
         & .arrow::before{
-            border-right-color: $white-color;
+            border-right-color: $secondary;
         }
     }
     &.bs-tooltip-left,
     &.bs-tooltip-auto[x-placement^="left"]{
         & .arrow::before{
-            border-left-color: $white-color;
+            border-left-color: $secondary;
         }
     }
     &.bs-tooltip-bottom,
     &.bs-tooltip-auto[x-placement^="bottom"]{
         & .arrow::before{
-            border-bottom-color: $white-color;
+            border-bottom-color: $secondary;
         }
     }
-}
-
-.tooltip-inner{
-    padding: 10px 15px;
-    min-width: 130px;
 }

@@ -1,32 +1,32 @@
 .notification-list {
     .tab-content {
         padding: 0;
-        height: calc(100vh - 134px);
-        overflow: auto;
+        // height: calc(100vh - 94px);
+        // overflow: auto;
         .list-group {
             a {
                 &:first-child {
                     border-top: none !important;
                 }
             }
-    
+
             .list-group-item {
                 font-size: 13px;
-    
+
                 h5 {
                     font-weight: 400;
                     font-size: 13px;
                 }
-    
+
                 strong {
                     font-weight: 500;
                 }
-    
+
                 p {
                     font-size: 12px;
                 }
             }
-        }    
+        }
     }
 
     .material-icons {
@@ -49,7 +49,7 @@
         font-size: 16px;
 
         span {
-            line-height: 1.9;
+            line-height: 1.6;
 
             &.badge {
                 line-height: 1;
@@ -107,7 +107,7 @@
             width: 28px;
             height: 28px;
             color: $brand-color;
-            background: #FFF; 
+            background: #FFF;
             border-radius: 50%;
             padding: 6px;
             margin-right: 10px !important;

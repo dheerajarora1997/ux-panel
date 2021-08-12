@@ -58,6 +58,9 @@ form {
   }
 }
 
+textarea.form-control{
+  height: auto;
+}
 
 
 // Help blocks (not in v4)
@@ -262,11 +265,13 @@ select {
   .has-success & {
     color: $green;
     opacity: 1;
+    display: none;
   }
 
   .has-danger & {
     color: $red;
     opacity: 1;
+    display: none;
   }
 }
 
@@ -276,7 +281,6 @@ select {
 }
 
 textarea {
-  height: auto !important;
   line-height: $bmd-line-height !important;
 }
 

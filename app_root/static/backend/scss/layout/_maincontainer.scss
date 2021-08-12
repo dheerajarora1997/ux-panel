@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 #main {
     @include transition(margin-left .5s);
-    min-height: calc(100vh - 105px);
+    min-height: calc(100vh - 152px);
     position: relative;
     @include transition(all 0.5s);
 }
