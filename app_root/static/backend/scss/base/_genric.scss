@@ -731,14 +731,29 @@ footer ul li {
     margin-bottom: 0;
 }
 
-.font-16{
+.font-16 {
     font-size: 16px;
 }
 
-.font-22{
+.font-22 {
     font-size: 22px;
 }
 
-.font-30{
+.font-30 {
     font-size: 30px;
+}
+
+.content-none {
+
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+.list-none{
+    list-style-type: none;
+    li{
+        list-style-type: none;
+    }
 }

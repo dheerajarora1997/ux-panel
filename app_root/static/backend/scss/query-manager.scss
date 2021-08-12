@@ -13,5 +13,6 @@
      &:hover{
          overflow: overlay;
          scrollbar-width: thin;
+         z-index: 1;
      }
  }

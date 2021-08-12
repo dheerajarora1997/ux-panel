@@ -14,37 +14,55 @@
             margin: 0;
             border: none;
             background-color: #fff;
-            small,.small{line-height: 1.2;}
-            @media only screen and (min-width: 991px){
-                &.min-max-50{
+
+            small,
+            .small {
+                line-height: 1.2;
+            }
+
+            @media only screen and (min-width: 991px) {
+                &.min-max-50 {
                     min-width: 50px;
                     max-width: 50px;
                     width: 50px;
                 }
-                &.min-max-150{
+
+                &.min-max-150 {
                     min-width: 150px;
                     max-width: 150px;
                     width: 150px;
                 }
-                &.min-max-200{
+
+                &.min-max-200 {
                     min-width: 200px;
                     max-width: 200px;
                     width: 200px;
                 }
-                &.min-max-250{
+
+                &.min-max-250 {
                     min-width: 250px;
                     max-width: 250px;
                     width: 250px;
                 }
-                &.min-max-300{
+
+                &.min-max-300 {
                     min-width: 300px;
                     max-width: 300px;
                     width: 300px;
                 }
-                &.min-max-350{
+
+                &.min-max-350 {
                     min-width: 350px;
                     max-width: 350px;
                     width: 350px;
+                }
+                &.has-checkbox {
+
+                    input[type="radio"],
+                    input[type="checkbox"] {
+                        margin-top: 14px;
+                        margin-bottom: 0;
+                    }
                 }
 
             }
@@ -71,15 +89,19 @@
                 max-width: 290px;
                 white-space: normal;
             }
-            &.has-selected{
+
+            &.has-selected {
                 opacity: .7;
-                &+.collapse{
+
+                &+.collapse {
                     opacity: .7;
                 }
             }
-            &.read{
+
+            &.read {
                 opacity: .7;
-                &+.collapse{
+
+                &+.collapse {
                     opacity: .7;
                 }
             }
@@ -129,6 +151,11 @@
 
                         &.has-checkbox {
                             padding-left: 20px !important;
+
+                            input[type="radio"],
+                            input[type="checkbox"] {
+                                margin-top: 10px;
+                            }
                         }
                     }
 
@@ -150,21 +177,21 @@
     }
 }
 
-.form-check .form-check-sign .check{
+.form-check .form-check-sign .check {
     width: 15px;
     height: 15px;
 }
 
-.form-check .form-check-sign .check:before{
+.form-check .form-check-sign .check:before {
     margin-top: -5px;
     margin-left: 5px;
 }
 
-.pagination-input{
+.pagination-input {
     max-width: 50px;
 }
 
-.responsive-table{
+.responsive-table {
     overflow: auto;
     margin-bottom: 10px;
 }
