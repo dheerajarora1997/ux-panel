@@ -15,7 +15,7 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  
+
   /* Enable Ligatures ================ */
   letter-spacing: 0;
   -webkit-font-feature-settings: "liga";
@@ -29,6 +29,28 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.lineicon-total-tickets:before {
+  content: "\e945";
+}
+.lineicon-neg-feedback-ticket:before {
+  content: "\e973";
+}
+.lineicon-positive-feedback-ticket:before {
+  content: "\e974";
+}
+.lineicon-feedback-not-given:before {
+  content: "\e975";
+}
+.lineicon-closed-tickets:before {
+  content: "\e976";
+}
+.lineicon-inprogress:before {
+  content: "\e977";
+}
+.lineicon-open-tickets:before {
+  content: "\e978";
 }
 
 .lineicon-add-credit:before {

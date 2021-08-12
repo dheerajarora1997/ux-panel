@@ -1,28 +1,53 @@
 .border-card {
+    .grid-col {
+        display: grid;
+        row-gap: .5em;
+        column-gap: 1em;
+
+        @media only screen and (min-width: 1025px) {
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+        }
+
+        @media only screen and (min-width: 451px) and (max-width: 1024px) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        @media only screen and (max-width: 450px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
     .border {
         border-top-color: #e2e1e6 !important;
         border-right-color: #e2e1e6 !important;
         border-left-color: #e2e1e6 !important;
         border-width: 1px 1px 4px !important;
-        &-primary.active{
+
+        &-primary.active {
             background: rgba(76, 121, 220, .1) !important;
         }
-        &-danger.active{
-            background: rgb(244, 67, 54 ,.1) !important;
+
+        &-danger.active {
+            background: rgb(244, 67, 54, .1) !important;
         }
-        &-warning.active{
+
+        &-warning.active {
             background: rgba(255, 152, 0, .1) !important;
         }
-        &-success.active{
+
+        &-success.active {
             background: rgba(76, 175, 80, .1) !important;
         }
-        &-info.active{
+
+        &-info.active {
             background: rgba(0, 188, 212, .1) !important;
         }
-        &-tertiary.active{
+
+        &-tertiary.active {
             background: rgba(185, 128, 240, .1) !important;
         }
-        &-quaternary.active{
+
+        &-quaternary.active {
             background: rgba(237, 142, 124, .1) !important;
         }
     }
