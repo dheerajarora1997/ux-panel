@@ -1,0 +1,29 @@
+.border-card {
+    .border {
+        border-top-color: #e2e1e6 !important;
+        border-right-color: #e2e1e6 !important;
+        border-left-color: #e2e1e6 !important;
+        border-width: 1px 1px 4px !important;
+        &-primary.active{
+            background: rgba(76, 121, 220, .1) !important;
+        }
+        &-danger.active{
+            background: rgb(244, 67, 54 ,.1) !important;
+        }
+        &-warning.active{
+            background: rgba(255, 152, 0, .1) !important;
+        }
+        &-success.active{
+            background: rgba(76, 175, 80, .1) !important;
+        }
+        &-info.active{
+            background: rgba(0, 188, 212, .1) !important;
+        }
+        &-tertiary.active{
+            background: rgba(185, 128, 240, .1) !important;
+        }
+        &-quaternary.active{
+            background: rgba(237, 142, 124, .1) !important;
+        }
+    }
+}

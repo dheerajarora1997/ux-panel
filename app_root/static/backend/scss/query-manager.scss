@@ -1,3 +1,18 @@
  // Sections and  pages
  @import
- 'components/grid-table';
+ 'components/grid-table',
+ 'components/expandSearch',
+ 'components/border-card',
+ 'components/modal-accordion',
+ 'components/conversation';
+
+ .ticket-left-panel{
+     overflow: hidden;
+     overflow-y: auto;
+     min-height: 529px;
+     max-height: 529px;
+     scrollbar-width: thin;
+     &:hover{
+         overflow: overlay;
+     }
+ }

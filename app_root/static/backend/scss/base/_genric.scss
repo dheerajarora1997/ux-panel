@@ -88,9 +88,9 @@
     }
 }
 
-.border-bottom {
-    border-bottom: 1px solid #eee !important;
-}
+// .border-bottom {
+//     border-color:  #eee;
+// }
 
 .border-bottom-form {
     border-bottom: 1px solid #d2d2d2 !important;
@@ -364,4 +364,12 @@ input[type=number]::-webkit-inner-spin-button {
 
 .SumoSelect>.CaptionCont>span.placeholder{
     font-style: normal !important;
+}
+.no-wrap{
+    white-space: nowrap;
+}
+
+.normal-select{
+    -moz-appearance: auto;
+    -webkit-appearance: auto;
 }

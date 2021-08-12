@@ -1,0 +1,33 @@
+.modal-accordion {
+    small,.small{
+        line-height: 1.1;
+    }
+    [data-toggle="collapse"] {
+        position: relative;
+
+        &:after {
+            content: '\f107';
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            position: absolute;
+            right: 20px;
+            top: 7px;
+            border-radius: 100%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &[aria-expanded="true"] {
+            &:after {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover:after {
+            background: rgba(36, 93, 136, .08) !important;
+        }
+    }
+}

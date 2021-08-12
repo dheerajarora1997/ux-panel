@@ -10,7 +10,7 @@
    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
    <!--  Fonts and icons -->
    <link rel="stylesheet" type="text/css"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons|Material+Icons+Outlined" />
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- CSS Files -->
    <link href="../static/backend/css/main.css" rel="stylesheet" />
@@ -430,11 +430,161 @@
             <div id="myCanvasNav" class="overlay" onclick="closeNav()">
                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
             </div>
-            <div class="grid-table w-100 px-3" id="tableCollapseParent">
+            <div class="topHead w-100 d-inline-block px-3 mb-3">
+               <div class="border-bottom py-2">
+                  <div class="row">
+                     <div class="col-12 col-md-6 d-flex">
+                        <h3 class="h5 d-inline-block my-1">Manage Student Query</h3>
+                        <a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" title="" data-container="body" title="Demo" data-original-title="Demo" class="d-flex align-items-center ml-1"><span class="material-icons-outlined"> play_circle_outline </span></a>
+                     </div>
+                     <div class="col-12 col-md-6 d-flex align-items-end justify-content-end">
+                        <div class="expandSearch">
+                           <div class="form-group has-search mb-0 py-0 bmd-form-group">
+                              <span class="material-icons search_icon text-primary">search</span>
+                              <input type="search" name="" id="" class="form-control pl-4" placeholder="Search by ID">
+                           </div>
+                        </div>
+                        <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
+                           <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title="" data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="border-card w-100 d-inline-block px-3 mb-3">
+               <div class="row no-gutters">
+                  <div class="col pr-2">
+                     <div class="bg-white border border-primary p-2 active">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Total Tickets</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets received in the time period selected." data-original-content="The total number of tickets received in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-primary"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col px-2">
+                     <div class="bg-white border border-danger p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Open Tickets</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of untouched tickets in the time period selected." data-original-content="The total number of untouched tickets in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-danger"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col px-2">
+                     <div class="bg-white border border-warning p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>In Progress Tickets</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected." data-original-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-warning"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col px-2">
+                     <div class="bg-white border border-success p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Closed Tickets</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets resolved or closed in the time period selected." data-original-content="The total number of tickets resolved or closed in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-success"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col px-2">
+                     <div class="bg-white border border-info p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Feedback Not Given</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total number tickets for which feedback is not given by the applicant in the time period selected." data-original-content="Total number tickets for which feedback is not given by the applicant in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-info"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col px-2">
+                     <div class="bg-white border border-tertiary p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Positive Feedback</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total of tickets for which positive feedback is given by the applicant in the time period selected." data-original-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-tertiary"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col pl-2">
+                     <div class="bg-white border border-quaternary p-2">
+                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                           <small>Negative Feedback</small>
+                           <i class="lineicon-info" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total of tickets for which negative feedback is given by the applicant in the time period selected." data-original-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."></i>
+                        </h3>
+                        <div class="row no-gutters align-items-center">
+                           <div class="col-8">
+                              <h4 class="h5 my-0">216745</h4>
+                           </div>
+                           <div class="col-4 text-right">
+                              <span class="material-icons-outlined  text-quaternary"> local_activity </span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="grid-table w-100 px-3 mt-3" id="tableCollapseParent">
+               <div class="row align-items-center mb-2">
+                  <div class="col-6">
+                     <div class="d-flex">
+                        <span class="font-weight-bold">Total 31 Records</span>
+                     </div>
+                  </div>
+                  <div class="col-6 text-right">
+                     <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-round">
+                        <i class="lineicon-download" aria-hidden="true"></i>
+                        <span class="font-weight-bold">Download</span>
+                     </a>
+                  </div>
+               </div>
                <table class="table table-borderless">
                   <thead>
                      <tr>
-                        <td class="pt-1 has-checkbox">
+                        <td class="pt-1 has-checkbox min-max-50">
                            <div class="form-check mb-0">
                               <label class="form-check-label">
                                  <input type="checkbox" class="form-check-input" />
@@ -444,17 +594,17 @@
                               </label>
                            </div>
                         </td>
-                        <td>Ticket Details</td>
-                        <td>Personal Details</td>
-                        <td>Category</td>
-                        <td>Assigned To</td>
+                        <td class="min-max-250">Ticket Details</td>
+                        <td class="min-max-350">Personal Details</td>
+                        <td class="min-max-200">Category</td>
+                        <td class="min-max-200">Assigned To</td>
                         <td>Status</td>
                         <td>Action</td>
                      </tr>
                   </thead>
                   <tbody>
                      <tr class="grid-table-row">
-                        <td class="pt-1 has-checkbox">
+                        <td class="pt-1 has-checkbox min-max-50">
                            <div class="form-check">
                               <label class="form-check-label">
                                  <input type="checkbox" class="form-check-input" />
@@ -464,18 +614,18 @@
                               </label>
                            </div>
                         </td>
-                        <td class="font-medium" data-title="Ticket Details">
+                        <td class="font-medium min-max-250" data-title="Ticket Details">
                            <a class="primary-color" href="javascript:void(0);">
                               786543
                            </a>
                         </td>
-                        <td data-title="Personal Details">
+                        <td class="min-max-300" data-title="Personal Details">
                            Name : Deepak Singh
                         </td>
-                        <td data-title="Category">
+                        <td class="min-max-200" data-title="Category">
                            Withdraw
                         </td>
-                        <td data-title="Assigned To">
+                        <td class="min-max-200" data-title="Assigned To">
                            Alok Sharma
                         </td>
                         <td data-title="Status">
@@ -483,36 +633,27 @@
                         </td>
                         <td data-title="Action">
                            <div class="d-flex">
-                              <a href="javascript:void(0);" class="px-2"><span
+                              <a href="#detail-popup" data-toggle="modal" class="px-2"><span
                                     class="lineicon-73 material-icons"></span></a>
                               <a data-toggle="collapse" href="#tableCollapse1" role="button" aria-expanded="false"
-                                 class="px-2"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                 class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                            </div>
                         </td>
                      </tr>
                      <tr class="collapse" id="tableCollapse1" data-parent="#tableCollapseParent">
-
-                        <td colspan="7">
-                           <div class="d-flex">
-                              <div class="col">
-                                 <p><span class="text-secondary">Raised On :</span> 13 Jul 2021 08:58 PM</p>
-                                 <p><span class="text-secondary">Updated On :</span> 14 Jul 2021 08:58 PM</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Email :</span> deepak@domain.com</p>
-                                 <p><span class="text-secondary">Mobile :</span> +91 9992992929</p>
-                              </div>
-                              <div class="col">
-                                 <p>Feedback (if any)</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Parent :</span> Category</p>
-                              </div>
-                              <div class="col">
-                                 <p>Role</p>
-                              </div>
-                           </div>
+                        <td class="min-max-50"></td>
+                        <td class="min-max-200">
+                           <p><span class="text-muted d-block small">Raised On</span>
+                           13 Jul 2021 08:58 PM</p>
+                           <p><span class="text-muted d-block small">Updated On</span>
+                              14 Jul 2021 08:58 PM</p>
                         </td>
+                        <td class="min-max-250">
+                           <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                           <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                        </td>
+                        <td><p><span class="text-secondary">Parent :</span> Category</p></td>
+                        <td><p>Role</p></td>
                      </tr>
                      <tr class="grid-table-row">
                         <td class="pt-1 has-checkbox">
@@ -547,33 +688,24 @@
                               <a href="javascript:void(0);" class="px-2"><span
                                     class="lineicon-73 material-icons"></span></a>
                               <a data-toggle="collapse" href="#tableCollapse2" role="button" aria-expanded="false"
-                                 class="px-2"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                 class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                            </div>
                         </td>
                      </tr>
                      <tr class="collapse" id="tableCollapse2" data-parent="#tableCollapseParent">
-
-                        <td colspan="7">
-                           <div class="d-flex">
-                              <div class="col">
-                                 <p><span class="text-secondary">Raised On :</span> 13 Jul 2021 08:58 PM</p>
-                                 <p><span class="text-secondary">Updated On :</span> 14 Jul 2021 08:58 PM</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Email :</span> deepak@domain.com</p>
-                                 <p><span class="text-secondary">Mobile :</span> +91 9992992929</p>
-                              </div>
-                              <div class="col">
-                                 <p>Feedback (if any)</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Parent :</span> Category</p>
-                              </div>
-                              <div class="col">
-                                 <p>Role</p>
-                              </div>
-                           </div>
+                        <td class="min-max-50"></td>
+                        <td class="min-max-200">
+                           <p><span class="text-muted d-block small">Raised On</span>
+                           13 Jul 2021 08:58 PM</p>
+                           <p><span class="text-muted d-block small">Updated On</span>
+                              14 Jul 2021 08:58 PM</p>
                         </td>
+                        <td class="min-max-250">
+                           <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                           <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                        </td>
+                        <td><p><span class="text-secondary">Parent :</span> Category</p></td>
+                        <td><p>Role</p></td>
                      </tr>
                      <tr class="grid-table-row">
                         <td class="pt-1 has-checkbox">
@@ -608,33 +740,24 @@
                               <a href="javascript:void(0);" class="px-2"><span
                                     class="lineicon-73 material-icons"></span></a>
                               <a data-toggle="collapse" href="#tableCollapse3" role="button" aria-expanded="false"
-                                 class="px-2"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                 class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                            </div>
                         </td>
                      </tr>
                      <tr class="collapse" id="tableCollapse3" data-parent="#tableCollapseParent">
-
-                        <td colspan="7">
-                           <div class="d-flex">
-                              <div class="col">
-                                 <p><span class="text-secondary">Raised On :</span> 13 Jul 2021 08:58 PM</p>
-                                 <p><span class="text-secondary">Updated On :</span> 14 Jul 2021 08:58 PM</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Email :</span> deepak@domain.com</p>
-                                 <p><span class="text-secondary">Mobile :</span> +91 9992992929</p>
-                              </div>
-                              <div class="col">
-                                 <p>Feedback (if any)</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Parent :</span> Category</p>
-                              </div>
-                              <div class="col">
-                                 <p>Role</p>
-                              </div>
-                           </div>
+                        <td class="min-max-50"></td>
+                        <td class="min-max-200">
+                           <p><span class="text-muted d-block small">Raised On</span>
+                           13 Jul 2021 08:58 PM</p>
+                           <p><span class="text-muted d-block small">Updated On</span>
+                              14 Jul 2021 08:58 PM</p>
                         </td>
+                        <td class="min-max-250">
+                           <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                           <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                        </td>
+                        <td><p><span class="text-secondary">Parent :</span> Category</p></td>
+                        <td><p>Role</p></td>
                      </tr>
                      <tr class="grid-table-row">
                         <td class="pt-1 has-checkbox">
@@ -669,122 +792,52 @@
                               <a href="javascript:void(0);" class="px-2"><span
                                     class="lineicon-73 material-icons"></span></a>
                               <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
-                                 class="px-2"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                 class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
                            </div>
                         </td>
                      </tr>
                      <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
-
-                        <td colspan="7">
-                           <div class="d-flex">
-                              <div class="col">
-                                 <p><span class="text-secondary">Raised On :</span> 13 Jul 2021 08:58 PM</p>
-                                 <p><span class="text-secondary">Updated On :</span> 14 Jul 2021 08:58 PM</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Email :</span> deepak@domain.com</p>
-                                 <p><span class="text-secondary">Mobile :</span> +91 9992992929</p>
-                              </div>
-                              <div class="col">
-                                 <p>Feedback (if any)</p>
-                              </div>
-                              <div class="col">
-                                 <p><span class="text-secondary">Parent :</span> Category</p>
-                              </div>
-                              <div class="col">
-                                 <p>Role</p>
-                              </div>
-                           </div>
+                        <td class="min-max-50"></td>
+                        <td class="min-max-200">
+                           <p><span class="text-muted d-block small">Raised On</span>
+                           13 Jul 2021 08:58 PM</p>
+                           <p><span class="text-muted d-block small">Updated On</span>
+                              14 Jul 2021 08:58 PM</p>
                         </td>
+                        <td class="min-max-250">
+                           <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                           <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                        </td>
+                        <td><p><span class="text-secondary">Parent :</span> Category</p></td>
+                        <td><p>Role</p></td>
                      </tr>
                   </tbody>
                </table>
+               <div class="d-flex justify-content-end align-items-center">
+                  <span class="mr-1 text-muted small">Show Rows</span>
+                  <div class="form-group my-0 mr-2 p-0">
+                     <select name="" id="" class="normal-select p-1 border small">
+                        <option value="">10</option>
+                        <option value="">20</option>
+                        <option value="">50</option>
+                        <option value="">100</option>
+                     </select>
+                  </div>
+                  <span class="mx-2 text-muted small">Go to</span>
+                  <div class="form-group m-0 p-0 col-1">
+                     <input type="text" class="col-12 border">
+                  </div>
+                  <span class="ml-1 mr-3 text-muted small">of 3</span>
+                  <a href="javascript:void(0);" class="bg-white border px-2" data-toggle="tooltip" data-placement="top" title=""
+                  data-container="body" data-original-title="Previous"><i class="fa fa-angle-left" aria-hidden="true" ></i></a>
+                  <a href="javascript:void(0);" class="bg-white border px-2" data-toggle="tooltip" data-placement="top" title=""
+                  data-container="body" data-original-title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+               </div>
             </div>
-
-            <div class="grid-table w-100 px-3" id="tableCollapseParent">
-               <table class="table table-borderless">
-                  <thead>
-                     <tr>
-                        <td class="pt-1 has-checkbox">
-                           <div class="form-check mb-0">
-                              <label class="form-check-label">
-                                 <input type="checkbox" class="form-check-input" />
-                                 <span class="form-check-sign p-0">
-                                    <span class="check"></span>
-                                 </span>
-                              </label>
-                           </div>
-                        </td>
-                        <td>Ticket Details</td>
-                        <td>Personal Details</td>
-                        <td>Category</td>
-                        <td>Assigned To</td>
-                        <td>Status</td>
-                        <td>Action</td>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr class="grid-table-row">
-                        <td class="pt-1 has-checkbox">
-                           <div class="form-check">
-                              <label class="form-check-label">
-                                 <input type="checkbox" class="form-check-input" />
-                                 <span class="form-check-sign p-0">
-                                    <span class="check"></span>
-                                 </span>
-                              </label>
-                           </div>
-                        </td>
-                        <td class="font-medium" data-title="Ticket Details">
-                           <a class="primary-color" href="javascript:void(0);">
-                              786543
-                           </a>
-                        </td>
-                        <td data-title="Personal Details">
-                           Name : Deepak Singh
-                        </td>
-                        <td data-title="Category">
-                           Withdraw
-                        </td>
-                        <td data-title="Assigned To">
-                           Alok Sharma
-                        </td>
-                        <td data-title="Status">
-                           In Progress
-                        </td>
-                        <td data-title="Action">
-                           <div class="d-flex">
-                              <a href="javascript:void(0);" class="px-2"><span
-                                    class="lineicon-73 material-icons"></span></a>
-                              <a data-toggle="collapse" href="#tableCollapse5" role="button" aria-expanded="false"
-                                 class="px-2"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr class="collapse" id="tableCollapse5" data-parent="#tableCollapseParent">
-                        <td></td>
-                        <td>
-                           <span class="d-block small"><span class="text-secondary">Raised On :</span> 13 Jul 2021 08:58 PM</span>
-                           <span class="d-block small"><span class="text-secondary">Updated On :</span> 14 Jul 2021 08:58 PM</span>
-                        </td>
-                        <td>
-                           <span class="d-block small"><span class="text-secondary">Email :</span> deepak@domain.com</span>
-                           <span class="d-block small"><span class="text-secondary">Mobile :</span> +91 9992992929</span>
-                        </td>
-                        <td><p class="small">Feedback (if any)</p></td>
-                        <td><p class="small"><span class="text-secondary">Parent :</span> Category</p></td>
-                        <td><p class="small">Role</p></td>
-                        <td></td>
-                     </tr>
-                  </tbody>
-               </table>
-            </div>
-
          </div>
       </div>
 
 
-   </div>
    </div>
 
 
@@ -825,6 +878,234 @@
          </ul>
       </div>
    </footer>
+
+   <div class="modal fade offCanvasModal right" id="detail-popup" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+         <div class="modal-content h-100">
+            <div class="modal-header py-2 px-3 border-bottom">
+               <h5 class="modal-title font-weight-bold my-0" id="exampleModalLabel">
+                  <span class="title"> <span class="text-secondary font-weight-normal">Ticket Id - </span>22323</span>
+               </h5>
+
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body p-0">
+               <div class="d-flex">
+                  <div class="col-12 col-md-6 bg-white px-0">
+                     <div class="ticket-left-panel">
+                        <div class="py-2 px-3 border-bottom">
+                           <h3 class="my-1 h6">Status: <span class="text-success">In Progress</span> </h3>
+                        </div>
+                        <div class="modal-accordion">
+                           <a href="#modal-collapse" data-toggle="collapse" aria-expanded="false" class="px-3 py-2 border-bottom d-block text-dark">View Lead Details</a>
+                           <div class="collapse border-bottom" id="modal-collapse">
+                              <div class="p-3">
+                                 <span class="text-muted font-weight-light small d-block">Email Address</span>
+                                 <p>test13501209@yopmail.com</p>
+                                 <span class="text-muted font-weight-light small d-block">City</span>
+                                 <p>Ludhiana</p>
+                                 <span class="text-muted font-weight-light small d-block">Course</span>
+                                 <p>B.Tech (CSE)</p>
+                                 <span class="text-muted font-weight-light small d-block">Mobile Number</span>
+                                 <p>+91 999 299 2929</p>
+                                 <span class="text-muted font-weight-light small d-block">State</span>
+                                 <p>Punjab</p>
+                                 <span class="text-muted font-weight-light small d-block">How did you come to know about Apeejay</span>
+                                 <p>Social Media</p>
+                                 <span class="text-muted font-weight-light small d-block">Name</span>
+                                 <p>Jashanpreet singh</p>
+                                 <span class="text-muted font-weight-light small d-block">Programme</span>
+                                 <p>Under Graduate</p>
+                              </div>
+                           </div>
+                           <a href="#modal-collapse1" data-toggle="collapse" aria-expanded="false" class="py-2 px-3 border-bottom d-block text-dark">Ticket Details</a>
+                           <div class="collapse border-bottom" id="modal-collapse1">
+                              <div class="p-3">
+                                 <span class="text-muted font-weight-light small d-block">Raised By</span>
+                                 <p>Jashanpreet singh</span>
+                                 <span class="text-muted font-weight-light small d-block">Category</span>
+                                 <p>Fees Details</p>
+                                 <span class="text-muted font-weight-light small d-block">Lead Stage</span>
+                                 <p>untouched</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-12 col-md-6 bg-light px-0">
+                     <div class="ticket-right-panel">
+                        <div class="p-2 border-bottom d-flex justify-content-between align-items-center">
+                           <h3 class="m-0 h6">Ticket Conversation</h3>
+                           <div class="action-links dropdown">
+                              <a href="javascript:void(0);" class="dropdown-toggle text-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 <span class="material-icons-outlined"> more_vert </span>
+                              </a>
+                              <div class="dropdown-menu">
+                                 <ul class="list-group">
+                                    <li class="list-group-items"><a href="javascript:void(0);">Open</a></li>
+                                    <li class="list-group-items"><a href="javascript:void(0);">Close</a></li>
+                                    <li class="list-group-items"><a href="javascript:void(0);">In Progress</a></li>
+                                 </ul>
+                              </div>
+
+                           </div>
+                        </div>
+                        <div class="chat-wrapper position-relative">
+                           <div class="w-100 chat-box">
+                               <div class="chat-container position-relative px-3">
+                                   <ul class="d-flex flex-column justify-content-end">
+                                       <li
+                                           class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
+                                           <small
+                                               class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
+                                           <div class="msg">Lorem Ipsum is simply dummy text of the
+                                               printing and typesetting industry. Lorem Ipsum has
+                                               been the
+                                               industry's standard dummy text ever since the 1500s.
+                                           </div>
+                                           <div class="msg file d-flex align-items-center">
+                                               <i class="icon-file p-2 h3 m-0 primary-color"
+                                                   aria-hidden="true"></i>
+                                               <a href="javascript:void(0);"
+                                                   class="primary-color font-medium">
+                                                   Screenshot--001234.png
+                                               </a>
+                                           </div>
+                                           <small class="text-muted ml-auto mt-1">
+                                               18 Apr, 2021, 4:00 PM
+                                           </small>
+                                       </li>
+                                       <li
+                                           class="chat-msg d-flex  flex-column position-relative receive-msg">
+                                           <small class="text-muted mb-1">Team Admission, College
+                                               Name</small>
+                                           <div class="msg">Lorem Ipsum is simply dummy text of the
+                                               printing and typesetting industry. Lorem Ipsum has
+                                               been the
+                                               industry's standard dummy text ever since the 1500s.
+                                           </div>
+                                           <small class="text-muted mt-1">
+                                               18 Apr, 2021, 4:00 PM
+                                           </small>
+                                       </li>
+                                       <li
+                                           class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
+                                           <small
+                                               class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
+                                           <div class="msg">Lorem Ipsum is simply dummy text of the
+                                               printing and typesetting industry. Lorem Ipsum has
+                                               been the
+                                               industry's standard dummy text ever since the 1500s.
+                                           </div>
+                                           <small class="text-muted ml-auto mt-1">
+                                               18 Apr, 2021, 4:00 PM
+                                           </small>
+                                       </li>
+                                   </ul>
+                                   <div
+                                       class="ticket-status position-relative d-flex justify-content-center">
+                                       <span
+                                           class="position-absolute small text-danger font-medium">
+                                           Ticket Closed
+                                       </span>
+                                   </div>
+                                   <ul>
+                                       <li
+                                           class="chat-msg d-flex  flex-column position-relative receive-msg">
+                                           <small class="text-muted mb-1">Team Admission, College
+                                               Name</small>
+                                           <div class="msg">Lorem Ipsum is simply dummy text of the
+                                               printing and typesetting industry. Lorem Ipsum has
+                                               been the
+                                               industry's standard dummy text ever since the 1500s.
+                                           </div>
+                                           <div class="msg file d-flex align-items-center">
+                                               <i class="icon-file p-2 h3 m-0 primary-color"
+                                                   aria-hidden="true"></i>
+                                               <a href="javascript:void(0);"
+                                                   class="primary-color font-medium">
+                                                   Screenshot--001234.png
+                                               </a>
+                                           </div>
+                                           <small class="text-muted mt-1">
+                                               18 Apr, 2021, 4:00 PM
+                                           </small>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                           <div
+                               class="chat-area position-absolute fixed-bottom bg-white d-flex align-items-center w-100 p-0">
+                               <div class="chat-file position-absolute bg-white w-100 px-3 py-1 d-none">
+                                   <div class="d-flex justify-content-between align-items-center">
+                                       <small class="file-name"></small>
+                                       <button class="btn p-0 remove-file bg-white">
+                                           <i class="text-danger fa fa-trash-o"></i>
+                                       </button>
+                                   </div>
+                               </div>
+                               <textarea name="" id="" resize="none" class="px-3 small"
+                                   placeholder="Write your message here..."></textarea>
+                               <label for="attachment" class="small fileBrowseCustom p-2" role="button" tabindex="0">
+                                 <i class="fa fa-file-o mr-1" aria-hidden="true"></i>
+                                 <input type="file" class="sr-only" id="attachment">
+                              </label>
+                              <a href="javascript:void(0);" class="btn btn-primary send-btn btn-round btn-sm small">
+                                 <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                              </a>
+                               <div class="row w-100">
+                                  <div class="col-9">
+                                  </div>
+                                  <div class="col-1">
+                                  </div>
+                                  <div class="col-2">
+                                  </div>
+                              </div>
+                           </div>
+                           <!-- Submit Feedback -->
+                           <!-- <div class="ticket-status-label position-absolute fixed-bottom bg-white d-flex justify-content-between align-items-center px-3 py-3 border-top">
+                               <div class="d-flex">
+                                   <p class="mb-0 pr-2 mr-2 border-right  text-danger font-medium">Ticket Closed</p>
+                                   <a href="javascript:void(0);" class="primary-color">Re-open Query</a>
+                               </div>
+                               <div class="d-flex align-items-center feedback-response">
+                                   <p class="mb-0">Feedback</p>
+                                   <a href="javascript:void(0);" class="bg-light-success text-base p-2 mx-2 rounded-circle">
+                                       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                   </a>
+                                   <a href="javascript:void(0);" class="bg-light-danger text-base p-2 rounded-circle">
+                                       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                   </a>
+                               </div>
+                           </div> -->
+                       </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <div class="form-group p-0 m-0">
+                     <select name="" id="" class="form-control selectpicker">
+                        <option value="">In Progress</option>
+                        <option value="">Close</option>
+                        <option value="">Open</option>
+                     </select>
+                  </div>
+                  <label for="attachment" class="btn btn-outline-primary btn-sm small btn-round fileBrowseCustom" role="button" tabindex="0">
+                     <i class="fa fa-file-o mr-1" aria-hidden="true"></i>
+                     Attach File
+                     <input type="file" class="sr-only" id="attachment">
+                 </label>
+                 <a href="javascript:void(0);"
+                     class="btn btn-primary send-btn btn-round btn-sm small">
+                     <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                 </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
 
    <!-- notification modal-->
@@ -1074,6 +1355,10 @@
       }
    </script>
    <script>
+      $(document).ready(function(){
+         $('[data-toggle="popover"]').popover();
+         $('[data-toggle="tooltip"]').tooltip();
+      });
       $('.grid-table table thead input[type="checkbox"]').change(function(event){
          if(event.target.checked){
             $('.grid-table table tbody input[type="checkbox"]').prop('checked', true);
@@ -1094,7 +1379,20 @@
          if (all_checkboxes.length === all_checkboxes.filter(":checked").length) {
             $('.grid-table table thead input[type="checkbox"]').prop('checked', true);
          }
+      });
+      function customFile() {
+         $('input[type="file"]').change(function (e) {
+            var fileName = e.target.files[0].name;
+            $('.chat-file  .file-name').text(fileName);
+            $('.chat-file').removeClass('d-none');
+         });
+      };
 
+      $(".fileBrowseCustom").on("click", customFile);
+      $(".chat-area .remove-file").on("click", function () {
+         $('.chat-file').addClass('d-none');
+         $('.chat-area input[type="file"]').val('');
+         $('.file-name').text('');
       });
    </script>
    <script>

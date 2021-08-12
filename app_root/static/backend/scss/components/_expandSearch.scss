@@ -1,0 +1,11 @@
+.expandSearch{
+input[type="search"]{
+    min-width: 170px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    &:focus{
+        min-width: 250px;
+    }
+}
+}
