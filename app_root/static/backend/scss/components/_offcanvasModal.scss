@@ -1,4 +1,5 @@
 $modal-xlg : 1100px;
+$modal-llg : 950px;
 $modal-lg : 800px;
 $modal-md : 550px;
 $modal-sm : 300px;
@@ -23,6 +24,11 @@ $modal-sm : 300px;
             &.modal-lg {
                 width: $modal-lg;
                 max-width: $modal-lg;
+            }
+
+            &.modal-llg {
+                width: $modal-llg;
+                max-width: $modal-llg;
             }
 
             &.modal-sm {
@@ -61,6 +67,10 @@ $modal-sm : 300px;
                     left: -$modal-lg;
                 }
 
+                &.modal-llg {
+                    left: -$modal-llg;
+                }
+
                 &.modal-sm {
                     left: -$modal-sm;
                 }
@@ -93,6 +103,10 @@ $modal-sm : 300px;
 
                 &.modal-lg {
                     right: -$modal-lg;
+                }
+
+                &.modal-llg {
+                    right: -$modal-llg;
                 }
 
                 &.modal-sm {
@@ -149,7 +163,7 @@ $modal-sm : 300px;
             // ----------------------
             position: absolute;
             right: 28px;
-            top: 20px;
+            top: 24px;
             border: 0;
             background: none;
             cursor: pointer;
@@ -235,6 +249,6 @@ body.scrollHidden{
 .offCanvasModal {
     .btn.btn-light{
         background: rgba(76,121,220,.1) !important;
-        
+
     }
 }

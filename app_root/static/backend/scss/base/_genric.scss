@@ -1,3 +1,6 @@
+body{
+    font-size: .9rem;
+}
 .fs-13 {
     font-size: 13px;
     font-weight: $font-weight-light;
@@ -756,4 +759,23 @@ footer ul li {
     li{
         list-style-type: none;
     }
+}
+
+.npf-pagination{
+    a{
+        &.inactive{
+            opacity: .8;
+            cursor: not-allowed;
+            color: #999;
+        }
+    }
+}
+
+.cke_reset.cke_contents{
+    max-height: 110px !important;
+}
+
+#cke_editor1{
+    width: 100%;
+    border-left: transparent;
 }

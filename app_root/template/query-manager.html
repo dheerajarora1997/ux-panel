@@ -406,183 +406,251 @@
    <!-- Header With Side Nav End-->
 
    <div
-      class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky">
+      class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-4">
       <!-- <h1 class="m-0 h2">Settings</h1>-->
 
       <div class="section-header-breadcrumb d-flex align-items-center w-sm-100 px-3 px-lg-0 py-2 py-lg-0">
-         <div class="breadcrumb-item fs-12 active"><span class="material-icons text-highlight">home</span></div>
+         <!-- <div class="breadcrumb-item fs-12 active"><span class="material-icons text-highlight">home</span></div>
          <div class="breadcrumb-item fs-12"><span class="text-highlight">Communications</span></div>
-         <div class="breadcrumb-item fs-12">SMS</div>
+         <div class="breadcrumb-item fs-12">SMS</div> -->
+         <h3 class="h5 d-inline-block my-1">Manage Student Query</h3>
+         <a href="javascript:void(0);" data-placement="bottom" data-container="body" data-toggle="popover"
+            data-trigger="focus" data-html="true"
+            data-content="<ul class='videoList list-none ml-0 pl-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>"
+            data-original-content="<ul class='videoList ml-0 pl-0 mb-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>"
+            class="d-flex align-items-center ml-1"><span class="material-icons-outlined">
+               play_circle_outline </span></a>
       </div>
 
-      <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0">
-         <div class="form-group has-search mb-0 py-0">
+      <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex justify-content-end">
+         <!-- <div class="form-group has-search mb-0 py-0">
             <span class="material-icons search_icon text-primary">search</span>
             <input type="text" class="form-control pl-4" placeholder="What are you looking for?">
+         </div> -->
+         <div class="expandSearch">
+            <div class="form-group has-search mb-0 py-0 bmd-form-group">
+               <span class="material-icons search_icon text-primary">search</span>
+               <input type="search" name="" id="" class="form-control pl-4" placeholder="Search by ID">
+            </div>
          </div>
+         <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
+            <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title=""
+               data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
+         </a>
       </div>
 
    </div>
 
    <div id="main" class="wrapper">
-      <div class="main-container p-md-3">
+      <div class="main-container px-md-3 pb-md-3 pt-0">
          <div class="row">
             <div id="myCanvasNav" class="overlay" onclick="closeNav()">
                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
             </div>
-            <div class="topHead w-100 d-inline-block px-3 mb-3">
-               <div class="border-bottom pb-2">
-                  <div class="row">
-                     <div class="col-12 col-md-6 d-flex">
-                        <h3 class="h5 d-inline-block my-1">Manage Student Query</h3>
-                        <a href="javascript:void(0);" data-placement="bottom" data-container="body" data-toggle="popover" data-trigger="hover" data-html="true" data-content="<ul class='videoList list-none ml-0 pl-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>" data-original-content="<ul class='videoList ml-0 pl-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>" class="d-flex align-items-center ml-1"><span class="material-icons-outlined"> play_circle_outline </span></a>
-                     </div>
-                     <div class="col-12 col-md-6 d-flex align-items-end justify-content-end">
-                        <div class="expandSearch">
-                           <div class="form-group has-search mb-0 py-0 bmd-form-group">
-                              <span class="material-icons search_icon text-primary">search</span>
-                              <input type="search" name="" id="" class="form-control pl-4" placeholder="Search by ID">
-                           </div>
+            <div class="d-none">
+               <div class="topHead w-100 d-inline-block px-3 mb-3">
+                  <div class="border-bottom pb-2">
+                     <div class="row">
+                        <div class="col-12 col-md-6 d-flex">
+                           <h3 class="h5 d-inline-block my-1">Manage Student Query</h3>
+                           <a href="javascript:void(0);" data-placement="bottom" data-container="body"
+                              data-toggle="popover" data-trigger="focus" data-html="true"
+                              data-content="<ul class='videoList list-none ml-0 pl-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>"
+                              data-original-content="<ul class='videoList ml-0 pl-0 mb-0'><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440883765' class='btn-video' id='qmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>Query Management System</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440647484' class='btn-video' id='huqmsGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use Query Management System?</span> </a> </li><li> <a href='javascript:void(0);' data-src='https://player.vimeo.com/video/440878633' class='btn-video' id='huptffGtm' data-toggle='modal' data-target='#productVideos' data-id='productVideos' onclick='vimeoSrcVideoGenric(this)'> <i class='fa fa-play-circle-o' aria-hidden='true'></i> <span class='vidText'>How to use the Push to FAQ functionality?</span> </a> </li></ul>"
+                              class="d-flex align-items-center ml-1"><span class="material-icons-outlined">
+                                 play_circle_outline </span></a>
                         </div>
-                        <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
-                           <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title="" data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="border-card w-100 d-inline-block px-3 mb-3">
-               <div class="grid-col">
-                  <div class="grid-item">
-                     <div class="bg-white border border-primary p-2 active">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Total Tickets</small>
-                           <i class="lineicon-info small" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets received in the time period selected." data-original-content="The total number of tickets received in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
+                        <div class="col-12 col-md-6 d-flex align-items-end justify-content-end">
+                           <div class="expandSearch">
+                              <div class="form-group has-search mb-0 py-0 bmd-form-group">
+                                 <span class="material-icons search_icon text-primary">search</span>
+                                 <input type="search" name="" id="" class="form-control pl-4"
+                                    placeholder="Search by ID">
+                              </div>
                            </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-total-tickets text-primary font-30"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-danger p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Open Tickets</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of untouched tickets in the time period selected." data-original-content="The total number of untouched tickets in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-open-tickets text-danger font-30"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-warning p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>In Progress Tickets</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected." data-original-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-inprogress text-warning font-30"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-success p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Closed Tickets</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="The total number of tickets resolved or closed in the time period selected." data-original-content="The total number of tickets resolved or closed in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-closed-tickets text-success font-30"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-info p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Feedback Not Given</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total number tickets for which feedback is not given by the applicant in the time period selected." data-original-content="Total number tickets for which feedback is not given by the applicant in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-feedback-not-given text-info font-22"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-tertiary p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Positive Feedback</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total of tickets for which positive feedback is given by the applicant in the time period selected." data-original-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-positive-feedback-ticket text-tertiary font-22"></i>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="grid-item">
-                     <div class="bg-white border border-quaternary p-2">
-                        <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                           <small>Negative Feedback</small>
-                           <i class="lineicon-info small" data-toggle="popover" data-placement="top" data-container="body" data-toggle="popover" data-trigger="hover" data-content="Total of tickets for which negative feedback is given by the applicant in the time period selected." data-original-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."></i>
-                        </h3>
-                        <div class="row no-gutters align-items-center">
-                           <div class="col-8">
-                              <h4 class="h5 my-0">216745</h4>
-                           </div>
-                           <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                              <i class="lineicon-neg-feedback-ticket text-quaternary font-22"></i>
-                           </div>
+                           <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
+                              <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom"
+                                 title="" data-container="body" title="Filter" data-original-title="Filter"> filter_alt
+                              </span>
+                           </a>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="grid-table w-100 px-3 mt-3" id="tableCollapseParent">
-               <div class="row align-items-center mb-2">
-                  <div class="col-6">
-                     <div class="d-flex">
+            <div class="carousel-wrap border-card w-100 d-inline-block px-3 mb-2">
+               <div class="grid-col0 owl-carousel">
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-primary p-2 active">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Total Tickets</small>
+                              <i class="lineicon-info small" data-placement="top" data-container="body"
+                                 data-toggle="popover" data-trigger="hover"
+                                 data-content="The total number of tickets received in the time period selected."
+                                 data-original-content="The total number of tickets received in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-total-tickets text-primary font-30"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-danger p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Open Tickets</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="The total number of untouched tickets in the time period selected."
+                                 data-original-content="The total number of untouched tickets in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-open-tickets text-danger font-30"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-warning p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>In Progress Tickets</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."
+                                 data-original-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-inprogress text-warning font-30"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascripit:void(0);">
+                        <div class="bg-white border border-success p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Closed Tickets</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="The total number of tickets resolved or closed in the time period selected."
+                                 data-original-content="The total number of tickets resolved or closed in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-closed-tickets text-success font-30"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-info p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Feedback Not Given</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="Total number tickets for which feedback is not given by the applicant in the time period selected."
+                                 data-original-content="Total number tickets for which feedback is not given by the applicant in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-feedback-not-given text-info font-22"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-tertiary p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Positive Feedback</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."
+                                 data-original-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-positive-feedback-ticket text-tertiary font-22"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="grid-item">
+                     <a href="javascript:void(0);">
+                        <div class="bg-white border border-quaternary p-2">
+                           <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
+                              <small>Negative Feedback</small>
+                              <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                 data-container="body" data-toggle="popover" data-trigger="hover"
+                                 data-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."
+                                 data-original-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."></i>
+                           </h3>
+                           <div class="row no-gutters align-items-center">
+                              <div class="col-8">
+                                 <h4 class="h6 my-0 text-dark">216745</h4>
+                              </div>
+                              <div class="col-4 text-right d-flex justify-content-end align-items-center">
+                                 <i class="lineicon-neg-feedback-ticket text-quaternary font-22"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
+                  </div>
+               </div>
+            </div>
+            <div class="grid-table w-100 px-3 mt-2" id="tableCollapseParent">
+               <div class="row align-items-center justify-content-between mb-2">
+                  <div class="col-4 d-md-none d-block">
+                     <label for="mob-table-head" class="d-flex align-items-center mb-0">
+                        <input type="checkbox" id="mob-table-head" class="mr-2">
+                        Select All
+                     </label>
+                  </div>
+                  <div class="col-4">
+                     <div class="d-flex justify-content-center justify-content-md-start">
                         <span class="font-weight-bold">Total 31 Records</span>
                      </div>
                   </div>
-                  <div class="col-6 text-right">
+                  <div class="col-4 text-right">
                      <a href="javascript:void(0);" class="btn btn-outline-primary btn-sm btn-round">
                         <i class="lineicon-download" aria-hidden="true"></i>
                         <span class="font-weight-bold">Download</span>
                      </a>
                   </div>
                </div>
-               <div class="responsive-table">
-                  <table class="table table-borderless">
+               <div class="responsive-table" data-sticky="true">
+                  <table class="table table-borderless"  data-last-col="true" data-colfix="2" data-col-left="50">
                      <thead>
                         <tr>
                            <td class="pt-1 has-checkbox min-max-50">
@@ -607,7 +675,7 @@
                               </a>
                            </td>
                            <td class="min-max-300" data-title="Personal Details">
-                              Name : Deepak Singh
+                              Deepak Singh
                            </td>
                            <td class="min-max-200" data-title="Category">
                               Withdraw
@@ -621,15 +689,19 @@
                            <td data-title="Action">
                               <div class="d-flex">
                                  <div class="dropdown">
-                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none" data-toggle="dropdown" aria-haspopup="true" ><span class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
                                     <div class="dropdown-menu">
-                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View Details</a>
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
                                        <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
                                        <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                     </div>
                                  </div>
                                  <a data-toggle="collapse" href="#tableCollapse1" role="button" aria-expanded="false"
-                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
                               </div>
                            </td>
                         </tr>
@@ -637,7 +709,7 @@
                            <td class="min-max-50"></td>
                            <td class="min-max-200">
                               <p><span class="text-muted d-block small">Raised On</span>
-                              13 Jul 2021 08:58 PM</p>
+                                 13 Jul 2021 08:58 PM</p>
                               <p><span class="text-muted d-block small">Updated On</span>
                                  14 Jul 2021 08:58 PM</p>
                            </td>
@@ -645,15 +717,16 @@
                               <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
-                           <td><p><span class="text-secondary">Parent :</span> Category</p></td>
-                           <td><p>Role</p></td>
+                           <td>
+                              <p><span class="text-secondary">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p>Role</p>
+                           </td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
-                              <div class="form-check">
-                                 <input type="checkbox" class="" />
-
-                              </div>
+                              <input type="checkbox" class="" />
                            </td>
                            <td class="font-medium" data-title="Ticket Details">
                               <a class="primary-color" href="javascript:void(0);">
@@ -661,7 +734,7 @@
                               </a>
                            </td>
                            <td data-title="Personal Details">
-                              Name : Deepak Singh
+                              Deepak Singh
                            </td>
                            <td data-title="Category">
                               Withdraw
@@ -675,15 +748,19 @@
                            <td data-title="Action">
                               <div class="d-flex">
                                  <div class="dropdown">
-                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none" data-toggle="dropdown" aria-haspopup="true" ><span class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
                                     <div class="dropdown-menu">
-                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View Details</a>
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
                                        <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
                                        <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                     </div>
                                  </div>
                                  <a data-toggle="collapse" href="#tableCollapse2" role="button" aria-expanded="false"
-                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
                               </div>
                            </td>
                         </tr>
@@ -691,7 +768,7 @@
                            <td class="min-max-50"></td>
                            <td class="min-max-200">
                               <p><span class="text-muted d-block small">Raised On</span>
-                              13 Jul 2021 08:58 PM</p>
+                                 13 Jul 2021 08:58 PM</p>
                               <p><span class="text-muted d-block small">Updated On</span>
                                  14 Jul 2021 08:58 PM</p>
                            </td>
@@ -699,8 +776,12 @@
                               <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
-                           <td><p><span class="text-secondary">Parent :</span> Category</p></td>
-                           <td><p>Role</p></td>
+                           <td>
+                              <p><span class="text-secondary">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p>Role</p>
+                           </td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
@@ -712,7 +793,7 @@
                               </a>
                            </td>
                            <td data-title="Personal Details">
-                              Name : Deepak Singh
+                              Deepak Singh
                            </td>
                            <td data-title="Category">
                               Withdraw
@@ -726,15 +807,19 @@
                            <td data-title="Action">
                               <div class="d-flex">
                                  <div class="dropdown">
-                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none" data-toggle="dropdown" aria-haspopup="true" ><span class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
                                     <div class="dropdown-menu">
-                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View Details</a>
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
                                        <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
                                        <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                     </div>
                                  </div>
                                  <a data-toggle="collapse" href="#tableCollapse3" role="button" aria-expanded="false"
-                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
                               </div>
                            </td>
                         </tr>
@@ -742,7 +827,7 @@
                            <td class="min-max-50"></td>
                            <td class="min-max-200">
                               <p><span class="text-muted d-block small">Raised On</span>
-                              13 Jul 2021 08:58 PM</p>
+                                 13 Jul 2021 08:58 PM</p>
                               <p><span class="text-muted d-block small">Updated On</span>
                                  14 Jul 2021 08:58 PM</p>
                            </td>
@@ -750,8 +835,12 @@
                               <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
-                           <td><p><span class="text-secondary">Parent :</span> Category</p></td>
-                           <td><p>Role</p></td>
+                           <td>
+                              <p><span class="text-secondary">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p>Role</p>
+                           </td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
@@ -763,7 +852,7 @@
                               </a>
                            </td>
                            <td data-title="Personal Details">
-                              Name : Deepak Singh
+                              Deepak Singh
                            </td>
                            <td data-title="Category">
                               Withdraw
@@ -777,15 +866,19 @@
                            <td data-title="Action">
                               <div class="d-flex">
                                  <div class="dropdown">
-                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none" data-toggle="dropdown" aria-haspopup="true" ><span class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
                                     <div class="dropdown-menu">
-                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View Details</a>
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
                                        <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
                                        <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                     </div>
                                  </div>
                                  <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
-                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
                               </div>
                            </td>
                         </tr>
@@ -793,7 +886,7 @@
                            <td class="min-max-50"></td>
                            <td class="min-max-200">
                               <p><span class="text-muted d-block small">Raised On</span>
-                              13 Jul 2021 08:58 PM</p>
+                                 13 Jul 2021 08:58 PM</p>
                               <p><span class="text-muted d-block small">Updated On</span>
                                  14 Jul 2021 08:58 PM</p>
                            </td>
@@ -801,15 +894,19 @@
                               <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
-                           <td><p><span class="text-secondary">Parent :</span> Category</p></td>
-                           <td><p>Role</p></td>
+                           <td>
+                              <p><span class="text-secondary">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p>Role</p>
+                           </td>
                         </tr>
                      </tbody>
                   </table>
                </div>
                <div class="d-flex justify-content-end align-items-center">
                   <span class="mr-1 text-muted small">Show Rows</span>
-                  <div class="form-group my-0 mr-2 p-0">
+                  <div class="form-group my-0 mr-1 p-0">
                      <select name="" id="" class="normal-select p-1 border small">
                         <option value="">10</option>
                         <option value="">20</option>
@@ -819,13 +916,17 @@
                   </div>
                   <span class="mx-2 text-muted small">Go to</span>
                   <div class="form-group m-0 p-0">
-                     <input type="text" class="pagination-input border">
+                     <input type="text" class="pagination-input border small text-center">
                   </div>
-                  <span class="ml-1 mr-3 text-muted small">of 3</span>
-                  <a href="javascript:void(0);" class="bg-white border px-2" data-toggle="tooltip" data-placement="top" title=""
-                  data-container="body" data-original-title="Previous"><i class="fa fa-angle-left" aria-hidden="true" ></i></a>
-                  <a href="javascript:void(0);" class="bg-white border px-2" data-toggle="tooltip" data-placement="top" title=""
-                  data-container="body" data-original-title="Next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                  <span class="ml-1 mr-2 text-muted small">of 3</span>
+                  <div class="npf-pagination">
+                     <a href="javascript:void(0);" class="bg-white border px-2 inactive" data-toggle="tooltip"
+                        data-placement="top" title="" data-container="body" data-original-title="Previous"><i
+                           class="fa fa-angle-left" aria-hidden="true"></i></a>
+                     <a href="javascript:void(0);" class="bg-white border px-2" data-toggle="tooltip"
+                        data-placement="top" title="" data-container="body" data-original-title="Next"><i
+                           class="fa fa-angle-right" aria-hidden="true"></i></a>
+                  </div>
                </div>
             </div>
          </div>
@@ -874,27 +975,29 @@
    </footer>
 
    <div class="modal fade offCanvasModal right" id="detail-popup" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-xlg" role="document">
+      <div class="modal-dialog modal-llg" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header py-2 px-3 border-bottom">
-               <h5 class="modal-title font-weight-bold my-0" id="exampleModalLabel">
-                  <span class="title"> <span class="text-secondary font-weight-normal">Ticket Id - </span>22323</span>
+            <div class="modal-header border-bottom">
+               <h5 class="modal-title my-0" id="exampleModalLabel">
+                  <span class="title font-weight-bold"> <span class="text-secondary font-weight-normal">Ticket Id - </span>22323</span>
                </h5>
 
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
             <div class="modal-body p-0">
                <div class="d-flex">
-                  <div class="col-12 col-md-6 bg-white px-0">
+                  <div class="col-12 col-md-5 bg-white px-0">
                      <div class="ticket-left-panel">
                         <div class="py-2 px-3 border-bottom">
                            <h3 class="my-0 h6">Status: <span class="text-success">In Progress</span> </h3>
                         </div>
-                        <div class="modal-accordion">
-                           <a href="#modal-collapse" data-toggle="collapse" aria-expanded="false" class="px-3 py-2 border-bottom d-block text-dark">View Lead Details</a>
-                           <div class="collapse border-bottom" id="modal-collapse">
+                        <div class="modal-accordion" id="popup-accordion">
+                           <a href="#modal-collapse" data-toggle="collapse" aria-expanded="false"
+                              class="px-3 py-2 border-bottom d-block text-dark">View Lead Details</a>
+                           <div class="collapse border-bottom" data-parent="#popup-accordion" id="modal-collapse">
                               <div class="p-3">
                                  <span class="text-muted font-weight-light small d-block">Email Address</span>
                                  <p>test13501209@yopmail.com</p>
@@ -906,24 +1009,24 @@
                                  <p>+91 999 299 2929</p>
                                  <span class="text-muted font-weight-light small d-block">State</span>
                                  <p>Punjab</p>
-                                 <span class="text-muted font-weight-light small d-block">How did you come to know about Apeejay</span>
+                                 <span class="text-muted font-weight-light small d-block">How did you come to know about
+                                    Apeejay</span>
                                  <p>Social Media</p>
                                  <span class="text-muted font-weight-light small d-block">Name</span>
                                  <p>Jashanpreet singh</p>
                                  <span class="text-muted font-weight-light small d-block">Programme</span>
                                  <p>Under Graduate</p>
-                                 <div class="row">
-                                    <div class="col-4">
-                                       <a href="javascript:void(0);" class="btn d-flex justify-content-center align-items-center bg-primary text-white p-2 rounded">
-                                          <span class="material-icons-outlined font-16 mr-1"> person </span>
-                                          View Profile
-                                       </a>
-                                    </div>
+                                 <div class="d-flex justify-content-end">
+                                    <a href="javascript:void(0);" class="d-flex align-items-center">
+                                       <span class="material-icons-outlined font-16 mr-1"> person </span>
+                                       View Profile
+                                    </a>
                                  </div>
                               </div>
                            </div>
-                           <a href="#modal-collapse1" data-toggle="collapse" aria-expanded="false" class="py-2 px-3 border-bottom d-block text-dark">Ticket Details</a>
-                           <div class="collapse border-bottom" id="modal-collapse1">
+                           <a href="#modal-collapse1" data-toggle="collapse" aria-expanded="false"
+                              class="py-2 px-3 border-bottom d-block text-dark">Ticket Details</a>
+                           <div class="collapse border-bottom" data-parent="#popup-accordion" id="modal-collapse1">
                               <div class="p-3">
                                  <span class="text-muted font-weight-light small d-block">Raised By</span>
                                  <p>Jashanpreet singh</p>
@@ -931,26 +1034,24 @@
                                  <p>Fees Details</p>
                                  <span class="text-muted font-weight-light small d-block">Lead Stage</span>
                                  <p>untouched</p>
-                                 <div class="row">
-                                    <div class="col-4">
-                                       <a href="javascript:void(0);" class="btn d-flex justify-content-center align-items-center bg-primary text-white p-2 rounded">
-                                          <span class="material-icons-outlined font-16 mr-1"> edit </span>
-                                          Edit Application
-                                       </a>
-                                    </div>
-                                    <div class="col-4">
-                                       <a href="javascript:void(0);" class="btn d-flex justify-content-center align-items-center bg-primary text-white p-2 rounded">
-                                          <span class="material-icons-outlined font-16 mr-1"> person </span>
-                                          Reassign Ticket
-                                       </a>
-                                    </div>
+                                 <div class="d-flex justify-content-end">
+                                    <a href="javascript:void(0);"
+                                       class="d-flex justify-content-center align-items-center mx-2">
+                                       <span class="material-icons-outlined font-16 mr-1"> edit </span>
+                                       Edit Application
+                                    </a>
+                                    <a href="javascript:void(0);"
+                                       class="d-flex justify-content-center align-items-center mx-2">
+                                       <span class="material-icons-outlined font-16 mr-1"> person </span>
+                                       Reassign Ticket
+                                    </a>
                                  </div>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div class="col-12 col-md-6 bg-light px-0">
+                  <div class="col-12 col-md-7 bg-light px-0">
                      <div class="ticket-right-panel">
                         <div class="p-2 border-bottom d-flex justify-content-between align-items-center">
                            <h3 class="m-0 h6">Ticket Conversation</h3>
@@ -970,101 +1071,91 @@
                         </div>
                         <div class="chat-wrapper position-relative">
                            <div class="w-100 chat-box">
-                               <div class="chat-container position-relative px-3">
-                                   <ul class="d-flex flex-column justify-content-end">
-                                       <li
-                                           class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
-                                           <small
-                                               class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
-                                           <div class="msg">Lorem Ipsum is simply dummy text of the
-                                               printing and typesetting industry. Lorem Ipsum has
-                                               been the
-                                               industry's standard dummy text ever since the 1500s.
-                                           </div>
-                                           <div class="msg file d-flex align-items-center">
-                                               <i class="icon-file p-2 h3 m-0 primary-color"
-                                                   aria-hidden="true"></i>
-                                               <a href="javascript:void(0);"
-                                                   class="primary-color font-medium">
-                                                   Screenshot--001234.png
-                                               </a>
-                                           </div>
-                                           <small class="text-muted ml-auto mt-1">
-                                               18 Apr, 2021, 4:00 PM
-                                           </small>
-                                       </li>
-                                       <li
-                                           class="chat-msg d-flex  flex-column position-relative receive-msg">
-                                           <small class="text-muted mb-1">Team Admission, College
-                                               Name</small>
-                                           <div class="msg">Lorem Ipsum is simply dummy text of the
-                                               printing and typesetting industry. Lorem Ipsum has
-                                               been the
-                                               industry's standard dummy text ever since the 1500s.
-                                           </div>
-                                           <small class="text-muted mt-1">
-                                               18 Apr, 2021, 4:00 PM
-                                           </small>
-                                       </li>
-                                       <li
-                                           class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
-                                           <small
-                                               class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
-                                           <div class="msg">Lorem Ipsum is simply dummy text of the
-                                               printing and typesetting industry. Lorem Ipsum has
-                                               been the
-                                               industry's standard dummy text ever since the 1500s.
-                                           </div>
-                                           <small class="text-muted ml-auto mt-1">
-                                               18 Apr, 2021, 4:00 PM
-                                           </small>
-                                       </li>
-                                   </ul>
-                                   <div
-                                       class="ticket-status position-relative d-flex justify-content-center">
-                                       <span
-                                           class="position-absolute small text-danger font-medium">
-                                           Ticket Closed
-                                       </span>
-                                   </div>
-                                   <ul>
-                                       <li
-                                           class="chat-msg d-flex  flex-column position-relative receive-msg">
-                                           <small class="text-muted mb-1">Team Admission, College
-                                               Name</small>
-                                           <div class="msg">Lorem Ipsum is simply dummy text of the
-                                               printing and typesetting industry. Lorem Ipsum has
-                                               been the
-                                               industry's standard dummy text ever since the 1500s.
-                                           </div>
-                                           <div class="msg file d-flex align-items-center">
-                                               <i class="icon-file p-2 h3 m-0 primary-color"
-                                                   aria-hidden="true"></i>
-                                               <a href="javascript:void(0);"
-                                                   class="primary-color font-medium">
-                                                   Screenshot--001234.png
-                                               </a>
-                                           </div>
-                                           <small class="text-muted mt-1">
-                                               18 Apr, 2021, 4:00 PM
-                                           </small>
-                                       </li>
-                                   </ul>
-                               </div>
+                              <div class="chat-container position-relative px-3">
+                                 <ul class="d-flex flex-column justify-content-end">
+                                    <li class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
+                                       <small
+                                          class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
+                                       <div class="msg">Lorem Ipsum is simply dummy text of the
+                                          printing and typesetting industry. Lorem Ipsum has
+                                          been the
+                                          industry's standard dummy text ever since the 1500s.
+                                       </div>
+                                       <div class="msg file d-flex align-items-center">
+                                          <i class="icon-file p-2 h3 m-0 primary-color" aria-hidden="true"></i>
+                                          <a href="javascript:void(0);" class="primary-color font-medium">
+                                             Screenshot--001234.png
+                                          </a>
+                                       </div>
+                                       <small class="text-muted ml-auto mt-1">
+                                          18 Apr, 2021, 4:00 PM
+                                       </small>
+                                    </li>
+                                    <li class="chat-msg d-flex  flex-column position-relative receive-msg">
+                                       <small class="text-muted mb-1">Team Admission, College
+                                          Name</small>
+                                       <div class="msg">Lorem Ipsum is simply dummy text of the
+                                          printing and typesetting industry. Lorem Ipsum has
+                                          been the
+                                          industry's standard dummy text ever since the 1500s.
+                                       </div>
+                                       <small class="text-muted mt-1">
+                                          18 Apr, 2021, 4:00 PM
+                                       </small>
+                                    </li>
+                                    <li class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
+                                       <small
+                                          class="sender-info ml-auto block bg-secondary text-white p-2 text-sm rounded-circle">RP</small>
+                                       <div class="msg">Lorem Ipsum is simply dummy text of the
+                                          printing and typesetting industry. Lorem Ipsum has
+                                          been the
+                                          industry's standard dummy text ever since the 1500s.
+                                       </div>
+                                       <small class="text-muted ml-auto mt-1">
+                                          18 Apr, 2021, 4:00 PM
+                                       </small>
+                                    </li>
+                                 </ul>
+                                 <div class="ticket-status position-relative d-flex justify-content-center">
+                                    <span class="position-absolute small text-danger font-medium">
+                                       Ticket Closed
+                                    </span>
+                                 </div>
+                                 <ul>
+                                    <li class="chat-msg d-flex  flex-column position-relative receive-msg">
+                                       <small class="text-muted mb-1">Team Admission, College
+                                          Name</small>
+                                       <div class="msg">Lorem Ipsum is simply dummy text of the
+                                          printing and typesetting industry. Lorem Ipsum has
+                                          been the
+                                          industry's standard dummy text ever since the 1500s.
+                                       </div>
+                                       <div class="msg file d-flex align-items-center">
+                                          <i class="icon-file p-2 h3 m-0 primary-color" aria-hidden="true"></i>
+                                          <a href="javascript:void(0);" class="primary-color font-medium">
+                                             Screenshot--001234.png
+                                          </a>
+                                       </div>
+                                       <small class="text-muted mt-1">
+                                          18 Apr, 2021, 4:00 PM
+                                       </small>
+                                    </li>
+                                 </ul>
+                              </div>
                            </div>
                            <div
-                               class="chat-area position-absolute fixed-bottom bg-white d-flex align-items-center justify-content-between w-100 p-0">
-                               <div class="chat-file border-bottom position-absolute bg-white w-100 px-2 py-1 d-none">
-                                   <div class="d-flex justify-content-between align-items-center">
-                                       <small class="file-name"></small>
-                                       <button class="btn p-0 remove-file bg-white">
-                                           <i class="text-danger fa fa-trash-o"></i>
-                                       </button>
-                                   </div>
-                               </div>
-                               <textarea name="" id="" resize="none" class="py-1 px-2 small w-100"
-                                   placeholder="Write your message here..."></textarea>
-                               <!-- <label for="attachment" class="fileBrowseCustom p-2 mb-0 mt-0 h6" role="button" tabindex="0">
+                              class="chat-area position-absolute fixed-bottom bg-white d-flex align-items-center justify-content-between w-100 p-0">
+                              <div class="chat-file border-bottom position-absolute bg-white w-100 px-2 py-1 d-none">
+                                 <div class="d-flex justify-content-between align-items-center">
+                                    <small class="file-name"></small>
+                                    <button class="btn p-0 remove-file bg-white">
+                                       <i class="text-danger fa fa-trash-o"></i>
+                                    </button>
+                                 </div>
+                              </div>
+                              <textarea name="editor1" id="" resize="none" class="py-1 px-2 small w-100"
+                                 placeholder="Write your message here..."></textarea>
+                              <!-- <label for="attachment" class="fileBrowseCustom p-2 mb-0 mt-0 h6" role="button" tabindex="0">
                                  <i class="fa fa-paperclip mr-1" aria-hidden="true"></i>
                                  <input type="file" class="sr-only" id="attachment">
                               </label>
@@ -1088,7 +1179,7 @@
                                    </a>
                                </div>
                            </div> -->
-                       </div>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -1100,15 +1191,15 @@
                         <option value="">Open</option>
                      </select>
                   </div>
-                  <label for="attachment" class="btn btn-outline-primary btn-sm small btn-round fileBrowseCustom" role="button" tabindex="0">
-                     <i class="fa fa-paperclip mr-1" aria-hidden="true"></i>
+                  <label for="attachment" class="fileBrowseCustom text-primary p-2 mx-2 h5 my-0" role="button"
+                     tabindex="0">
+                     <i class="fa fa-paperclip" aria-hidden="true"></i>
                      <!-- Attach File -->
                      <input type="file" class="sr-only" id="attachment">
-                 </label>
-                 <a href="javascript:void(0);"
-                     class="btn btn-primary send-btn btn-round btn-sm small">
+                  </label>
+                  <a href="javascript:void(0);" class="btn btn-primary send-btn btn-round btn-sm small">
                      <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                 </a>
+                  </a>
                </div>
             </div>
          </div>
@@ -1118,51 +1209,76 @@
    <div class="modal fade offCanvasModal right" id="reasign-popup" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-sm" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header py-2 px-3 border-bottom">
-               <h5 class="modal-title font-weight-bold my-0" id="exampleModalLabel">
-                  <span class="title">Reassign Ticket</span>
+            <div class="modal-header border-bottom">
+               <h5 class="modal-title my-0" id="exampleModalLabel">
+                  <span class="title font-weight-bold">Reassign Ticket</span>
                </h5>
 
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
             <div class="modal-body">
-               <div class="form-group">
-                  <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select Category"  data-style="px-2 border">
+               <div class="form-group pt-0">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
+                     title="Select Category" data-style="px-2 border">
                      <option value="">Admission</option>
                      <option value="">General</option>
                      <option value="">Technical</option>
                   </select>
                </div>
-               <div class="form-group">
-                  <select name="" id="" class="form-control selectpicker" data-live-search="true"  title="Select Sub Category"  data-style="px-2 border">
+               <div class="form-group pt-0">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
+                     title="Select Sub Category" data-style="px-2 border">
                      <option value="">Admission</option>
                      <option value="">General</option>
                      <option value="">Technical</option>
                   </select>
                </div>
-               <div class="form-group">
-                  <select name="" id="" class="form-control selectpicker" data-live-search="true"  title="Select User"  data-style="px-2 border">
+               <div class="form-group pt-0">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select User"
+                     data-style="px-2 border">
                      <option value="">Admission</option>
                      <option value="">General</option>
                      <option value="">Technical</option>
                   </select>
+               </div>
+               <div class="modal-footer justify-content-between">
+                  <button class="btn btn-sm btn-dark rounded-0">Reset</button>
+                  <button class="btn btn-sm btn-primary rounded-0">Apply</button>
                </div>
             </div>
          </div>
       </div>
    </div>
 
+   <div class="modal fade modalVideoGenric" id="productVideos" tabindex="-1">
+      <div class="modal-dialog" role="dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close p-0" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body pb-0 pt-3">
+               <!-- <i class="fa fa-spinner fa-spin"></i> -->
+               <iframe class="vimeovideo" src="/img/blank.gif" width="100%" height="360" frameborder="0"
+                  allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+         </div>
+      </div>
+   </div>
 
 
    <!-- notification modal-->
    <div class="modal fade offCanvasModal right" id="notification" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-md" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header py-2 px-3 border-bottom">
-               <h5 class="modal-title font-weight-bold my-0" id="exampleModalLabel">
-                  <span class="title">Your Notifications</span>
+            <div class="modal-header border-bottom">
+               <h5 class="modal-title my-0" id="exampleModalLabel">
+                  <span class="title font-weight-bold">Your Notifications</span>
                   <span class="badge badge-pill badge-light">Unread<span
                         class="all-unread-count unread-count-text"><span class="badge bg-primary">8</span></span></span>
                </h5>
@@ -1336,12 +1452,69 @@
    <script src="../static/backend/js/plugins/moment.min.js"></script>
    <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
    <script src="../static/backend/js/plugins/nouislider.min.js"></script>
-   <script src="../static/backend/js/plugins/ckeditor.js"></script>
+   <!-- <script src="../static/backend/js/plugins/ckeditor.js"></script> -->
 
    <!--  Theme JS Files  -->
    <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
    <script src="../static/backend/js/bootstrap-select.js"></script>
    <!--<script src="https://materializecss.com/bin/materialize.js"></script>-->
+
+   <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
+   <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script>
+
+   <script>
+      CKEDITOR.replace('editor1');
+      $('.owl-carousel').owlCarousel({
+  // loop: true,
+  margin: 15,
+  stagePadding: 0,
+  nav: true,
+  navigation: true,
+  autoWidth: false,
+  navText: [
+    "<i class='fa fa-angle-left'></i>",
+    "<i class='fa fa-angle-right'></i>"
+  ],
+  autoplay: false,
+  responsiveClass: true,
+  autoplayHoverPause: true,
+  dots: false,
+  responsive: {
+    0: {
+      items: 3
+    },
+    600: {
+      items: 4
+    },
+    1000: {
+      items: 5
+    },
+    1300: {
+      items: 7
+    }
+  },
+});
+   </script>
+
+   <script>
+      // Genric Popup modal for Videos
+      function vimeoSrcVideoGenric(element) {
+         var dataId = $(element).attr('data-id');
+         //var vimeodataSrc = $('#'+dataId+ ' iframe.vimeovideo').attr('data-src');
+         var vimeodataSrc = $(element).attr('data-src');
+         //alert(vimeodataSrc);
+         var vimeoSrc = $('#' + dataId + ' iframe.vimeovideo').attr('src');
+         if (vimeoSrc == '' || vimeoSrc == '/img/blank.gif') {
+            $('#' + dataId + ' iframe.vimeovideo').attr('src', vimeodataSrc);
+            return false;
+         }
+      }
+
+      $('#productVideos').on('hidden.bs.modal', function (e) {
+         $('.vimeovideo').attr('src', "{% load_static_file 'theme/<v>/images/no-record.png' %}");
+         vimeoVideo();
+      })
+   </script>
 
    <!-- Inline Plugin Init -->
    <script>
@@ -1403,12 +1576,18 @@
       }
    </script>
    <script>
-      $(document).ready(function(){
+      $(document).ready(function () {
          $('[data-toggle="popover"]').popover();
          $('[data-toggle="tooltip"]').tooltip();
+         const colLeft = $('table').data('col-left');
+         $('table[data-colfix="2"] td:nth-child(2)').css('left', colLeft);
+         $('table[data-colfix="2"] th:nth-child(2)').css('left', colLeft);
+         $('table[data-colfix="2"] th:nth-child(1)').css('width', colLeft);
+         $('table[data-colfix="2"] td:nth-child(1)').css('width', colLeft);
+         $('table[data-colfix="2"] th:nth-child(1)').css('min-width', colLeft);
       });
-      $('.grid-table table thead input[type="checkbox"]').change(function(event){
-         if(event.target.checked){
+      $('.grid-table table thead input[type="checkbox"], #mob-table-head').change(function (event) {
+         if (event.target.checked) {
             $('.grid-table table tbody input[type="checkbox"]').prop('checked', true);
             $('.grid-table table tbody').find('.grid-table-row').addClass('has-selected');
          } else {
@@ -1416,16 +1595,16 @@
             $('.grid-table table tbody').find('.grid-table-row').removeClass('has-selected');
          }
       });
-      $('.grid-table table tbody input[type="checkbox"]').change(function(event){
-         if(event.target.checked){
+      $('.grid-table table tbody input[type="checkbox"]').change(function (event) {
+         if (event.target.checked) {
             $(this).closest('.grid-table-row').addClass('has-selected');
          } else {
             $(this).closest('.grid-table-row').removeClass('has-selected');
-            $('.grid-table table thead input[type="checkbox"]').prop('checked', false);
+            $('.grid-table table thead input[type="checkbox"], #mob-table-head').prop('checked', false);
          }
          const all_checkboxes = $('.grid-table table tbody input[type="checkbox"]');
          if (all_checkboxes.length === all_checkboxes.filter(":checked").length) {
-            $('.grid-table table thead input[type="checkbox"]').prop('checked', true);
+            $('.grid-table table thead input[type="checkbox"], #mob-table-head').prop('checked', true);
          }
       });
       function customFile() {

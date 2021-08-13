@@ -1,15 +1,15 @@
 .grid-table table.table {
     width: 100%;
-    overflow: hidden;
+    // overflow: hidden;
     border-radius: 10px;
     background: #fafafa;
+    margin-bottom: 0;
 
     tr {
         margin: 10px 0;
         padding: 10px 0;
 
         td {
-            padding-right: 0;
             white-space: nowrap;
             margin: 0;
             border: none;
@@ -56,6 +56,7 @@
                     max-width: 350px;
                     width: 350px;
                 }
+
                 &.has-checkbox {
 
                     input[type="radio"],
@@ -83,7 +84,7 @@
 
     tbody tr {
         &.grid-table-row {
-            border-top: 11px solid #f1f3f4;
+            border-top: 1px solid #f1f3f4;
 
             .table-des {
                 max-width: 290px;
@@ -104,6 +105,10 @@
                 &+.collapse {
                     opacity: .7;
                 }
+            }
+
+            &:hover td {
+                // background: rgb(76, 121, 220, .1);
             }
 
         }
@@ -129,13 +134,15 @@
 
             tbody {
                 tr {
-                    border-bottom: 1px solid #999;
+                    border-bottom: 1px solid rgba(153, 153, 153, .1);
 
                     td {
                         width: 100%;
                         display: block;
                         padding-left: 40% !important;
                         margin-bottom: 24px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
 
                         &:before {
                             content: attr(data-title);
@@ -145,16 +152,19 @@
                             font-weight: unset;
                             position: absolute;
                             width: 40%;
-                            top: 16px;
+                            top: 8px;
                             left: 20px;
                         }
 
                         &.has-checkbox {
+                            padding-top: 10px !important;
                             padding-left: 20px !important;
 
                             input[type="radio"],
                             input[type="checkbox"] {
-                                margin-top: 10px;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
                             }
                         }
                     }
@@ -194,4 +204,36 @@
 .responsive-table {
     overflow: auto;
     margin-bottom: 10px;
+}
+
+.grid-table [data-sticky="true"] {
+
+    table thead tr th,
+    table thead tr td {
+        position: sticky;
+        top: 0;
+    }
+
+    table[data-colfix="2"] td:first-child,
+    table[data-colfix="2"] th:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 9;
+        border-right: 1px solid #eee;
+    }
+
+    table[data-last-col="true"] td:last-child,
+    table[data-last-col="true"] th:last-child {
+        position: sticky;
+        right: 0;
+        z-index: 1;
+        border-left: 1px solid #eee;
+    }
+
+    table[data-colfix="2"] td:nth-child(2) {
+        position: sticky;
+        z-index: 1;
+        border-right: 1px solid #eee;
+    }
+
 }

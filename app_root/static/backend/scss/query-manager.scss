@@ -1,15 +1,20 @@
- // Sections and  pages
+// Vendor
+@import 'vendors/owl.carousel/src/scss/owl.carousel.scss';
+
+// Sections and  pages
  @import
  'components/grid-table',
  'components/expandSearch',
  'components/border-card',
  'components/modal-accordion',
- 'components/conversation';
+ 'components/conversation',
+ 'components/video-iframe-modal',
+ 'components/owl-carousal';
 
  .ticket-left-panel{
      overflow: hidden;
-     min-height: 529px;
-     max-height: 529px;
+     min-height: 500px;
+     max-height: calc(100vh - 93px);
      &:hover{
          overflow: overlay;
          scrollbar-width: thin;
