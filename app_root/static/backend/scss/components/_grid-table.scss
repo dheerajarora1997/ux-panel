@@ -92,7 +92,7 @@
 
     tbody tr {
         &.grid-table-row {
-            border-top: 1px solid #f1f3f4;
+            border-top: 1px solid #eee;
 
             .table-des {
                 max-width: 290px;
@@ -226,13 +226,20 @@
             top: 0;
         }
 
+        table[data-colfix="1"] td:first-child,
+        table[data-colfix="1"] th:first-child,
         table[data-colfix="2"] td:first-child,
         table[data-colfix="2"] th:first-child {
             position: sticky;
             left: 0;
             z-index: 99;
+            border-right: none;
+        }
+        table[data-colfix="1"] td:first-child,
+        table[data-colfix="1"] th:first-child{
             border-right: 1px solid #eee;
         }
+
 
         table[data-last-col="true"] td:last-child,
         table[data-last-col="true"] th:last-child {
