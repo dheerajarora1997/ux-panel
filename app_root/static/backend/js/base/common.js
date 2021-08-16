@@ -46,63 +46,91 @@
         document.getElementById("myCanvasNav").style.opacity = "0";
         document.body.classList.remove("bodyFrizze");
         //document.getElementById("right-content").style.marginLeft= "0";
-     }     
+     }
 
-//zendesk 
+//zendesk
 
-zE('webWidget', 'prefill', {
-    email: {
-       value: 'narendra@nopaperforms.com',
-       //readOnly: true // optional
-    },
-    name: {
-       value: 'NPF Automation',
-       //readOnly: true // optional
-    }
- });
- window.zESettings = {
-    webWidget: {
-       position: {
-          horizontal: 'right', vertical: 'bottom',
-       },
-       offset: {
-          horizontal: '-12px',
-          vertical: '-12px',
-       },
-       /*color: {
-          theme: '#75b740',
-          launcher: '#75b740',
-          launcherText: '#fff',
-          button: '#75b740',
-          resultLists: '#75b740',
-          header: '#75b740',
-          articleLinks: '#FF4500'
-       },*/
-       launcher: {
-          mobile: {
-             labelVisible: false
-          }
-       }
-    }
- };
- var myVar;
- zE('webWidget:on', 'open', function () {
-    myVar = setInterval(removeZndeskIconTimer, 100)
- });
+// zE('webWidget', 'prefill', {
+//     email: {
+//        value: 'narendra@nopaperforms.com',
+//        //readOnly: true // optional
+//     },
+//     name: {
+//        value: 'NPF Automation',
+//        //readOnly: true // optional
+//     }
+//  });
+//  window.zESettings = {
+//     webWidget: {
+//        position: {
+//           horizontal: 'right', vertical: 'bottom',
+//        },
+//        offset: {
+//           horizontal: '-12px',
+//           vertical: '-12px',
+//        },
+//        /*color: {
+//           theme: '#75b740',
+//           launcher: '#75b740',
+//           launcherText: '#fff',
+//           button: '#75b740',
+//           resultLists: '#75b740',
+//           header: '#75b740',
+//           articleLinks: '#FF4500'
+//        },*/
+//        launcher: {
+//           mobile: {
+//              labelVisible: false
+//           }
+//        }
+//     }
+//  };
+//  var myVar;
+//  zE('webWidget:on', 'open', function () {
+//     myVar = setInterval(removeZndeskIconTimer, 100)
+//  });
 
- zE('webWidget:on', 'close', function () {
-    stopRemoveZndeskIconTimer();
- });
+//  zE('webWidget:on', 'close', function () {
+//     stopRemoveZndeskIconTimer();
+//  });
 
- function removeZndeskIconTimer() {
-    var $iframe = $('#webWidget');
-    var $emailParent = $iframe.contents().find("input[name='email']").parent();
-    $emailParent.find('small#emailMsg').remove();
-    $emailParent.append('<small id= "emailMsg" style="color:#004085">our team will get back to you on this email id</small>');
-    $iframe.contents().find("svg#Layer_1").remove();
- }
+//  function removeZndeskIconTimer() {
+//     var $iframe = $('#webWidget');
+//     var $emailParent = $iframe.contents().find("input[name='email']").parent();
+//     $emailParent.find('small#emailMsg').remove();
+//     $emailParent.append('<small id= "emailMsg" style="color:#004085">our team will get back to you on this email id</small>');
+//     $iframe.contents().find("svg#Layer_1").remove();
+//  }
 
- function stopRemoveZndeskIconTimer() {
-    clearInterval(myVar);
- }
- zE('webWidget', 'helpCenter:setSuggestions', { search: 'Admin Dashboard' });   
+//  function stopRemoveZndeskIconTimer() {
+//     clearInterval(myVar);
+//  }
+//  zE('webWidget', 'helpCenter:setSuggestions', { search: 'Admin Dashboard' });
+
+ function vimeoVideo(){
+	var iframes = $('.vimeovideo'),
+    status = $('.status');
+	iframes.each(function() {
+	  var player=$f(this);
+	  player.api("pause");
+	});
+	return false;
+}
+
+// Genric Popup modal for Videos
+function vimeoSrcVideoGenric(element){
+	var dataId = $(element).attr('data-id');
+	//var vimeodataSrc = $('#'+dataId+ ' iframe.vimeovideo').attr('data-src');
+	var vimeodataSrc = $(element).attr('data-src');
+	//alert(vimeodataSrc);
+	var vimeoSrc = $('#'+dataId+ ' iframe.vimeovideo').attr('src');
+	if(vimeoSrc == '' || vimeoSrc =='../static/backend/images/blank.gif'){
+		$('#'+dataId+ ' iframe.vimeovideo').attr('src', vimeodataSrc);
+		return false;
+	}
+}
+
+$('.modalvideoGenric').on('hidden.bs.modal', function (e) {
+	$('.modalvideoGenric .vimeovideo').attr('src', '');
+	vimeoVideo();
+})
