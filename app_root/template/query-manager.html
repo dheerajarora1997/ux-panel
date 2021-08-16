@@ -433,7 +433,7 @@
                <input type="search" name="" id="" class="form-control pl-4" placeholder="Search by ID">
             </div>
          </div>
-         <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
+         <a href="#filterPopup" class="d-flex p-1 ml-2 rounded-circle" data-toggle="modal">
             <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title=""
                data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
          </a>
@@ -478,11 +478,11 @@
                   </div>
                </div>
             </div>
-            <div class="carousel-wrap border-card w-100 d-inline-block px-3 mb-2">
-               <div class="grid-col0 owl-carousel">
+            <div class="carousel-wrap border-card px-2 w-100">
+               <div class="owl-carousel">
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-primary p-2 active">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-primary p-2 active">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Total Tickets</small>
                               <i class="lineicon-info small" data-placement="top" data-container="body"
@@ -502,8 +502,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-danger p-2">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-danger p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Open Tickets</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -523,8 +523,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-warning p-2">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-warning p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>In Progress Tickets</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -544,8 +544,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascripit:void(0);">
-                        <div class="bg-white border border-success p-2">
+                     <a href="javascripit:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-success p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Closed Tickets</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -565,8 +565,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-info p-2">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-info p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Feedback Not Given</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -586,8 +586,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-tertiary p-2">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-tertiary p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Positive Feedback</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -607,8 +607,8 @@
                      </a>
                   </div>
                   <div class="grid-item">
-                     <a href="javascript:void(0);">
-                        <div class="bg-white border border-quaternary p-2">
+                     <a href="javascript:void(0);" class="d-inline-block w-100">
+                        <div class="bg-white rounded border border-quaternary p-2">
                            <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
                               <small>Negative Feedback</small>
                               <i class="lineicon-info small" data-toggle="popover" data-placement="top"
@@ -650,18 +650,18 @@
                   </div>
                </div>
                <div class="responsive-table" data-sticky="true">
-                  <table class="table table-borderless"  data-last-col="true" data-colfix="2" data-col-left="50">
+                  <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
                      <thead>
                         <tr>
-                           <td class="pt-1 has-checkbox min-max-50">
+                           <th class="pt-1 has-checkbox min-max-50">
                               <input type="checkbox" class="" />
-                           </td>
-                           <td class="min-max-250">Ticket Details</td>
-                           <td class="min-max-350">Personal Details</td>
-                           <td class="min-max-200">Category</td>
-                           <td class="min-max-200">Assigned To</td>
-                           <td>Status</td>
-                           <td>Action</td>
+                           </th>
+                           <th class="min-max-250">Ticket Details</th>
+                           <th class="min-max-350">Personal Details</th>
+                           <th class="min-max-200">Category</th>
+                           <th class="min-max-200">Assigned To</th>
+                           <th>Status</th>
+                           <th>Action</th>
                         </tr>
                      </thead>
                      <tbody>
@@ -670,7 +670,7 @@
                               <input type="checkbox" class="" />
                            </td>
                            <td class="font-medium min-max-250" data-title="Ticket Details">
-                              <a class="primary-color" href="javascript:void(0);">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
                                  786543
                               </a>
                            </td>
@@ -718,18 +718,20 @@
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
                            <td>
-                              <p><span class="text-secondary">Parent :</span> Category</p>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
                            </td>
                            <td>
-                              <p>Role</p>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
                            </td>
+                           <td></td>
+                           <td></td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
                               <input type="checkbox" class="" />
                            </td>
                            <td class="font-medium" data-title="Ticket Details">
-                              <a class="primary-color" href="javascript:void(0);">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
                                  786543
                               </a>
                            </td>
@@ -777,18 +779,20 @@
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
                            <td>
-                              <p><span class="text-secondary">Parent :</span> Category</p>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
                            </td>
                            <td>
-                              <p>Role</p>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
                            </td>
+                           <td></td>
+                           <td></td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
                               <input type="checkbox" class="" />
                            </td>
                            <td class="font-medium" data-title="Ticket Details">
-                              <a class="primary-color" href="javascript:void(0);">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
                                  786543
                               </a>
                            </td>
@@ -836,18 +840,20 @@
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
                            <td>
-                              <p><span class="text-secondary">Parent :</span> Category</p>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
                            </td>
                            <td>
-                              <p>Role</p>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
                            </td>
+                           <td></td>
+                           <td></td>
                         </tr>
                         <tr class="grid-table-row">
                            <td class="pt-1 has-checkbox">
                               <input type="checkbox" class="" />
                            </td>
                            <td class="font-medium" data-title="Ticket Details">
-                              <a class="primary-color" href="javascript:void(0);">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
                                  786543
                               </a>
                            </td>
@@ -895,11 +901,318 @@
                               <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
                            </td>
                            <td>
-                              <p><span class="text-secondary">Parent :</span> Category</p>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
                            </td>
                            <td>
-                              <p>Role</p>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
                            </td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr class="grid-table-row">
+                           <td class="pt-1 has-checkbox">
+                              <input type="checkbox" class="" />
+                           </td>
+                           <td class="font-medium" data-title="Ticket Details">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                 786543
+                              </a>
+                           </td>
+                           <td data-title="Personal Details">
+                              Deepak Singh
+                           </td>
+                           <td data-title="Category">
+                              Withdraw
+                           </td>
+                           <td data-title="Assigned To">
+                              Alok Sharma
+                           </td>
+                           <td data-title="Status">
+                              In Progress
+                           </td>
+                           <td data-title="Action">
+                              <div class="d-flex">
+                                 <div class="dropdown">
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <div class="dropdown-menu">
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
+                                       <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                       <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
+                                    </div>
+                                 </div>
+                                 <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
+                           <td class="min-max-50"></td>
+                           <td class="min-max-200">
+                              <p><span class="text-muted d-block small">Raised On</span>
+                                 13 Jul 2021 08:58 PM</p>
+                              <p><span class="text-muted d-block small">Updated On</span>
+                                 14 Jul 2021 08:58 PM</p>
+                           </td>
+                           <td class="min-max-250">
+                              <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                              <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
+                           </td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr class="grid-table-row">
+                           <td class="pt-1 has-checkbox">
+                              <input type="checkbox" class="" />
+                           </td>
+                           <td class="font-medium" data-title="Ticket Details">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                 786543
+                              </a>
+                           </td>
+                           <td data-title="Personal Details">
+                              Deepak Singh
+                           </td>
+                           <td data-title="Category">
+                              Withdraw
+                           </td>
+                           <td data-title="Assigned To">
+                              Alok Sharma
+                           </td>
+                           <td data-title="Status">
+                              In Progress
+                           </td>
+                           <td data-title="Action">
+                              <div class="d-flex">
+                                 <div class="dropdown">
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <div class="dropdown-menu">
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
+                                       <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                       <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
+                                    </div>
+                                 </div>
+                                 <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
+                           <td class="min-max-50"></td>
+                           <td class="min-max-200">
+                              <p><span class="text-muted d-block small">Raised On</span>
+                                 13 Jul 2021 08:58 PM</p>
+                              <p><span class="text-muted d-block small">Updated On</span>
+                                 14 Jul 2021 08:58 PM</p>
+                           </td>
+                           <td class="min-max-250">
+                              <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                              <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
+                           </td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr class="grid-table-row">
+                           <td class="pt-1 has-checkbox">
+                              <input type="checkbox" class="" />
+                           </td>
+                           <td class="font-medium" data-title="Ticket Details">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                 786543
+                              </a>
+                           </td>
+                           <td data-title="Personal Details">
+                              Deepak Singh
+                           </td>
+                           <td data-title="Category">
+                              Withdraw
+                           </td>
+                           <td data-title="Assigned To">
+                              Alok Sharma
+                           </td>
+                           <td data-title="Status">
+                              In Progress
+                           </td>
+                           <td data-title="Action">
+                              <div class="d-flex">
+                                 <div class="dropdown">
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <div class="dropdown-menu">
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
+                                       <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                       <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
+                                    </div>
+                                 </div>
+                                 <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
+                           <td class="min-max-50"></td>
+                           <td class="min-max-200">
+                              <p><span class="text-muted d-block small">Raised On</span>
+                                 13 Jul 2021 08:58 PM</p>
+                              <p><span class="text-muted d-block small">Updated On</span>
+                                 14 Jul 2021 08:58 PM</p>
+                           </td>
+                           <td class="min-max-250">
+                              <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                              <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
+                           </td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr class="grid-table-row">
+                           <td class="pt-1 has-checkbox">
+                              <input type="checkbox" class="" />
+                           </td>
+                           <td class="font-medium" data-title="Ticket Details">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                 786543
+                              </a>
+                           </td>
+                           <td data-title="Personal Details">
+                              Deepak Singh
+                           </td>
+                           <td data-title="Category">
+                              Withdraw
+                           </td>
+                           <td data-title="Assigned To">
+                              Alok Sharma
+                           </td>
+                           <td data-title="Status">
+                              In Progress
+                           </td>
+                           <td data-title="Action">
+                              <div class="d-flex">
+                                 <div class="dropdown">
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <div class="dropdown-menu">
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
+                                       <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                       <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
+                                    </div>
+                                 </div>
+                                 <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
+                           <td class="min-max-50"></td>
+                           <td class="min-max-200">
+                              <p><span class="text-muted d-block small">Raised On</span>
+                                 13 Jul 2021 08:58 PM</p>
+                              <p><span class="text-muted d-block small">Updated On</span>
+                                 14 Jul 2021 08:58 PM</p>
+                           </td>
+                           <td class="min-max-250">
+                              <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                              <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
+                           </td>
+                           <td></td>
+                           <td></td>
+                        </tr>
+                        <tr class="grid-table-row">
+                           <td class="pt-1 has-checkbox">
+                              <input type="checkbox" class="" />
+                           </td>
+                           <td class="font-medium" data-title="Ticket Details">
+                              <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                 786543
+                              </a>
+                           </td>
+                           <td data-title="Personal Details">
+                              Deepak Singh
+                           </td>
+                           <td data-title="Category">
+                              Withdraw
+                           </td>
+                           <td data-title="Assigned To">
+                              Alok Sharma
+                           </td>
+                           <td data-title="Status">
+                              In Progress
+                           </td>
+                           <td data-title="Action">
+                              <div class="d-flex">
+                                 <div class="dropdown">
+                                    <a href="javascript:void(0);" class="px-2 dropdown-toggle content-none"
+                                       data-toggle="dropdown" aria-haspopup="true"><span
+                                          class="lineicon-73 material-icons h5 my-0"></span></a>
+                                    <div class="dropdown-menu">
+                                       <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
+                                          Details</a>
+                                       <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                       <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
+                                    </div>
+                                 </div>
+                                 <a data-toggle="collapse" href="#tableCollapse4" role="button" aria-expanded="false"
+                                    class="px-2 d-flex py-1 hover-effect rounded-circle"><i class="fa fa-angle-down"
+                                       aria-hidden="true"></i></a>
+                              </div>
+                           </td>
+                        </tr>
+                        <tr class="collapse" id="tableCollapse4" data-parent="#tableCollapseParent">
+                           <td class="min-max-50"></td>
+                           <td class="min-max-200">
+                              <p><span class="text-muted d-block small">Raised On</span>
+                                 13 Jul 2021 08:58 PM</p>
+                              <p><span class="text-muted d-block small">Updated On</span>
+                                 14 Jul 2021 08:58 PM</p>
+                           </td>
+                           <td class="min-max-250">
+                              <p><span class="text-muted d-block small">Email</span> deepak@domain.com</p>
+                              <p><span class="text-muted d-block small">Mobile</span> +91 999 299 2929</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Parent :</span> Category</p>
+                           </td>
+                           <td>
+                              <p><span class="text-muted d-block small">Role :</span> --------</p>
+                           </td>
+                           <td></td>
+                           <td></td>
                         </tr>
                      </tbody>
                   </table>
@@ -931,8 +1244,6 @@
             </div>
          </div>
       </div>
-
-
    </div>
 
 
@@ -977,9 +1288,10 @@
    <div class="modal fade offCanvasModal right" id="detail-popup" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-llg" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header border-bottom">
+            <div class="modal-header border-bottom-blue">
                <h5 class="modal-title my-0" id="exampleModalLabel">
-                  <span class="title font-weight-bold"> <span class="text-secondary font-weight-normal">Ticket Id - </span>22323</span>
+                  <span class="title font-weight-bold"> <span class="text-secondary font-weight-normal">Ticket Id -
+                     </span>22323</span>
                </h5>
 
                <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
@@ -1209,7 +1521,7 @@
    <div class="modal fade offCanvasModal right" id="reasign-popup" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-sm" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header border-bottom">
+            <div class="modal-header border-bottom-blue">
                <h5 class="modal-title my-0" id="exampleModalLabel">
                   <span class="title font-weight-bold">Reassign Ticket</span>
                </h5>
@@ -1253,6 +1565,45 @@
       </div>
    </div>
 
+   <div class="modal fade offCanvasModal right" id="filterPopup" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-sm" role="document">
+         <div class="modal-content h-100">
+            <div class="modal-header border-bottom-blue">
+               <h5 class="modal-title my-0" id="exampleModalLabel">
+                  <span class="title font-weight-bold">Filter</span>
+               </h5>
+
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group pt-0">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
+                     title="Select College" data-style="px-2 border">
+                     <option value="">college 1</option>
+                     <option value="">college 1</option>
+                     <option value="">college 1</option>
+                  </select>
+               </div>
+               <div class="form-group pt-0">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
+                     title="Select Form" data-style="px-2 border">
+                     <option value="">Admission</option>
+                     <option value="">General</option>
+                     <option value="">Technical</option>
+                  </select>
+               </div>
+               <div class="modal-footer justify-content-between">
+                  <button class="btn btn-sm btn-dark rounded-0">Reset</button>
+                  <button class="btn btn-sm btn-primary rounded-0">Apply</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
    <div class="modal fade modalVideoGenric" id="productVideos" tabindex="-1">
       <div class="modal-dialog" role="dialog">
          <div class="modal-content">
@@ -1264,7 +1615,7 @@
             </div>
             <div class="modal-body pb-0 pt-3">
                <!-- <i class="fa fa-spinner fa-spin"></i> -->
-               <iframe class="vimeovideo" src="/img/blank.gif" width="100%" height="360" frameborder="0"
+               <iframe class="vimeovideo" src="../static/backend/images/loader_big.gif" width="100%" height="360" frameborder="0"
                   allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
          </div>
@@ -1276,7 +1627,7 @@
    <div class="modal fade offCanvasModal right" id="notification" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-md" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header border-bottom">
+            <div class="modal-header border-bottom-blue">
                <h5 class="modal-title my-0" id="exampleModalLabel">
                   <span class="title font-weight-bold">Your Notifications</span>
                   <span class="badge badge-pill badge-light">Unread<span
@@ -1463,37 +1814,49 @@
    <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script>
 
    <script>
-      CKEDITOR.replace('editor1');
+      $('#detail-popup').on('shown.bs.modal', function () {
+         CKEDITOR.replace('editor1');
+      });
+      $('.grid-table table .dropdown').on('show.bs.dropdown', function () {
+         $('.grid-table [data-sticky=true] table[data-last-col=true] td:last-child').css('position', 'static');
+      });
+      $('.grid-table table .dropdown').on('hide.bs.dropdown', function () {
+         $('.grid-table [data-sticky=true] table[data-last-col=true] td:last-child').css('position', 'sticky');
+      });
+
       $('.owl-carousel').owlCarousel({
-  // loop: true,
-  margin: 15,
-  stagePadding: 0,
-  nav: true,
-  navigation: true,
-  autoWidth: false,
-  navText: [
-    "<i class='fa fa-angle-left'></i>",
-    "<i class='fa fa-angle-right'></i>"
-  ],
-  autoplay: false,
-  responsiveClass: true,
-  autoplayHoverPause: true,
-  dots: false,
-  responsive: {
-    0: {
-      items: 3
-    },
-    600: {
-      items: 4
-    },
-    1000: {
-      items: 5
-    },
-    1300: {
-      items: 7
-    }
-  },
-});
+         // loop: true,
+         margin: 15,
+         stagePadding: 0,
+         nav: true,
+         navigation: true,
+         autoWidth: false,
+         navText: [
+            "<i class='fa fa-angle-left'></i>",
+            "<i class='fa fa-angle-right'></i>"
+         ],
+         autoplay: false,
+         responsiveClass: true,
+         autoplayHoverPause: true,
+         dots: false,
+         responsive: {
+            0: {
+               items: 3
+            },
+            600: {
+               items: 4
+            },
+            1000: {
+               items: 5
+            },
+            1300: {
+               items: 7
+            }
+         },
+      });
+
+
+
    </script>
 
    <script>

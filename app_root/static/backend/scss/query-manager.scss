@@ -2,22 +2,26 @@
 @import 'vendors/owl.carousel/src/scss/owl.carousel.scss';
 
 // Sections and  pages
- @import
- 'components/grid-table',
- 'components/expandSearch',
- 'components/border-card',
- 'components/modal-accordion',
- 'components/conversation',
- 'components/video-iframe-modal',
- 'components/owl-carousal';
+@import 'components/grid-table',
+'components/expandSearch',
+'components/border-card',
+'components/modal-accordion',
+'components/conversation',
+'components/video-iframe-modal',
+'components/owl-carousal';
 
- .ticket-left-panel{
-     overflow: hidden;
-     min-height: 500px;
-     max-height: calc(100vh - 93px);
-     &:hover{
-         overflow: overlay;
-         scrollbar-width: thin;
-         z-index: 1;
-     }
- }
+.ticket-left-panel {
+    overflow: hidden;
+    min-height: 500px;
+    max-height: calc(100vh - 93px);
+
+    &:hover {
+        overflow: overlay;
+        scrollbar-width: thin;
+        z-index: 1;
+    }
+}
+
+.ticket-right-panel {
+    border-left: #d1d1d1 1px solid;
+}
