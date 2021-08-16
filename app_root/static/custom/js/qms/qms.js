@@ -8,7 +8,7 @@ $('#detail-popup').on('shown.bs.modal', function () {
     $('.grid-table [data-sticky=true] table[data-last-col=true] td:last-child').css('position', 'sticky');
  });
 
- if ($(window).width() < 1023) {
+ if ($(window).width() < 1299) {
     $('.owl-carousel').removeClass('grid-col');
     $('.owl-carousel').owlCarousel({
        // loop: true,
@@ -62,10 +62,8 @@ $('#detail-popup').on('shown.bs.modal', function () {
      if ($(window).width() > 768) {
 
          const colLeft = $('table').data('col-left');
-         $('table[data-colfix="2"] td:nth-child(2)').css('left', colLeft);
-         $('table[data-colfix="2"] th:nth-child(2)').css('left', colLeft);
-         $('table[data-colfix="2"] th:nth-child(1)').css('width', colLeft);
-         $('table[data-colfix="2"] td:nth-child(1)').css('width', colLeft);
+         $('table[data-colfix="2"] td:nth-child(2), table[data-colfix="2"] th:nth-child(2)').css('left', colLeft);
+         $('table[data-colfix="2"] th:nth-child(1), table[data-colfix="2"] td:nth-child(1)').css('width', colLeft);
          $('table[data-colfix="2"] th:nth-child(1)').css('min-width', colLeft);
 
          $('.grid-table table tbody input[type="checkbox"]').change(function (event) {
