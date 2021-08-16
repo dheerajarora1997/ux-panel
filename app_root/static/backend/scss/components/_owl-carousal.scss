@@ -1,5 +1,5 @@
 .carousel-wrap {
-    margin: 10px auto;
+    margin: 0 auto 10px;
     padding: 0;
     width: 100%;
     position: relative;
@@ -10,10 +10,6 @@
         display: flex;
     }
 }
-
-
-
-
 
 /* fix blank or flashing items on carousel */
 .owl-carousel .item {

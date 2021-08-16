@@ -27,7 +27,7 @@ $('#detail-popup').on('shown.bs.modal', function () {
        dots: false,
        responsive: {
           0: {
-             items: 3
+             items: 2
           },
           600: {
              items: 4
@@ -41,3 +41,59 @@ $('#detail-popup').on('shown.bs.modal', function () {
        },
     });
  }
+
+ $(document).ready(function () {
+     if('[data-toggle="popover"]'){
+         $('[data-toggle="popover"]').popover();
+     }
+     if('[data-toggle="tooltip"]'){
+         $('[data-toggle="tooltip"]').tooltip();
+     }
+
+     $('.grid-table table thead input[type="checkbox"], #mob-table-head').change(function (event) {
+        if (event.target.checked) {
+           $('.grid-table table tbody input[type="checkbox"]').prop('checked', true);
+           $('.grid-table table tbody').find('.grid-table-row').addClass('has-selected');
+        } else {
+           $('.grid-table table tbody input[type="checkbox"]').prop('checked', false);
+           $('.grid-table table tbody').find('.grid-table-row').removeClass('has-selected');
+        }
+     });
+     if ($(window).width() > 768) {
+
+         const colLeft = $('table').data('col-left');
+         $('table[data-colfix="2"] td:nth-child(2)').css('left', colLeft);
+         $('table[data-colfix="2"] th:nth-child(2)').css('left', colLeft);
+         $('table[data-colfix="2"] th:nth-child(1)').css('width', colLeft);
+         $('table[data-colfix="2"] td:nth-child(1)').css('width', colLeft);
+         $('table[data-colfix="2"] th:nth-child(1)').css('min-width', colLeft);
+
+         $('.grid-table table tbody input[type="checkbox"]').change(function (event) {
+            if (event.target.checked) {
+               $(this).closest('.grid-table-row').addClass('has-selected');
+            } else {
+               $(this).closest('.grid-table-row').removeClass('has-selected');
+               $('.grid-table table thead input[type="checkbox"], #mob-table-head').prop('checked', false);
+            }
+            const all_checkboxes = $('.grid-table table tbody input[type="checkbox"]');
+            if (all_checkboxes.length === all_checkboxes.filter(":checked").length) {
+               $('.grid-table table thead input[type="checkbox"], #mob-table-head').prop('checked', true);
+            }
+         });
+     }
+ });
+
+ function customFile() {
+    $('input[type="file"]').change(function (e) {
+       var fileName = e.target.files[0].name;
+       $('.chat-file  .file-name').text(fileName);
+       $('.chat-file').removeClass('d-none');
+    });
+ };
+
+ $(".fileBrowseCustom").on("click", customFile);
+ $(".chat-area .remove-file").on("click", function () {
+    $('.chat-file').addClass('d-none');
+    $('.chat-area input[type="file"]').val('');
+    $('.file-name').text('');
+ });

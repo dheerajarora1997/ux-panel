@@ -10,10 +10,15 @@
 'components/video-iframe-modal',
 'components/owl-carousal';
 
+
+@media only screen and (min-width){
+    .ticket-left-panel {
+        min-height: 500px;
+        max-height: calc(100vh - 110px);
+    }
+}
 .ticket-left-panel {
     overflow: hidden;
-    min-height: 500px;
-    max-height: calc(100vh - 93px);
 
     &:hover {
         overflow: overlay;

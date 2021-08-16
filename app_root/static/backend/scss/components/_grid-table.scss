@@ -142,7 +142,7 @@
 
             tbody {
                 tr {
-                    border-bottom: 1px solid rgba(153, 153, 153, .1);
+                    border-bottom: 11px solid rgba(153, 153, 153, .1);
 
                     td {
                         width: 100%;
@@ -171,8 +171,8 @@
                             input[type="radio"],
                             input[type="checkbox"] {
                                 position: absolute;
-                                left: 0;
-                                top: 0;
+                                left: 5px;
+                                top: 2px;
                             }
                         }
                     }
@@ -214,35 +214,40 @@
     margin-bottom: 10px;
 }
 
-.grid-table [data-sticky="true"] {
-
-    table thead tr th,
-    table thead tr td {
-        position: sticky;
-        top: 0;
+@media only screen and (min-width: 768px){
+    .grid-table table.table tbody tr.grid-table-row{
+        border-width: 1px 0 0;
     }
+    .grid-table [data-sticky="true"] {
 
-    table[data-colfix="2"] td:first-child,
-    table[data-colfix="2"] th:first-child {
-        position: sticky;
-        left: 0;
-        z-index: 99;
-        border-right: 1px solid #eee;
+        table thead tr th,
+        table thead tr td {
+            position: sticky;
+            top: 0;
+        }
+
+        table[data-colfix="2"] td:first-child,
+        table[data-colfix="2"] th:first-child {
+            position: sticky;
+            left: 0;
+            z-index: 99;
+            border-right: 1px solid #eee;
+        }
+
+        table[data-last-col="true"] td:last-child,
+        table[data-last-col="true"] th:last-child {
+            position: sticky;
+            right: 0;
+            z-index: 1;
+            border-left: 1px solid #eee;
+        }
+
+        table[data-colfix="2"] td:nth-child(2),
+        table[data-colfix="2"] th:nth-child(2) {
+            position: sticky;
+            z-index: 99;
+            border-right: 1px solid #eee;
+        }
+
     }
-
-    table[data-last-col="true"] td:last-child,
-    table[data-last-col="true"] th:last-child {
-        position: sticky;
-        right: 0;
-        z-index: 1;
-        border-left: 1px solid #eee;
-    }
-
-    table[data-colfix="2"] td:nth-child(2),
-    table[data-colfix="2"] th:nth-child(2) {
-        position: sticky;
-        z-index: 99;
-        border-right: 1px solid #eee;
-    }
-
 }
