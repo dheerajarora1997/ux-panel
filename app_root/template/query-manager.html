@@ -16,16 +16,17 @@
    <link href="../static/backend/css/main.css" rel="stylesheet" />
    <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
    <link href="../static/backend/css/query-manager.css" rel="stylesheet" />
+   <link href="../static/backend/css/dark-mode.css" rel="stylesheet" />
    <!--<link href="../static/backend/css/config.css" rel="stylesheet" />-->
 </head>
 
-<body>
+<body class="dark-mode">
    <!-- Header With Side Nav Start-->
 
    <nav class="navbar fixed-top navbar-expand-lg border-bottom shadow-none brand-color" color-on-scroll="100"
       id="sectionsNav">
-      <div class="d-flex w-100 pl-2 pl-lg-0">
-         <div class="navbar-translate d-flex justify-content-between w-100">
+      <div class="d-flex w-100">
+         <div class="navbar-translate d-flex justify-content-between w-100 pl-2">
             <button class="navbar-toggler d-none d-lg-block" id="navbar-toggler-desktop" type="button"
                data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
                <span class="sr-only">Toggle navigation</span>
@@ -33,7 +34,7 @@
                <span class="navbar-toggler-icon"></span>
                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="../static/backend/images/npfLogo.svg" width="150"
+            <a class="navbar-brand mr-2" href="#"><img src="../static/backend/images/npfLogo.svg" width="150"
                   class="img-responsive d-none d-lg-block" alt="NoPaperForms">
                <img src="../static/backend/images/mobile-logo.png" class="img-responsive d-block d-lg-none d-flex ml-1"
                   height="32" alt="NoPaperForms">
@@ -1602,7 +1603,6 @@
                </div>
                <div class="modal-footer justify-content-between">
                   <button class="btn btn-sm btn-dark rounded-0">
-                     <span class="material-icons-outlined"> restart_alt </span>
                      Reset
                   </button>
                   <button class="btn btn-sm btn-primary rounded-0">Apply</button>
@@ -1822,6 +1822,9 @@
    <script src="../static/backend/js/base/common.js"></script>
    <script src="../static/custom/js/qms/qms.js"></script>
 
+   <script>
+
+   </script>
 
 </body>
 
