@@ -1,0 +1,25 @@
+table {
+    th.sorting {
+        padding-right: 15px;
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+            font-family: 'lineicon';
+            margin-left: 5px;
+            color: #808080;
+            content: '\e979';
+            font-size: .7rem;
+        }
+
+        &.sorting_asc:after {
+            color: #4c79dc;
+            content: '\e952';
+        }
+
+        &.sorting_desc:after {
+            color: #4c79dc;
+            content: '\e947';
+        }
+    }
+}

@@ -31,6 +31,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lineicon-sorting:before {
+  content: "\e979";
+}
 .lineicon-total-tickets:before {
   content: "\e945";
 }
