@@ -662,8 +662,8 @@
                                  <input type="checkbox" class="" />
                               </th>
                               <th class="min-max-250 sorting">Ticket Details</th>
-                              <th class="min-max-350 sorting sorting_desc">Personal Details</th>
-                              <th class="min-max-200 sorting sorting_asc">Category</th>
+                              <th class="min-max-350 sorting">Personal Details</th>
+                              <th class="min-max-200 sorting">Category</th>
                               <th class="min-max-200">Assigned To</th>
                               <th>Status</th>
                               <th>Action</th>
@@ -1823,7 +1823,15 @@
    <script src="../static/custom/js/qms/qms.js"></script>
 
    <script>
-
+      $('.sorting').click( function(){
+         $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
+         if($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')){
+            $(this).toggleClass('sorting_desc sorting_asc');
+         }
+         else{
+            $(this).addClass('sorting_desc');
+         }
+      });
    </script>
 
 </body>

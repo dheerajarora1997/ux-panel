@@ -31,6 +31,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.lineicon-sort-down:before {
+  content: "\e97a";
+}
+.lineicon-sort-up:before {
+  content: "\e97b";
+}
 .lineicon-sorting:before {
   content: "\e979";
 }
