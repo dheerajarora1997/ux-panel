@@ -111,7 +111,7 @@
 	var iframes = $('.vimeovideo'),
     status = $('.status');
 	iframes.each(function() {
-	  var player=$f(this);
+	  var player=$(this);
 	  player.api("pause");
 	});
 	return false;
@@ -120,9 +120,7 @@
 // Genric Popup modal for Videos
 function vimeoSrcVideoGenric(element){
 	var dataId = $(element).attr('data-id');
-	//var vimeodataSrc = $('#'+dataId+ ' iframe.vimeovideo').attr('data-src');
 	var vimeodataSrc = $(element).attr('data-src');
-	//alert(vimeodataSrc);
 	var vimeoSrc = $('#'+dataId+ ' iframe.vimeovideo').attr('src');
 	if(vimeoSrc == '' || vimeoSrc =='../static/backend/images/blank.gif'){
 		$('#'+dataId+ ' iframe.vimeovideo').attr('src', vimeodataSrc);
@@ -133,4 +131,4 @@ function vimeoSrcVideoGenric(element){
 $('.modalvideoGenric').on('hidden.bs.modal', function (e) {
 	$('.modalvideoGenric .vimeovideo').attr('src', '');
 	vimeoVideo();
-})
+});
