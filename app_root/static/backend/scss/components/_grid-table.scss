@@ -11,18 +11,24 @@
         margin: 10px 0;
         padding: 10px 0;
 
-        td,th {
+        td,
+        th {
             white-space: nowrap;
             margin: 0;
             border: none;
             background-color: #fff;
             vertical-align: top;
 
-            .hover-effect{
-                width: 25px;
-                height: 25px;
+            .hover-effect {
+                width: 22px;
+                height: 22px;
                 align-items: center;
                 justify-content: center;
+                background-color: #f1f3f4 !important;
+
+                i {
+                    line-height: 1rem;
+                }
             }
 
             small,
@@ -35,6 +41,12 @@
                     min-width: 50px;
                     max-width: 50px;
                     width: 50px;
+                }
+
+                &.min-max-100 {
+                    min-width: 100px;
+                    max-width: 100px;
+                    width: 100px;
                 }
 
                 &.min-max-150 {
@@ -83,9 +95,10 @@
 
     thead {
         tr {
-            td,th {
-                font-size: 90%;
-                background: #ebeeef;
+
+            td,
+            th {
+                background: #e0e4e6;
                 font-weight: 600;
             }
         }
@@ -95,6 +108,22 @@
     tbody tr {
         &.grid-table-row {
             border-top: 1px solid #eee;
+
+            td {
+                font-weight: 500;
+                vertical-align: middle;
+
+                [data-toggle='collapse'] {
+                    i.fa:before {
+                        font-size: 1rem;
+                        content: '\f107';
+                    }
+
+                    &[aria-expanded='true'] i.fa:before {
+                        content: '\f106';
+                    }
+                }
+            }
 
             .table-des {
                 max-width: 290px;
@@ -110,21 +139,33 @@
             }
 
             &.read {
-                opacity: .7;
+                td {
+                    font-weight: 400 !important;
+
+                    @media only screen and (min-width: 768px) {
+                        background: #fafafa;
+                    }
+                }
 
                 &+.collapse {
-                    opacity: .7;
+                    td {
+                        background: #fafafa;
+                    }
                 }
             }
 
             &:hover td {
-                // background: rgb(76, 121, 220, .1);
+                background: #fcfcfc;
             }
 
         }
 
         &:not(.grid-table-row) td {
-            background: #f9fafa;
+            background: #fcfcfc;
+
+            p {
+                font-size: 13px;
+            }
         }
 
     }
@@ -133,7 +174,7 @@
 // @include media("<tablet") {
 @media only screen and (max-width: 768px) {
     .grid-table {
-        table {
+        table.table {
             * {
                 position: relative;
             }
@@ -144,15 +185,29 @@
 
             tbody {
                 tr {
-                    border-bottom: 11px solid rgba(153, 153, 153, .1);
+                    border-bottom: none;
+
+                    &.grid-table-row {
+                        border-top: 11px solid #eee;
+
+                        &:first-child {
+                            border: none;
+                        }
+                    }
 
                     td {
                         width: 100%;
                         display: block;
                         padding-left: 40% !important;
-                        margin-bottom: 24px;
-                        padding-top: 5px;
+                        padding-top: 10px;
                         padding-bottom: 5px;
+                        @media only screen and (max-width: 767px){
+                            padding-left: 35% !important;
+                        }
+
+                        &:last-child {
+                            padding-bottom: 10px;
+                        }
 
                         &:before {
                             content: attr(data-title);
@@ -162,8 +217,11 @@
                             font-weight: unset;
                             position: absolute;
                             width: 40%;
-                            top: 8px;
+                            top: 14px;
                             left: 20px;
+                            @media only screen and (max-width: 767px){
+                                font-size: 11px;
+                            }
                         }
 
                         &.has-checkbox {
@@ -176,6 +234,10 @@
                                 left: 5px;
                                 top: 2px;
                             }
+                        }
+
+                        &:empty {
+                            padding: 0;
                         }
                     }
 
@@ -197,6 +259,22 @@
     }
 }
 
+.grid-table table.table tbody.custom-skeleton {
+    .skeleton-loader.description {
+        width: 100%;
+    }
+
+    tr td {
+        padding-left: 10px !important;
+
+        &:before {
+            content: none;
+
+        }
+    }
+}
+
+
 .form-check .form-check-sign .check {
     width: 15px;
     height: 15px;
@@ -216,10 +294,11 @@
     margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 768px){
-    .grid-table table.table tbody tr.grid-table-row{
+@media only screen and (min-width: 768px) {
+    .grid-table table.table tbody tr.grid-table-row:not(:first-child) {
         border-width: 1px 0 0;
     }
+
     .grid-table [data-sticky="true"] {
 
         table thead tr th,
@@ -237,8 +316,9 @@
             z-index: 99;
             border-right: none;
         }
+
         table[data-colfix="1"] td:first-child,
-        table[data-colfix="1"] th:first-child{
+        table[data-colfix="1"] th:first-child {
             border-right: 1px solid #eee;
         }
 
@@ -258,5 +338,13 @@
             border-right: 1px solid #eee;
         }
 
+    }
+}
+
+.table {
+    tbody {
+        +tbody {
+            border-top-color: #ddd;
+        }
     }
 }

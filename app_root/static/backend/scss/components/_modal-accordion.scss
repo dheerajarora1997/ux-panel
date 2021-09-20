@@ -1,7 +1,12 @@
 .modal-accordion {
-    small,.small{
+    max-height: calc(100vh - 150px);
+    overflow: auto;
+
+    small,
+    .small {
         line-height: 1.1;
     }
+
     [data-toggle="collapse"] {
         position: relative;
 
@@ -10,7 +15,7 @@
             display: inline-block;
             font: normal normal normal 14px/1 FontAwesome;
             position: absolute;
-            right: 20px;
+            right: 10px;
             top: 7px;
             border-radius: 100%;
             width: 24px;
@@ -21,6 +26,7 @@
         }
 
         &[aria-expanded="true"] {
+            background: rgba(0,0,0,.01);
             &:after {
                 transform: rotate(180deg);
             }

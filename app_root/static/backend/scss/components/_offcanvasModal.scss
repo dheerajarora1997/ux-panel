@@ -2,7 +2,7 @@ $modal-xlg : 1100px;
 $modal-llg : 950px;
 $modal-lg : 800px;
 $modal-md : 550px;
-$modal-sm : 300px;
+$modal-sm : 350px;
 
 
 /*** Modal open left & Right ***/
@@ -25,6 +25,10 @@ $modal-sm : 300px;
                 width: $modal-lg;
                 max-width: $modal-lg;
             }
+            &.modal-llg {
+                width: $modal-llg;
+                max-width: $modal-llg;
+            }
 
             &.modal-llg {
                 width: $modal-llg;
@@ -44,6 +48,10 @@ $modal-sm : 300px;
             &.modal-xlg {
                 width: $modal-xlg;
                 max-width: $modal-xlg;
+            }
+            @media only screen and (max-width: 767px){
+                width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -163,7 +171,7 @@ $modal-sm : 300px;
             // ----------------------
             position: absolute;
             right: 28px;
-            top: 24px;
+            top: 25px;
             border: 0;
             background: none;
             cursor: pointer;
@@ -214,13 +222,6 @@ body.scrollHidden{
 
 @include media("<tablet") {
     .modal {
-        .modal-header {
-            .close {
-                height: 20px;
-                width: 20px;
-            }
-        }
-
         &.left,
         &.right {
             .modal-dialog {

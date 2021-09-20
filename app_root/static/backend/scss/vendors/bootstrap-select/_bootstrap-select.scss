@@ -102,13 +102,12 @@
       text-align: center;
       overflow: hidden;
       text-overflow: ellipsis;
-    }  
+    }
     }
   }
   .dropdown-menu{
     width: 400px;
     overflow-y: auto;
-    max-height: 200px;
   }
 }
 .dropdown-menu {
@@ -187,10 +186,6 @@ select.selectpicker {
     display: inline-flex;
     align-items: center;
     justify-content: space-between;
-
-    &:after {
-      margin-top: -1px;
-    }
 
     &.bs-placeholder {
       &,
@@ -401,7 +396,7 @@ select.selectpicker {
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-    
+
 
     // used to expand the height of the button when inside an input group
     .filter-expand {
@@ -750,7 +745,7 @@ select.selectpicker {
         background-color:transparent !important;
         color:$white-color !important;
     }
-  
+
   }
 }
 

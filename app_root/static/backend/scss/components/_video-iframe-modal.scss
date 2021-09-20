@@ -27,11 +27,30 @@
             }
         }
     }
+    .modal-body{
+        background: url('/static/theme/v1/images/loader.gif') center no-repeat; background-size: 10%;
+    }
 }
 
-.outside-cross-modal .close{
-    position:absolute;
-    right: -25px;
+.outside-cross-modal .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
     color: #010;
     font-size: 1.5rem;
+    z-index: 1;
+    line-height: .8;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        width: 40px;
+        height: 40px;
+        z-index: 9;
+        top: -5px;
+        right: -10px;
+        position: absolute;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 0 0 0 40px;
+    }
 }

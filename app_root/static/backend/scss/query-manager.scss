@@ -1,5 +1,5 @@
 // Vendor
-@import 'vendors/owl.carousel/src/scss/owl.carousel.scss';
+@import 'vendors/owl.carousel/src/scss/owl.carousel.scss', 'vendors/date-range-picker' ;
 
 // Sections and  pages
 @import 'components/grid-table',
@@ -7,6 +7,7 @@
 'components/border-card',
 'components/modal-accordion',
 'components/conversation',
+'components/status',
 'components/video-iframe-modal',
 'components/owl-carousal';
 
@@ -29,4 +30,10 @@
 
 .ticket-right-panel {
     border-left: #d1d1d1 1px solid;
+}
+
+.student-query-header{
+    .bootstrap-select .dropdown-menu{
+        min-width: 180px;
+    }
 }

@@ -17,6 +17,7 @@
     #main {
         margin-left:45px;
         z-index: 1;
+        min-height: calc(100vh - 100px);
     }
 
     .main-container {

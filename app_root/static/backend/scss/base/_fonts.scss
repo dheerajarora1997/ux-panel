@@ -26,9 +26,24 @@
   -webkit-font-variant-ligatures: discretionary-ligatures;
   font-variant-ligatures: discretionary-ligatures;
 
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.lineicon-single-file:before {
+  content: "\e97c";
 }
 
 .lineicon-sort-down:before {
@@ -37,6 +52,7 @@
 .lineicon-sort-up:before {
   content: "\e97b";
 }
+
 .lineicon-sorting:before {
   content: "\e979";
 }

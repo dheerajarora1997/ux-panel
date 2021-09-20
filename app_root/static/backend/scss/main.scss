@@ -1,4 +1,5 @@
 @import
+    'abstracts/variable-overwrite',
     'vendors/material-kit/variables',
     'abstracts/variables',
     'vendors/material-kit/mixins',
@@ -75,4 +76,11 @@
     'components/two-step-modal',
 	'components/notification',
     'components/noDataFoundDiv',
-    'components/callInfoOver';
+    'components/callInfoOver',
+    'components/searchicon',
+    'components/notification',
+    'components/offcanvasModal',
+    'components/notifyAlert',
+    'components/alert-modal',
+    'components/skeleton-loader',
+    'components/spinner';
