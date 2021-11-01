@@ -168,9 +168,8 @@
     &:hover {
         @include transition(.5s all);
         @include transition-delay(.5s);
-        box-shadow: 4px 4px 6px -3px rgb(0 0 0 / 60%);
+        box-shadow: 4px 4px 6px -3px rgba(0, 0, 0, .6);
         overflow: auto;
-        ;
     }
 
     @include media('>=tablet') {
