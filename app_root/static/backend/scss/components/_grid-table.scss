@@ -2,10 +2,10 @@
 
 .grid-table table.table {
     width: 100%;
-    // overflow: hidden;
-    border-radius: 10px;
+    border-radius: 4px;
     background: #fafafa;
     margin-bottom: 0;
+    overflow: hidden;
 
     tr {
         margin: 10px 0;
@@ -13,7 +13,6 @@
 
         td,
         th {
-            white-space: nowrap;
             margin: 0;
             border: none;
             background-color: #fff;
@@ -24,7 +23,7 @@
                 height: 22px;
                 align-items: center;
                 justify-content: center;
-                background-color: #f1f3f4 !important;
+                // background-color: #f1f3f4 !important;
 
                 i {
                     line-height: 1rem;
@@ -37,10 +36,21 @@
             }
 
             @media only screen and (min-width: 991px) {
+                &.min-max-30 {
+                    min-width: 30px;
+                    max-width: 30px;
+                    width: 30px;
+                }
                 &.min-max-50 {
                     min-width: 50px;
                     max-width: 50px;
                     width: 50px;
+                }
+
+                &.min-max-75 {
+                    min-width: 75px;
+                    max-width: 75px;
+                    width: 75px;
                 }
 
                 &.min-max-100 {
@@ -141,9 +151,11 @@
             &.read {
                 td {
                     font-weight: 400 !important;
-
+                    .badge{
+                        font-weight: 400 !important;
+                    }
                     @media only screen and (min-width: 768px) {
-                        background: #fafafa;
+                        background: #fbfbfb;
                     }
                 }
 
@@ -188,7 +200,7 @@
                     border-bottom: none;
 
                     &.grid-table-row {
-                        border-top: 11px solid #eee;
+                        border-top: 11px solid #f1f3f4;
 
                         &:first-child {
                             border: none;
@@ -225,6 +237,7 @@
                         }
 
                         &.has-checkbox {
+                            min-height: 25px;
                             padding-top: 10px !important;
                             padding-left: 20px !important;
 
@@ -295,8 +308,10 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .grid-table table.table tbody tr.grid-table-row:not(:first-child) {
-        border-width: 1px 0 0;
+    .grid-table table.table tbody tr.grid-table-row{
+        &:not(:first-child) {
+            border-width: 1px 0 0;
+        }
     }
 
     .grid-table [data-sticky="true"] {
@@ -346,5 +361,14 @@
         +tbody {
             border-top-color: #ddd;
         }
+    }
+}
+.selection-row{
+    min-height: 30px;
+    margin-bottom: 5px;
+    .selection-count{
+        background: #ccd9f5 !important;
+        padding: 5px 0;
+        border-radius: 4px;
     }
 }

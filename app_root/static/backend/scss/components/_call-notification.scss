@@ -32,7 +32,7 @@
 .notifyCountUl{
     padding: 0;
     margin: 0;
-    
+
     li {
         display: table;
         width: 100%;
@@ -43,7 +43,7 @@
         padding: 10px;
       &:hover, &.active{
           background-color: #f8f9fa;
-      }  
+      }
     }
 }
 .disMobile {
@@ -52,7 +52,7 @@
 }
 .modal-dialog .modal-content {
     /* box-shadow: 0 27px 24px 0 rgb(0 0 0 / 20%), 0 40px 77px 0 rgb(0 0 0 / 8%); */
-    box-shadow: 0 15px 24px 0 rgb(0 0 0 / 10%) !important;
+    box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .1) !important;
 }
 .notifyCountUl {
     a{
@@ -115,7 +115,7 @@
        }
       &:hover{
           background-color: transparent;
-      } 
+      }
     }
 }
 .outbound-list{
@@ -140,7 +140,7 @@
            }
         }
     .modal-content {
-        box-shadow: 0 15px 24px 0 rgb(0 0 0 / 10%) !important;
+        box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .1) !important;
     }
     .modal-header{
         .close{
@@ -149,7 +149,7 @@
         .material-icons{
             font-size: 30px;
             color: $brand-color;
-            opacity: 1;            
+            opacity: 1;
         }
     }
 }
@@ -164,7 +164,7 @@
         }
         .material-icons{
             font-size: 16px;
-        }        
+        }
         i{
         color: #4b7bdd;
         background: #fff;
@@ -187,7 +187,7 @@
 #action-detail{
     .modal-dialog{
         .modal-content {
-            box-shadow: 0 15px 24px 0 rgb(0 0 0 / 10%) !important;
+            box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .1) !important;
         }
     }
 }
@@ -202,7 +202,7 @@ button.close_modal {
 
 .close_modal_c{
 	z-index:1060!important;
-	 
+
 }
 .offCanvasModal.widthbound {
 	right:0px !important;
@@ -227,7 +227,7 @@ button.close_modal {
     opacity: 0 !important;
 }
 
-@include media("<largephone") {    
+@include media("<largephone") {
     .modal.right.fade.show .modal-detail {
         right: 0px;
     }

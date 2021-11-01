@@ -1,0 +1,23 @@
+.plusMinushide,.Whatsapp-business-number-div{
+    .row{
+        &:first-child{
+            .remove-div{
+                display:none!important;
+            }
+            .add-div{
+                display:none;
+            }
+        }
+        .add-div{
+            display:none;
+        }
+        &:last-child{
+            .add-div{
+                display:inline-block;
+            }
+            .remove-div{
+                display:inline-block;
+            }
+        }
+    }
+}

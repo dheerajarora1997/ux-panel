@@ -3,6 +3,7 @@
     padding: 0;
     width: 100%;
     position: relative;
+    border-radius: 4px;
 
     .owl-carousel {
         padding: 0 0 0 0;
@@ -26,7 +27,7 @@
 .owl-nav>button {
     margin-top: -20px;
     position: absolute;
-    top: 50%;
+    top: 55%;
 
     @media only screen and (max-width: 767px) {
         top: 60%;
@@ -35,18 +36,13 @@
     i {
         color: #666;
         font-size: 18px;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border-radius: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         background: #f1f1f1;
-
-        @media only screen and (max-width: 767px) {
-            width: 20px;
-            height: 20px;
-        }
     }
 
     &:hover i {
@@ -66,16 +62,16 @@
 }
 
 .owl-nav .owl-prev {
-    left: -20px;
+    left: -17px;
 
     @media only screen and (max-width: 767px) {
-        left: -10px;
+        left: -15px;
     }
 }
 
 .owl-nav .owl-next {
-    right: -25px;
+    right: -15px;
     @media only screen and (max-width: 767px) {
-        right: -10px;
+        right: -15px;
     }
 }

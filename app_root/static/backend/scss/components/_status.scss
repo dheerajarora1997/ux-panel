@@ -1,20 +1,23 @@
-.badge{
-    &.data-Open{
-        border: 1px solid #f44336;
-        color: #f44336;
-        border-radius: 10px;
-        text-transform: capitalize;
+.table .badge{
+    border-radius: 10px;
+    text-transform: capitalize;
+    color: #111;
+    padding: 4px 10px 4px 15px;
+    font-size: 85%;
+    position: relative;
+    &:before{
+        content: '\002B24';
+        position: absolute;
+        left: 0;
+        font-size: 10px;
     }
-    &.data-In.Progress{
-        border: 1px solid #ff9800;
-        color: #ff9800;
-        border-radius:10px;
-        text-transform:capitalize;
+    &.data-Open:before{
+        color: #ee554b;
     }
-    &.data-Close{
-        border: 1px solid #4caf50;
-        color: #4caf50;
-        border-radius:10px;
-        text-transform: capitalize;
-    } 
+    &.data-In.Progress:before{
+        color: #e49f20;
+    }
+    &.data-Closed:before{
+        color: #65c640;
+    }
 }

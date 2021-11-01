@@ -1,17 +1,22 @@
 .notifY-alert{
-    position:fixed;
     display:none;
+    position:fixed;
+    width :100%;
+    min-width:15rem;
     z-index: 10000;
     top:0;
-    left: 50%;
-    font-size:0.85rem;
-    min-width:15rem;
-    margin-left: -7.5rem;
-    border-radius: 0 0 1rem 1rem;
-    padding:.5rem 1rem;
-    box-shadow:0 .5rem 1rem rgba(0, 0, 0, .15);
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    .notify-content{
+        font-size:0.85rem;
+        border-radius: 0 0 1rem 1rem;
+        padding:.5rem 1rem;
+        box-shadow:0 .5rem 1rem rgba(0, 0, 0, .15);
+
+    }
     &.show{
-        display:block;
+        display:flex;
     }
     .alert-icon{
         display: inline-block;

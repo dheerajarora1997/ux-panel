@@ -1,10 +1,12 @@
 .alert-modal {
     .alert-container {
-        display: inline-block;
+        display: flex;
         background-color: $white;
         border-radius: 10px;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
+        flex-direction: column;
+        align-items: center;
         box-shadow: 0 0 10px rgba(0,0,0,.3);
     }
     .alert-badge {
@@ -13,7 +15,6 @@
         padding: 3px 22px;
         position: absolute;
         top: -7px;
-        left: 84px;
         color: $white;
         text-align: center;
         background: transparent;
@@ -38,9 +39,9 @@
             -moz-transform: perspective(16px) rotateX(-6deg);
             -webkit-transform: perspective(16px) rotateX(-6deg);
             transform-origin: top;
-            border-radius: 0 0 7px 7px;
-            -moz-border-radius: 0 0 7px 7px;
-            -webkit-border-radius: 0 0 7px 7px;
+            border-radius: 0 0 20px 20px;
+            -moz-border-radius: 0 0 20px 20px;
+            -webkit-border-radius: 0 0 20px 20px;
         }
 
         .alert-badge-paper {
@@ -51,7 +52,7 @@
                 height: 8px;
                 top: -1px;
                 z-index: -2;
-                background: $primary;
+                background: #a1b9ec;
             }
 
             &:before {
@@ -67,7 +68,7 @@
         }
     }
     .alert-content{
-        padding: 25px;
+        padding: 25px 10px;
         height: 100%;
         display: flex;
         align-items: center;
@@ -106,7 +107,7 @@
             }
             .alert-badge-paper{
                 &:before,&:after{
-                    background: $warning;
+                    background: #ffc266;
                 }
             }
         }
@@ -132,7 +133,7 @@
             }
             .alert-badge-paper{
                 &:before,&:after{
-                    background: $success;
+                    background: #91cf93;
                 }
             }
         }
@@ -159,7 +160,7 @@
             }
             .alert-badge-paper{
                 &:before,&:after{
-                    background: $danger;
+                    background: #f99b94;
                 }
             }
         }

@@ -113,7 +113,7 @@
            }
         }
     .modal-content {
-        box-shadow: 0 15px 24px 0 rgb(0 0 0 / 10%) !important;
+        box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .10) !important;
     }
     .modal-header{
         .close{
@@ -151,7 +151,7 @@
     }
     .modal-dialog {
         .modal-content {
-            box-shadow: 0 15px 24px 0 rgb(0 0 0 / 10%) !important;
+            box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .10) !important;
         }
     }
 }

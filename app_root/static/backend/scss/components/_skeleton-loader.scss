@@ -13,6 +13,13 @@
         animation: shine 1s infinite;
         border-radius: 10px;
 
+        &.picture{
+            min-height: 16px;
+            max-width: 16px;
+            border-radius: 100%;
+            margin-bottom: 0;
+        }
+
         &.title {
             min-height: 18px;
             width: 60%;
