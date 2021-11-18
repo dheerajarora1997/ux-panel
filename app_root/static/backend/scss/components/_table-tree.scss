@@ -195,8 +195,14 @@ tr.grid-table-row {
       display: flex;
       list-style-type: none;
 
-      &.expanded .grid-column:first-child {
-         background: #f3f6fc;
+      &.expanded {
+         .grid-sublist:before {
+            height: 100%;
+         }
+
+         .grid-column:first-child {
+            background: #f3f6fc;
+         }
       }
    }
 
@@ -328,6 +334,7 @@ tr.grid-table-row {
          @media only screen and (min-width: 991px) {
             background-color: #fff;
          }
+
          &:after {
             content: '';
             width: 100vh;
@@ -370,7 +377,7 @@ tr.grid-table-row {
          content: '';
          width: 1px;
          position: absolute;
-         height: 46px;
+         height: calc(100% + 24px);
          background: #ccc;
          left: 16px;
          top: -24px;

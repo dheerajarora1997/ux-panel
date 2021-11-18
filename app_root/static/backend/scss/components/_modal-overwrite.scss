@@ -87,11 +87,13 @@
                 background-color: #fff;
                 z-index: 111;
                 border-radius: 0 0 10px 10px;
-                .btn{
+
+                .btn {
                     font-weight: 500;
-                    &.btn-outline-secondary{
-                        color: rgba(0,0,0,0.57);
-                        border-color: rgba(0,0,0,0.57);
+
+                    &.btn-outline-secondary {
+                        color: rgba(0, 0, 0, 0.57);
+                        border-color: rgba(0, 0, 0, 0.57);
                     }
                 }
             }
@@ -110,13 +112,14 @@
         border-radius: 50%;
     }
 }
-.modal-backdrop.show{
+
+.modal-backdrop.show {
     opacity: 1;
 }
 
-.ticket-detail-popup.modal{
-    .modal-dialog .modal-content .modal-body{
-        @media only screen and (min-width: 767px){
+.ticket-detail-popup.modal {
+    .modal-dialog .modal-content .modal-body {
+        @media only screen and (min-width: 767px) {
             overflow: hidden;
         }
     }
@@ -124,4 +127,20 @@
 
 .modal:not(.offCanvasModal) .modal-dialog .modal-content .modal-body {
     max-height: 80vh;
+}
+
+.modal {
+    z-index: 1052;
+
+    &.modal-inside {
+        z-index: 1053;
+    }
+
+    &-backdrop.show {
+        z-index: 1051;
+
+        &+& {
+            z-index: 1052;
+        }
+    }
 }

@@ -1,12 +1,12 @@
 // Vendor
 @import "vendors/owl.carousel/src/scss/owl.carousel.scss",
-  "vendors/date-range-picker";
+"vendors/date-range-picker";
 
 // Sections and  pages
 @import "components/grid-table", "components/expandSearch",
-  "components/border-card", "components/modal-accordion",
-  "components/conversation", "components/status",
-  "components/video-iframe-modal", "components/owl-carousal";
+"components/border-card", "components/modal-accordion",
+"components/conversation", "components/status",
+"components/video-iframe-modal", "components/owl-carousal";
 
 @media only screen and (min-width) {
   .ticket-left-panel {
@@ -14,16 +14,19 @@
     max-height: calc(100vh - 110px);
   }
 }
+
 .ticket-left-panel {
   overflow: hidden;
 
-  .text-danger{
+  .text-danger {
     color: #ee554b !important;
   }
-  .text-success{
+
+  .text-success {
     color: #65c640 !important;
   }
-  .text-warning{
+
+  .text-warning {
     color: #e49f20 !important;
   }
 

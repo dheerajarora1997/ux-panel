@@ -80,7 +80,8 @@
                 .modal-dialog {
                     right: 0;
                 }
-                .modal-detail{
+
+                .modal-detail {
                     right: $modal-md;
                 }
             }
@@ -102,6 +103,7 @@ body.scrollHidden{
 
 @include media("<tablet") {
     .modal {
+
         &.left,
         &.right {
             .modal-dialog {
@@ -128,48 +130,64 @@ body.scrollHidden{
 }
 
 .modal.offCanvasModal {
-    .modal-dialog{
+    .modal-dialog {
         height: 100%;
         position: fixed;
         transform: translate(0, 0);
     }
-    .modal-content{
+
+    .modal-content {
         border-radius: 0;
         height: 100vh;
     }
-    .modal-header{
+
+    .modal-header {
         padding: .75rem 1rem;
     }
-    .modal-body{
-        padding: 15px 15px 50px;
+
+    .modal-body {
+        padding: 0 0 50px !important;
     }
-    .modal-footer{
+
+    .modal-footer {
         position: fixed;
         width: 100%;
         bottom: 0;
         left: 0;
     }
-    .btn.btn-light{
-        background: rgba(76,121,220,.1) !important;
+
+    .btn.btn-light {
+        background: rgba(76, 121, 220, .1) !important;
 
     }
-    &.floating{
-        .modal-content{
+
+    &.floating {
+        .modal-content {
             height: calc(100vh - 20px);
             border-radius: 10px;
             margin-top: 10px;
+
             .modal-accordion {
                 max-height: calc(100vh - 172px);
             }
-            .modal-footer{
+
+            .modal-footer {
                 bottom: 10px;
                 border-radius: 0 0 10px 10px;
             }
         }
-        &.right{
-            .modal-dialog{
+
+        &.right {
+            .modal-dialog {
                 right: 10px;
             }
+        }
+    }
+
+    &#filterPopup,
+    &#reassign-popup {
+        .modal-content .modal-body {
+            padding: 15px 15px 50px !important;
         }
     }
 }
