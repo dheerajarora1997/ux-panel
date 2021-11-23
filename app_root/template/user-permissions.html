@@ -478,7 +478,7 @@
                   onclick="getReassignPopup(0,'bulk');"><i aria-hidden="true" class="lineicon-reassign mr-2"></i>
                   Reassign</a></div>
          </div>
-         <a href="#create-user-popup" data-toggle="modal" class="btn btn-sm btn-primary d-flex align-items-center">
+         <a href="#create-user-popup" data-toggle="modal" class="ml-2 btn btn-sm btn-primary d-flex align-items-center">
             <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
             Create New
          </a>
@@ -675,199 +675,172 @@
       </div>
    </footer>
 
-   <div class="modal fade offCanvasModal right" id="detail-popup" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-llg" role="document">
+   <div class="modal fade offCanvasModal header-less-modal popup-customization right" id="detail-popup" tabindex="-1" role="dialog"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
          <div class="modal-content h-100">
-            <div class="modal-header border-bottom-blue">
+            <!-- <div class="modal-header border-bottom-blue">
                <h5 class="modal-title my-0" id="exampleModalLabel">
                   <span class="title font-weight-bold"> <span class="text-secondary font-weight-normal">Ticket Id -
                      </span>22323</span>
                </h5>
-
-               <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                  data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                  <span aria-hidden="true">&times;</span>
-               </button>
-            </div>
+            </div> -->
             <div class="modal-body p-0">
+               <div class="bg-light borde border-bottom px-2 py-4 text-center">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                     data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                     <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="bg-white d-inline-block text-center p-3 rounded-circle leading-4 shadow">JJ</div>
+                  <h6 class="my-1">Joseph Johnson <span class="small">(Publisher)</span></h6>
+                  <small class="d-block text-muted">Created By Ajay.g On 28/10/21 03:34:41 PM</small>
+                  <div class="d-block">
+                     <span><a href="javascript:void(0);" class="">joseph.j@gmail.com</a></span> | <span><a
+                           href="javascript:void(0);" class="">+91- 9426718905</a></span>
+                  </div>
+                  <div class="d-inline-block badge badge-success mt-2">Enabled User</div>
+               </div>
                <div class="row no-gutters">
-                  <div class="col-12 col-md-5 bg-white px-0">
+                  <div class="col-12 bg-white px-0">
                      <div class="ticket-left-panel">
-                        <div class="py-2 px-3 border-bottom">
-                           <h3 class="my-0 h6">Status: <span class="text-success">In Progress</span> </h3>
-                        </div>
                         <div class="modal-accordion" id="popup-accordion">
                            <a href="#modal-collapse" data-toggle="collapse" aria-expanded="false"
-                              class="px-3 py-2 border-bottom d-block text-dark">View Lead Details</a>
+                              class="px-3 py-2 border-bottom d-block text-dark">Institute Specific Information</a>
                            <div class="collapse border-bottom" data-parent="#popup-accordion" id="modal-collapse">
                               <div class="p-3">
-                                 <span class="text-muted font-weight-light small d-block">Email Address</span>
-                                 <p>test13501209@yopmail.com</p>
-                                 <span class="text-muted font-weight-light small d-block">City</span>
-                                 <p>Ludhiana</p>
-                                 <span class="text-muted font-weight-light small d-block">Course</span>
-                                 <p>B.Tech (CSE)</p>
-                                 <span class="text-muted font-weight-light small d-block">Mobile Number</span>
-                                 <p>+91 999 299 2929</p>
-                                 <span class="text-muted font-weight-light small d-block">State</span>
-                                 <p>Punjab</p>
-                                 <span class="text-muted font-weight-light small d-block">How did you come to know about
-                                    Apeejay</span>
-                                 <p>Social Media</p>
-                                 <span class="text-muted font-weight-light small d-block">Name</span>
-                                 <p>Jashanpreet singh</p>
-                                 <span class="text-muted font-weight-light small d-block">Programme</span>
-                                 <p>Under Graduate</p>
-                                 <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0);" class="d-flex align-items-center border-bottom-blue">
-                                       <span class="material-icons-outlined font-16 mr-1"> person </span>
-                                       View Profile
-                                    </a>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Email</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <textarea name="" id="" class="form-control tags-input"></textarea>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Role</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                             title="Assign a Role">
+                                             <option>Role</option>
+                                             <option>Role</option>
+                                             <option>Role</option>
+                                             <option>Role</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Permission</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                             title="Assign a Permission">
+                                             <option>Permission</option>
+                                             <option>Permission</option>
+                                             <option>Permission</option>
+                                             <option>Permission</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Terms</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                             title="Assign a Term">
+                                             <option>Terms</option>
+                                             <option>Terms</option>
+                                             <option>Terms</option>
+                                             <option>Terms</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Allocated Forms</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <textarea name="" id="" class="form-control tags-input"></textarea>
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
                            <a href="#modal-collapse1" data-toggle="collapse" aria-expanded="false"
-                              class="py-2 px-3 border-bottom d-block text-dark">Ticket Details</a>
+                              class="py-2 px-3 border-bottom d-block text-dark">User Information</a>
                            <div class="collapse border-bottom" data-parent="#popup-accordion" id="modal-collapse1">
                               <div class="p-3">
-                                 <span class="text-muted font-weight-light small d-block">Raised By</span>
-                                 <p>Jashanpreet singh</p>
-                                 <span class="text-muted font-weight-light small d-block">Category</span>
-                                 <p>Fees Details</p>
-                                 <span class="text-muted font-weight-light small d-block">Lead Stage</span>
-                                 <p>untouched</p>
-                                 <div class="d-flex justify-content-end">
-                                    <a href="javascript:void(0);"
-                                       class="d-flex justify-content-center align-items-center mx-2 border-bottom-blue">
-                                       <span class="material-icons-outlined font-16 mr-1"> edit </span>
-                                       Edit Application
-                                    </a>
-                                    <a href="javascript:void(0);"
-                                       class="d-flex justify-content-center align-items-center mx-2 border-bottom-blue">
-                                       <span class="material-icons-outlined font-16 mr-1"> person </span>
-                                       Reassign Ticket
-                                    </a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-12 col-md-7 bg-light px-0">
-                     <div class="ticket-right-panel">
-                        <div class="p-2 border-bottom d-flex justify-content-between align-items-center">
-                           <h3 class="m-0 h6">Ticket Conversation</h3>
-                           <div class="action-links dropdown">
-                              <!-- <a href="javascript:void(0);" class="dropdown-toggle text-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 <span class="material-icons-outlined"> more_vert </span>
-                              </a> -->
-                              <div class="dropdown-menu">
-                                 <ul class="list-group">
-                                    <li class="list-group-items"><a href="javascript:void(0);">Open</a></li>
-                                    <li class="list-group-items"><a href="javascript:void(0);">Close</a></li>
-                                    <li class="list-group-items"><a href="javascript:void(0);">In Progress</a></li>
-                                 </ul>
-                              </div>
-
-                           </div>
-                        </div>
-                        <div class="chat-wrapper position-relative">
-                           <div class="w-100 chat-box">
-                              <div class="chat-container position-relative px-3 pt-3">
-                                 <ul class="d-flex flex-column justify-content-end">
-                                    <li class="chat-msg d-flex flex-column position-relative receive-msg">
-                                       <div class="d-flex">
-                                          <small
-                                             class="sender-info block bg-secondary text-white p-2 text-sm rounded-circle">A</small>
-                                          <div class="d-flex flex-column">
-                                             <div class="msg ml-2">Unable to submit</div>
-
-                                          </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">First Name</label>
                                        </div>
-                                       <small class="text-muted mt-1 pl-4 ml-2">08 Jun 2021 01:02 PM</small>
-                                    </li>
-                                    <div id="conversationHistory">
-                                       <li class="chat-msg d-flex  flex-column position-relative sent-msg mt-auto">
-                                          <div class="d-flex justify-content-end  ">
-                                             <div class="d-flex flex-column">
-                                                <div class="msg mr-2">
-                                                   <p>Please click on submit.</p>
-                                                   <p>&nbsp;</p>
-                                                   <p>Regards,</p>
-                                                   <p>XYZ</p>
-                                                </div>
-                                             </div>
-                                             <small
-                                                class="sender-info block bg-secondary text-white p-2 text-sm rounded-circle">T</small>
-                                          </div>
-                                          <small class="text-muted ml-auto mr-1 pr-4 ">29 Jun 2021 05:35 PM</small>
-                                       </li>
-                                       <div class="ticket-status position-relative d-flex justify-content-center">
-                                          <span class="position-absolute small text-success font-weight-bold">Ticket has
-                                             been Closed</span>
+                                       <div class="col-8">
+                                          <input type="text" class="form-control" placeholder="First Name">
                                        </div>
                                     </div>
-                                 </ul>
-                              </div>
-                           </div>
-                           <div
-                              class="chat-area position-absolute fixed-bottom bg-white d-flex align-items-center justify-content-between w-100 p-0">
-                              <div class="chat-file border-bottom position-absolute bg-white w-100 px-2 py-1 d-none">
-                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small class="file-name"></small>
-                                    <button class="btn p-0 remove-file bg-white" data-toggle="tooltip"
-                                       data-placement="left" data-container="body" title="Remove">
-                                       <i class="text-danger fa fa-trash-o"></i>
-                                    </button>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Last Name</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <input type="text" class="form-control" placeholder="Last Name">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Email</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <input type="text" class="form-control" placeholder="mail@gmail.com">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Phone Number</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <input type="text" class="form-control" placeholder="999 999 9999">
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="form-group pt-0 mb-3">
+                                    <div class="row">
+                                       <div class="col-4">
+                                          <label class="text-dark mb-0 mt-2 pt-1">Date of Birth</label>
+                                       </div>
+                                       <div class="col-8">
+                                          <input type="text" class="form-control date-range-picker" placeholder="Select a Range">
+                                       </div>
+                                    </div>
                                  </div>
                               </div>
-                              <textarea name="editor1" id="" resize="none" class="py-1 px-2 small w-100"
-                                 placeholder="Write your message here..."></textarea>
-                              <!-- <label for="attachment" class="fileBrowseCustom p-2 mb-0 mt-0 h6" role="button" tabindex="0">
-                                 <i class="fa fa-paperclip mr-1" aria-hidden="true"></i>
-                                 <input type="file" class="sr-only" id="attachment">
-                              </label>
-                              <a href="javascript:void(0);" class="btn btn-primary send-btn btn-round btn-sm small mr-2">
-                                 <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                              </a> -->
                            </div>
-                           <!-- Submit Feedback -->
-                           <!-- <div class="ticket-status-label position-absolute fixed-bottom bg-white d-flex justify-content-between align-items-center px-3 py-3 border-top">
-                               <div class="d-flex">
-                                   <p class="mb-0 pr-2 mr-2 border-right  text-danger font-weight-bold">Ticket Closed</p>
-                                   <a href="javascript:void(0);" class="primary-color">Re-open Query</a>
-                               </div>
-                               <div class="d-flex align-items-center feedback-response">
-                                   <p class="mb-0">Feedback</p>
-                                   <a href="javascript:void(0);" class="bg-light-success text-base p-2 mx-2 rounded-circle">
-                                       <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                                   </a>
-                                   <a href="javascript:void(0);" class="bg-light-danger text-base p-2 rounded-circle">
-                                       <i class="fa fa-thumbs-down" aria-hidden="true"></i>
-                                   </a>
-                               </div>
-                           </div> -->
                         </div>
                      </div>
                   </div>
                </div>
-               <div class="modal-footer">
-                  <div class="form-group p-0 m-0">
-                     <select name="" id="" class="form-control selectpicker">
-                        <option value="">In Progress</option>
-                        <option value="">Close</option>
-                        <option value="">Open</option>
-                     </select>
-                  </div>
-                  <label for="attachment" class="fileBrowseCustom text-primary p-2 mx-2 h5 my-0" role="button"
-                     tabindex="0">
-                     <i class="fa fa-paperclip" aria-hidden="true"></i>
-                     <!-- Attach File -->
-                     <input type="file" class="sr-only" id="attachment">
-                  </label>
-                  <a href="javascript:void(0);" class="btn btn-primary send-btn btn-round btn-sm small">
-                     <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
-                  </a>
+               <div class="modal-footer justify-content-between">
+                  <button class="btn btn-sm btn-outline-secondary">Cancel</button>
+                  <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
                </div>
             </div>
          </div>
@@ -889,19 +862,26 @@
             <div class="modal-body">
                <p class="">The user(s) you have selected will no longer be able to access NPF CRM. However, if you
                   reactivate them at a later date, they will be able to view all of their existing data.</p>
-               <h6>Note:</h6>
-               <ol class="pl-4">
-                  <li class="text-danger mb-2">If deleted user is part of any allocation logic, automation or queries,
-                     user will be removed from respective logics.</li>
-                  <li class="text-danger mb-2">If deleted user email has been configured in sending out mails, then
-                     emails will not be sent.</li>
-                  <li class="text-danger mb-2">If deleted user has been used to configure any integration or 3rd party
-                     login, it might stop working.</li>
-               </ol>
+               <!-- <h6>Note:</h6> -->
+               <div class="callout-alert bordered error">
+                  <div class="callout-msg">
+                     <ol class="pl-3 small text-dark mb-0">
+                        <li class="mb-1 leading-5">If deleted user is part of any allocation logic, automation or
+                           queries,
+                           user will be removed from respective logics.</li>
+                        <li class="mb-1 leading-5">If deleted user email has been configured in sending out mails, then
+                           emails will not be sent.</li>
+                        <li class="mb-1 leading-5">If deleted user has been used to configure any integration or 3rd
+                           party
+                           login, it might stop working.</li>
+                     </ol>
+                  </div>
+               </div>
+
             </div>
             <div class="modal-footer">
-               <button class="btn btn-sm btn-dark rounded-0 mr-3" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-sm btn-primary rounded-0" data-dismiss="modal">Disable</button>
+               <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-sm btn-primary " data-dismiss="modal">Disable</button>
             </div>
          </div>
       </div>
@@ -966,19 +946,25 @@
                      </ul>
                   </div>
                </div>
-               <h6>Note:</h6>
-               <ol class="pl-4">
-                  <li class="text-danger mb-2">If deleted user is part of any allocation logic, automation or queries,
-                     user will be removed from respective logics.</li>
-                  <li class="text-danger mb-2">If deleted user email has been configured in sending out mails, then
-                     emails will not be sent.</li>
-                  <li class="text-danger mb-2">If deleted user has been used to configure any integration or 3rd party
-                     login, it might stop working.</li>
-               </ol>
+               <!-- <h6>Note:</h6> -->
+               <div class="callout-alert bordered error">
+                  <div class="callout-msg">
+                     <ol class="pl-3 small text-dark mb-0">
+                        <li class="mb-2 leading-5">If deleted user is part of any allocation logic, automation or
+                           queries,
+                           user will be removed from respective logics.</li>
+                        <li class="mb-2 leading-5">If deleted user email has been configured in sending out mails, then
+                           emails will not be sent.</li>
+                        <li class="mb-2 leading-5">If deleted user has been used to configure any integration or 3rd
+                           party
+                           login, it might stop working.</li>
+                     </ol>
+                  </div>
+               </div>
             </div>
             <div class="modal-footer">
-               <button class="btn btn-sm btn-dark rounded-0 mr-3" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-sm btn-primary rounded-0" data-dismiss="modal">Delete</button>
+               <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-sm btn-primary " data-dismiss="modal">Delete</button>
             </div>
          </div>
       </div>
@@ -1005,16 +991,20 @@
                      <option>Permission Group</option>
                   </select>
                </div>
-               <h6>Note:</h6>
-               <ul class="pl-2" style="list-style-type: none;">
-                  <li class="text-danger mb-2">Permission group works in sync with the role (hierarchy). In case any
-                     permission group is selected here which is not in sync with the reporting manager, the permission
-                     group selection will be discarded.</li>
-                  </ol>
+               <!-- <h6>Note:</h6> -->
+               <div class="callout-alert bordered error">
+                  <div class="callout-msg">
+                     <ul class="pl-2 small text-dark mb-0" style="list-style-type: none;">
+                        <li class="leading-5">Permission group works in sync with the role (hierarchy). In case any
+                           permission group is selected here which is not in sync with the reporting manager, the
+                           permission group selection will be discarded.</li>
+                     </ul>
+                  </div>
+               </div>
             </div>
             <div class="modal-footer">
-               <button class="btn btn-sm btn-dark rounded-0 mr-3" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-sm btn-primary rounded-0" data-dismiss="modal">Allow</button>
+               <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-sm btn-primary " data-dismiss="modal">Allow</button>
             </div>
          </div>
       </div>
@@ -1036,7 +1026,7 @@
                <div class="form-group">
                   <label class="text-dark">Update the Forms for the selected users</label>
                   <select class="form-control selectpicker" title="Select Multiple Forms" data-size="3"
-                     data-style="px-2 border" data-selected-text-format="count > 1" multiple>
+                     data-style="px-2 border" data-selected-text-format="count > 1" data-live-search="true" multiple>
                      <option>Form 1</option>
                      <option>Form 2</option>
                      <option>Form 3</option>
@@ -1047,15 +1037,21 @@
                      <option>Form 8</option>
                   </select>
                </div>
-               <h6>Note:</h6>
+               <!-- <h6>Note:</h6> -->
+               <div class="callout-alert bordered error">
+                  <div class="callout-msg">
+                     <ul class="pl-2 small text-dark mb-0" style="list-style-type: none;">
+                        <li class="leading-5">In case user is enabled in an automation allocation and now if respective
+                           form is removed then allocation will stop for that particular form.</li>
+                     </ul>
+                  </div>
+               </div>
                <ul class="pl-2" style="list-style-type: none;">
-                  <li class="text-danger mb-2">In case user is enabled in an automation allocation and now if respective
-                     form is removed then allocation will stop for that particular form.</li>
                   </ol>
             </div>
             <div class="modal-footer">
-               <button class="btn btn-sm btn-dark rounded-0 mr-3" data-dismiss="modal">Cancel</button>
-               <button class="btn btn-sm btn-primary rounded-0" data-dismiss="modal">Add</button>
+               <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
+               <button class="btn btn-sm btn-primary " data-dismiss="modal">Add</button>
             </div>
          </div>
       </div>
@@ -1078,7 +1074,7 @@
                   <div class="form-group pt-0 mb-3">
                      <div class="row">
                         <div class="col-4">
-                           <label class="text-dark">Email</label>
+                           <label class="text-dark mb-0 mt-2 pt-1">Email</label>
                         </div>
                         <div class="col-8">
                            <textarea name="" id="" class="form-control tags-input"></textarea>
@@ -1088,7 +1084,7 @@
                   <div class="form-group pt-0 mb-3">
                      <div class="row">
                         <div class="col-4">
-                           <label class="text-dark">Role</label>
+                           <label class="text-dark mb-0 mt-2 pt-1">Role</label>
                         </div>
                         <div class="col-8">
                            <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1104,7 +1100,7 @@
                   <div class="form-group pt-0 mb-3">
                      <div class="row">
                         <div class="col-4">
-                           <label class="text-dark">Permission</label>
+                           <label class="text-dark mb-0 mt-2 pt-1">Permission</label>
                         </div>
                         <div class="col-8">
                            <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1120,7 +1116,7 @@
                   <div class="form-group pt-0 mb-3">
                      <div class="row">
                         <div class="col-4">
-                           <label class="text-dark">Terms</label>
+                           <label class="text-dark mb-0 mt-2 pt-1">Terms</label>
                         </div>
                         <div class="col-8">
                            <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1136,7 +1132,7 @@
                   <div class="form-group pt-0 mb-3">
                      <div class="row">
                         <div class="col-4">
-                           <label class="text-dark">Allocated Forms</label>
+                           <label class="text-dark mb-0 mt-2 pt-1">Allocated Forms</label>
                         </div>
                         <div class="col-8">
                            <textarea name="" id="" class="form-control tags-input"></textarea>
@@ -1146,8 +1142,8 @@
                </div>
             </div>
             <div class="modal-footer justify-content-between">
-               <button class="btn btn-sm btn-dark rounded-0">Cancel</button>
-               <button class="btn btn-sm btn-primary rounded-0" data-dismiss="modal">Invite</button>
+               <button class="btn btn-sm btn-outline-secondary">Cancel</button>
+               <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
             </div>
          </div>
       </div>

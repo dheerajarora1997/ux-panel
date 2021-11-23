@@ -199,6 +199,7 @@ body {
         .select-blank {
             max-width: 240px;
         }
+
         .dropdown.bootstrap-select {
 
             .dropdown-menu.inner {
@@ -1055,6 +1056,9 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         &::placeholder {
             font-size: 95%;
         }
+    }
+    .bootstrap-tagsinput input[type="text"]{
+        border: none;
     }
 }
 
