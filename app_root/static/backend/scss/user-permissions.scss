@@ -1,17 +1,10 @@
 @import 'vendors/chosen/main', 'vendors/bootstrap-tagsinput/bootstrap-tagsinput';
 
-@import "components/grid-table", "components/expandSearch", "components/border-card", "components/modal-accordion", "components/conversation";
+@import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure";
 
 .header-info {
     position: relative;
     z-index: 9;
-}
-
-@media only screen and (min-width) {
-    .ticket-left-panel {
-        min-height: 500px;
-        max-height: calc(100vh - 110px);
-    }
 }
 
 .ticket-left-panel {
@@ -62,6 +55,25 @@
     }
 }
 
-.modal-accordion{
+.modal-accordion {
     max-height: 100%;
+}
+
+.team-group {
+    background: #fff;
+
+    .team-name {
+        background: #f1f3f4;
+    }
+    .empty-card-link{
+        min-height: 246px;
+    }
+
+    &:hover {
+        background: #f0f4ff;
+
+        .team-name {
+            background: #fff;
+        }
+    }
 }

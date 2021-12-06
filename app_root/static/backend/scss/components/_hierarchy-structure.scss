@@ -1,0 +1,56 @@
+@import '../abstracts/mixins';
+
+.team-hierarchy {
+    .hierarchy-item {
+        position: relative;
+        margin-bottom: 1rem;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            background: #ccc;
+        }
+
+        &:before {
+            width: 1px;
+            left: 30px;
+            top: 50px;
+            height: calc(100% - 80px);
+        }
+
+        &:after {
+            width: 20px;
+            height: 1px;
+            top: 40px;
+            left: -18px;
+        }
+
+        &:last-child {
+            >div:before {
+                content: '';
+                width: 2px;
+                background-color: #fff;
+                position: absolute;
+                left: -18px;
+                top: 41px;
+                height: calc(100% - 42px);
+            }
+
+
+        }
+    }
+    >.hierarchy-item:after{
+        content: none;
+    }
+
+    [data-toggle="collapse"]:before {
+        content: '\e5e1';
+        font-family: 'Material Icons';
+        color: #323232;
+    }
+
+    [data-toggle="collapse"][aria-expanded="true"]:before {
+        @include rotate(90);
+    }
+}

@@ -1,0 +1,39 @@
+$width: 8;
+
+@for $a from 0 through $width {
+    .w-#{$a} {
+        width: $a / 8 + rem;
+        min-width: $a / 8 + rem;
+    }
+}
+
+$width: 12;
+
+@for $b from 9 through $width {
+    .w-#{$b} {
+        width: $b/4 + rem;
+        min-width: $b/4 + rem;
+    }
+}
+
+$width: 20;
+
+@for $b from 13 through $width {
+    @if $b%2==0 {
+        .w-#{$b} {
+            width: $b/4 + rem;
+            min-width: $b/4 + rem;
+        }
+    }
+}
+
+$width: 99;
+
+@for $b from 24 through $width {
+    @if $b%4==0 {
+        .w-#{$b} {
+            width: $b/4 + rem;
+            min-width: $b/4 + rem;
+        }
+    }
+}

@@ -7,7 +7,7 @@
 }
 
 // Rotate
-@mixin rotate ($deg) { 
+@mixin rotate ($deg) {
 	@include transform(rotate(#{$deg}deg));
 }
 
@@ -70,7 +70,7 @@
   margin-right: 25px;
 }
 @mixin cardstyle{
-  border:1px solid #e2e1e6; 
+  border:1px solid #e2e1e6;
   border-radius: 6px;
   padding: 2px 15px;
   margin: 14px 0 25px 0;

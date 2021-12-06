@@ -500,7 +500,7 @@
             <span class="material-icons search_icon text-primary">search</span>
             <input type="text" class="form-control pl-4" placeholder="What are you looking for?">
          </div> -->
-            <div class="position-relative" id="expendedSearch">
+            <!-- <div class="position-relative" id="expendedSearch">
                 <a href="javascript:void(0);"
                     class="expended-search-link d-flex border-0 p-1 ml-2 hover-effect rounded-circle text-secondary"
                     data-toggle="tooltip" data-placement="bottom" data-container="body" title="Search"
@@ -540,14 +540,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <a href="#filterPopup"
-                class="filter-btn text-secondary d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle hover-effect"
+            </div> -->
+            <a href="#team-hierarchy-popup"
+                class="text-secondary d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle hover-effect"
                 data-toggle="modal">
-                <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title=""
-                    data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
+                <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title="Team Hierarchy"
+                    data-container="body"> account_tree </span>
             </a>
-            <div class="dropdown" id="moreOptions" style="position: relative; z-index: 9;"><a aria-haspopup="true"
+            <!-- <div class="dropdown" id="moreOptions" style="position: relative; z-index: 9;"><a aria-haspopup="true"
                     class="d-flex ml-2 dropdown-toggle content-none text-secondary" data-toggle="dropdown"
                     href="javascript:void(0);" aria-expanded="false"><span
                         class="material-icons-outlined hover-effect rounded-circle p-1" data-container="body"
@@ -560,8 +560,8 @@
                         href="javascript:void(0)" onclick="getReassignPopup(0,'bulk');"><i aria-hidden="true"
                             class="lineicon-reassign mr-2"></i>
                         Reassign</a></div>
-            </div>
-            <a href="#create-user-popup" data-toggle="modal"
+            </div> -->
+            <a href="#create-team-popup" data-toggle="modal"
                 class="ml-2 btn btn-sm btn-primary d-flex align-items-center">
                 <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
                 Create New
@@ -571,315 +571,136 @@
     </div>
 
     <div id="main" class="wrapper">
-        <div class="main-container px-md-3 pb-md-3 pt-3">
+        <div class="main-container px-3 px-md-3 pb-md-3 pt-3">
             <div class="row">
                 <div class="col-12">
                     <div id="myCanvasNav" class="overlay" onclick="closeNav()">
                         <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
                     </div>
-                    <div class="d-none">
-                        <div class="topHead w-100 d-inline-block px-3 mb-3">
-                            <div class="border-bottom pb-2">
-                                <div class="row">
-                                    <div class="col-12 col-md-6 d-flex">
-                                        <h3 class="h5 d-inline-block my-1">User Permissions</h3>
-                                    </div>
-                                    <div class="col-12 col-md-6 d-flex align-items-end justify-content-end">
-                                        <div class="expandSearch">
-                                            <div class="form-group has-search mb-0 py-0 bmd-form-group">
-                                                <span class="material-icons search_icon text-primary">search</span>
-                                                <input type="search" name="" id="" class="form-control pl-4"
-                                                    placeholder="Search by ID">
-                                            </div>
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div id="loopItem" class="team-group shadow mb-4">
+                                <div class="py-2 pb-3 pt-2">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                            <div class="dropdown">
+                                                <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                    <span class="material-icons-outlined"> more_vert </span>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
+                                                </div>
+                                              </div>
                                         </div>
-                                        <a href="javascript:void(0);"
-                                            class="d-flex border border-primary p-1 ml-4 rounded-circle">
-                                            <span class="material-icons-outlined" data-toggle="tooltip"
-                                                data-placement="bottom" title="" data-container="body" title="Filter"
-                                                data-original-title="Filter">
-                                                filter_alt
-                                            </span>
-                                        </a>
+                                        <div class="col-12 text-center">
+                                            <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
+                                                <span class="h3 m-0 font-weight-normal">AT</span>
+                                            </div>
+                                            <h3 class="mt-2 mb-1">Admission Team</h3>
+                                            <p class="mb-0">Team Manager - Ajay Garg</p>
+                                            <small>By - Alok Sharma, 01/11/21 11:12:23 PM</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-3 border-top">
+                                    <div class="d-flex">
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-danger mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">VE</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-warning mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">PP</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-success mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">AS</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-info mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">DA</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle bg-primary text-white mr-2">TR</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-10">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-sm-4">
-                                    <div class="shadow bg-white rounded mb-5 p-3">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="my-0 h6">Team 1</h4>
-                                            </div>
-                                            <div class="col d-flex justify-content-end">
-                                                <a href="javascript:void(0);" class="d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn">
-                                                    <span class="material-icons-outlined"> person_add </span>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="team-group shadow mb-4">
+                                <div class="py-2 pb-3 pt-2">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                            <div class="dropdown">
+                                                <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                    <span class="material-icons-outlined"> more_vert </span>
                                                 </a>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="material-icons-outlined"> more_vert </span>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <small>By: Joseph.j on 21/01/21  11:34:24 PM</small>
-                                                <hr class="my-1" />
-                                            </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
+                                                </div>
+                                              </div>
                                         </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <ul class="users-list pl-0 mb-0 w-100 d-flex flex-row-reverse justify-content-end">
-                                                    <li>
-                                                        <button style="background: brown" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">AD</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: plum" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">IN</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: peru" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">DL</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: purple" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">VE</button>
-                                                    </li>
-                                                </ul>
+                                        <div class="col-12 text-center">
+                                            <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
+                                                <span class="h3 m-0 font-weight-normal">AT</span>
                                             </div>
-                                            <div class="col-6 d-flex align-items-center justify-content-end">
-                                                <span class="material-icons-outlined text-muted"> people_alt </span>
-                                                <span class="text-muted">12</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <div class="badge badge-success">Manager: Joseph.j</div>
-                                            </div>
+                                            <h3 class="mt-2 mb-1">Marketing Team</h3>
+                                            <p class="mb-0">Team Manager - Ajay Garg</p>
+                                            <small>By - Alok Sharma, 01/11/21 11:12:23 PM</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-4">
-                                    <div class="shadow bg-white rounded mb-5 p-3">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="my-0 h6">Team 2</h4>
-                                            </div>
-                                            <div class="col d-flex justify-content-end">
-                                                <a href="javascript:void(0);" class="d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn">
-                                                    <span class="material-icons-outlined"> person_add </span>
+                                <div class="p-3 border-top">
+                                    <div class="d-flex">
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-danger mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">VE</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-warning mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">PP</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-success mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">AS</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-info mr-2" data-toggle="tooltip" data-placement="bottom" title="Name">DA</div>
+                                        <div class="team-badge h6 m-0 font-weight-normal w-9 h-9 d-flex justify-content-center align-items-center rounded-circle border-primary border mr-2">+21</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="team-group shadow mb-4">
+                                <div class="py-2 pb-3 pt-2">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                            <div class="dropdown">
+                                                <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                    <span class="material-icons-outlined"> more_vert </span>
                                                 </a>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="material-icons-outlined"> more_vert </span>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <small>By: Joseph.j on 21/01/21  11:34:24 PM</small>
-                                                <hr class="my-1" />
-                                            </div>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
+                                                  <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
+                                                </div>
+                                              </div>
                                         </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <ul class="users-list pl-0 mb-0 w-100 d-flex flex-row-reverse justify-content-end">
-                                                    <li>
-                                                        <button style="background: palevioletred" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">AD</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: khaki" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">IN</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: lightblue" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">DL</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: olive" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">PE</button>
-                                                    </li>
-                                                </ul>
+                                        <div class="col-12 text-center">
+                                            <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
+                                                <span class="h3 m-0 font-weight-normal">AT</span>
                                             </div>
-                                            <div class="col-6 d-flex align-items-center justify-content-end">
-                                                <span class="material-icons-outlined text-muted"> people_alt </span>
-                                                <span class="text-muted">12</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <div class="badge badge-warning">Manager: Joseph.j</div>
-                                            </div>
+                                            <h3 class="mt-2 mb-1">Product Team</h3>
+                                            <p class="mb-0">Team Manager - Ajay Garg</p>
+                                            <small>By - Alok Sharma, 01/11/21 11:12:23 PM</small>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-4">
-                                    <div class="shadow bg-white rounded mb-5 p-3">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="my-0 h6">Team 3</h4>
-                                            </div>
-                                            <div class="col d-flex justify-content-end">
-                                                <a href="javascript:void(0);" class="d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn">
-                                                    <span class="material-icons-outlined"> person_add </span>
-                                                </a>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="material-icons-outlined"> more_vert </span>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <small>By: Joseph.j on 21/01/21  11:34:24 PM</small>
-                                                <hr class="my-1" />
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <ul class="users-list pl-0 mb-0 w-100 d-flex flex-row-reverse justify-content-end">
-                                                    <li>
-                                                        <button style="background: dimgray" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">AD</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: darkorange" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">IN</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: darkmagenta" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">DL</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: darkblue" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">TT</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6 d-flex align-items-center justify-content-end">
-                                                <span class="material-icons-outlined text-muted"> people_alt </span>
-                                                <span class="text-muted">12</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <div class="badge badge-danger">Manager: Joseph.j</div>
-                                            </div>
-                                        </div>
+                                <div class="p-3 border-top">
+                                    <div class="d-flex justify-content-center">
+                                        <h6 class="mt-1 mb-2 text-muted font-weight-normal text-center">
+                                            No User
+                                        </h6>
                                     </div>
                                 </div>
-                                <div class="col-12 col-sm-4">
-                                    <div class="shadow bg-white rounded mb-5 p-3">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="my-0 h6">Team 4</h4>
-                                            </div>
-                                            <div class="col d-flex justify-content-end">
-                                                <a href="javascript:void(0);" class="d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn">
-                                                    <span class="material-icons-outlined"> person_add </span>
-                                                </a>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="material-icons-outlined"> more_vert </span>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <small>By: Joseph.j on 21/01/21  11:34:24 PM</small>
-                                                <hr class="my-1" />
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <ul class="users-list pl-0 mb-0 w-100 d-flex flex-row-reverse justify-content-end">
-                                                    <li>
-                                                        <button style="background: violet" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">AD</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: aquamarine" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">IN</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: rebeccapurple" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">DL</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: red" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">QA</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6 d-flex align-items-center justify-content-end">
-                                                <span class="material-icons-outlined text-muted"> people_alt </span>
-                                                <span class="text-muted">12</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <div class="badge badge-info">Manager: Joseph.j</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-4">
-                                    <div class="shadow bg-white rounded mb-5 p-3">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-                                                <h4 class="my-0 h6">Team 5</h4>
-                                            </div>
-                                            <div class="col d-flex justify-content-end">
-                                                <a href="javascript:void(0);" class="d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn">
-                                                    <span class="material-icons-outlined"> person_add </span>
-                                                </a>
-                                                <div class="dropdown">
-                                                    <a href="javascript:void(0);" class="bg-white border-0 dropdown-toggle content-none d-flex jusify-content-center align-items-center text-secondary rounded-circle hover-effect p-1 small-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="material-icons-outlined"> more_vert </span>
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                      <a class="dropdown-item" href="#">Action</a>
-                                                      <a class="dropdown-item" href="#">Another action</a>
-                                                      <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                  </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <small>By: Joseph.j on 21/01/21  11:34:24 PM</small>
-                                                <hr class="my-1" />
-                                            </div>
-                                        </div>
-                                        <div class="row align-items-center">
-                                            <div class="col-6">
-                                                <ul class="users-list pl-0 mb-0 w-100 d-flex flex-row-reverse justify-content-end">
-                                                    <li>
-                                                        <button style="background: burlywood" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">AD</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: seagreen" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">IN</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: thistle" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">DL</button>
-                                                    </li>
-                                                    <li>
-                                                        <button style="background: tomato" class="d-flex justify-content-center align-items-center rounded-circle border-0 text-white">UI</button>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6 d-flex align-items-center justify-content-end">
-                                                <span class="material-icons-outlined text-muted"> people_alt </span>
-                                                <span class="text-muted">12</span>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3">
-                                            <div class="col-12">
-                                                <div class="badge badge-success">Manager: Joseph.j</div>
-                                            </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <div class="team-group shadow mb-4">
+                                <div class="py-2 pb-3 pt-2">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <a href="#create-team-popup" data-toggle="modal" class="d-flex text-muted empty-card-link justify-content-center align-items-center flex-column">
+                                                <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle mb-2">
+                                                    <span class="material-icons-outlined"> add </span>
+                                                </div>
+                                                Create Team
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -929,6 +750,155 @@
             </ul>
         </div>
     </footer>
+
+    <div class="modal fade offCanvasModal right" id="team-permission" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-blue">
+                    <h5 class="modal-title my-0" id="exampleModalLabel">
+                        <span class="title font-weight-bold">Team User Permissions</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-3">
+                        <h3 class="mt-0 mb-2 h5">User Permission</h3>
+                        <div class="row">
+                            <div class="col-6"><small class="text-dark">Admin Users</small></div>
+                            <div class="col-3 text-center"><small class="text-dark">Individual </small></div>
+                            <div class="col-3 text-center"><small class="text-dark">Team View & Edit </small></div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Joseph Johnson (Admin)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Sheetal Garg(Marketing)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Ajay Garg(Marketing)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">John Doe(Admission)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6"><small class="text-dark">Marketing Users</small></div>
+                            <div class="col-3 text-center"><small class="text-dark">Individual </small></div>
+                            <div class="col-3 text-center"><small class="text-dark">Team View & Edit </small></div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Joseph Johnson (Admin)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-2">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Sheetal Garg(Marketing)</label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <label class="custom-radio">
+                                        <input type="radio" name="user-permission" id="" class="">
+                                        <span class="custom-btn-span"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="modal fade offCanvasModal header-less-modal popup-customization right" id="detail-popup" tabindex="-1"
         role="dialog" aria-hidden="true">
@@ -1112,12 +1082,12 @@
         </div>
     </div>
 
-    <div class="modal fade" id="disable-user-popup" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade offCanvasModal right" id="team-hierarchy-popup" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-blue">
                     <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Disable User</span>
+                        <span class="title font-weight-bold">Team Hierarchy</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
                         data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
@@ -1125,217 +1095,113 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p class="">The user(s) you have selected will no longer be able to access NPF CRM. However, if you
-                        reactivate them at a later date, they will be able to view all of their existing data.</p>
-                    <!-- <h6>Note:</h6> -->
-                    <div class="callout-alert bordered error">
-                        <div class="callout-msg">
-                            <ol class="pl-3 small text-dark mb-0">
-                                <li class="mb-1 leading-5">If deleted user is part of any allocation logic, automation
-                                    or
-                                    queries,
-                                    user will be removed from respective logics.</li>
-                                <li class="mb-1 leading-5">If deleted user email has been configured in sending out
-                                    mails, then
-                                    emails will not be sent.</li>
-                                <li class="mb-1 leading-5">If deleted user has been used to configure any integration or
-                                    3rd
-                                    party
-                                    login, it might stop working.</li>
-                            </ol>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary " data-dismiss="modal">Disable</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade popup-customization" id="delete-user-popup" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Delete User</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6 class="mt-0">Select Deletion option</h6>
-                    <div class="row align-items-center">
-                        <div class="col-12">
-                            <div class="form-group mb-1">
-                                <label class="text-dark">
-                                    <input type="radio" name="delete-option" /> Delete Without Transfer
-                                </label>
+                    <div class="p-3">
+                        <div class="team-hierarchy">
+                            <div class="hierarchy-item">
+                                <div class="d-flex">
+                                    <a href="#collapse1" class="btn btn-sm rounded-0 bg-light-success px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                        <span class="material-icons-outlined text-dark"> people </span>
+                                    </a>
+                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                        <h5 class="mb-1 mt-0">Admin</h5>
+                                        <small class="text-dark">By Admin Name</small>
+                                    </div>
+                                </div>
+                                <div class="collapse pl-5 pt-4" id="collapse1">
+                                    <div class="hierarchy-item">
+                                        <div class="d-flex">
+                                            <a href="#collapse2" class="btn btn-sm rounded-0 bg-light-warning px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                <span class="material-icons-outlined text-dark"> people </span>
+                                            </a>
+                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                <h5 class="mb-1 mt-0">Head Office</h5>
+                                                <small class="text-dark">By Admin Name</small>
+                                            </div>
+                                        </div>
+                                        <div class="collapse pl-5 pt-4" id="collapse2">
+                                            <div class="hierarchy-item">
+                                                <div class="d-flex">
+                                                    <a href="#collapse3" class="btn btn-sm rounded-0 bg-light-info px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                    </a>
+                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                        <h5 class="mb-1 mt-0">North Zone</h5>
+                                                        <small class="text-dark">By Admin Name</small>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse pl-5 pt-4" id="collapse3">
+                                                    <div class="hierarchy-item">
+                                                        <div class="d-flex">
+                                                            <a href="#collapse4" class="btn btn-sm rounded-0 bg-light-danger px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                            </a>
+                                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                                <h5 class="mb-1 mt-0">Gurgaon</h5>
+                                                                <small class="text-dark">By Admin Name</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="collapse pl-5 pt-4" id="collapse4">
+                                                            <!-- Last Here -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hierarchy-item">
+                                        <div class="d-flex">
+                                            <a href="#collapse22" class="btn btn-sm rounded-0 bg-light-warning px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                <span class="material-icons-outlined text-dark"> people </span>
+                                            </a>
+                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                <h5 class="mb-1 mt-0">Marketing Office</h5>
+                                                <small class="text-dark">By Admin Name</small>
+                                            </div>
+                                        </div>
+                                        <div class="collapse pl-5 pt-4" id="collapse22">
+                                            <div class="hierarchy-item">
+                                                <div class="d-flex">
+                                                    <a href="#collapse33" class="btn btn-sm rounded-0 bg-light-info px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                    </a>
+                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                        <h5 class="mb-1 mt-0">North Zone</h5>
+                                                        <small class="text-dark">By Admin Name</small>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse pl-5 pt-4" id="collapse33">
+                                                    <div class="hierarchy-item">
+                                                        <div class="d-flex">
+                                                            <a href="#collapse44" class="btn btn-sm rounded-0 bg-light-danger px-4 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                            </a>
+                                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                                <h5 class="mb-1 mt-0">Gurgaon</h5>
+                                                                <small class="text-dark">By Admin Name</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="collapse pl-5 pt-4" id="collapse44">
+                                                            <!-- Last Here -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <div class="form-group mb-1">
-                                <label class="text-dark">
-                                    <input type="radio" name="delete-option" /> Transfer Ownership
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="form-group">
-                                <select class="form-control selectpicker" data-live-search="true"
-                                    title="Select Category" data-style="px-2 border">
-                                    <option>User 1</option>
-                                    <option>User 2</option>
-                                    <option>User 3</option>
-                                    <option>User 4</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <ul style="list-style-type:none">
-                                <li>
-                                    <div class="form-group"><label class="text-dark"><input type="checkbox"
-                                                name="transfer-owner"> Assign all existing Leads, applications &
-                                            queries(along with
-                                            upcoming follow-up) of deleted user to the new user.</label></div>
-                                </li>
-                                <li>
-                                    <div class="form-group"><label class="text-dark"><input type="checkbox"
-                                                name="transfer-owner"> Assign deleted users form(s) to the new
-                                            user.</label></div>
-                                </li>
-                                <li>
-                                    <div class="form-group"><label class="text-dark"><input type="checkbox"
-                                                name="transfer-owner"> Replace deleted user with the new user in
-                                            allocation logic,
-                                            automation, sender email address.</label></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- <h6>Note:</h6> -->
-                    <div class="callout-alert bordered error">
-                        <div class="callout-msg">
-                            <ol class="pl-3 small text-dark mb-0">
-                                <li class="mb-2 leading-5">If deleted user is part of any allocation logic, automation
-                                    or
-                                    queries,
-                                    user will be removed from respective logics.</li>
-                                <li class="mb-2 leading-5">If deleted user email has been configured in sending out
-                                    mails, then
-                                    emails will not be sent.</li>
-                                <li class="mb-2 leading-5">If deleted user has been used to configure any integration or
-                                    3rd
-                                    party
-                                    login, it might stop working.</li>
-                            </ol>
-                        </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary " data-dismiss="modal">Delete</button>
+                <div class="modal-footer justify-content-between">
+                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-sm btn-primary" data-dismiss="modal">Next</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade popup-customization" id="change-permissions-popup" tabindex="-1" role="dialog"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Change Permissions</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="text-dark">Change Permission To</label>
-                        <select class="form-control selectpicker" title="Select Permission Group Name"
-                            data-style="px-2 border">
-                            <option>Permission Group</option>
-                        </select>
-                    </div>
-                    <!-- <h6>Note:</h6> -->
-                    <div class="callout-alert bordered error">
-                        <div class="callout-msg">
-                            <ul class="pl-2 small text-dark mb-0" style="list-style-type: none;">
-                                <li class="leading-5">Permission group works in sync with the role (hierarchy). In case
-                                    any
-                                    permission group is selected here which is not in sync with the reporting manager,
-                                    the
-                                    permission group selection will be discarded.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary " data-dismiss="modal">Allow</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade popup-customization" id="manage-form-popup" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Add Remove Forms</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label class="text-dark">Update the Forms for the selected users</label>
-                        <select class="form-control selectpicker" title="Select Multiple Forms" data-size="3"
-                            data-style="px-2 border" data-selected-text-format="count > 1" data-live-search="true"
-                            multiple>
-                            <option>Form 1</option>
-                            <option>Form 2</option>
-                            <option>Form 3</option>
-                            <option>Form 4</option>
-                            <option>Form 5</option>
-                            <option>Form 6</option>
-                            <option>Form 7</option>
-                            <option>Form 8</option>
-                        </select>
-                    </div>
-                    <!-- <h6>Note:</h6> -->
-                    <div class="callout-alert bordered error">
-                        <div class="callout-msg">
-                            <ul class="pl-2 small text-dark mb-0" style="list-style-type: none;">
-                                <li class="leading-5">In case user is enabled in an automation allocation and now if
-                                    respective
-                                    form is removed then allocation will stop for that particular form.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <ul class="pl-2" style="list-style-type: none;">
-                        </ol>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-sm btn-outline-secondary mr-3" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary " data-dismiss="modal">Add</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade offCanvasModal right" id="create-user-popup" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade offCanvasModal right popup-customization" id="create-team-popup" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-blue">
@@ -1352,17 +1218,27 @@
                         <div class="form-group pt-0 mb-3">
                             <div class="row">
                                 <div class="col-4">
-                                    <label class="text-dark mb-0 mt-2 pt-1">Email</label>
+                                    <label class="text-dark mb-0 mt-2 pt-1">Team Name <sup class="text-danger">*</sup> </label>
                                 </div>
                                 <div class="col-8">
-                                    <textarea name="" id="" class="form-control tags-input"></textarea>
+                                    <input type="text" class="form-control">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group pt-0 mb-3">
                             <div class="row">
                                 <div class="col-4">
-                                    <label class="text-dark mb-0 mt-2 pt-1">Role</label>
+                                    <label class="text-dark mb-0 mt-2 pt-1">Team Description :</label>
+                                </div>
+                                <div class="col-8">
+                                    <textarea name="" id="" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-2 pt-1">Institute Allocation <sup class="text-danger">*</sup> </label>
                                 </div>
                                 <div class="col-8">
                                     <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1378,7 +1254,7 @@
                         <div class="form-group pt-0 mb-3">
                             <div class="row">
                                 <div class="col-4">
-                                    <label class="text-dark mb-0 mt-2 pt-1">Permission</label>
+                                    <label class="text-dark mb-0 mt-2 pt-1">Form Allocation <sup class="text-danger">*</sup> </label>
                                 </div>
                                 <div class="col-8">
                                     <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1394,7 +1270,7 @@
                         <div class="form-group pt-0 mb-3">
                             <div class="row">
                                 <div class="col-4">
-                                    <label class="text-dark mb-0 mt-2 pt-1">Terms</label>
+                                    <label class="text-dark mb-0 mt-2 pt-1">Terms Source</label>
                                 </div>
                                 <div class="col-8">
                                     <select class="selectpicker" data-style="px-2 border" data-live-search="true"
@@ -1420,8 +1296,8 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button class="btn btn-sm btn-outline-secondary">Cancel</button>
-                    <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
+                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-sm btn-primary" data-dismiss="modal">Next</button>
                 </div>
             </div>
         </div>
@@ -1442,8 +1318,6 @@
             </div>
         </div>
     </div>
-
-
     <!-- notification modal-->
     <div class="modal fade offCanvasModal right" id="notification" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-md" role="document">
@@ -1728,7 +1602,9 @@
         // $('.chosen-select').chosen();
         $('.tags-input').tagsinput();
     </script>
+    <script>
 
+    </script>
 </body>
 
 </html>
