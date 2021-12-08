@@ -514,10 +514,10 @@
                                      <a class="nav-link" href="#users" data-toggle="tab">User</a>
                                   </li>
                                   <li class="nav-item">
-                                     <a class="nav-link active show" href="#user-teams" data-toggle="tab">Teams</a>
+                                     <a class="nav-link" href="#user-teams" data-toggle="tab">Teams</a>
                                   </li>
                                   <li class="nav-item">
-                                     <a class="nav-link" href="#user-roles" data-toggle="tab">Roles</a>
+                                     <a class="nav-link active show" href="#user-roles" data-toggle="tab">Roles</a>
                                   </li>
                                </ul>
                             </div>
@@ -545,13 +545,13 @@
                 </div>
             </div>
             <div class="tab-content">
+                <div id="myCanvasNav" class="overlay" onclick="closeNav()">
+                    <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
+                </div>
                 <div class="tab-pane fade" id="users"></div>
-                <div class="tab-pane fade show active" id="user-teams">
+                <div class="tab-pane fade" id="user-teams">
                     <div class="row">
                         <div class="col-12">
-                            <div id="myCanvasNav" class="overlay" onclick="closeNav()">
-                                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
-                            </div>
                             <div class="row custom-skeleton" id="skeleton-card">
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                                     <div class="team-group card mt-0 mb-4">
@@ -711,7 +711,137 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="user-roles"></div>
+                <div class="tab-pane fade show active" id="user-roles">
+                    <div class="bg-white p-4 min-h-96">
+                        <div class="team-hierarchy short-hierarchy">
+                            <div class="hierarchy-item">
+                                <div class="d-flex">
+                                    <a href="#collapse01" class="btn btn-sm rounded-0 bg-light-success px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
+                                        <span class="material-icons-outlined text-dark"> people </span>
+                                    </a>
+                                    <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                        <h6 class="mb-0 mt-0">Admin</h6>
+                                    </div>
+                                </div>
+                                <div class="collapse show pl-5 pt-4" id="collapse01">
+                                    <div class="hierarchy-item">
+                                        <div class="d-flex">
+                                            <a href="#collapse02" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
+                                            </a>
+                                            <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                <h6 class="mb-0 mt-0">Head Office</h6>
+                                                <div class="editable-option position-absolute">
+                                                    <div class="d-flex pl-2">
+                                                        <a href="#create-role-modal" data-toggle="modal">
+                                                            <span class="material-icons-outlined text-secondary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Edit" data-container="body" data-placement="top"> edit </span>
+                                                        </a>
+                                                        <a href="#delete-role-modal" data-toggle="modal">
+                                                            <span class="material-icons-outlined text-secondary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Delete" data-container="body" data-placement="top"> delete </span>
+                                                        </a>
+                                                        <a href="#create-role-modal" data-toggle="modal">
+                                                            <span class="material-icons-outlined text-primary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Add New" data-container="body" data-placement="top"> add_circle_outline </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="collapse pl-5 pt-4" id="collapse02">
+                                            <div class="hierarchy-item">
+                                                <div class="d-flex">
+                                                    <a href="#collapse03" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                        <span class="text-dark h5 ml-2 my-0"> 8</span>
+                                                    </a>
+                                                    <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                        <h6 class="mb-0 mt-0">North Zone</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse pl-5 pt-4" id="collapse03">
+                                                    <div class="hierarchy-item">
+                                                        <div class="d-flex">
+                                                            <a href="#collapse04" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                                <span class="text-dark h5 ml-2 my-0"> 3</span>
+                                                            </a>
+                                                            <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="collapse pl-5 pt-4" id="collapse04">
+                                                            <div class="hierarchy-item">
+                                                                <div class="d-flex">
+                                                                    <a href="#collapse05" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
+                                                                    </a>
+                                                                    <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                                        <h6 class="mb-0 mt-0">East Gurgaon</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hierarchy-item">
+                                        <div class="d-flex">
+                                            <a href="#collapse022" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
+                                            </a>
+                                            <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                <h6 class="mb-0 mt-0">Marketing Office</h6>
+                                            </div>
+                                        </div>
+                                        <div class="collapse pl-5 pt-4" id="collapse022">
+                                            <div class="hierarchy-item">
+                                                <div class="d-flex">
+                                                    <a href="#collapse033" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                        <span class="text-dark h5 ml-2 my-0">4</span>
+                                                    </a>
+                                                    <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                        <h6 class="mb-0 mt-0">North Zone</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="collapse pl-5 pt-4" id="collapse033">
+                                                    <div class="hierarchy-item">
+                                                        <div class="d-flex">
+                                                            <a href="#collapse044" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                <span class="material-icons-outlined text-dark"> people </span>
+                                                                <span class="text-dark h5 ml-2 my-0"> 1</span>
+                                                            </a>
+                                                            <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div class="collapse pl-5 pt-4" id="collapse044">
+                                                            <div class="hierarchy-item">
+                                                                <div class="d-flex">
+                                                                    <a href="#collapse05" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
+                                                                        <span class="material-icons-outlined text-dark"> people </span>
+                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
+                                                                    </a>
+                                                                    <div class="position-relative border-top border-right border-bottom p-2 min-w-44 no-wrap cursor-pointer editable-wrapper">
+                                                                        <h6 class="mb-0 mt-0">West Gurgaon</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -924,188 +1054,6 @@
                 <div class="modal-footer justify-content-between">
                     <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
                     <button class="btn btn-sm btn-primary border" data-dismiss="modal">Invite</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade offCanvasModal header-less-modal popup-customization right" id="detail-popup" tabindex="-1"
-        role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content h-100">
-                <!-- <div class="modal-header border-bottom-blue">
-               <h5 class="modal-title my-0" id="exampleModalLabel">
-                  <span class="title font-weight-bold"> <span class="text-secondary font-weight-normal">Ticket Id -
-                     </span>22323</span>
-               </h5>
-            </div> -->
-                <div class="modal-body p-0">
-                    <div class="bg-light borde border-bottom px-2 py-4 text-center">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                            data-toggle="tooltip" data-placement="left" title="" data-container="body"
-                            data-original-title="Click Here to Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <div class="bg-white d-inline-block text-center p-3 rounded-circle leading-4 shadow">JJ</div>
-                        <h6 class="my-1">Joseph Johnson <span class="small">(Publisher)</span></h6>
-                        <small class="d-block text-muted">Created By Ajay.g On 28/10/21 03:34:41 PM</small>
-                        <div class="d-block">
-                            <span><a href="javascript:void(0);" class="">joseph.j@gmail.com</a></span> | <span><a
-                                    href="javascript:void(0);" class="">+91- 9426718905</a></span>
-                        </div>
-                        <div class="d-inline-block badge badge-success mt-2">Enabled User</div>
-                    </div>
-                    <div class="row no-gutters">
-                        <div class="col-12 bg-white px-0">
-                            <div class="ticket-left-panel">
-                                <div class="modal-accordion" id="popup-accordion">
-                                    <a href="#modal-collapse" data-toggle="collapse" aria-expanded="false"
-                                        class="px-3 py-2 border-bottom d-block text-dark">Institute Specific
-                                        Information</a>
-                                    <div class="collapse border-bottom" data-parent="#popup-accordion"
-                                        id="modal-collapse">
-                                        <div class="p-3">
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Email</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <textarea name="" id=""
-                                                            class="form-control tags-input"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Role</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border"
-                                                            data-live-search="true" title="Assign a Role">
-                                                            <option>Role</option>
-                                                            <option>Role</option>
-                                                            <option>Role</option>
-                                                            <option>Role</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Permission</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border"
-                                                            data-live-search="true" title="Assign a Permission">
-                                                            <option>Permission</option>
-                                                            <option>Permission</option>
-                                                            <option>Permission</option>
-                                                            <option>Permission</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Terms</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border"
-                                                            data-live-search="true" title="Assign a Term">
-                                                            <option>Terms</option>
-                                                            <option>Terms</option>
-                                                            <option>Terms</option>
-                                                            <option>Terms</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Allocated Forms</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <textarea name="" id=""
-                                                            class="form-control"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="#modal-collapse1" data-toggle="collapse" aria-expanded="false"
-                                        class="py-2 px-3 border-bottom d-block text-dark">User Information</a>
-                                    <div class="collapse border-bottom" data-parent="#popup-accordion"
-                                        id="modal-collapse1">
-                                        <div class="p-3">
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">First Name</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="First Name">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Last Name</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control" placeholder="Last Name">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Email</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="mail@gmail.com">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Phone Number</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control"
-                                                            placeholder="999 999 9999">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group pt-0 mb-3">
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <label class="text-dark mb-0 mt-1 pt-1">Date of Birth</label>
-                                                    </div>
-                                                    <div class="col-8">
-                                                        <input type="text" class="form-control date-range-picker"
-                                                            placeholder="Select a Range">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button class="btn btn-sm btn-outline-secondary">Cancel</button>
-                        <button class="btn btn-sm btn-primary border" data-dismiss="modal">Invite</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1404,216 +1352,124 @@
             </div>
         </div>
     </div>
-
-    <div class="modal fade modalvideoGenric outside-cross-modal" id="productVideos" tabindex="-1">
-        <div class="modal-dialog" role="dialog">
+    <div class="modal fade offCanvasModal right popup-customization" id="create-role-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <button type="button" class="close p-0" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <div class="modal-body p-0">
-                    <!-- <i class="fa fa-spinner fa-spin"></i> -->
-                    <iframe class="vimeovideo border-0" src="../static/backend/images/blank.gif" width="100%"
-                        height="360" frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen
-                        mozallowfullscreen allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- notification modal-->
-    <div class="modal fade offCanvasModal right" id="notification" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content h-100">
                 <div class="modal-header border-bottom-blue">
                     <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Your Notifications</span>
-                        <span class="badge badge-pill badge-light">Unread<span
-                                class="all-unread-count unread-count-text"><span
-                                    class="badge bg-primary">8</span></span></span>
+                        <span class="title font-weight-bold">Create Role</span>
                     </h5>
-
-                    <button type="button" class="close d-md-none" data-dismiss="modal" aria-label="Close">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-
                 </div>
-                <div class="modal-body p-0">
-                    <div class="notification-popup">
-                        <div class="nav-tabs-navigation inline_tabs">
-                            <div class="nav-tabs-wrapper">
-                                <ul class="nav nav-tabs flex-nowrap" data-tabs="tabs">
-                                    <li class="nav-item">
-                                        <a class="nav-link active show" href="#viewall" data-toggle="tab"><span
-                                                class="material-icons">visibility</span> View All
-                                            <div class="ripple-container"></div>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#tasks" data-toggle="tab"><span
-                                                class="material-icons">
-                                                content_copy
-                                            </span> Tasks (8)</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#noti" data-toggle="tab"><span
-                                                class="material-icons">notifications_none</span> Notifications (0)</a>
-                                    </li>
-                                </ul>
-                                <a href="#" class="position-absolute link-readall d-none d-sm-block">Mark All As
-                                    Read</a>
+                <div class="modal-body">
+                    <div class="p-3">
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Role Name </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" placeholder="Enter Team Name">
+                                </div>
                             </div>
                         </div>
-                        <div class="tab-content">
-                            <div class="tab-pane active show" id="viewall">
-
-                                <div class="list-group py-0">
-
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management & Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
-
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Reporting To</label>
                                 </div>
-
-                            </div>
-                            <div class="tab-pane" id="tasks">
-                                <div class="list-group py-0">
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management &amp; Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
+                                <div class="col-8">
+                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                        title="Reporting To">
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="noti">
-                                <div class="list-group py-0">
-                                    <a href="#"
-                                        class="list-group-item list-group-item-action flex-nowrap align-items-start border-top">
-                                        <div class="mr-2 mt-1"><span class="material-icons mx-0">content_copy</span>
-                                        </div>
-                                        <div>
-                                            <h5 class="my-0">Bulk Data Updated for 10 leads.</h5>
-                                            <p class="my-1">Apeejay Institute of Management &amp; Engineering Technical
-                                                Campus</p>
-                                            <p class="text-muted mb-0">08/03/2021 3:36 pm</p>
-                                        </div>
-
-                                    </a>
+                        </div>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Role Description</label>
+                                </div>
+                                <div class="col-8">
+                                    <textarea name="" id="" class="form-control" placeholder="Enter Team Description"></textarea>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
-                <div class="modal-footer py-2 px-0 justify-content-center">
-                    <a href="#" target="_blank"
-                        class="btn btn-outline-primary btn-sm text-capitilize text-capitalize">Show
-                        All Notifications</a>
+                <div class="modal-footer justify-content-between">
+                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade offCanvasModal right popup-customization" id="delete-role-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-blue">
+                    <h5 class="modal-title my-0" id="exampleModalLabel">
+                        <span class="title font-weight-bold">Create Role</span>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-3">
+                        <div class="callout-alert bordered error mb-4">
+                            <div class="callout-msg">
+                               Before Deleting, you must transfer users and subordinates with this role to a new role.
+                            </div>
+                         </div>
+                         <h5 class="">Transfer User and Sub Roles</h5>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Role to be deleted </label>
+                                </div>
+                                <div class="col-8">
+                                    <input type="text" class="form-control" placeholder="Role to be deleted">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Transfer to role</label>
+                                </div>
+                                <div class="col-8">
+                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                        title="Transfer to Role">
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!--  Core JS Files  -->
     <script src="../static/backend/js/core/jquery.min.js"></script>
@@ -1706,6 +1562,17 @@
         $('.tags-input').tagsinput();
     </script>
     <script>
+        $('.editable-wrapper').mouseover(function(){
+           $(this).addClass('active');
+        });
+        $('.editable-wrapper').mouseleave(function(){
+           $('.editable-wrapper').removeClass('active');
+        });
+        if( $('.editable-wrapper .editable-option').length){
+            let editableOption = $('.editable-wrapper .editable-option').clone();
+            console.log(editableOption);
+            $('.editable-wrapper').append(editableOption);
+        }
         let skeletonCard = $('#skeleton-card').html();
         for (let i = 0; i < 3; i++) {
             $('#skeleton-card').append(skeletonCard);
