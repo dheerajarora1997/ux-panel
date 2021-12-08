@@ -486,75 +486,12 @@
 
     <div
         class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-2">
-        <!-- <h1 class="m-0 h2">Settings</h1>-->
 
         <div class="d-none d-md-flex section-header-breadcrumb align-items-center w-sm-100 px-3 px-lg-0 py-2 py-lg-0">
-            <!-- <div class="breadcrumb-item fs-12 active"><span class="material-icons text-highlight">home</span></div>
-         <div class="breadcrumb-item fs-12"><span class="text-highlight">Communications</span></div>
-         <div class="breadcrumb-item fs-12">SMS</div> -->
             <h3 class="h5 d-inline-block my-1">Teams</h3>
         </div>
 
         <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex align-items-center justify-content-md-end justify-content-between">
-            <!-- <div class="form-group has-search mb-0 py-0">
-            <span class="material-icons search_icon text-primary">search</span>
-            <input type="text" class="form-control pl-4" placeholder="What are you looking for?">
-         </div> -->
-            <!-- <div class="position-relative" id="expendedSearch">
-                <a href="javascript:void(0);"
-                    class="expended-search-link d-flex border-0 p-1 ml-2 hover-effect rounded-circle text-secondary"
-                    data-toggle="tooltip" data-placement="bottom" data-container="body" title="Search"
-                    data-trigger="hover">
-                    <span class="material-icons-outlined"> search </span>
-                </a>
-                <div class="expended-search-wrpper position-absolute">
-                    <div class="row no-gutters border" id="searchBox">
-                        <div class="col-7">
-                            <div class="expandSearch">
-                                <div class="form-group has-search mb-0 py-0 bmd-form-group">
-                                    <span class="material-icons search_icon text-muted ml-1">search</span>
-                                    <input type="search" name="searchticket" id="searchTicket" class="form-control pl-4"
-                                        placeholder="Search" onkeypress="searchTicket(this);" value="">
-                                </div>
-                                <div class="validation-message small text-danger" id="search_error"></div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-group p-0 my-0 rounded-0">
-                                <select name="status" id="search_filter" title="Search By"
-                                    class="form-control selectpicker" data-style="bg-light pl-2 pr-1 rounded-0">
-                                    <option value="ticket_id" {% if not parameters.email and not parameters.mobile %}
-                                        selected {% endif %}>Ticket ID</option>
-                                    <option value="email">Email</option>
-                                    <option value="mobile">Mobile No</option>
-                                </select>
-                            </div>
-                            <div class="validation-message small text-danger" id="search_filter_error"></div>
-                        </div>
-                        <div class="col-1 d-flex align-items-center">
-                            <a href="javascript:void(0);" onclick="resetSearch();" data-dismiss="search"
-                                class="pl-1 py-2 d-flex justify-content-center align-items-center" data-toggle="tooltip"
-                                data-placement="bottom" data-container="body" title="Close" data-trigger="hover">
-                                <span class="material-icons-outlined text-secondary"> close </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- <div class="dropdown" id="moreOptions" style="position: relative; z-index: 9;"><a aria-haspopup="true"
-                    class="d-flex ml-2 dropdown-toggle content-none text-secondary" data-toggle="dropdown"
-                    href="javascript:void(0);" aria-expanded="false"><span
-                        class="material-icons-outlined hover-effect rounded-circle p-1" data-container="body"
-                        data-placement="top" data-toggle="tooltip" data-trigger="hover" title=""
-                        data-original-title="More Options">more_vert</span></a>
-                <div class="dropdown-menu" x-placement="bottom-start"
-                    style="position: absolute; top: 32px; left: 8px; will-change: top, left;"><a class="dropdown-item"
-                        href="javascript:void(0)" onclick="downloadTickets();"><i aria-hidden="true"
-                            class="lineicon-download mr-2"></i> Download</a> <a class="dropdown-item"
-                        href="javascript:void(0)" onclick="getReassignPopup(0,'bulk');"><i aria-hidden="true"
-                            class="lineicon-reassign mr-2"></i>
-                        Reassign</a></div>
-            </div> -->
             <h3 class="h5 d-inline-block my-1 d-block d-md-none">Teams</h3>
             <a href="#create-team-popup" data-toggle="modal"
                 class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
@@ -627,7 +564,7 @@
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                           <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
                                                         </div>
@@ -665,7 +602,7 @@
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                           <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
                                                         </div>
@@ -703,7 +640,7 @@
                                                         </a>
                                                         <div class="dropdown-menu dropdown-menu-right">
                                                           <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Delete Team</a>
+                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
                                                           <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
                                                         </div>
@@ -792,6 +729,34 @@
         </div>
     </footer>
 
+    <div id="notifyAlert" class="notifY-alert d-flex">
+        <div class="notify-content alert alert-success">
+            <div class="alert-icon">
+                <span class="material-icons">check</span>
+            </div>
+            Changed saved successfully!
+        </div>
+    </div>
+
+    <div tabindex="-1" class="modal fade in alert-modal error" id="delete-modal" data-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content bg-transparent shadow-none">
+               <div class="alert-container">
+                  <div class="alert-badge">
+                     <span class="popup_title">Alert</span>
+                     <div class="alert-badge-paper"></div>
+                  </div>
+                  <div class="alert-content">
+                   <p class="text-left font500 mt-4" id="ConfirmMsgBody">Do you want Delete element ?</p>
+                  </div>
+                  <div class="alert-btn-group">
+                     <button type="submit" data-dismiss="modal" class="btn btn-outline alert-btn-outline btn-round btn-sm" id="confirmNo">No</button>
+                     <a class="btn alert-btn-filled btn-round btn-sm ml-4" data-dismiss="modal" href="javascript:void(0);" id="confirmYes">Yes</a>
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade offCanvasModal right" id="team-permission" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -1359,7 +1324,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group pt-0 mb-3">
+                        <div class="form-group pt-0 mb-3 d-none">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-8">
                                     <div class="row align-items-center">
@@ -1394,6 +1359,13 @@
                                             <select name="to" id="undo_redo_to" class="form-control multi-select-pill" multiple="multiple"></select>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-control pt-0 mb-3">
+                            <div class="row justify-content-end">
+                                <div class="col-12 col-md-8">
+                                    <div id="transfer3" class=""></div>
                                 </div>
                             </div>
                         </div>
@@ -1641,7 +1613,7 @@
     <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
     <script src="../static/backend/js/plugins/typehead.js"></script>
     <script src="../static/backend/js/plugins/multiselect.min.js"></script>
-    <!-- <script src="../static/custom/js/qms/qms.js"></script> -->
+    <script src="../static/backend/js/plugins/transfer.js"></script>
 
     <script>
         $('.sorting').click(function () {
@@ -1709,6 +1681,64 @@
     </script>
     <script>
         $(document).ready(function () { $('#undo_redo').multiselect();});
+        var groupDataArray = [
+            {
+                "groupName": "China",
+                "groupData": [
+                    {
+                        "city": "Beijing",
+                        "value": 122
+                    },
+                    {
+                        "city": "Shanghai",
+                        "value": 643
+                    },
+                    {
+                        "city": "Qingdao",
+                        "value": 422
+                    },
+                    {
+                        "city": "Tianjin",
+                        "value": 622
+                    }
+                ]
+            },
+            {
+                "groupName": "Japan",
+                "groupData": [
+                    {
+                        "city": "Tokyo",
+                        "value": 132
+                    },
+                    {
+                        "city": "Osaka",
+                        "value": 112
+                    },
+                    {
+                        "city": "Yokohama",
+                        "value": 191
+                    }
+                ]
+            }
+        ];
+
+        var settings = {
+            tabNameText : "Users",
+            rightTabNameText : "Selected Users",
+            searchPlaceholderText : "Search User",
+            "groupDataArray": groupDataArray,
+            "groupItemName": "groupName",
+            "groupArrayName": "groupData",
+            "itemName": "city",
+            "valueName": "value",
+            "callable": function (items) {
+                // console.dir(items)
+            }
+        };
+
+        $("#transfer3").transfer(settings);
+        // $('.transfer-double-content-left .transfer-double-content-param .param-item').html('Users');
+        // $('.transfer-double-content-right .transfer-double-content-param .param-item').html('Selected Users');
     </script>
 </body>
 

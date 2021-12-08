@@ -1,5 +1,20 @@
 body {
     font-size: .9rem;
+    .main-container{
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        animation-duration: 1s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .fs-13 {
@@ -1023,9 +1038,11 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         .dropdown-menu {
             border-radius: 2px;
         }
+
         .btn.dropdown-toggle {
             border-color: #ccc !important;
         }
+
         &.show {
             .btn.dropdown-toggle {
                 border-color: #4c79dc !important;
@@ -1324,8 +1341,8 @@ input[type="checkbox"] {
     }
 }
 
-.form-required{
-    label:after{
+.form-required {
+    label:after {
         content: "*";
         color: #f44336;
         padding-left: 2px;
