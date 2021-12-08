@@ -30,6 +30,9 @@
         z-index: 11;
         background-color: $bg-light-blue;
     }
+    &.spotlight .nav-item .nav-link.active{
+        border-width: 0 0 4px !important;
+    }
 }
 .inline_tabs {
     li {

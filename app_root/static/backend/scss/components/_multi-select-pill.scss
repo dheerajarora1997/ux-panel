@@ -1,0 +1,26 @@
+select.multi-select-pill[multiple] {
+    min-height: 120px;
+    border: 1px solid #ccc;
+    white-space: normal;
+    option{
+        // display: inline-block;
+        margin-bottom: 5px;
+        padding: 5px 5px 5px 10px;
+        border-radius: 100px;
+        background: #ededed;
+    }
+}
+
+.pill-selected select.multi-select-pill[multiple],
+.pill-selected select.multi-select-pill[multiple]:focus {
+    background: transparent;
+}
+
+.pill-selected select.multi-select-pill[multiple] option {
+    background: #f1f1f1;
+    min-height: 25px;
+    cursor: pointer;
+    font-size: 75%;
+    word-break: break-all;
+    white-space: normal;
+}

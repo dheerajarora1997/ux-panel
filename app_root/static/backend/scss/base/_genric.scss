@@ -1003,6 +1003,14 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         margin-bottom: 10px;
     }
 
+    .form-control {
+        background: none !important;
+
+        &:focus {
+            border-color: #4c79dc !important;
+        }
+    }
+
     .dropdown.bootstrap-select {
         .dropdown-toggle:after {
             color: #333;
@@ -1015,10 +1023,12 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         .dropdown-menu {
             border-radius: 2px;
         }
-
+        .btn.dropdown-toggle {
+            border-color: #ccc !important;
+        }
         &.show {
             .btn.dropdown-toggle {
-                border-color: #bfbfbf !important;
+                border-color: #4c79dc !important;
             }
         }
 
@@ -1038,6 +1048,7 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
                 height: 30px;
                 padding: 0 0 0 .5rem;
                 border-radius: 2px;
+                background: none;
             }
         }
     }
@@ -1048,7 +1059,7 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
     textarea {
         background: none;
         font-size: 85%;
-        border: 1px solid #e2e1e6;
+        border: 1px solid #ccc;
         padding: 10px;
         color: #000;
         border-radius: 2px;
@@ -1057,7 +1068,8 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
             font-size: 95%;
         }
     }
-    .bootstrap-tagsinput input[type="text"]{
+
+    .bootstrap-tagsinput input[type="text"] {
         border: none;
     }
 }
@@ -1309,5 +1321,13 @@ input[type="checkbox"] {
         background: #e2e1e6;
         padding: 2px 8px;
         border-radius: 0 0 0 10px;
+    }
+}
+
+.form-required{
+    label:after{
+        content: "*";
+        color: #f44336;
+        padding-left: 2px;
     }
 }
