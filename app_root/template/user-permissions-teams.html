@@ -552,9 +552,35 @@
                             <div id="myCanvasNav" class="overlay" onclick="closeNav()">
                                 <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
                             </div>
-                            <div class="row">
+                            <div class="row custom-skeleton" id="skeleton-card">
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div id="loopItem" class="team-group card mt-0 mb-4">
+                                    <div class="team-group card mt-0 mb-4">
+                                        <div class="pt-2 pb-3">
+                                            <div class="w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
+                                                <div class="skeleton-loader w-100 h-100 rounded-circle"></div>
+                                            </div>
+                                            <div class="skeleton-loader title my-3 mx-auto"></div>
+                                            <div class="skeleton-loader description my-3 mx-auto"></div>
+                                        </div>
+                                        <div class="p-3 border-top">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
+                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
+                                                </div>
+                                                <div class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
+                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
+                                                </div>
+                                                <div class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
+                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="team-cards" class="row">
+                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                    <div id="" class="team-group card mt-0 mb-4">
                                         <div class="pt-2 pb-3">
                                             <div class="row no-gutters">
                                                 <div class="col-12 d-flex justify-content-end position-absolute z-1">
@@ -1252,7 +1278,7 @@
                                     <label class="text-dark mb-0 mt-1 pt-1">Team Name </label>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control" placeholder="Enter Team Name">
                                 </div>
                             </div>
                         </div>
@@ -1262,7 +1288,7 @@
                                     <label class="text-dark mb-0 mt-1 pt-1">Team Description</label>
                                 </div>
                                 <div class="col-8">
-                                    <textarea name="" id="" class="form-control"></textarea>
+                                    <textarea name="" id="" class="form-control" placeholder="Enter Team Description"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -1320,7 +1346,7 @@
                                     <label class="text-dark mb-0 mt-1 pt-1">Allocated Forms</label>
                                 </div>
                                 <div class="col-8">
-                                    <textarea name="" id="" class="form-control"></textarea>
+                                    <textarea name="" id="" class="form-control" placeholder="Enter Allocated Forms"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -1680,6 +1706,15 @@
         $('.tags-input').tagsinput();
     </script>
     <script>
+        let skeletonCard = $('#skeleton-card').html();
+        for (let i = 0; i < 3; i++) {
+            $('#skeleton-card').append(skeletonCard);
+        }
+        $('#team-cards').hide();
+        setTimeout(() => {
+            $('#skeleton-card').hide();
+            $('#team-cards').show();
+        }, 4500);
         $(document).ready(function () { $('#undo_redo').multiselect();});
         var groupDataArray = [
             {
