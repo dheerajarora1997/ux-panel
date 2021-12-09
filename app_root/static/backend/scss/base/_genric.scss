@@ -1070,6 +1070,7 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         }
     }
 
+    .bootstrap-tagsinput,
     .date-range-picker,
     input[type="text"],
     input[type="number"],
@@ -1080,14 +1081,15 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         padding: 10px;
         color: #000;
         border-radius: 2px;
-
-        &::placeholder {
-            font-size: 95%;
-        }
     }
 
-    .bootstrap-tagsinput input[type="text"] {
+    .bootstrap-tagsinput{
+        padding: 5px;
+        input[type="text"] {
         border: none;
+        padding: 5px;
+        font-size: .85rem;
+       }
     }
 }
 

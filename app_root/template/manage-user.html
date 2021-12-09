@@ -16,13 +16,6 @@
     <link href="../static/backend/css/main.css" rel="stylesheet" />
     <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
     <link href="../static/backend/css/user-permissions.css" rel="stylesheet" />
-    <style>
-        .small-btn{width: 36px; height: 36px;}
-        .users-list{list-style-type: none;}
-        .users-list li{display: inline-block;}
-        .users-list li button{width: 40px; height: 40px;}
-        .users-list li:not(:last-child){margin-left: -20px;}
-    </style>
 </head>
 
 <body class="dark-mode">
@@ -488,12 +481,12 @@
         class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-2">
 
         <div class="d-none d-md-flex section-header-breadcrumb align-items-center w-sm-100 px-3 px-lg-0 py-2 py-lg-0">
-            <h3 class="h5 d-inline-block my-1">Teams</h3>
+            <h3 class="h5 d-inline-block my-1">Manage User</h3>
         </div>
 
         <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex align-items-center justify-content-md-end justify-content-between">
-            <h3 class="h5 d-inline-block my-1 d-block d-md-none">Teams</h3>
-            <a href="#create-team-popup" data-toggle="modal"
+            <h3 class="h5 d-inline-block my-1 d-block d-md-none">Manage User</h3>
+            <a href="#create-user-popup" data-toggle="modal"
                 class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
                 <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
                 Create New
@@ -511,13 +504,13 @@
                             <div class="nav-tabs-wrapper">
                                <ul class="nav nav-tabs flex-nowrap border-bottom-0" data-tabs="tabs" role="tablist">
                                   <li class="nav-item">
-                                     <a class="nav-link" href="#users" data-toggle="tab">User</a>
+                                     <a class="nav-link active show" href="#users" data-toggle="tab">User</a>
                                   </li>
                                   <li class="nav-item">
                                      <a class="nav-link" href="#user-teams" data-toggle="tab">Teams</a>
                                   </li>
                                   <li class="nav-item">
-                                     <a class="nav-link active show" href="#user-roles" data-toggle="tab">Roles</a>
+                                     <a class="nav-link" href="#user-roles" data-toggle="tab">Roles</a>
                                   </li>
                                </ul>
                             </div>
@@ -548,7 +541,102 @@
                 <div id="myCanvasNav" class="overlay" onclick="closeNav()">
                     <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
                 </div>
-                <div class="tab-pane fade" id="users"></div>
+                <div class="tab-pane fade show active" id="users">
+                    <div class="grid-table w-100 mt-4 mt-sm-2" id="tableCollapseParent">
+                        <div class="row align-items-center justify-content-between mb-2">
+                           <div class="col-6 col-sm-4 d-md-none d-block">
+                              <label for="mob-table-head" class="d-flex align-items-center mb-0">
+                                 <input type="checkbox" id="mob-table-head" class="mr-2">
+                                 Select All
+                              </label>
+                           </div>
+                        </div>
+                        <div class="responsive-table">
+                           <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
+                              <thead>
+                                 <tr>
+                                    <th class="pt-1 has-checkbox min-max-50">
+                                       <input type="checkbox" class="" />
+                                    </th>
+                                    <th class="min-max-150 sorting">Name</th>
+                                    <th class="min-max-200 sorting">Email ID</th>
+                                    <th class="min-max-150 sorting">Role</th>
+                                    <th class="min-max-150">Permission</th>
+                                    <th class="min-max-200">Assigned Publisher</th>
+                                    <th class="min-max-200">Last Active</th>
+                                    <th class="text-right">Action</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr class="grid-table-row">
+                                    <td class="pt-1 has-checkbox min-max-50">
+                                       <input type="checkbox" class="" />
+                                    </td>
+                                    <td class="min-max-150 font-weight-bold" data-title="Ticket Details">
+                                       <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                          John Doe
+                                       </a>
+                                    </td>
+                                    <td class="min-max-200 sorting">johndoe@gmail.com</td>
+                                    <td class="min-max-150 sorting">
+                                        <a href="javascript:void(0);" class="text-primary">Counsellor</a>
+                                    </td>
+                                    <td class="min-max-150">
+                                        <a href="javascript:void(0);" class="text-primary">Admissions</a>
+                                    </td>
+                                    <td class="min-max-150"> <div class="d-flex align-items-center">Team 1 & <span class="badge badge-primary ml-2 px-1 leading-5">1 More</span></div></td>
+                                    <td class="min-max-200">29/08/2021 10:23:44 AM</td>
+                                    <td data-title="Action">
+                                       <div class="d-flex justify-content-lg-end">
+                                          <div class="dropdown" data-container="body">
+                                             <a aria-haspopup="true"
+                                                class="content-none d-flex dropdown-toggle hover-effect ml-2 p-md-3 p-2 rounded-circle text-muted"
+                                                data-toggle="dropdown" href="javascript:void(0);">
+                                                <span class="material-icons-outlined">more_horiz</span>
+                                             </a>
+                                             <div class="dropdown-menu">
+                                                <a class="dropdown-item" data-toggle="modal"
+                                                   href="#disable-user-popup">Disable User</a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#delete-user-popup">Delete
+                                                   User</a>
+                                                <a class="dropdown-item" data-toggle="modal"
+                                                   href="#change-permissions-popup">Change Permissions</a>
+                                                <a class="dropdown-item" data-toggle="modal" href="#manage-form-popup">Add
+                                                   Remove Forms</a>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+                        <div class="d-flex justify-content-end align-items-center">
+                           <span class="mr-1 text-muted small">Show Rows</span>
+                           <div class="form-group my-0 mr-1 p-0">
+                              <select name="" id="" class="normal-select p-1 border small">
+                                 <option value="">10</option>
+                                 <option value="">20</option>
+                                 <option value="">50</option>
+                                 <option value="">100</option>
+                              </select>
+                           </div>
+                           <span class="mx-2 text-muted small">Go to</span>
+                           <div class="form-group m-0 p-0">
+                              <input type="text" class="pagination-input border small text-center">
+                           </div>
+                           <span class="ml-1 mr-2 text-muted small">of 3</span>
+                           <div class="npf-pagination">
+                              <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
+                                 data-placement="top" title="" data-container="body" data-original-title="Previous"><i
+                                    class="fa fa-angle-left" aria-hidden="true"></i></a>
+                              <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
+                                 title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
+                                    aria-hidden="true"></i></a>
+                           </div>
+                        </div>
+                     </div>
+                </div>
                 <div class="tab-pane fade" id="user-teams">
                     <div class="row">
                         <div class="col-12">
@@ -711,7 +799,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade show active" id="user-roles">
+                <div class="tab-pane fade" id="user-roles">
                     <div class="bg-white p-4 min-h-96">
                         <div class="team-hierarchy short-hierarchy">
                             <div class="hierarchy-item">
@@ -1468,6 +1556,114 @@
         </div>
     </div>
 
+    <div class="modal fade offCanvasModal right popup-customization" id="create-user-popup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+           <div class="modal-content">
+              <div class="modal-header border-bottom-blue">
+                 <h5 class="modal-title my-0" id="exampleModalLabel">
+                    <span class="title font-weight-bold">Create User</span>
+                 </h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+                    data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                    <span aria-hidden="true">&times;</span>
+                 </button>
+              </div>
+              <div class="modal-body">
+                 <div class="p-3">
+                    <div class="form-group pt-0 mb-3">
+                        <div class="row form-required">
+                           <div class="col-4">
+                              <label class="text-dark mb-0 mt-2 pt-1">College Name</label>
+                           </div>
+                           <div class="col-8">
+                            <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                            title="Assign a Role">
+                                <option>College Name</option>
+                                <option>College Name</option>
+                                <option>College Name</option>
+                                <option>College Name</option>
+                            </select>
+                           </div>
+                        </div>
+                     </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row form-required">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Email</label>
+                          </div>
+                          <div class="col-8">
+                             <textarea name="" id="" class="form-control tags-input" placeholder="Enter Email ID"></textarea>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row form-required">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Role</label>
+                          </div>
+                          <div class="col-8">
+                             <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                title="Assign a Role">
+                                <option>Role</option>
+                                <option>Role</option>
+                                <option>Role</option>
+                                <option>Role</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row form-required">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Permission</label>
+                          </div>
+                          <div class="col-8">
+                             <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                title="Assign a Permission">
+                                <option>Permission</option>
+                                <option>Permission</option>
+                                <option>Permission</option>
+                                <option>Permission</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Terms</label>
+                          </div>
+                          <div class="col-8">
+                             <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                title="Assign a Term">
+                                <option>Terms</option>
+                                <option>Terms</option>
+                                <option>Terms</option>
+                                <option>Terms</option>
+                             </select>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Allocated Forms</label>
+                          </div>
+                          <div class="col-8">
+                             <textarea name="" id="" class="form-control tags-input"></textarea>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="modal-footer justify-content-between">
+                 <button class="btn btn-sm btn-outline-secondary">Cancel</button>
+                 <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
+              </div>
+           </div>
+        </div>
+     </div>
+
 
 
 
@@ -1570,8 +1766,11 @@
         });
         if( $('.editable-wrapper .editable-option').length){
             let editableOption = $('.editable-wrapper .editable-option').clone();
-            console.log(editableOption);
             $('.editable-wrapper').append(editableOption);
+        }
+        let tableElement = $('table tbody').html();
+        for (let i = 0; i < 3; i++) {
+            $('table tbody').append(tableElement);
         }
         let skeletonCard = $('#skeleton-card').html();
         for (let i = 0; i < 3; i++) {

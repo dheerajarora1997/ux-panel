@@ -79,11 +79,11 @@
     z-index: 1;
     background: #fff;
     .editable-option{
+        display: none;
         min-width: 110px;
         height: calc(100% + 2px);
         left: calc( 100% - 1px);
         top: -1px;
-        display: flex;
         align-items: center;
         opacity: 0;
         z-index: -1;
@@ -95,6 +95,7 @@
     &.active{
         overflow:unset;
         .editable-option{
+            display: flex;
             left: 100%;
             opacity: 1;
         }
