@@ -73,12 +73,18 @@
     .team-badge {
         font-size: .85rem;
     }
+    .team-card-dropdown:not(.show) [data-toggle="dropdown"]{
+        opacity: 0;
+    }
 
     &:hover {
         background: #f0f4ff;
 
         .team-name {
             background: #fff;
+        }
+        .team-card-dropdown:not(.show) [data-toggle="dropdown"]{
+            opacity: 1;
         }
     }
 }

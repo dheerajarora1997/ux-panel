@@ -22,7 +22,7 @@
         &:after {
             width: 18px;
             height: 1px;
-            top: 40px;
+            top: 33px;
             left: -18px;
         }
 
@@ -33,7 +33,7 @@
                 background-color: #fff;
                 position: absolute;
                 left: -18px;
-                top: 41px;
+                top: 34px;
                 height: calc(100% - 42px);
             }
 
@@ -64,9 +64,10 @@
     }
 
     [data-toggle="collapse"]:before {
-        content: '\e5e1';
+        content: '\e5df';
         font-family: 'Material Icons';
         color: #323232;
+        font-size: 25px;
     }
 
     [data-toggle="collapse"][aria-expanded="true"]:before {
@@ -75,28 +76,27 @@
 }
 
 .editable-wrapper{
-    overflow: hidden;
-    z-index: 1;
+    z-index: 9;
     background: #fff;
+    border: 1px solid #ccc;
+    border-left-color: #fff;
     .editable-option{
-        display: none;
-        min-width: 110px;
+        display: flex;
+        width: 0;
         height: calc(100% + 2px);
-        left: calc( 100% - 1px);
+        left: 0;
         top: -1px;
         align-items: center;
         opacity: 0;
         z-index: -1;
-        border: 1px solid #e2e1e6;
-        border-left-color: #fff;
         border-radius: 0 20px 20px 0;
-        transition: all .5s ease-in-out;
+        transition: all 1s ease-in-out;
     }
+    &:hover,
     &.active{
-        overflow:unset;
         .editable-option{
-            display: flex;
-            left: 100%;
+            width: 110px;
+            left: calc(100% - 1px);
             opacity: 1;
         }
     }

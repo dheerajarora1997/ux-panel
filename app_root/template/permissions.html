@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon.png">
     <link rel="icon" type="image/ico" href="../favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>User Permissions</title>
+    <title>Permissions</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <!--  Fonts and icons -->
     <link rel="stylesheet" type="text/css"
@@ -481,12 +481,12 @@
         class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-2">
 
         <div class="d-none d-md-flex section-header-breadcrumb align-items-center w-sm-100 px-3 px-lg-0 py-2 py-lg-0">
-            <h3 class="h5 d-inline-block my-1">Manage User</h3>
+            <h3 class="h5 d-inline-block my-1">Permission</h3>
         </div>
 
         <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex align-items-center justify-content-md-end justify-content-between">
-            <h3 class="h5 d-inline-block my-1 d-block d-md-none">Manage User</h3>
-            <a href="#create-user-popup" data-toggle="modal"
+            <h3 class="h5 d-inline-block my-1 d-block d-md-none">Permission</h3>
+            <a href="#create-permission" data-toggle="modal"
                 class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
                 <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
                 Create
@@ -497,32 +497,21 @@
 
     <div id="main" class="wrapper">
         <div class="main-container px-4 pb-md-3 pt-1">
-            <div class="border-bottom mb-3">
-                <div class="row">
-                    <div class="col-sm-9">
-                        <div class="nav-tabs-navigation inline_tabs spotlight mb-0">
-                            <div class="nav-tabs-wrapper">
-                               <ul class="nav nav-tabs flex-nowrap border-bottom-0" data-tabs="tabs" role="tablist">
-                                  <li class="nav-item">
-                                     <a class="nav-link active show" href="#users" data-toggle="tab">User</a>
-                                  </li>
-                                  <li class="nav-item">
-                                     <a class="nav-link" href="#user-teams" data-toggle="tab">Teams</a>
-                                  </li>
-                                  <li class="nav-item">
-                                     <a class="nav-link" href="#user-roles" data-toggle="tab">Roles</a>
-                                  </li>
-                               </ul>
-                            </div>
-                         </div>
-                    </div>
-                    <div class="col-sm-1 pr-0">
-                        <a href="#team-hierarchy-popup" class="w-9 h-9 bg-white text-secondary d-flex justify-content-center align-items-center p-1 ml-auto rounded-circle " data-toggle="modal">
-                            <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title="Team Hierarchy" data-container="body"> account_tree </span>
-                        </a>
-                    </div>
+            <div class="mb-3">
+                <div class="row justify-content-end">
                     <div class="col-sm-2">
                         <div class="d-flex align-items-center justify-content-end mb-3 mb-md-0">
+                            <!-- <a href="#team-hierarchy-popup" class="w-9 h-9 bg-white text-secondary d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle" data-toggle="modal">
+                                <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title="Team Hierarchy" data-container="body"> account_tree </span>
+                            </a> -->
+                            <!-- <div class="togglebutton text-right rounded bg-light p-2 ml-2">
+                                <label class="mb-0"><input type="hidden" name="otp_on_email" value="0">
+                                    <span class="text-dark mx-2">
+                                        Internal User
+                                    </span>
+                                    <input id="id-61a76145f6e35c5983bca67a" class=" form_elements" name="otp_on_email" type="checkbox" value="1"><span class="toggle ml-1"></span>
+                                </label>
+                            </div> -->
                             <select name="" id="" class="form-control selectpicker ml-3 border-0" data-style="px-2">
                                 <option>Internal User</option>
                                 <option>Npf User</option>
@@ -531,423 +520,93 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-content">
-                <div id="myCanvasNav" class="overlay" onclick="closeNav()">
-                    <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
-                </div>
-                <div class="tab-pane fade show active" id="users">
-                    <div class="grid-table w-100 mt-4 mt-sm-2" id="tableCollapseParent">
-                        <div class="row align-items-center justify-content-between mb-2">
-                           <div class="col-6 col-sm-4 d-md-none d-block">
-                              <label for="mob-table-head" class="d-flex align-items-center mb-0">
-                                 <input type="checkbox" id="mob-table-head" class="mr-2">
-                                 Select All
-                              </label>
-                           </div>
-                        </div>
-                        <div class="responsive-table">
-                           <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
-                              <thead>
-                                 <tr>
-                                    <th class="pt-1 has-checkbox min-max-50">
-                                       <input type="checkbox" class="" />
-                                    </th>
-                                    <th class="min-max-150 sorting">Name</th>
-                                    <th class="min-max-200 sorting">Email ID</th>
-                                    <th class="min-max-150 sorting">Role</th>
-                                    <th class="min-max-150">Permission</th>
-                                    <th class="min-max-200">Teams</th>
-                                    <th class="min-max-200">Assigned Publisher</th>
-                                    <th class="min-max-200">Last Active</th>
-                                    <th class="text-right">Action</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 <tr class="grid-table-row">
-                                    <td class="pt-1 has-checkbox min-max-50">
-                                       <input type="checkbox" class="" />
-                                    </td>
-                                    <td class="min-max-150 font-weight-bold" data-title="Ticket Details">
-                                       <a class="primary-color" href="#detail-popup" data-toggle="modal">
-                                          John Doe
-                                       </a>
-                                    </td>
-                                    <td class="min-max-200 sorting">johndoe@gmail.com</td>
-                                    <td class="min-max-150 sorting">
-                                        <a href="javascript:void(0);" class="text-primary">Counsellor</a>
-                                    </td>
-                                    <td class="min-max-150">
-                                        <a href="javascript:void(0);" class="text-primary">Admissions</a>
-                                    </td>
-                                    <td class="min-max-200">
-                                        <div class="d-flex align-items-center">Team 1
-                                            <span class="font-weight-normal bg-light-info badge-pill ml-2 py-1 px-2 text-dark small leading-5">+ 1 More</span></div>
-                                    </td>
-                                    <td class="min-max-200">College Dunia</td>
-                                    <td class="min-max-200">29/08/2021 10:23:44 AM</td>
-                                    <td data-title="Action">
-                                       <div class="d-flex justify-content-lg-end">
-                                          <div class="dropdown" data-container="body">
-                                             <a aria-haspopup="true"
-                                                class="content-none d-flex dropdown-toggle hover-effect ml-2 p-md-3 p-2 rounded-circle text-muted"
-                                                data-toggle="dropdown" href="javascript:void(0);">
-                                                <span class="material-icons-outlined">more_horiz</span>
-                                             </a>
-                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item" data-toggle="modal"
-                                                   href="#disable-user-popup">Disable User</a>
-                                                <a class="dropdown-item" data-toggle="modal" href="#delete-user-popup">Delete
-                                                   User</a>
-                                                <a class="dropdown-item" data-toggle="modal"
-                                                   href="#change-permissions-popup">Change Permissions</a>
-                                                <a class="dropdown-item" data-toggle="modal" href="#manage-form-popup">Add
-                                                   Remove Forms</a>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </td>
-                                 </tr>
-                              </tbody>
-                           </table>
-                        </div>
-                        <div class="d-flex justify-content-end align-items-center">
-                           <span class="mr-1 text-muted small">Show Rows</span>
-                           <div class="form-group my-0 mr-1 p-0">
-                              <select name="" id="" class="normal-select p-1 border small">
-                                 <option value="">10</option>
-                                 <option value="">20</option>
-                                 <option value="">50</option>
-                                 <option value="">100</option>
-                              </select>
-                           </div>
-                           <span class="mx-2 text-muted small">Go to</span>
-                           <div class="form-group m-0 p-0">
-                              <input type="text" class="pagination-input border small text-center">
-                           </div>
-                           <span class="ml-1 mr-2 text-muted small">of 3</span>
-                           <div class="npf-pagination">
-                              <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
-                                 data-placement="top" title="" data-container="body" data-original-title="Previous"><i
-                                    class="fa fa-angle-left" aria-hidden="true"></i></a>
-                              <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
-                                 title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
-                                    aria-hidden="true"></i></a>
-                           </div>
-                        </div>
-                     </div>
-                </div>
-                <div class="tab-pane fade" id="user-teams">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="row custom-skeleton" id="skeleton-card">
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="team-group card mt-0 mb-4">
-                                        <div class="pt-2 pb-3">
-                                            <div class="w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
-                                                <div class="skeleton-loader w-100 h-100 rounded-circle"></div>
-                                            </div>
-                                            <div class="skeleton-loader title my-3 mx-auto"></div>
-                                            <div class="skeleton-loader description my-3 mx-auto"></div>
-                                        </div>
-                                        <div class="p-3 border-top">
-                                            <div class="d-flex justify-content-center">
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
-                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
-                                                </a>
-                                                <a  href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
-                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
-                                                </a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle">
-                                                    <div class="skeleton-loader my-3 mx-auto h-100 w-100 rounded-circle"></div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="team-cards" class="row">
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div id="" class="team-group card mt-0 mb-4">
-                                        <div class="pt-2 pb-3">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
-                                                    <div class="dropdown team-card-dropdown">
-                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                            <span class="material-icons-outlined"> more_vert </span>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
-                                                        </div>
-                                                      </div>
-                                                </div>
-                                                <div class="col-12 text-center">
-                                                    <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
-                                                        <span class="h3 m-0 font-weight-normal">AT</span>
-                                                    </div>
-                                                    <h3 class="mt-2 mb-1 text-truncate px-4 font-weight-normal">Admission Team</h3>
-                                                    <p class="mb-0 text-truncate px-3">Manager - Ajay Garg</p>
-                                                    <small class="text-truncate d-block px-4">By - Alok Sharma</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-3 border-top">
-                                            <div class="d-flex justify-content-center">
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-danger" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">VE</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-warning" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">PP</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-success" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">AS</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-info" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">DA</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle bg-primary text-white" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">TR</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="team-group card mt-0 mb-4">
-                                        <div class="pt-2 pb-3">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
-                                                    <div class="dropdown team-card-dropdown">
-                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                            <span class="material-icons-outlined"> more_vert </span>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
-                                                        </div>
-                                                      </div>
-                                                </div>
-                                                <div class="col-12 text-center">
-                                                    <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
-                                                        <span class="h3 m-0 font-weight-normal">AT</span>
-                                                    </div>
-                                                    <h3 class="mt-2 mb-1 text-truncate px-4 font-weight-normal">Marketing Team</h3>
-                                                    <p class="mb-0 text-truncate px-3">Manager - Ajay Garg</p>
-                                                    <small class="text-truncate d-block px-4">By - Alok Sharma</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-3 border-top">
-                                            <div class="d-flex justify-content-center">
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-danger" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">VE</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-warning" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">PP</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-success" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">AS</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-normal mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle badge-light-info" data-toggle="tooltip" data-placement="bottom" title="Name" data-trigger="hover">DA</a>
-                                                <a href="javscript:void(0);" class="team-badge font-weight-bold mx-1 w-9 h-9 d-flex justify-content-center align-items-center rounded-circle border-primary border text-dark">+21</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="team-group card mt-0 mb-4">
-                                        <div class="pt-2 pb-3">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
-                                                    <div class="dropdown team-card-dropdown">
-                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle p-1 w-9 h-9 mr-1" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                                                            <span class="material-icons-outlined"> more_vert </span>
-                                                        </a>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                          <a class="dropdown-item" data-toggle="modal" href="#">Edit Team</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#team-permission" data-toggle="modal">Edit Permission</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#create-team-popup" data-toggle="modal">Add User</a>
-                                                          <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete Team</a>
-                                                        </div>
-                                                      </div>
-                                                </div>
-                                                <div class="col-12 text-center">
-                                                    <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle">
-                                                        <span class="h3 m-0 font-weight-normal">AT</span>
-                                                    </div>
-                                                    <h3 class="mt-2 mb-1 text-truncate px-4 font-weight-normal">Product Team</h3>
-                                                    <p class="mb-0 text-truncate px-3">Manager - Ajay Garg</p>
-                                                    <small class="text-truncate d-block px-4">By - Alok Sharma</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="p-3 border-top">
-                                            <div class="d-flex justify-content-center">
-                                                <h6 class="my-0 h-9 text-muted font-weight-bold d-flex justify-content-center align-items-center">
-                                                    No User
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                                    <div class="team-group card mt-0 mb-4">
-                                        <div class="pt-2 pb-3">
-                                            <div class="row no-gutters">
-                                                <div class="col-12 text-center">
-                                                    <a href="#create-team-popup" data-toggle="modal" class="d-flex text-muted empty-card-link justify-content-center align-items-center flex-column">
-                                                        <div class="team-name w-20 h-20 d-flex justify-content-center align-items-center mt-3 mx-auto rounded-circle mb-2">
-                                                            <span class="material-icons-outlined display-4 text-dark"> add </span>
-                                                        </div>
-                                                        Create Team
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="user-roles">
-                    <div class="bg-white p-4 min-h-96">
-                        <div class="team-hierarchy">
-                            <div class="hierarchy-item">
-                                <div class="d-flex">
-                                    <a href="#collapse01" class="btn btn-sm rounded-0 bg-light-success px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                        <span class="material-icons-outlined text-dark"> people </span>
-                                    </a>
-                                    <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                        <div class="p-2 bg-white position-relative z-2">
-                                            <h6 class="mb-0 mt-0 text-dark">Admin</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="collapse show pl-5 pt-4" id="collapse01">
-                                    <div class="hierarchy-item">
-                                        <div class="d-flex">
-                                            <a href="#collapse02" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
-                                            </a>
-                                            <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center active">
-                                                <div class="p-2 bg-white position-relative z-2">
-                                                    <h6 class="mb-0 mt-0 text-dark">Head Office</h6>
-                                                </div>
-                                                <div class="editable-option position-absolute">
-                                                    <div class="d-flex pl-2">
-                                                        <a href="#create-role-modal" data-toggle="modal">
-                                                            <span class="material-icons-outlined text-secondary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Edit" data-container="body" data-placement="top"> edit </span>
-                                                        </a>
-                                                        <a href="#delete-role-modal" data-toggle="modal">
-                                                            <span class="material-icons-outlined text-secondary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Delete" data-container="body" data-placement="top"> delete </span>
-                                                        </a>
-                                                        <a href="#create-role-modal" data-toggle="modal">
-                                                            <span class="material-icons-outlined text-primary p-1 hover-effect rounded-circle w-9 h-9 d-flex justify-content-center align-items-center" data-toggle="tooltip" data-trigger="hover" title="Add New" data-container="body" data-placement="top"> add_circle_outline </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="collapse show pl-5 pt-4" id="collapse02">
-                                            <div class="hierarchy-item">
-                                                <div class="d-flex">
-                                                    <a href="#collapse03" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                        <span class="text-dark h5 ml-2 my-0"> 8</span>
-                                                    </a>
-                                                    <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                        <div class="p-2 bg-white position-relative z-2">
-                                                            <h6 class="mb-0 mt-0 text-dark">North Zone</h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="collapse show pl-5 pt-4" id="collapse03">
-                                                    <div class="hierarchy-item">
-                                                        <div class="d-flex">
-                                                            <a href="#collapse04" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                                <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                            </a>
-                                                            <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                                <div class="p-2 bg-white position-relative z-2">
-                                                                    <h6 class="mb-0 mt-0 text-dark">Gurgaon</h6>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="collapse show pl-5 pt-4" id="collapse04">
-                                                            <div class="hierarchy-item">
-                                                                <div class="d-flex">
-                                                                    <a href="#collapse05" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                                    </a>
-                                                                    <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                                        <div class="p-2 bg-white position-relative z-2">
-                                                                            <h6 class="mb-0 mt-0 text-dark">East Gurgaon</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hierarchy-item">
-                                        <div class="d-flex">
-                                            <a href="#collapse022" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
-                                            </a>
-                                            <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                <div class="p-2 bg-white position-relative z-2">
-                                                    <h6 class="mb-0 mt-0 text-dark">Marketing Office</h6>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="collapse show pl-5 pt-4" id="collapse022">
-                                            <div class="hierarchy-item">
-                                                <div class="d-flex">
-                                                    <a href="#collapse033" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                        <span class="text-dark h5 ml-2 my-0">4</span>
-                                                    </a>
-                                                    <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                        <div class="p-2 bg-white position-relative z-2">
-                                                            <h6 class="mb-0 mt-0 text-dark">North Zone</h6>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="collapse show pl-5 pt-4" id="collapse033">
-                                                    <div class="hierarchy-item">
-                                                        <div class="d-flex">
-                                                            <a href="#collapse044" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                                <span class="text-dark h5 ml-2 my-0"> 1</span>
-                                                            </a>
-                                                            <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                                <div class="p-2 bg-white position-relative z-2">
-                                                                    <h6 class="mb-0 mt-0 text-dark">Gurgaon</h6>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="collapse show pl-5 pt-4" id="collapse044">
-                                                            <div class="hierarchy-item">
-                                                                <div class="d-flex">
-                                                                    <a href="#collapse05" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                                    </a>
-                                                                    <div class="position-relative min-w-44 no-wrap cursor-pointer editable-wrapper z-9 h-16 d-flex flex-column justify-content-center">
-                                                                        <div class="p-2 bg-white position-relative z-2">
-                                                                            <h6 class="mb-0 mt-0 text-dark">West Gurgaon</h6>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="myCanvasNav" class="overlay" onclick="closeNav()">
+                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
             </div>
+            <div class="grid-table w-100 mt-4 mt-sm-2" id="tableCollapseParent">
+                <div class="row align-items-center justify-content-between mb-2">
+                   <div class="col-6 col-sm-4 d-md-none d-block">
+                      <label for="mob-table-head" class="d-flex align-items-center mb-0">
+                         <input type="checkbox" id="mob-table-head" class="mr-2">
+                         Select All
+                      </label>
+                   </div>
+                </div>
+                <div class="responsive-table">
+                   <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
+                      <thead>
+                         <tr>
+                            <th class="pt-1 has-checkbox min-max-50">
+                               <input type="checkbox" class="" />
+                            </th>
+                            <th class="min-max-200 sorting">Permission Group</th>
+                            <th class="min-max-150 sorting">User</th>
+                            <th class="min-max-150 sorting">Role</th>
+                            <th class="min-max-250">Created By</th>
+                            <th class="min-max-250">Updated By</th>
+                            <th class="text-right">Action</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         <tr class="grid-table-row">
+                            <td class="pt-1 has-checkbox min-max-50">
+                               <input type="checkbox" class="" />
+                            </td>
+                            <td class="min-max-200 font-weight-bold" data-title="Ticket Details">
+                               <a class="primary-color" href="#detail-popup" data-toggle="modal">
+                                  Super Admin
+                               </a>
+                            </td>
+                            <td class="min-max-150 sorting">30 Users</td>
+                            <td class="min-max-150 sorting">2 Role</td>
+                            <td class="min-max-250">
+                                29/08/2021 10:23:44 AM
+                            </td>
+                            <td class="min-max-250">29/08/2021 10:23:44 AM</td>
+                            <td data-title="Action">
+                               <div class="d-flex justify-content-lg-end">
+                                  <div class="dropdown" data-container="body">
+                                     <a aria-haspopup="true"
+                                        class="content-none d-flex dropdown-toggle hover-effect ml-2 p-md-3 p-2 rounded-circle text-muted"
+                                        data-toggle="dropdown" href="javascript:void(0);">
+                                        <span class="material-icons-outlined">more_horiz</span>
+                                     </a>
+                                     <div class="dropdown-menu">
+                                        <a class="dropdown-item" data-toggle="modal" href="#delete-modal">Delete
+                                           User</a>
+                                     </div>
+                                  </div>
+                               </div>
+                            </td>
+                         </tr>
+                      </tbody>
+                   </table>
+                </div>
+                <div class="d-flex justify-content-end align-items-center">
+                   <span class="mr-1 text-muted small">Show Rows</span>
+                   <div class="form-group my-0 mr-1 p-0">
+                      <select name="" id="" class="normal-select p-1 border small">
+                         <option value="">10</option>
+                         <option value="">20</option>
+                         <option value="">50</option>
+                         <option value="">100</option>
+                      </select>
+                   </div>
+                   <span class="mx-2 text-muted small">Go to</span>
+                   <div class="form-group m-0 p-0">
+                      <input type="text" class="pagination-input border small text-center">
+                   </div>
+                   <span class="ml-1 mr-2 text-muted small">of 3</span>
+                   <div class="npf-pagination">
+                      <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
+                         data-placement="top" title="" data-container="body" data-original-title="Previous"><i
+                            class="fa fa-angle-left" aria-hidden="true"></i></a>
+                      <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
+                         title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
+                            aria-hidden="true"></i></a>
+                   </div>
+                </div>
+             </div>
         </div>
     </div>
 
@@ -1018,12 +677,12 @@
             </div>
         </div>
     </div>
-    <div class="modal fade offCanvasModal right" id="team-permission" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade offCanvasModal right popup-customization" id="create-permission" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-blue">
                     <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Team User Permissions</span>
+                        <span class="title font-weight-bold">Create Permissions</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
                         data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
@@ -1032,125 +691,29 @@
                 </div>
                 <div class="modal-body">
                     <div class="p-3">
-                        <div class="row">
-                            <div class="col-6"><small class="text-dark font-weight-bold">Admin Users</small></div>
-                            <div class="col-3 text-center"><small class="text-dark font-weight-bold">Individual </small></div>
-                            <div class="col-3 text-center"><small class="text-dark font-weight-bold">Team View & Edit </small></div>
-                        </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Joseph Johnson</label>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-5">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Permission Group Name</label>
                                 </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
+                                <div class="col-7">
+                                    <input type="text" class="form-control" placeholder="Enter a Permission Group Name" />
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Sheetal Garg</label>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row form-required">
+                                <div class="col-5">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Permission Group Clone With</label>
                                 </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Ajay Garg</label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">John Doe</label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-6"><small class="text-dark font-weight-bold">Marketing Users</small></div>
-                        </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Joseph Johnson </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-2">
-                            <div class="row">
-                                <div class="col-6">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Sheetal Garg</label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
-                                </div>
-                                <div class="col-3 text-center">
-                                    <label class="custom-radio">
-                                        <input type="radio" name="user-permission" id="" class="">
-                                        <span class="custom-btn-span"></span>
-                                    </label>
+                                <div class="col-7">
+                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
+                                        title="Assign a Role">
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                        <option>Role</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -1158,7 +721,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Save</button>
+                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Invite</button>
                 </div>
             </div>
         </div>
@@ -1184,10 +747,10 @@
                                     <a href="#collapse1" class="btn btn-sm rounded-0 bg-light-success px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
                                         <span class="material-icons-outlined text-dark"> people </span>
                                     </a>
-                                    <a href="javascript:void(0)" class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                        <h6 class="mb-0 mt-0 text-dark">Admin</h6>
-                                        <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                    </a>
+                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                        <h6 class="mb-0 mt-0">Admin</h6>
+                                        <small class="text-dark">By Admin Name</small>
+                                    </div>
                                 </div>
                                 <div class="collapse show pl-5 pt-4" id="collapse1">
                                     <div class="hierarchy-item">
@@ -1196,10 +759,10 @@
                                                 <span class="material-icons-outlined text-dark"> people </span>
                                                 <span class="text-dark h5 ml-2 my-0"> 12</span>
                                             </a>
-                                            <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                <h6 class="mb-0 mt-0 text-dark">Head Office</h6>
-                                                <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                            </a>
+                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                <h6 class="mb-0 mt-0">Head Office</h6>
+                                                <small class="text-dark">By Admin Name</small>
+                                            </div>
                                         </div>
                                         <div class="collapse pl-5 pt-4" id="collapse2">
                                             <div class="hierarchy-item">
@@ -1208,10 +771,10 @@
                                                         <span class="material-icons-outlined text-dark"> people </span>
                                                         <span class="text-dark h5 ml-2 my-0"> 8</span>
                                                     </a>
-                                                    <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                        <h6 class="mb-0 mt-0 text-dark">North Zone</h6>
-                                                        <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                    </a>
+                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                        <h6 class="mb-0 mt-0">North Zone</h6>
+                                                        <small class="text-dark">By Admin Name</small>
+                                                    </div>
                                                 </div>
                                                 <div class="collapse pl-5 pt-4" id="collapse3">
                                                     <div class="hierarchy-item">
@@ -1220,10 +783,10 @@
                                                                 <span class="material-icons-outlined text-dark"> people </span>
                                                                 <span class="text-dark h5 ml-2 my-0"> 3</span>
                                                             </a>
-                                                            <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                                <h6 class="mb-0 mt-0 text-dark">Gurgaon</h6>
-                                                                <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                            </a>
+                                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
+                                                                <small class="text-dark">By Admin Name</small>
+                                                            </div>
                                                         </div>
                                                         <div class="collapse pl-5 pt-4" id="collapse4">
                                                             <div class="hierarchy-item">
@@ -1232,10 +795,10 @@
                                                                         <span class="material-icons-outlined text-dark"> people </span>
                                                                         <span class="text-dark h5 ml-2 my-0"> 3</span>
                                                                     </a>
-                                                                    <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                                        <h6 class="mb-0 mt-0 text-dark">East Gurgaon</h6>
-                                                                        <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                                    </a>
+                                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                                        <h6 class="mb-0 mt-0">East Gurgaon</h6>
+                                                                        <small class="text-dark">By Admin Name</small>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1250,10 +813,10 @@
                                                 <span class="material-icons-outlined text-dark"> people </span>
                                                 <span class="text-dark h5 ml-2 my-0"> 12</span>
                                             </a>
-                                            <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                <h6 class="mb-0 mt-0 text-dark">Marketing Office</h6>
-                                                <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                            </a>
+                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                <h6 class="mb-0 mt-0">Marketing Office</h6>
+                                                <small class="text-dark">By Admin Name</small>
+                                            </div>
                                         </div>
                                         <div class="collapse pl-5 pt-4" id="collapse22">
                                             <div class="hierarchy-item">
@@ -1262,10 +825,10 @@
                                                         <span class="material-icons-outlined text-dark"> people </span>
                                                         <span class="text-dark h5 ml-2 my-0">4</span>
                                                     </a>
-                                                    <a href="javascript:void(0)" class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                        <h6 class="mb-0 mt-0 text-dark">North Zone</h6>
-                                                        <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                    </a>
+                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                        <h6 class="mb-0 mt-0">North Zone</h6>
+                                                        <small class="text-dark">By Admin Name</small>
+                                                    </div>
                                                 </div>
                                                 <div class="collapse pl-5 pt-4" id="collapse33">
                                                     <div class="hierarchy-item">
@@ -1274,10 +837,10 @@
                                                                 <span class="material-icons-outlined text-dark"> people </span>
                                                                 <span class="text-dark h5 ml-2 my-0"> 1</span>
                                                             </a>
-                                                            <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                                <h6 class="mb-0 mt-0 text-dark">Gurgaon</h6>
-                                                                <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                            </a>
+                                                            <div class="border-top border-right border-bottom p-2 w-44">
+                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
+                                                                <small class="text-dark">By Admin Name</small>
+                                                            </div>
                                                         </div>
                                                         <div class="collapse pl-5 pt-4" id="collapse44">
                                                             <div class="hierarchy-item">
@@ -1286,10 +849,10 @@
                                                                         <span class="material-icons-outlined text-dark"> people </span>
                                                                         <span class="text-dark h5 ml-2 my-0"> 3</span>
                                                                     </a>
-                                                                    <a href="javascript:void(0)"  class="border-top border-right border-bottom p-2 w-44 h-16 d-flex flex-column justify-content-center hover-effect">
-                                                                        <h6 class="mb-0 mt-0 text-dark">West Gurgaon</h6>
-                                                                        <small class="text-dark d-inline-block text-truncate pr-3">Manager - Alok Sharma</small>
-                                                                    </a>
+                                                                    <div class="border-top border-right border-bottom p-2 w-44">
+                                                                        <h6 class="mb-0 mt-0">West Gurgaon</h6>
+                                                                        <small class="text-dark">By Admin Name</small>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1393,6 +956,16 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group pt-0 mb-3">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label class="text-dark mb-0 mt-1 pt-1">Allocated Forms</label>
+                                </div>
+                                <div class="col-8">
+                                    <textarea name="" id="" class="form-control" placeholder="Enter Allocated Forms"></textarea>
+                                </div>
+                            </div>
+                        </div>
                         <div class="form-group pt-0 mb-3 d-none">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-8">
@@ -1442,7 +1015,7 @@
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Create</button>
+                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
                 </div>
             </div>
         </div>
@@ -1584,7 +1157,7 @@
                            </div>
                            <div class="col-8">
                             <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                            title="Select College ">
+                            title="Assign a Role">
                                 <option>College Name</option>
                                 <option>College Name</option>
                                 <option>College Name</option>
@@ -1651,11 +1224,21 @@
                           </div>
                        </div>
                     </div>
+                    <div class="form-group pt-0 mb-3">
+                       <div class="row">
+                          <div class="col-4">
+                             <label class="text-dark mb-0 mt-2 pt-1">Allocated Forms</label>
+                          </div>
+                          <div class="col-8">
+                             <textarea name="" id="" class="form-control tags-input"></textarea>
+                          </div>
+                       </div>
+                    </div>
                  </div>
               </div>
               <div class="modal-footer justify-content-between">
                  <button class="btn btn-sm btn-outline-secondary">Cancel</button>
-                 <button class="btn btn-sm btn-primary" data-dismiss="modal">Create</button>
+                 <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
               </div>
            </div>
         </div>
@@ -1755,18 +1338,12 @@
         $('.tags-input').tagsinput();
     </script>
     <script>
-        $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
-            $('.tooltip').remove();
+        $('.editable-wrapper').mouseover(function(){
+           $(this).addClass('active');
         });
-    </script>
-    <script>
-
-        // $('.editable-wrapper').mouseover(function(){
-        //    $(this).addClass('active');
-        // });
-        // $('.editable-wrapper').mouseleave(function(){
-        //    $('.editable-wrapper').removeClass('active');
-        // });
+        $('.editable-wrapper').mouseleave(function(){
+           $('.editable-wrapper').removeClass('active');
+        });
         if( $('.editable-wrapper .editable-option').length){
             let editableOption = $('.editable-wrapper .editable-option').clone();
             $('.editable-wrapper').append(editableOption);
@@ -1827,9 +1404,9 @@
         ];
 
         var settings = {
-            tabNameText : "Available",
-            rightTabNameText : "Selected",
-            searchPlaceholderText : "Search",
+            tabNameText : "Users",
+            rightTabNameText : "Selected Users",
+            searchPlaceholderText : "Search User",
             "groupDataArray": groupDataArray,
             "groupItemName": "groupName",
             "groupArrayName": "groupData",
@@ -1841,6 +1418,8 @@
         };
 
         $("#transfer3").transfer(settings);
+        // $('.transfer-double-content-left .transfer-double-content-param .param-item').html('Users');
+        // $('.transfer-double-content-right .transfer-double-content-param .param-item').html('Selected Users');
     </script>
 </body>
 
