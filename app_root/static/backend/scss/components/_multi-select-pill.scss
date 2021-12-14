@@ -294,6 +294,9 @@ select.multi-select-pill[multiple] {
         border: 1px solid #ccc;
         border-width: 0 1px;
     }
+    &-list-li{
+        margin-top: 5px;
+    }
 
     &-list-main {
         height: 210px;
@@ -301,7 +304,7 @@ select.multi-select-pill[multiple] {
 
         & .transfer-double-list-ul {
             list-style: none;
-            padding-left: 25px;
+            padding-left: 5px;
             margin: 0;
 
             &-li {
@@ -377,7 +380,7 @@ select.multi-select-pill[multiple] {
     }
     &main &ul{
         list-style: none;
-        padding-left: 20px;
+        padding-left: 5px;
         margin: 0;
 
     }
