@@ -1,6 +1,6 @@
-@import 'vendors/chosen/main', 'vendors/bootstrap-tagsinput/bootstrap-tagsinput';
+@import 'vendors/chosen/main', 'vendors/bootstrap-tagsinput/bootstrap-tagsinput', 'vendors/chosen/main';
 
-@import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure", "./components/multi-select-pill";
+@import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure", "./components/multi-select-pill", "./components/bulk-upload";
 
 .header-info {
     position: relative;
@@ -20,12 +20,6 @@
 
     .text-warning {
         color: #e49f20 !important;
-    }
-
-    &:hover {
-        overflow: overlay;
-        scrollbar-width: thin;
-        z-index: 1;
     }
 }
 
@@ -57,6 +51,7 @@
 
 .modal-accordion {
     max-height: 100%;
+    min-height: calc(100vh - 290px);
 }
 
 .team-group {
@@ -84,6 +79,18 @@
             background: #fff;
         }
         .team-card-dropdown:not(.show) [data-toggle="dropdown"]{
+            opacity: 1;
+        }
+    }
+}
+
+.team-user-card{
+    .team-user-dropdown:not(.show) [data-toggle="dropdown"]{
+        opacity: 0;
+    }
+    &:hover {
+        background: #f0f4ff;
+        .team-user-dropdown:not(.show) [data-toggle="dropdown"]{
             opacity: 1;
         }
     }

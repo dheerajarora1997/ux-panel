@@ -6,7 +6,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon.png">
     <link rel="icon" type="image/ico" href="../favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Permissions</title>
+    <title>Teams</title>
     <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <!--  Fonts and icons -->
     <link rel="stylesheet" type="text/css"
@@ -474,122 +474,195 @@
             </div>
         </div>
     </nav>
-
     <!-- Header With Side Nav End-->
-
-    <div
-        class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-2">
-
-        <div class="d-none d-md-flex section-header-breadcrumb align-items-center w-sm-100 px-3 px-lg-0 py-2 py-lg-0">
-            <h3 class="h5 d-inline-block my-1">Permission</h3>
-        </div>
-
-        <div class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex align-items-center justify-content-md-end justify-content-between">
-            <h3 class="h5 d-inline-block my-1 d-block d-md-none">Permission</h3>
-            <a href="#create-permission" data-toggle="modal"
-                class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
-                <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
-                Create
-            </a>
-        </div>
-
-    </div>
-
-    <div id="main" class="wrapper">
-        <div class="main-container px-4 pb-md-3 pt-1">
-            <div class="mb-0">
-                <div class="row justify-content-end">
-                    <div class="col-sm-2">
-                        <div class="d-flex align-items-center justify-content-end">
-                            <select name="" id="" class="form-control selectpicker border-0" data-style="px-2">
-                                <option>Internal User</option>
-                                <option>Npf User</option>
-                            </select>
+    <div class="wrapper" id="main">
+        <div class="main-container p-0">
+            <div class="bg-white d-flex flex-wrap justify-content-between px-3 py-2 shadow-bottom mb-3">
+                    <div class="topHead w-100 d-inline-block">
+                        <div class="row">
+                            <div class="col-4 col-md-6 d-flex justify-content-between">
+                                <div class="d-flex">
+                                    <h3 class="h5 d-inline-block my-1">Team</h3>
+                                </div>
+                            </div>
+                            <div class="col-8 col-md-6 pl-0 pl-md-3 d-flex align-items-end justify-content-end">
+                                <div class="position-relative" id="expendedSearch">
+                                    <a href="javascript:void(0);"
+                                       class="expended-search-link d-flex border-0 p-1 ml-2 hover-effect rounded-circle text-secondary"
+                                       data-toggle="tooltip" data-placement="bottom" data-container="body" title="Search" data-trigger="hover">
+                                       <span class="material-icons-outlined"> search </span>
+                                    </a>
+                                    <div class="expended-search-wrpper position-absolute">
+                                       <div class="row no-gutters border" id="searchBox">
+                                          <div class="col-7">
+                                             <div class="expandSearch">
+                                                <div class="form-group has-search mb-0 py-0 bmd-form-group">
+                                                   <span class="material-icons search_icon text-muted ml-1">search</span>
+                                                   <input type="search" name="searchticket" id="searchTicket" class="form-control pl-4"
+                                                      placeholder="Search" value="">
+                                                </div>
+                                                <div class="validation-message small text-danger" id="search_error"></div>
+                                             </div>
+                                          </div>
+                                          <div class="col-4">
+                                             <div class="form-group p-0 my-0 rounded-0">
+                                                <select name="status" id="search_filter" title="Search By" class="form-control selectpicker"
+                                                   data-style="bg-light pl-2 pr-1 rounded-0">
+                                                   <option value="ticket_id" {% if not parameters.email and not parameters.mobile %} selected {%
+                                                      endif %}>Name</option>
+                                                   <option value="email">Email</option>
+                                                   <option value="mobile">Role</option>
+                                                </select>
+                                             </div>
+                                             <div class="validation-message small text-danger" id="search_filter_error"></div>
+                                          </div>
+                                          <div class="col-1 d-flex align-items-center">
+                                             <a href="javascript:void(0);" onclick="resetSearch();" data-dismiss="search"
+                                                class="pl-1 py-2 d-flex justify-content-center align-items-center" data-toggle="tooltip"
+                                                data-placement="bottom" data-container="body" title="Close" data-trigger="hover">
+                                                <span class="material-icons-outlined text-secondary"> close </span>
+                                             </a>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <a href="#add-user-modal" data-toggle="modal"
+                                     class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
+                                     <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
+                                     Add User
+                                 </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="px-3 pb-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="row custom-skeleton" id="skeleton-card">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+                                <div class="card mt-1 team-user-card">
+                                    <div class="card-body p-3">
+                                        <div class="row justify-content-end">
+                                            <div class="col-3">
+                                                <div class="d-flex justify-content-center align-items-center w-12 h-12 rounded">
+                                                    <div class="skeleton-loader w-100 h-100 rounded"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-9">
+                                                <div class="skeleton-loader description w-50 mb-2"></div>
+                                                <div class="skeleton-loader description mb-2"></div>
+                                            </div>
+                                            <div class="col-12 col-sm-9">
+                                                <div class="skeleton-loader description mb-2"></div>
+                                                <div class="skeleton-loader description mb-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="team-user" class="team-user">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <div class="card mt-1 team-user-card">
+                                        <div class="card-body p-3 ">
+                                            <div class="row justify-content-end">
+                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                                    <div class="dropdown team-user-dropdown">
+                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                            <span class="material-icons-outlined"> more_vert </span>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                          <a class="dropdown-item" data-toggle="modal" href="#">Remove User</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="d-flex justify-content-center align-items-center w-12 h-12 bg-light-success rounded">
+                                                        <h6>AG</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <h3 class="h6 my-0">Ajay Garg</h3>
+                                                    <a href="mailto:ajay.g@nopaperforms.com" class="text-muted mb-2 d-inline-block">ajay.g@nopaperforms.com</a>
+                                                </div>
+                                                <div class="col-12 col-sm-9">
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Role : </span>Product Manager</p>
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Permission : </span>Individual</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <div class="card mt-1 team-user-card">
+                                        <div class="card-body p-3 ">
+                                            <div class="row justify-content-end">
+                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                                    <div class="dropdown team-user-dropdown">
+                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                            <span class="material-icons-outlined"> more_vert </span>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                          <a class="dropdown-item" data-toggle="modal" href="#">Remove User</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="d-flex justify-content-center align-items-center w-12 h-12 bg-light-info rounded">
+                                                        <h6>MA</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <h3 class="h6 my-0">Mickey Arora</h3>
+                                                    <a href="mailto:mickey.a@yopmail.com" class="text-muted mb-2 d-inline-block">mickey.a@yopmail.com</a>
+                                                </div>
+                                                <div class="col-12 col-sm-9">
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Role : </span>UI Developer</p>
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Permission : </span>Individual</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-lg-4">
+                                    <div class="card mt-1 team-user-card">
+                                        <div class="card-body p-3 ">
+                                            <div class="row justify-content-end">
+                                                <div class="col-12 d-flex justify-content-end position-absolute z-1">
+                                                    <div class="dropdown team-user-dropdown">
+                                                        <a href="javascript:void(0);" class=" border-0 dropdown-toggle content-none d-flex justify-content-center align-items-center text-secondary rounded-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                                                            <span class="material-icons-outlined"> more_vert </span>
+                                                        </a>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                          <a class="dropdown-item" data-toggle="modal" href="#">Remove User</a>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="d-flex justify-content-center align-items-center w-12 h-12 bg-light-warning rounded">
+                                                        <h6>AG</h6>
+                                                    </div>
+                                                </div>
+                                                <div class="col-9">
+                                                    <h3 class="h6 my-0">Vipin Tiwari</h3>
+                                                    <a href="mailto:vipin.t@nopaperforms.com" class="text-muted mb-2 d-inline-block">vipin.t@nopaperforms.com</a>
+                                                </div>
+                                                <div class="col-12 col-sm-9">
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Role : </span>Sr. UI Developer</p>
+                                                    <p class="no-wrap text-truncate pr-2 mb-1"><span class="text-muted w-24 d-inline-block">Permission : </span>Individual</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div id="myCanvasNav" class="overlay" onclick="closeNav()">
-                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
-            </div>
-            <div class="grid-table w-100 mt-4 mt-sm-2" id="tableCollapseParent">
-                <div class="row align-items-center justify-content-between mb-2">
-                   <div class="col-6 col-sm-4 d-md-none d-block">
-                      <label for="mob-table-head" class="d-flex align-items-center mb-0">
-                         <input type="checkbox" id="mob-table-head" class="mr-2">
-                         Select All
-                      </label>
-                   </div>
-                </div>
-                <div class="responsive-table">
-                   <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
-                      <thead>
-                         <tr>
-                            <th class="pt-1 has-checkbox min-max-50">
-                               <input type="checkbox" class="" />
-                            </th>
-                            <th class="min-max-200 sorting">Permission Group</th>
-                            <th class="min-max-150 sorting">User</th>
-                            <th class="min-max-150 sorting">Role</th>
-                            <th class="min-max-250">Created By</th>
-                            <th class="min-max-250">Updated By</th>
-                            <th class="text-right"></th>
-                         </tr>
-                      </thead>
-                      <tbody>
-                         <tr class="grid-table-row">
-                            <td class="pt-1 has-checkbox min-max-50">
-                               <input type="checkbox" class="" />
-                            </td>
-                            <td class="min-max-200 font-weight-bold" data-title="Permission Group">
-                               <a class="primary-color" href="#detail-popup" data-toggle="modal">
-                                  Super Admin
-                               </a>
-                            </td>
-                            <td class="min-max-150 sorting" data-title="User`">30 Users</td>
-                            <td class="min-max-150 sorting" data-title="Role">2 Role</td>
-                            <td class="min-max-250" data-title="Created By">
-                                29/08/2021 10:23:44 AM
-                            </td>
-                            <td class="min-max-250" data-title="Updated By">29/08/2021 10:23:44 AM</td>
-                            <td data-title="Action" data-title="Action">
-                                <div class="table-last-action text-right">
-                                    <a class="btn badge badge-danger border-0 text-capitalize" data-toggle="modal" href="#delete-modal">Delete</a>
-                                </div>
-                            </td>
-                         </tr>
-                      </tbody>
-                   </table>
-                </div>
-                <div class="d-flex justify-content-end align-items-center">
-                   <span class="mr-1 text-muted small">Show Rows</span>
-                   <div class="form-group my-0 mr-1 p-0">
-                      <select name="" id="" class="normal-select p-1 border small">
-                         <option value="">10</option>
-                         <option value="">20</option>
-                         <option value="">50</option>
-                         <option value="">100</option>
-                      </select>
-                   </div>
-                   <span class="mx-2 text-muted small">Go to</span>
-                   <div class="form-group m-0 p-0">
-                      <input type="text" class="pagination-input border small text-center">
-                   </div>
-                   <span class="ml-1 mr-2 text-muted small">of 3</span>
-                   <div class="npf-pagination">
-                      <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
-                         data-placement="top" title="" data-container="body" data-original-title="Previous"><i
-                            class="fa fa-angle-left" aria-hidden="true"></i></a>
-                      <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
-                         title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
-                            aria-hidden="true"></i></a>
-                   </div>
-                </div>
-             </div>
         </div>
     </div>
-
-
     <footer class="footer footer-white border-top">
         <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
             <a class="footer-brand text-muted" href="#">Copyright © 2021 NoPaperForms. All rights reserved</a>
@@ -656,12 +729,13 @@
             </div>
         </div>
     </div>
-    <div class="modal fade offCanvasModal right popup-customization" id="create-permission" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal fade offCanvasModal right popup-customization" id="add-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
             <div class="modal-content">
                 <div class="modal-header border-bottom-blue">
                     <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Create Permissions</span>
+                        <span class="title font-weight-bold">Add User</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
                         data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
@@ -670,390 +744,65 @@
                 </div>
                 <div class="modal-body">
                     <div class="p-3">
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-5">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Permission Group Name</label>
-                                </div>
-                                <div class="col-7">
-                                    <input type="text" class="form-control" placeholder="Enter a Permission Group Name" />
-                                </div>
+                        <div class="row no-gutters align-items-center border-bottom mb-2 pb-2">
+                            <div class="col-1">
+                                <input type="checkbox" />
                             </div>
+                            <div class="col-4 text-muted">
+                                User
+                            </div>
+                            <div class="col-3 text-muted">Role</div>
+                            <div class="col-4 text-muted">Permission</div>
                         </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-5">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Permission Group Clone With</label>
-                                </div>
-                                <div class="col-7">
-                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                                        title="Assign a Role">
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                    </select>
-                                </div>
+                        <div class="row no-gutters align-items-center mb-2">
+                            <div class="col-1">
+                                <input type="checkbox" />
                             </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <span class="w-9 h-9 mr-2 d-flex justify-content-center align-items-center bg-light-success rounded-circle">AS</span>
+                                Alok Sharma
+                            </div>
+                            <div class="col-3 d-flex">Product Owner</div>
+                            <div class="col-4 d-flex">Team View & Edit</div>
                         </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Invite</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade offCanvasModal right" id="team-hierarchy-popup" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Team Hierarchy</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="p-3">
-                        <div class="team-hierarchy">
-                            <div class="hierarchy-item">
-                                <div class="d-flex">
-                                    <a href="#collapse1" class="btn btn-sm rounded-0 bg-light-success px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="true">
-                                        <span class="material-icons-outlined text-dark"> people </span>
-                                    </a>
-                                    <div class="border-top border-right border-bottom p-2 w-44">
-                                        <h6 class="mb-0 mt-0">Admin</h6>
-                                        <small class="text-dark">By Admin Name</small>
-                                    </div>
-                                </div>
-                                <div class="collapse show pl-5 pt-4" id="collapse1">
-                                    <div class="hierarchy-item">
-                                        <div class="d-flex">
-                                            <a href="#collapse2" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
-                                            </a>
-                                            <div class="border-top border-right border-bottom p-2 w-44">
-                                                <h6 class="mb-0 mt-0">Head Office</h6>
-                                                <small class="text-dark">By Admin Name</small>
-                                            </div>
-                                        </div>
-                                        <div class="collapse pl-5 pt-4" id="collapse2">
-                                            <div class="hierarchy-item">
-                                                <div class="d-flex">
-                                                    <a href="#collapse3" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                        <span class="text-dark h5 ml-2 my-0"> 8</span>
-                                                    </a>
-                                                    <div class="border-top border-right border-bottom p-2 w-44">
-                                                        <h6 class="mb-0 mt-0">North Zone</h6>
-                                                        <small class="text-dark">By Admin Name</small>
-                                                    </div>
-                                                </div>
-                                                <div class="collapse pl-5 pt-4" id="collapse3">
-                                                    <div class="hierarchy-item">
-                                                        <div class="d-flex">
-                                                            <a href="#collapse4" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                                <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                            </a>
-                                                            <div class="border-top border-right border-bottom p-2 w-44">
-                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
-                                                                <small class="text-dark">By Admin Name</small>
-                                                            </div>
-                                                        </div>
-                                                        <div class="collapse pl-5 pt-4" id="collapse4">
-                                                            <div class="hierarchy-item">
-                                                                <div class="d-flex">
-                                                                    <a href="#collapse5" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                                    </a>
-                                                                    <div class="border-top border-right border-bottom p-2 w-44">
-                                                                        <h6 class="mb-0 mt-0">East Gurgaon</h6>
-                                                                        <small class="text-dark">By Admin Name</small>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="hierarchy-item">
-                                        <div class="d-flex">
-                                            <a href="#collapse22" class="btn btn-sm rounded-0 bg-light-warning px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                <span class="text-dark h5 ml-2 my-0"> 12</span>
-                                            </a>
-                                            <div class="border-top border-right border-bottom p-2 w-44">
-                                                <h6 class="mb-0 mt-0">Marketing Office</h6>
-                                                <small class="text-dark">By Admin Name</small>
-                                            </div>
-                                        </div>
-                                        <div class="collapse pl-5 pt-4" id="collapse22">
-                                            <div class="hierarchy-item">
-                                                <div class="d-flex">
-                                                    <a href="#collapse33" class="btn btn-sm rounded-0 bg-light-info px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                        <span class="text-dark h5 ml-2 my-0">4</span>
-                                                    </a>
-                                                    <div class="border-top border-right border-bottom p-2 w-44">
-                                                        <h6 class="mb-0 mt-0">North Zone</h6>
-                                                        <small class="text-dark">By Admin Name</small>
-                                                    </div>
-                                                </div>
-                                                <div class="collapse pl-5 pt-4" id="collapse33">
-                                                    <div class="hierarchy-item">
-                                                        <div class="d-flex">
-                                                            <a href="#collapse44" class="btn btn-sm rounded-0 bg-light-danger px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                                <span class="material-icons-outlined text-dark"> people </span>
-                                                                <span class="text-dark h5 ml-2 my-0"> 1</span>
-                                                            </a>
-                                                            <div class="border-top border-right border-bottom p-2 w-44">
-                                                                <h6 class="mb-0 mt-0">Gurgaon</h6>
-                                                                <small class="text-dark">By Admin Name</small>
-                                                            </div>
-                                                        </div>
-                                                        <div class="collapse pl-5 pt-4" id="collapse44">
-                                                            <div class="hierarchy-item">
-                                                                <div class="d-flex">
-                                                                    <a href="#collapse5" class="btn btn-sm rounded-0 bg-quaternary px-3 d-flex justify-content-center align-items-center" data-toggle="collapse" aria-expanded="false">
-                                                                        <span class="material-icons-outlined text-dark"> people </span>
-                                                                        <span class="text-dark h5 ml-2 my-0"> 3</span>
-                                                                    </a>
-                                                                    <div class="border-top border-right border-bottom p-2 w-44">
-                                                                        <h6 class="mb-0 mt-0">West Gurgaon</h6>
-                                                                        <small class="text-dark">By Admin Name</small>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="row no-gutters align-items-center mb-2">
+                            <div class="col-1">
+                                <input type="checkbox" />
                             </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <span class="w-9 h-9 mr-2 d-flex justify-content-center align-items-center bg-light-info rounded-circle">MA</span>
+                                Mickey Arora
+                            </div>
+                            <div class="col-3 d-flex">UI Developer</div>
+                            <div class="col-4 d-flex">Team View & Edit</div>
+                        </div>
+                        <div class="row no-gutters align-items-center mb-2">
+                            <div class="col-1">
+                                <input type="checkbox" />
+                            </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <span class="w-9 h-9 mr-2 d-flex justify-content-center align-items-center bg-light-warning rounded-circle">VT</span>
+                                Vipin Tiwari
+                            </div>
+                            <div class="col-3 d-flex">Sr. UI Developer</div>
+                            <div class="col-4 d-flex">Team View & Edit</div>
+                        </div>
+                        <div class="row no-gutters align-items-center mb-2">
+                            <div class="col-1">
+                                <input type="checkbox" />
+                            </div>
+                            <div class="col-4 d-flex align-items-center">
+                                <span class="w-9 h-9 mr-2 d-flex justify-content-center align-items-center bg-light-danger rounded-circle">DM</span>
+                                Dhiraj Mishra
+                            </div>
+                            <div class="col-3 d-flex">UI Lead</div>
+                            <div class="col-4 d-flex">Team View & Edit</div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
                     <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade offCanvasModal right popup-customization" id="create-team-popup" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Create User</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="p-3">
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Team Name </label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" placeholder="Enter Team Name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Team Description</label>
-                                </div>
-                                <div class="col-8">
-                                    <textarea name="" id="" class="form-control" placeholder="Enter Team Description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Institute Allocation</label>
-                                </div>
-                                <div class="col-8">
-                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                                        title="Assign a Role">
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Form Allocation</label>
-                                </div>
-                                <div class="col-8">
-                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                                        title="Assign a Permission">
-                                        <option>Permission</option>
-                                        <option>Permission</option>
-                                        <option>Permission</option>
-                                        <option>Permission</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Terms Source</label>
-                                </div>
-                                <div class="col-8">
-                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                                        title="Assign a Term">
-                                        <option>Terms</option>
-                                        <option>Terms</option>
-                                        <option>Terms</option>
-                                        <option>Terms</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Allocated Forms</label>
-                                </div>
-                                <div class="col-8">
-                                    <textarea name="" id="" class="form-control" placeholder="Enter Allocated Forms"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3 d-none">
-                            <div class="row justify-content-end">
-                                <div class="col-12 col-md-8">
-                                    <div class="row align-items-center">
-                                        <div class="col-5">
-                                            <small class="mb-3">Available</small>
-                                            <select name="from" id="undo_redo" class="form-control multi-select-pill" multiple="multiple">
-                                                <option value="1">C++</option>
-                                                <option value="2">C#</option>
-                                                <option value="3">Haskell</option>
-                                                <option value="4">Java</option>
-                                                <option value="5">JavaScript</option>
-                                                <option value="6">Lisp</option>
-                                                <option value="7">Lua</option>
-                                                <option value="8">MATLAB</option>
-                                                <option value="9">NewLISP</option>
-                                                <option value="10">PHP</option>
-                                                <option value="11">Perl</option>
-                                                <option value="12">SQL</option>
-                                                <option value="13">Unix shell</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-2">
-                                            <button class="btn btn-sm p-1 btn-block btn-primary" id="undo_redo_rightSelected">
-                                                <span class="material-icons-outlined"> arrow_right </span>
-                                            </button>
-                                            <button class="btn btn-sm p-1 btn-block btn-secondary" id="undo_redo_leftSelected">
-                                                <span class="material-icons-outlined"> arrow_left </span>
-                                            </button>
-                                        </div>
-                                        <div class="col-5 pill-selected">
-                                            <small class="mb-3">Selected</small>
-                                            <select name="to" id="undo_redo_to" class="form-control multi-select-pill" multiple="multiple"></select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-control pt-0 mb-3">
-                            <div class="row justify-content-end">
-                                <div class="col-12 col-md-8">
-                                    <div id="transfer3" class=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade offCanvasModal right popup-customization" id="create-role-modal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-bottom-blue">
-                    <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Create Role</span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="p-3">
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Role Name </label>
-                                </div>
-                                <div class="col-8">
-                                    <input type="text" class="form-control" placeholder="Enter Team Name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row form-required">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Reporting To</label>
-                                </div>
-                                <div class="col-8">
-                                    <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                                        title="Reporting To">
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                        <option>Role</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group pt-0 mb-3">
-                            <div class="row">
-                                <div class="col-4">
-                                    <label class="text-dark mb-0 mt-1 pt-1">Role Description</label>
-                                </div>
-                                <div class="col-8">
-                                    <textarea name="" id="" class="form-control" placeholder="Enter Team Description"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button class="btn btn-sm btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Next</button>
+                    <button class="btn btn-sm btn-primary border" data-dismiss="modal">Add</button>
                 </div>
             </div>
         </div>
@@ -1064,10 +813,10 @@
             <div class="modal-content">
                 <div class="modal-header border-bottom-blue">
                     <h5 class="modal-title my-0" id="exampleModalLabel">
-                        <span class="title font-weight-bold">Create Role</span>
+                        <span class="title font-weight-bold">Delete Role</span>
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
-                        data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+                        data-placement="left" data-container="body" title="Click Here to Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -1078,7 +827,7 @@
                                Before Deleting, you must transfer users and subordinates with this role to a new role.
                             </div>
                          </div>
-                         <h5 class="">Transfer User and Sub Roles</h5>
+                         <h6 class="">Transfer User and Sub Roles</h6>
                         <div class="form-group pt-0 mb-3">
                             <div class="row form-required">
                                 <div class="col-4">
@@ -1136,7 +885,7 @@
                            </div>
                            <div class="col-8">
                             <select class="selectpicker" data-style="px-2 border" data-live-search="true"
-                            title="Assign a Role">
+                            title="Select College ">
                                 <option>College Name</option>
                                 <option>College Name</option>
                                 <option>College Name</option>
@@ -1203,21 +952,11 @@
                           </div>
                        </div>
                     </div>
-                    <div class="form-group pt-0 mb-3">
-                       <div class="row">
-                          <div class="col-4">
-                             <label class="text-dark mb-0 mt-2 pt-1">Allocated Forms</label>
-                          </div>
-                          <div class="col-8">
-                             <textarea name="" id="" class="form-control tags-input"></textarea>
-                          </div>
-                       </div>
-                    </div>
                  </div>
               </div>
               <div class="modal-footer justify-content-between">
                  <button class="btn btn-sm btn-outline-secondary">Cancel</button>
-                 <button class="btn btn-sm btn-primary" data-dismiss="modal">Invite</button>
+                 <button class="btn btn-sm btn-primary" data-dismiss="modal">Create</button>
               </div>
            </div>
         </div>
@@ -1317,88 +1056,24 @@
         $('.tags-input').tagsinput();
     </script>
     <script>
-        $('.editable-wrapper').mouseover(function(){
-           $(this).addClass('active');
+        $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
+            $('.tooltip').remove();
         });
-        $('.editable-wrapper').mouseleave(function(){
-           $('.editable-wrapper').removeClass('active');
-        });
-        if( $('.editable-wrapper .editable-option').length){
-            let editableOption = $('.editable-wrapper .editable-option').clone();
-            $('.editable-wrapper').append(editableOption);
-        }
-        let tableElement = $('table tbody').html();
-        for (let i = 0; i < 3; i++) {
-            $('table tbody').append(tableElement);
+    </script>
+    <script>
+        let tableElement = $('.team-user>.row').html();
+        for (let i = 0; i < 2; i++) {
+            $('.team-user>.row').append(tableElement);
         }
         let skeletonCard = $('#skeleton-card').html();
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 2; i++) {
             $('#skeleton-card').append(skeletonCard);
         }
-        $('#team-cards').hide();
+        $('#team-user').hide();
         setTimeout(() => {
             $('#skeleton-card').hide();
-            $('#team-cards').show();
+            $('#team-user').show();
         }, 4500);
-        $(document).ready(function () { $('#undo_redo').multiselect();});
-        var groupDataArray = [
-            {
-                "groupName": "China",
-                "groupData": [
-                    {
-                        "city": "Beijing",
-                        "value": 122
-                    },
-                    {
-                        "city": "Shanghai",
-                        "value": 643
-                    },
-                    {
-                        "city": "Qingdao",
-                        "value": 422
-                    },
-                    {
-                        "city": "Tianjin",
-                        "value": 622
-                    }
-                ]
-            },
-            {
-                "groupName": "Japan",
-                "groupData": [
-                    {
-                        "city": "Tokyo",
-                        "value": 132
-                    },
-                    {
-                        "city": "Osaka",
-                        "value": 112
-                    },
-                    {
-                        "city": "Yokohama",
-                        "value": 191
-                    }
-                ]
-            }
-        ];
-
-        var settings = {
-            tabNameText : "Users",
-            rightTabNameText : "Selected Users",
-            searchPlaceholderText : "Search User",
-            "groupDataArray": groupDataArray,
-            "groupItemName": "groupName",
-            "groupArrayName": "groupData",
-            "itemName": "city",
-            "valueName": "value",
-            "callable": function (items) {
-                // console.dir(items)
-            }
-        };
-
-        $("#transfer3").transfer(settings);
-        // $('.transfer-double-content-left .transfer-double-content-param .param-item').html('Users');
-        // $('.transfer-double-content-right .transfer-double-content-param .param-item').html('Selected Users');
     </script>
 </body>
 

@@ -14,7 +14,6 @@
         td,
         th {
             margin: 0;
-            border: none;
             background-color: #fff;
             vertical-align: top;
 
@@ -41,6 +40,7 @@
                     max-width: 30px;
                     width: 30px;
                 }
+
                 &.min-max-50 {
                     min-width: 50px;
                     max-width: 50px;
@@ -101,6 +101,10 @@
             }
 
         }
+
+        th {
+            border: 0;
+        }
     }
 
     thead {
@@ -151,9 +155,11 @@
             &.read {
                 td {
                     font-weight: 400 !important;
-                    .badge{
+
+                    .badge {
                         font-weight: 400 !important;
                     }
+
                     @media only screen and (min-width: 768px) {
                         background: #fbfbfb;
                     }
@@ -213,7 +219,8 @@
                         padding-left: 40% !important;
                         padding-top: 10px;
                         padding-bottom: 5px;
-                        @media only screen and (max-width: 767px){
+
+                        @media only screen and (max-width: 767px) {
                             padding-left: 35% !important;
                         }
 
@@ -231,7 +238,8 @@
                             width: 40%;
                             top: 14px;
                             left: 20px;
-                            @media only screen and (max-width: 767px){
+
+                            @media only screen and (max-width: 767px) {
                                 font-size: 11px;
                             }
                         }
@@ -308,7 +316,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .grid-table table.table tbody tr.grid-table-row{
+    .grid-table table.table tbody tr.grid-table-row {
         &:not(:first-child) {
             border-width: 1px 0 0;
         }
@@ -363,12 +371,24 @@
         }
     }
 }
-.selection-row{
+
+.selection-row {
     min-height: 30px;
     margin-bottom: 5px;
-    .selection-count{
+
+    .selection-count {
         background: #ccd9f5 !important;
         padding: 5px 0;
         border-radius: 4px;
     }
+}
+.grid-table{
+    .table-last-action {
+    visibility: hidden;
+}
+
+table tr:hover .table-last-action {
+    visibility: visible;
+}
+
 }

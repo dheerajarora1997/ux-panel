@@ -1,6 +1,7 @@
 body {
     font-size: .9rem;
-    .main-container{
+
+    .main-container {
         -webkit-animation-name: fadeIn;
         animation-name: fadeIn;
         animation-duration: 1s;
@@ -327,7 +328,7 @@ nav.navbar {
 
     th,
     td {
-        padding: .75rem .5rem;
+        padding: .75rem 1rem;
     }
 }
 
@@ -1056,7 +1057,7 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         .bs-searchbox {
             &:after {
                 top: 14px;
-                color: #4c79dc;
+                color: #666;
             }
 
             .form-control {
@@ -1083,13 +1084,31 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
         border-radius: 2px;
     }
 
-    .bootstrap-tagsinput{
+    .bootstrap-tagsinput {
         padding: 5px;
+        padding-right: 30px;
+
         input[type="text"] {
-        border: none;
-        padding: 0 5px 5px;
-        font-size: .85rem;
-       }
+            border: none;
+            padding: 0 5px 5px;
+            font-size: .85rem;
+        }
+    }
+
+    .chosen-container {
+        border: 1px solid #d2d2d2;
+        border-radius: 2px;
+        min-height: 56px;
+        .search-choice{
+            margin-left: 5px !important;
+        }
+        .chosen-search-input{
+            padding-left: 8px !important;
+        }
+
+        .chosen-choices {
+            border: none;
+        }
     }
 }
 
@@ -1349,4 +1368,8 @@ input[type="checkbox"] {
         color: #f44336;
         padding-left: 2px;
     }
+}
+
+.border-input{
+    border-color: #ccc !important;
 }
