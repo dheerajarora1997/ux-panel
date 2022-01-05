@@ -85,12 +85,12 @@
 }
 
 .team-user-card{
-    .team-user-dropdown:not(.show) [data-toggle="dropdown"]{
+    .team-user-dropdown{
         opacity: 0;
     }
     &:hover {
         background: #f0f4ff;
-        .team-user-dropdown:not(.show) [data-toggle="dropdown"]{
+        .team-user-dropdown{
             opacity: 1;
         }
     }
