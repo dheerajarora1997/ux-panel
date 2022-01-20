@@ -1422,7 +1422,8 @@
                                                         <label class="text-dark mb-0 mt-2 pt-1">Role</label>
                                                     </div>
                                                     <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border"  title="Assign a Role">
+                                                        <select class="selectpicker" data-style="px-2 border"
+                                                            title="Assign a Role">
                                                             <option>Role</option>
                                                             <option>Role</option>
                                                             <option>Role</option>
@@ -1437,7 +1438,8 @@
                                                         <label class="text-dark mb-0 mt-2 pt-1">Permission</label>
                                                     </div>
                                                     <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border" title="Assign a Permission">
+                                                        <select class="selectpicker" data-style="px-2 border"
+                                                            title="Assign a Permission">
                                                             <option>Permission</option>
                                                             <option>Permission</option>
                                                             <option>Permission</option>
@@ -1452,7 +1454,8 @@
                                                         <label class="text-dark mb-0 mt-2 pt-1">Terms</label>
                                                     </div>
                                                     <div class="col-8">
-                                                        <select class="selectpicker" data-style="px-2 border" title="Assign a Term">
+                                                        <select class="selectpicker" data-style="px-2 border"
+                                                            title="Assign a Term">
                                                             <option>Terms</option>
                                                             <option>Terms</option>
                                                             <option>Terms</option>
@@ -1467,7 +1470,8 @@
                                                         <label class="text-dark">Allocated Forms</label>
                                                     </div>
                                                     <div class="col-8">
-                                                        <select name="" id="" class="chosen-select form-control border" multiple data-placeholder="Allocated Forms">
+                                                        <select name="" id="" class="chosen-select form-control border"
+                                                            multiple data-placeholder="Allocated Forms">
                                                             <option>Option</option>
                                                             <option>Option</option>
                                                             <option>Option</option>
@@ -1771,7 +1775,9 @@
                                     <label class="text-dark mb-0 mt-2 pt-1">Role</label>
                                 </div>
                                 <div class="col-8">
-                                    <a href="#team-hierarchy-popup" data-toggle="modal" class="btn btn-link p-2 text-left border border-input d-block rounded-sm text-muted" data-backdrop="false">Assign a Role</a>
+                                    <a href="#team-hierarchy-popup" data-toggle="modal"
+                                        class="btn btn-link p-2 text-left border border-input d-block rounded-sm text-muted"
+                                        data-backdrop="false">Assign a Role</a>
                                 </div>
                             </div>
                         </div>
@@ -2113,12 +2119,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group pt-0 mb-3 d-none">
+                        <div class="form-group pt-0 mb-3">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-8">
                                     <div class="row align-items-center">
                                         <div class="col-5">
                                             <small class="mb-3">Available</small>
+                                            <input type="text" id="searchInput" onkeyup="filterFunction()" class="form-control border-bottom-0" />
                                             <select name="from" id="undo_redo" class="form-control multi-select-pill"
                                                 multiple="multiple">
                                                 <option value="1">C++</option>
@@ -2155,7 +2162,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-control pt-0 mb-3">
+                        <div class="form-control pt-0 mb-3 d-none">
                             <div class="row justify-content-end">
                                 <div class="col-12 col-md-8">
                                     <div id="transfer3" class=""></div>
@@ -2543,7 +2550,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
 
 
         <!--  Core JS Files  -->
@@ -2573,6 +2580,23 @@
         <script src="../static/backend/js/plugins/transfer.js"></script>
         <script src="../static/backend/js/plugins/chosen.js"></script>
 
+        <script>
+            function filterFunction() {
+                var input, filter, ul, li, option, i;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("undo_redo");
+                option = div.getElementsByTagName("option");
+                for (i = 0; i < option.length; i++) {
+                    txtValue = option[i].textContent || option[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        option[i].style.display = "";
+                    } else {
+                        option[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
         <script>
             $('.sorting').click(function () {
                 $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
@@ -2636,7 +2660,7 @@
             });
             $('.chosen-select').chosen();
             $('.tags-input').tagsinput();
-            $('.swipe-button').click(function(){$(this).toggleClass('btn-success btn-danger')});
+            $('.swipe-button').click(function () { $(this).toggleClass('btn-success btn-danger') });
         </script>
         <script>
             $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {

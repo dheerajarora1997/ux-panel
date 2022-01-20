@@ -3,95 +3,99 @@
 @import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure", "./components/multi-select-pill", "./components/bulk-upload";
 
 .header-info {
-    position: relative;
-    z-index: 9;
+  position: relative;
+  z-index: 9;
 }
 
 .ticket-left-panel {
-    overflow: hidden;
+  overflow: hidden;
 
-    .text-danger {
-        color: #ee554b !important;
-    }
+  .text-danger {
+    color: #ee554b !important;
+  }
 
-    .text-success {
-        color: #65c640 !important;
-    }
+  .text-success {
+    color: #65c640 !important;
+  }
 
-    .text-warning {
-        color: #e49f20 !important;
-    }
+  .text-warning {
+    color: #e49f20 !important;
+  }
 }
 
 .ticket-right-panel {
-    border-left: #d1d1d1 1px solid;
+  border-left: #d1d1d1 1px solid;
 }
 
 .student-query-header {
-    .bootstrap-select .dropdown-menu {
-        min-width: 180px;
-    }
+  .bootstrap-select .dropdown-menu {
+    min-width: 180px;
+  }
 }
 
 .dropdown.bootstrap-select {
-    width: 100% !important;
+  width: 100% !important;
 }
 
 .bootstrap-tagsinput {
-    max-width: 100% !important;
-    border-width: 1px;
-    padding-left: 5px;
-    min-height: 55px;
-    border-radius: 4px;
+  max-width: 100% !important;
+  border-width: 1px;
+  padding-left: 5px;
+  min-height: 55px;
+  border-radius: 4px;
 
-    .label {
-        margin-top: 3px;
-    }
+  .label {
+    margin-top: 3px;
+  }
 }
 
 .modal-accordion {
-    max-height: 100%;
-    min-height: calc(100vh - 290px);
+  max-height: 100%;
+  min-height: calc(100vh - 290px);
 }
 
 .team-group {
-    background: #fff;
+  background: #fff;
+
+  .team-name {
+    background: #f1f3f4;
+  }
+
+  .empty-card-link {
+    min-height: 251px;
+  }
+
+  .team-badge {
+    font-size: .85rem;
+  }
+
+  .team-card-dropdown:not(.show) [data-toggle="dropdown"] {
+    opacity: 0;
+  }
+
+  &:hover {
+    background: #f0f4ff;
 
     .team-name {
-        background: #f1f3f4;
+      background: #fff;
     }
 
-    .empty-card-link {
-        min-height: 251px;
+    .team-card-dropdown:not(.show) [data-toggle="dropdown"] {
+      opacity: 1;
     }
-
-    .team-badge {
-        font-size: .85rem;
-    }
-    .team-card-dropdown:not(.show) [data-toggle="dropdown"]{
-        opacity: 0;
-    }
-
-    &:hover {
-        background: #f0f4ff;
-
-        .team-name {
-            background: #fff;
-        }
-        .team-card-dropdown:not(.show) [data-toggle="dropdown"]{
-            opacity: 1;
-        }
-    }
+  }
 }
 
-.team-user-card{
-    .team-user-dropdown{
-        opacity: 0;
+.team-user-card {
+  .team-user-dropdown {
+    opacity: 0;
+  }
+
+  &:hover {
+    background: #f0f4ff;
+
+    .team-user-dropdown {
+      opacity: 1;
     }
-    &:hover {
-        background: #f0f4ff;
-        .team-user-dropdown{
-            opacity: 1;
-        }
-    }
+  }
 }

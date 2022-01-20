@@ -108,6 +108,45 @@
             </div>
         </div>
     </div>
+    <div class="jumbotron">
+        <div class="row justify-content-center">
+            <div class="col-10">
+                <input type="text" id="searchInput" onkeyup="filterFunction()" />
+                <select name="from" id="undo_redo" class="form-control multi-select-pill" multiple="multiple">
+                    <option value="1">C++</option>
+                    <option value="2">C#</option>
+                    <option value="3">Haskell</option>
+                    <option value="4">Java</option>
+                    <option value="5">JavaScript</option>
+                    <option value="6">Lisp</option>
+                    <option value="7">Lua</option>
+                    <option value="8">MATLAB</option>
+                    <option value="9">NewLISP</option>
+                    <option value="10">PHP</option>
+                    <option value="11">Perl</option>
+                    <option value="12">SQL</option>
+                    <option value="13">Unix shell</option>
+                </select>
+                <script>
+                    function filterFunction() {
+                        var input, filter, ul, li, option, i;
+                        input = document.getElementById("searchInput");
+                        filter = input.value.toUpperCase();
+                        div = document.getElementById("undo_redo");
+                        option = div.getElementsByTagName("option");
+                        for (i = 0; i < option.length; i++) {
+                            txtValue = option[i].textContent || option[i].innerText;
+                            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                option[i].style.display = "";
+                            } else {
+                                option[i].style.display = "none";
+                            }
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
     <script src="../static/backend/js/core/jquery.min.js"></script>
     <script src="../static/backend/js/core/popper.min.js"></script>
     <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
