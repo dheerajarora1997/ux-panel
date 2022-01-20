@@ -542,11 +542,17 @@
                                     data-container="body" title="Download" data-original-title="Filter"> file_download
                                 </span>
                             </a>
-                            <a href="#create-user-popup" data-toggle="modal"
-                                class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
-                                <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
-                                Create
-                            </a>
+                            <div class="dropdown">
+                                <a href="#"  type="button"
+                                    class="ml-2 btn btn-sm btn-primary border d-flex align-items-center dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    <span class="material-icons-outlined"  style="font-size: 18px;"> add </span>
+                                    Create
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#create-user-popup" data-toggle="modal">Create</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2125,7 +2131,8 @@
                                     <div class="row align-items-center">
                                         <div class="col-5">
                                             <small class="mb-3">Available</small>
-                                            <input type="text" id="searchInput" onkeyup="filterFunction()" class="form-control border-bottom-0" />
+                                            <input type="text" id="searchInput" onkeyup="filterFunction()"
+                                                class="form-control border-bottom-0" />
                                             <select name="from" id="undo_redo" class="form-control multi-select-pill"
                                                 multiple="multiple">
                                                 <option value="1">C++</option>
@@ -2553,196 +2560,196 @@
     </div>
 
 
-        <!--  Core JS Files  -->
-        <script src="../static/backend/js/core/jquery.min.js"></script>
-        <script src="../static/backend/js/core/popper.min.js"></script>
-        <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
+    <!--  Core JS Files  -->
+    <script src="../static/backend/js/core/jquery.min.js"></script>
+    <script src="../static/backend/js/core/popper.min.js"></script>
+    <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
 
-        <!--  Plugins Files  -->
-        <script src="../static/backend/js/plugins/moment.min.js"></script>
-        <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
-        <script src="../static/backend/js/plugins/nouislider.min.js"></script>
-        <!-- <script src="../static/backend/js/plugins/ckeditor.js"></script> -->
+    <!--  Plugins Files  -->
+    <script src="../static/backend/js/plugins/moment.min.js"></script>
+    <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
+    <script src="../static/backend/js/plugins/nouislider.min.js"></script>
+    <!-- <script src="../static/backend/js/plugins/ckeditor.js"></script> -->
 
-        <!--  Theme JS Files  -->
-        <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
-        <script src="../static/backend/js/bootstrap-select.js"></script>
-        <!--<script src="https://materializecss.com/bin/materialize.js"></script>-->
+    <!--  Theme JS Files  -->
+    <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
+    <script src="../static/backend/js/bootstrap-select.js"></script>
+    <!--<script src="https://materializecss.com/bin/materialize.js"></script>-->
 
-        <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
-        <!-- <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script> -->
+    <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
+    <!-- <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script> -->
 
 
-        <script src="../static/backend/js/base/common.js"></script>
-        <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
-        <script src="../static/backend/js/plugins/typehead.js"></script>
-        <script src="../static/backend/js/plugins/multiselect.min.js"></script>
-        <script src="../static/backend/js/plugins/transfer.js"></script>
-        <script src="../static/backend/js/plugins/chosen.js"></script>
+    <script src="../static/backend/js/base/common.js"></script>
+    <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
+    <script src="../static/backend/js/plugins/typehead.js"></script>
+    <script src="../static/backend/js/plugins/multiselect.min.js"></script>
+    <script src="../static/backend/js/plugins/transfer.js"></script>
+    <script src="../static/backend/js/plugins/chosen.js"></script>
 
-        <script>
-            function filterFunction() {
-                var input, filter, ul, li, option, i;
-                input = document.getElementById("searchInput");
-                filter = input.value.toUpperCase();
-                div = document.getElementById("undo_redo");
-                option = div.getElementsByTagName("option");
-                for (i = 0; i < option.length; i++) {
-                    txtValue = option[i].textContent || option[i].innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        option[i].style.display = "";
-                    } else {
-                        option[i].style.display = "none";
-                    }
+    <script>
+        function filterFunction() {
+            var input, filter, ul, li, option, i;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            div = document.getElementById("undo_redo");
+            option = div.getElementsByTagName("option");
+            for (i = 0; i < option.length; i++) {
+                txtValue = option[i].textContent || option[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    option[i].style.display = "";
+                } else {
+                    option[i].style.display = "none";
                 }
             }
-        </script>
-        <script>
-            $('.sorting').click(function () {
-                $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
-                if ($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')) {
-                    $(this).toggleClass('sorting_desc sorting_asc');
-                }
-                else {
-                    $(this).addClass('sorting_desc');
-                }
-            });
-            $('.expended-search-link').click(function () {
-                $(this).next('.expended-search-wrpper').toggleClass('active');
-            });
-            $('.expended-search-wrpper [data-dismiss="search"]').click(function () {
-                $('#searchTicket').val('');
-                $('.expended-search-wrpper').removeClass('active');
-            });
-            $('.expended-search-wrpper #search_filter').on('shown.bs.select', function () {
-                $('.expended-search-wrpper #searchBox').css('overflow', 'unset');
-            });
+        }
+    </script>
+    <script>
+        $('.sorting').click(function () {
+            $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
+            if ($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')) {
+                $(this).toggleClass('sorting_desc sorting_asc');
+            }
+            else {
+                $(this).addClass('sorting_desc');
+            }
+        });
+        $('.expended-search-link').click(function () {
+            $(this).next('.expended-search-wrpper').toggleClass('active');
+        });
+        $('.expended-search-wrpper [data-dismiss="search"]').click(function () {
+            $('#searchTicket').val('');
+            $('.expended-search-wrpper').removeClass('active');
+        });
+        $('.expended-search-wrpper #search_filter').on('shown.bs.select', function () {
+            $('.expended-search-wrpper #searchBox').css('overflow', 'unset');
+        });
 
-            $('.expended-search-wrpper #search_filter').on('hidden.bs.select', function () {
-                $('.expended-search-wrpper #searchBox').css('overflow', 'hidden');
-            });
+        $('.expended-search-wrpper #search_filter').on('hidden.bs.select', function () {
+            $('.expended-search-wrpper #searchBox').css('overflow', 'hidden');
+        });
 
-            // dropdownMenuPlacement with body
-            function dropdownMenuPlacement() {
-                $('.dropdown.show[data-container="body"]').dropdown('toggle');
-                // hold onto the drop down menu
-                var dropdownMenu;
-                // and when you show it, move it to the body
-                $('.dropdown[data-container="body"]').on('show.bs.dropdown', function (e) {
+        // dropdownMenuPlacement with body
+        function dropdownMenuPlacement() {
+            $('.dropdown.show[data-container="body"]').dropdown('toggle');
+            // hold onto the drop down menu
+            var dropdownMenu;
+            // and when you show it, move it to the body
+            $('.dropdown[data-container="body"]').on('show.bs.dropdown', function (e) {
 
-                    // grab the menu
-                    dropdownMenu = $(e.target).find('.dropdown-menu');
-                    var dropHeight = dropdownMenu.outerHeight() - 50;
+                // grab the menu
+                dropdownMenu = $(e.target).find('.dropdown-menu');
+                var dropHeight = dropdownMenu.outerHeight() - 50;
 
-                    // detach it and append it to the body
-                    $('body').append(dropdownMenu.detach());
+                // detach it and append it to the body
+                $('body').append(dropdownMenu.detach());
 
-                    // grab the new offset position
-                    var eOffset = $(e.target).offset();
-                    var offsetDropPos = eOffset.top - dropHeight;
-                    // make sure to place it where it would normally go (this could be improved)
-                    dropdownMenu.css({
-                        'display': 'block',
-                        //'top': eOffset.top + $(e.target).outerHeight(),
-                        'top': (offsetDropPos < 0) ? 0 : offsetDropPos,
-                        'left': eOffset.left - 135
-                    });
+                // grab the new offset position
+                var eOffset = $(e.target).offset();
+                var offsetDropPos = eOffset.top - dropHeight;
+                // make sure to place it where it would normally go (this could be improved)
+                dropdownMenu.css({
+                    'display': 'block',
+                    //'top': eOffset.top + $(e.target).outerHeight(),
+                    'top': (offsetDropPos < 0) ? 0 : offsetDropPos,
+                    'left': eOffset.left - 135
                 });
-                // and when you hide it, reattach the drop down, and hide it normally
-                $('.dropdown[data-container="body"]').on('hide.bs.dropdown', function (e) {
-                    $(e.target).append(dropdownMenu.detach());
-                    dropdownMenu.hide();
-                });
-            }
-
-            $('.dropdown[data-container="body"]:not(.show)').click(function () {
-                dropdownMenuPlacement();
             });
-            $('.chosen-select').chosen();
-            $('.tags-input').tagsinput();
-            $('.swipe-button').click(function () { $(this).toggleClass('btn-success btn-danger') });
-        </script>
-        <script>
-            $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
-                $('.tooltip').remove();
+            // and when you hide it, reattach the drop down, and hide it normally
+            $('.dropdown[data-container="body"]').on('hide.bs.dropdown', function (e) {
+                $(e.target).append(dropdownMenu.detach());
+                dropdownMenu.hide();
             });
-        </script>
-        <script>
+        }
 
-            // $('.editable-wrapper').mouseover(function(){
-            //    $(this).addClass('active');
-            // });
-            // $('.editable-wrapper').mouseleave(function(){
-            //    $('.editable-wrapper').removeClass('active');
-            // });
-            if ($('.editable-wrapper .editable-option').length) {
-                let editableOption = $('.editable-wrapper .editable-option').clone();
-                $('.editable-wrapper').append(editableOption);
+        $('.dropdown[data-container="body"]:not(.show)').click(function () {
+            dropdownMenuPlacement();
+        });
+        $('.chosen-select').chosen();
+        $('.tags-input').tagsinput();
+        $('.swipe-button').click(function () { $(this).toggleClass('btn-success btn-danger') });
+    </script>
+    <script>
+        $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
+            $('.tooltip').remove();
+        });
+    </script>
+    <script>
+
+        // $('.editable-wrapper').mouseover(function(){
+        //    $(this).addClass('active');
+        // });
+        // $('.editable-wrapper').mouseleave(function(){
+        //    $('.editable-wrapper').removeClass('active');
+        // });
+        if ($('.editable-wrapper .editable-option').length) {
+            let editableOption = $('.editable-wrapper .editable-option').clone();
+            $('.editable-wrapper').append(editableOption);
+        }
+        let tableElement = $('table tbody').html();
+        for (let i = 0; i < 3; i++) {
+            $('#tableCollapseParent table tbody').append(tableElement);
+        }
+        let skeletonCard = $('#skeleton-card').html();
+        for (let i = 0; i < 3; i++) {
+            $('#skeleton-card').append(skeletonCard);
+        }
+        $('#team-cards').hide();
+        $('#tableNoData').show();
+        $('#tableCollapseParent').hide();
+
+        setTimeout(() => {
+            $('#skeleton-card').hide();
+            $('#team-cards').show();
+            $('#tableNoData').hide();
+            $('#tableCollapseParent').show();
+        }, 4500);
+        $(document).ready(function () { $('#undo_redo').multiselect(); });
+        var groupDataArray = [
+            {
+                "city": "Beijing",
+                "value": 122
+            },
+            {
+                "city": "Shanghai",
+                "value": 643
+            },
+            {
+                "city": "Qingdao",
+                "value": 422
+            },
+            {
+                "city": "Tianjin",
+                "value": 622
+            },
+            {
+                "city": "Tokyo",
+                "value": 132
+            },
+            {
+                "city": "Osaka",
+                "value": 112
+            },
+            {
+                "city": "Yokohama",
+                "value": 191
             }
-            let tableElement = $('table tbody').html();
-            for (let i = 0; i < 3; i++) {
-                $('#tableCollapseParent table tbody').append(tableElement);
+        ];
+
+        var settings = {
+            tabNameText: "Available",
+            rightTabNameText: "Selected",
+            searchPlaceholderText: "Search",
+            "dataArray": groupDataArray,
+            "itemName": "city",
+            "valueName": "value",
+            "callable": function (items) {
+                // console.dir(items)
             }
-            let skeletonCard = $('#skeleton-card').html();
-            for (let i = 0; i < 3; i++) {
-                $('#skeleton-card').append(skeletonCard);
-            }
-            $('#team-cards').hide();
-            $('#tableNoData').show();
-            $('#tableCollapseParent').hide();
+        };
 
-            setTimeout(() => {
-                $('#skeleton-card').hide();
-                $('#team-cards').show();
-                $('#tableNoData').hide();
-                $('#tableCollapseParent').show();
-            }, 4500);
-            $(document).ready(function () { $('#undo_redo').multiselect(); });
-            var groupDataArray = [
-                {
-                    "city": "Beijing",
-                    "value": 122
-                },
-                {
-                    "city": "Shanghai",
-                    "value": 643
-                },
-                {
-                    "city": "Qingdao",
-                    "value": 422
-                },
-                {
-                    "city": "Tianjin",
-                    "value": 622
-                },
-                {
-                    "city": "Tokyo",
-                    "value": 132
-                },
-                {
-                    "city": "Osaka",
-                    "value": 112
-                },
-                {
-                    "city": "Yokohama",
-                    "value": 191
-                }
-            ];
-
-            var settings = {
-                tabNameText: "Available",
-                rightTabNameText: "Selected",
-                searchPlaceholderText: "Search",
-                "dataArray": groupDataArray,
-                "itemName": "city",
-                "valueName": "value",
-                "callable": function (items) {
-                    // console.dir(items)
-                }
-            };
-
-            $("#transfer3").transfer(settings);
-        </script>
+        $("#transfer3").transfer(settings);
+    </script>
 </body>
 
 </html>
