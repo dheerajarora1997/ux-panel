@@ -11,6 +11,9 @@ select.multi-select-pill[multiple] {
         background: #ededed;
     }
 }
+select#undo_redo_to {
+    min-height: 185px;
+}
 
 .pill-selected select.multi-select-pill[multiple] {
 

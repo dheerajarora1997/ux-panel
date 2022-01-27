@@ -55,7 +55,10 @@
 }
 
 .team-group {
-  background: #fff;
+    background: #fff;
+    &-header{
+        min-height: 204px;
+    }
 
   .team-name {
     background: #f1f3f4;
