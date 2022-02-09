@@ -3,19 +3,26 @@
     overflow: hidden;
     transition: all ease .5s;
     scrollbar-width: thin;
+
     &:hover {
         overflow-y: auto;
         overflow-y: overlay;
         z-index: 1;
     }
-    &.has-scrolled{
+
+    &.has-scrolled {
         height: calc(100vh - 80px);
+    }
+
+    &.shorten {
+        height: calc(100vh - 260px);
     }
 }
 
 .list-group {
     .list-group-item {
         border-bottom: 1px solid #f8f9fa;
+
         h6 {
             font-weight: 400;
         }
@@ -32,13 +39,16 @@
             content: '';
             transition: width 0.5s;
         }
-        .font-light-small{
-            color:$grey-700;
+
+        .font-light-small {
+            color: $grey-700;
         }
-        &:before{
+
+        &:before {
             content: '';
             transition: width 0.5s;
         }
+
         &.active {
             background: #f8f9fa;
 
@@ -64,7 +74,7 @@
             }
         }
 
-        p{
+        p {
             line-height: 1.4;
             font-weight: 400;
 

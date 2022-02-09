@@ -1392,3 +1392,25 @@ input[type="checkbox"] {
 .cursor-not-allowed {
     cursor: not-allowed;
 }
+
+.cam-icon {
+    right: 2px;
+    bottom: 4px;
+}
+
+.search-input {
+    position: relative;
+
+    input {
+        padding-left: 22px;
+    }
+
+    &:before {
+        content: '\e8b6';
+        font-family: 'Material Icons';
+        position: absolute;
+        top: 19px;
+        left: 15px;
+        color: #666;
+    }
+}
