@@ -6,7 +6,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../apple-icon.png">
   <link rel="icon" type="image/ico" href="../favicon.ico">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>User Limit</title>
+  <title>Admin Data Update Logs</title>
   <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
   <!--  Fonts and icons -->
   <link rel="stylesheet" type="text/css"
@@ -15,10 +15,10 @@
   <!-- CSS Files -->
   <link href="../static/backend/css/main.css" rel="stylesheet" />
   <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
-  <link href="../static/backend/css/user-limit.css" rel="stylesheet" />
+  <link href="../static/backend/css/custom-list.css" rel="stylesheet" />
 </head>
 
-<body class="dark-mode">
+<body>
   <!-- Header With Side Nav Start-->
   <nav class="navbar fixed-top navbar-expand-lg border-bottom shadow-none brand-color" color-on-scroll="100"
     id="sectionsNav">
@@ -434,145 +434,587 @@
     </div>
   </nav>
   <!-- Header With Side Nav End-->
-  <div
-    class="header-info bg-white d-flex flex-wrap justify-content-between px-0 px-lg-3 py-0 py-lg-2 shadow-bottom position-sticky mb-2">
-    <div class="d-none d-md-flex section-header-breadcrumb align-items-center w-sm-100 px-3 px-lg-0 py-lg-0">
-      <h3 class="h5 d-inline-block my-1">User Limit</h3>
-    </div>
-    <div
-      class="input_search w-sm-100 px-3 px-lg-0 my-2 my-lg-0 d-flex align-items-center justify-content-md-end justify-content-between">
-      <h3 class="h5 d-inline-block my-1 d-block d-md-none">User Limit</h3>
-    </div>
-
-  </div>
-  <div id="main" class="wrapper">
-    <div class="main-container px-4 pb-md-3 pt-1">
-      <div id="myCanvasNav" class="overlay" onclick="closeNav()">
-        <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
-      </div>
-      <div class="mb-3">
-        <div class="bg-white rounded shadow-sm">
+  <div class="wrapper" id="main">
+    <div class="main-container p-0">
+      <div class="bg-white d-flex flex-wrap justify-content-between px-3 py-2 shadow-bottom mb-3">
+        <div class="topHead w-100 d-inline-block">
           <div class="row">
-            <div class="col-sm-12 col-md-4">
-              <h6 class="mt-2 mb-3 font-weight-normal text-center">Total Users</h6>
-              <div class="circle-wrap mb-4">
-                <div class="circle c75">
-                  <div class="mask full">
-                    <div class="fill"></div>
-                  </div>
-                  <div class="mask half">
-                    <div class="fill"></div>
-                  </div>
-                  <div class="inside-circle"> 75% </div>
-                </div>
+            <div class="col-4 col-md-6 d-flex justify-content-between pr-0 pr-sm-2">
+              <div class="d-flex">
+                <h3 class="h5 d-inline-block my-1">Admin Data Update Logs</h3>
               </div>
             </div>
-            <div class="col-sm-12 col-md-4">
-              <h6 class="mt-2 mb-3 font-weight-normal text-secondary text-center">Standard Users</h6>
-              <div class="circle-wrap mb-4">
-                <div class="circle c55">
-                  <div class="mask full">
-                    <div class="fill bg-danger"></div>
+            <div class="col-8 col-md-6 pl-0 pl-md-3 d-flex align-items-end justify-content-md-end">
+              <div class="position-relative" id="expendedSearch">
+                <a href="javascript:void(0);"
+                  class="expended-search-link d-flex border-0 p-1 ml-2 hover-effect rounded-circle text-secondary"
+                  data-toggle="tooltip" data-placement="bottom" data-container="body" title="Search"
+                  data-trigger="hover">
+                  <span class="material-icons-outlined"> search </span>
+                </a>
+                <div class="expended-search-wrpper position-absolute">
+                  <div class="row no-gutters border" id="searchBox">
+                    <div class="col-7">
+                      <div class="expandSearch">
+                        <div class="form-group has-search mb-0 py-0 bmd-form-group">
+                          <span class="material-icons search_icon text-muted ml-1">search</span>
+                          <input type="search" name="searchticket" id="searchTicket" class="form-control pl-4"
+                            placeholder="Search" value="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="form-group p-0 my-0 rounded-0">
+                        <select name="status" id="search_filter" title="Search By" class="form-control selectpicker"
+                          data-style="bg-light pl-2 pr-1 rounded-0">
+                          <option value="ticket_id" {% if not parameters.email and not parameters.mobile %} selected {%
+                            endif %}>Name</option>
+                          <option value="email">Email</option>
+                          <option value="mobile">Role</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-1 d-flex align-items-center">
+                      <a href="javascript:void(0);" onclick="resetSearch();" data-dismiss="search"
+                        class="pl-1 py-2 d-flex justify-content-center align-items-center" data-toggle="tooltip"
+                        data-placement="bottom" data-container="body" title="Close" data-trigger="hover">
+                        <span class="material-icons-outlined text-secondary"> close </span>
+                      </a>
+                    </div>
                   </div>
-                  <div class="mask half">
-                    <div class="fill bg-danger"></div>
-                  </div>
-                  <div class="inside-circle text-danger"> 55% </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-12 col-md-4">
-              <h6 class="mt-2 mb-3 font-weight-normal text-secondary text-center">Light Users</h6>
-              <div class="circle-wrap mb-4">
-                <div class="circle c25">
-                  <div class="mask full">
-                    <div class="fill bg-warning"></div>
-                  </div>
-                  <div class="mask half">
-                    <div class="fill bg-warning"></div>
-                  </div>
-                  <div class="inside-circle text-warning"> 25% </div>
-                </div>
-              </div>
+              <a href="#filterPopup"
+                class="filter-btn text-secondary d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle hover-effect"
+                data-toggle="modal">
+                <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title=""
+                  data-container="body" title="Filter" data-original-title="Filter">
+                  filter_alt </span>
+              </a>
+              <!-- <div class="dropdown">
+                                <a href="#create-user-popup"  type="button" data-toggle="modal"
+                                    class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
+                                    <span class="material-icons-outlined"  style="font-size: 18px;"> add </span>
+                                    Create
+                                </a>
+                            </div> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-12 col-md-6">
-          <div class="bg-white px-3 py-2 shadow-sm rounded">
-            <h5>Standard User</h5>
-            <div class="graphbox">
-              <span class="axis-points"></span>
-              <span class="axis-names" data-axis-x="Category" data-axis-y="Users"></span>
-              <div class="graph-bar bg-primary" style="width: 100%" data-title="Total User">20</div>
-              <div class="graph-bar bg-danger" style="width: 50%" data-title="Active">12</div>
-              <div class="graph-bar bg-info" style="width: 40%" data-title="Inactive">8</div>
-              <div class="graph-bar bg-warning" style="width: 20%" data-title="Unregistered">2</div>
+      <div class="px-3 pb-3">
+        <div class="row">
+          <div class="col-12">
+            <div class="border-bottom mb-3">
+              <div class="row align-items-center">
+                <div class="col-12 col-sm-4">
+                  <div class="nav-tabs-navigation inline_tabs spotlight mb-0">
+                    <div class="nav-tabs-wrapper">
+                      <ul class="nav nav-tabs flex-nowrap border-bottom-0" data-tabs="tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active show" href="#data-logs" data-toggle="tab">Upload Logs</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                                                    <a class="nav-link" href="#user-teams" data-toggle="tab">Teams</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#user-roles" data-toggle="tab">Roles</a>
+                                                </li> -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6 text-right justify-content-end ml-auto">
+                  <div class="my-0">
+                    <button data-target="#create-admin-field" data-toggle="modal" type="button"
+                      class="btn btn-sm btn-primary">Create Admin Field</button>
+                    <button data-target="#update-admin-data" data-toggle="modal" type="button"
+                      class="btn btn-sm btn-primary">Update Admin Data</button>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6">
-          <div class="bg-white px-3 py-2 shadow-sm rounded">
-            <h5>Light User</h5>
-            <div class="graphbox">
-              <span class="axis-points"></span>
-              <span class="axis-names" data-axis-x="Category" data-axis-y="Users"></span>
-              <div class="graph-bar bg-primary" style="width: 100%" data-title="Total User">20</div>
-              <div class="graph-bar bg-danger" style="width: 50%" data-title="Active">12</div>
-              <div class="graph-bar bg-info" style="width: 40%" data-title="Inactive">8</div>
-              <div class="graph-bar bg-warning" style="width: 20%" data-title="Unregistered">2</div>
+            <div class="tab-content">
+              <div id="myCanvasNav" class="overlay" onclick="closeNav()">
+                <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">&times;</a>
+              </div>
+              <div class="tab-pane fade active show" id="data-logs">
+                <div id="tableNoData">
+                  <div class="h-96 w-100 bg-white d-flex justify-content-center align-items-center flex-column">
+                    <img src="../static/backend/images/no-record.png" alt="" class="w-40">
+                    <h3 class="text-secondary h4">No Data Available</h3>
+                    <!-- <a href="#create-user-popup" data-toggle="modal"
+                                            class="ml-2 btn btn-sm btn-primary border d-flex align-items-center">
+                                            <span class="material-icons-outlined" style="font-size: 18px;"> add </span>
+                                            Create User
+                                        </a> -->
+                  </div>
+                </div>
+                <div class="grid-table w-100 mt-4 mt-sm-2" id="tableCollapseParent">
+                  <div class="responsive-table">
+                    <table class="table table-borderless" data-last-col="true" data-colfix="2" data-col-left="50">
+                      <thead>
+                        <tr>
+                          <th class="min-max-250 sorting">Upload Date & Time</th>
+                          <th class="min-max-200 sorting">Uploaded By</th>
+                          <th class="min-max-200 sorting">Upload Status</th>
+                          <th class="min-max-200 text-center">Successfully Uploaded</th>
+                          <th class="min-max-200 text-center">Failed</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="grid-table-row">
+                          <td class="min-max-250 font-weight-bold" data-title="Upload Date & Time">
+                            21 Feb 2020 03:23:00 PM
+                          </td>
+                          <td class="min-max-200 sorting" data-title="Uploaded By">
+                            Npf Automation
+                          </td>
+                          <td class="min-max-200 sorting" data-title="Upload Status">
+                            Completed
+                          </td>
+                          <td class="min-max-200 text-center" data-title="Successfully Uploaded">
+                            0
+                          </td>
+                          <td class="min-max-200 text-center" data-title="Failed">
+                            0
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="d-flex justify-content-end align-items-center">
+                    <span class="mr-1 text-muted small">Show Rows</span>
+                    <div class="form-group my-0 mr-1 p-0">
+                      <select name="" id="" class="normal-select p-1 border small bg-white">
+                        <option value="">10</option>
+                        <option value="">20</option>
+                        <option value="">50</option>
+                        <option value="">100</option>
+                      </select>
+                    </div>
+                    <span class="mx-2 text-muted small">Go to</span>
+                    <div class="form-group m-0 p-0">
+                      <input type="text" class="pagination-input border small text-center">
+                    </div>
+                    <span class="ml-1 mr-2 text-muted small">of 3</span>
+                    <div class="npf-pagination">
+                      <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
+                        data-placement="top" title="" data-container="body" data-original-title="Previous"><i
+                          class="fa fa-angle-left" aria-hidden="true"></i></a>
+                      <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
+                        title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
+                          aria-hidden="true"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer footer-white border-top">
-      <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
-        <a class="footer-brand text-muted" href="#">Copyright © 2021 NoPaperForms. All rights reserved</a>
+  </div>
+  <footer class="footer footer-white border-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+      <a class="footer-brand text-muted" href="#">Copyright © 2021 NoPaperForms. All rights reserved</a>
 
-        <ul class="social-buttons float-right">
-          <li>
-            <a href="https://www.facebook.com/nopaperforms" data-toggle="tooltip" data-placement="top" title=""
-              data-container="body" data-original-title="Facebook" target="_blank"
-              class="btn btn-just-icon btn-link btn-facebook">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://twitter.com/nopaperforms1" target="_blank" data-toggle="tooltip" data-placement="top"
-              title="" data-container="body" data-original-title="Twitter"
-              class="btn btn-just-icon btn-link btn-twitter">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
+      <ul class="social-buttons float-right">
+        <li>
+          <a href="https://www.facebook.com/nopaperforms" data-toggle="tooltip" data-placement="top" title=""
+            data-container="body" data-original-title="Facebook" target="_blank"
+            class="btn btn-just-icon btn-link btn-facebook">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/nopaperforms1" target="_blank" data-toggle="tooltip" data-placement="top"
+            title="" data-container="body" data-original-title="Twitter" class="btn btn-just-icon btn-link btn-twitter">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+        </li>
 
-          <li>
-            <a href="https://www.linkedin.com/company/nopaperforms-com/" target="_blank" data-toggle="tooltip"
-              data-placement="top" title="" data-container="body" data-original-title="Linkedin"
-              class="btn btn-just-icon btn-link btn-linkedin">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/channel/UCcHtB-AXJ0qXMUs9-DyjjcA" target="_blank" data-toggle="tooltip"
-              data-placement="top" title="" data-container="body" data-original-title="Youtube"
-              class="btn btn-just-icon btn-link btn-youtube">
-              <i class="fa fa-youtube-play" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
+        <li>
+          <a href="https://www.linkedin.com/company/nopaperforms-com/" target="_blank" data-toggle="tooltip"
+            data-placement="top" title="" data-container="body" data-original-title="Linkedin"
+            class="btn btn-just-icon btn-link btn-linkedin">
+            <i class="fa fa-linkedin" aria-hidden="true"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCcHtB-AXJ0qXMUs9-DyjjcA" target="_blank" data-toggle="tooltip"
+            data-placement="top" title="" data-container="body" data-original-title="Youtube"
+            class="btn btn-just-icon btn-link btn-youtube">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+
+  <div id="notifyAlert" class="notifY-alert d-flex">
+    <div class="notify-content alert alert-success">
+      <div class="alert-icon">
+        <span class="material-icons">check</span>
       </div>
-    </footer>
+      Changed saved successfully!
+    </div>
+  </div>
 
-    <!--  Core JS Files  -->
-    <script src="../static/backend/js/core/jquery.min.js"></script>
-    <script src="../static/backend/js/core/popper.min.js"></script>
-    <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
+  <div class="modal fade offCanvasModal right popup-customization" id="update-admin-data" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-blue">
+          <h5 class="modal-title my-0" id="exampleModalLabel">
+            <span class="title font-weight-bold">Update Admin Data</span>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+            data-placement="left" data-container="body" title="Click Here to Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="p-3">
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">Select Form Name</label>
+                </div>
+                <div class="col-sm-8">
+                  <select name="" id="" class="chosen-select form-control" data-style="px-2 border" multiple data-placeholder="Select Form">
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">Update Data</label>
+                </div>
+                <div class="col-sm-8">
+                  <select name="" id="" class="selectpicker form-control" data-style="px-2 border" multiple data-placeholder="Select Option">
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">CSV File</label>
+                </div>
+                <div class="col-sm-8">
+                  <input type="file" class="position-static" id="attachment" style="opacity: 1; height: 30px;">
+                  <a href="javascript:void(0);" class="text-primary d-flex align-items-center">
+                    <span class="material-icons-outlined"> file_download </span>
+                    Download Sample File
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-end">
+              <div class="col-sm-8">
+                <div class="bg-light px-2 mb-2 d-block">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <label for="">CSV Label</label>
+                    </div>
+                    <div class="col-sm-7">
+                      <label for="">Form Fields</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-light px-2 py-2 mb-2 d-block">
+                  <div class="row my-2">
+                    <div class="col-sm-5">
+                      <label for="" class="label-required">Application</label>
+                    </div>
+                    <div class="col-sm-7 fixed-scoring-field">
+                      <select name="" id="" class="selectpicker" data-style="px-1 py-0 border">
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                        <option value="">Option 3</option>
+                        <option value="">Option 4</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-sm-5">
+                      <label for="" class="label-required">Application 1</label>
+                    </div>
+                    <div class="col-sm-7 fixed-scoring-field">
+                      <select name="" id="" class="selectpicker" data-style="px-1 py-0 border">
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                        <option value="">Option 3</option>
+                        <option value="">Option 4</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row my-2">
+                    <div class="col-sm-5">
+                      <label for="" class="label-required">Application 2</label>
+                    </div>
+                    <div class="col-sm-7 fixed-scoring-field">
+                      <select name="" id="" class="selectpicker" data-style="px-1 py-0 border">
+                        <option value="">Option 1</option>
+                        <option value="">Option 2</option>
+                        <option value="">Option 3</option>
+                        <option value="">Option 4</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade offCanvasModal right popup-customization" id="create-admin-field" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header border-bottom-blue">
+          <h5 class="modal-title my-0" id="exampleModalLabel">
+            <span class="title font-weight-bold">Create Admin Form Field</span>
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+            data-placement="left" data-container="body" title="Click Here to Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="p-3">
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">Field Name</label>
+                </div>
+                <div class="col-sm-8">
+                 <input type="text" name="" id="" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">Field Label</label>
+                </div>
+                <div class="col-sm-8">
+                  <select name="" id="" class="selectpicker form-control" data-style="px-2 border" multiple data-placeholder="Select Option">
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group mb-3 pt-0">
+              <div class="row">
+                <div class="col-sm-4">
+                  <label for="" class="pt-2 label-required">Field Type</label>
+                </div>
+                <div class="col-sm-8">
+                  <select name="" id="" class="selectpicker form-control" data-style="px-2 border" multiple data-placeholder="Select Option">
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                    <option>Option</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade offCanvasModal right popup-customization" id="filterPopup" tabindex="-1" role="dialog"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content h-100">
+        <div class="modal-header border-bottom-blue">
+          <h5 class="modal-title my-0" id="exampleModalLabel">
+            <span class="title font-weight-bold">Filter</span>
+          </h5>
 
-    <!-- Plugin  -->
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="tooltip"
+            data-placement="left" title="" data-container="body" data-original-title="Click Here to Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group pt-0">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="tickets_forms" class="pt-2">Select College</label>
+              </div>
+              <div class="col-sm-8">
+                <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select College"
+                  data-style="px-2 border">
+                  <option value="">college 1</option>
+                  <option value="">college 1</option>
+                  <option value="">college 1</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group pt-0">
+            <div class="row">
+              <div class="col-sm-4">
+                <label for="tickets_forms" class="pt-2">Select Form</label>
+              </div>
+              <div class="col-sm-8">
+                <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select Form"
+                  data-style="px-2 border">
+                  <option value="">Admission</option>
+                  <option value="">General</option>
+                  <option value="">Technical</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button class="btn btn-sm btn-outline-secondary rounded-0" data-dismiss="modal">Reset</button>
+            <button class="btn btn-sm btn-primary rounded-0">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
+  <!--  Core JS Files  -->
+  <script src="../static/backend/js/core/jquery.min.js"></script>
+  <script src="../static/backend/js/core/popper.min.js"></script>
+  <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
+
+  <!--  Plugins Files  -->
+  <script src="../static/backend/js/plugins/moment.min.js"></script>
+  <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
+  <script src="../static/backend/js/plugins/nouislider.min.js"></script>
+  <!-- <script src="../static/backend/js/plugins/ckeditor.js"></script> -->
+
+  <!--  Theme JS Files  -->
+  <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
+  <script src="../static/backend/js/bootstrap-select.js"></script>
+  <!--<script src="https://materializecss.com/bin/materialize.js"></script>-->
+
+  <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
+  <!-- <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script> -->
+
+
+  <script src="../static/backend/js/base/common.js"></script>
+  <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
+  <script src="../static/backend/js/plugins/typehead.js"></script>
+  <script src="../static/backend/js/plugins/multiselect.min.js"></script>
+  <script src="../static/backend/js/plugins/transfer.js"></script>
+  <script src="../static/backend/js/plugins/chosen.js"></script>
+  <script>
+    $('.sorting').click(function () {
+      $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
+      if ($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')) {
+        $(this).toggleClass('sorting_desc sorting_asc');
+      }
+      else {
+        $(this).addClass('sorting_desc');
+      }
+    });
+    $('.expended-search-link').click(function () {
+      $(this).next('.expended-search-wrpper').toggleClass('active');
+    });
+    $('.expended-search-wrpper [data-dismiss="search"]').click(function () {
+      $('#searchTicket').val('');
+      $('.expended-search-wrpper').removeClass('active');
+    });
+    $('.expended-search-wrpper #search_filter').on('shown.bs.select', function () {
+      $('.expended-search-wrpper #searchBox').css('overflow', 'unset');
+    });
+
+    $('.expended-search-wrpper #search_filter').on('hidden.bs.select', function () {
+      $('.expended-search-wrpper #searchBox').css('overflow', 'hidden');
+    });
+
+    // dropdownMenuPlacement with body
+    function dropdownMenuPlacement() {
+      $('.dropdown.show[data-container="body"]').dropdown('toggle');
+      // hold onto the drop down menu
+      var dropdownMenu;
+      // and when you show it, move it to the body
+      $('.dropdown[data-container="body"]').on('show.bs.dropdown', function (e) {
+
+        // grab the menu
+        dropdownMenu = $(e.target).find('.dropdown-menu');
+        var dropHeight = dropdownMenu.outerHeight() - 50;
+
+        // detach it and append it to the body
+        $('body').append(dropdownMenu.detach());
+
+        // grab the new offset position
+        var eOffset = $(e.target).offset();
+        var offsetDropPos = eOffset.top - dropHeight;
+        // make sure to place it where it would normally go (this could be improved)
+        dropdownMenu.css({
+          'display': 'block',
+          //'top': eOffset.top + $(e.target).outerHeight(),
+          'top': (offsetDropPos < 0) ? 0 : offsetDropPos,
+          'left': eOffset.left - 135
+        });
+      });
+      // and when you hide it, reattach the drop down, and hide it normally
+      $('.dropdown[data-container="body"]').on('hide.bs.dropdown', function (e) {
+        $(e.target).append(dropdownMenu.detach());
+        dropdownMenu.hide();
+      });
+    }
+
+    $('.dropdown[data-container="body"]:not(.show)').click(function () {
+      dropdownMenuPlacement();
+    });
+    $('.chosen-select').chosen();
+    $('.tags-input').tagsinput();
+    $('.swipe-button').click(function () { $(this).toggleClass('btn-success btn-danger') });
+  </script>
+  <script>
+    $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
+      $('.tooltip').remove();
+    });
+  </script>
+  <script>
+    if ($('.editable-wrapper .editable-option').length) {
+      let editableOption = $('.editable-wrapper .editable-option').clone();
+      $('.editable-wrapper').append(editableOption);
+    }
+    let tableElement = $('table tbody').html();
+    for (let i = 0; i < 3; i++) {
+      $('#tableCollapseParent table tbody').append(tableElement);
+    }
+    let skeletonCard = $('#skeleton-card').html();
+    for (let i = 0; i < 3; i++) {
+      $('#skeleton-card').append(skeletonCard);
+    }
+    $('#team-cards').hide();
+    $('#tableNoData').show();
+    $('#tableCollapseParent').hide();
+
+    setTimeout(() => {
+      $('#skeleton-card').hide();
+      $('#team-cards').show();
+      $('#tableNoData').hide();
+      $('#tableCollapseParent').show();
+    }, 4500);
+  </script>
 </body>
 
 </html>

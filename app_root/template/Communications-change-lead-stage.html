@@ -31,7 +31,7 @@
       .has-sub-tree-label{position: relative;}
       .has-sub-tree-label:before{content: ''; position: absolute; left: -23px; top: 50%; height: 1px;  width: 24px;  border: 1px solid #f8f9fa;}
       .dlt-btn{line-height: 1; padding: 10px; width: 43px; height: 43px;}
-      .clear-btn{line-height: 1; padding: 4px; width: 30px; height: 30px; position: absolute; right: 0; top: -15px; }
+      .clear-btn{line-height: 1; padding: 4px; width: 20px; height: 20px; position: absolute; right: 0; top: -16px; }
    </style>
 </head>
 
@@ -601,219 +601,228 @@
                                                 </div>
                                              </div>
                                           </div>
-                                          <div class="card px-3 mt-0 mb-3">
-                                             <!-- Stage -->
-                                             <div class="position-relative has-tree">
-                                                <div class="row align-items-start my-3">
-                                                   <div class="col-2">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center font-weight-bold">Stage 1</span>
-                                                   </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Application Paid</option>
-                                                         <option>Application Paid</option>
-                                                         <option>Application Paid</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Select Score</option>
-                                                         <option> -10 </option>
-                                                         <option> -5 </option>
-                                                         <option> 0 </option>
-                                                         <option> 1 </option>
-                                                         <option> 2 </option>
-                                                         <option> 3 </option>
-                                                         <option> 4 </option>
-                                                         <option> 5 </option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-1">
+                                          <div id="dragItemBox">
 
-                                                   </div>
-                                                </div>
-                                                <div class="row align-items-start mb-3 has-sub-tree">
-                                                   <div class="col-2 pl-4 ">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
-                                                   </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Online</option>
-                                                         <option>Offline</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-3 text-right">
-                                                      <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
-                                                         <span class="material-icons-outlined"> delete </span>
-                                                      </a>
-                                                   </div>
-                                                </div>
-                                                <div class="row align-items-start mb-3 has-sub-tree">
-                                                   <div class="col-2 pl-4 ">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
-                                                   </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Online</option>
-                                                         <option>Offline</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-3 text-right">
-                                                      <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
-                                                         <span class="material-icons-outlined"> delete </span>
-                                                      </a>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                             <div class="row mb-3">
-                                                <div class="col-12 text-right">
-                                                   <a href="javascript:void" class="text-primary border-bottom-blue">Add New Sub Stage</a>
-                                                </div>
-                                             </div>
-                                             <!-- Sub stage -->
-                                          </div>
-                                          <div class="card px-3 mt-0 mb-3">
-                                             <div class="position-relative has-tree">
+                                             <div class="card px-3 mt-0 mb-3">
                                                 <!-- Stage -->
-                                                <div class="row align-items-start my-3">
-                                                   <div class="col-2">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center font-weight-bold">Stage 2</span>
+                                                <div class="position-relative has-tree">
+                                                   <div class="row align-items-start my-3">
+                                                      <div class="col-2">
+                                                         <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center font-weight-bold">Stage 1</span>
+                                                      </div>
+                                                      <div class="col-3">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Application Paid</option>
+                                                            <option>Application Paid</option>
+                                                            <option>Application Paid</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Select Score</option>
+                                                            <option> -10 </option>
+                                                            <option> -5 </option>
+                                                            <option> 0 </option>
+                                                            <option> 1 </option>
+                                                            <option> 2 </option>
+                                                            <option> 3 </option>
+                                                            <option> 4 </option>
+                                                            <option> 5 </option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-1">
+                                                         <div class="togglebutton"><label><input type="checkbox" checked=""><span class="toggle"></span></label></div>
+                                                      </div>
                                                    </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Application Paid</option>
-                                                         <option>Application Paid</option>
-                                                         <option>Application Paid</option>
-                                                      </select>
+                                                   <div class="" id="dragSubItem">
+                                                      <div class="row align-items-start mb-3 has-sub-tree">
+                                                         <div class="col-2 pl-4 ">
+                                                            <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
+                                                         </div>
+                                                         <div class="col-3">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Online</option>
+                                                               <option>Offline</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-3 text-right">
+                                                            <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
+                                                               <span class="material-icons-outlined"> delete </span>
+                                                            </a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row align-items-start mb-3 has-sub-tree">
+                                                         <div class="col-2 pl-4 ">
+                                                            <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
+                                                         </div>
+                                                         <div class="col-3">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Online</option>
+                                                               <option>Offline</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-3 text-right">
+                                                            <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
+                                                               <span class="material-icons-outlined"> delete </span>
+                                                            </a>
+                                                         </div>
+                                                      </div>
                                                    </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Select Score</option>
-                                                         <option> -10 </option>
-                                                         <option> -5 </option>
-                                                         <option> 0 </option>
-                                                         <option> 1 </option>
-                                                         <option> 2 </option>
-                                                         <option> 3 </option>
-                                                         <option> 4 </option>
-                                                         <option> 5 </option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-1 text-right">
-                                                      <a href="javascript:void(0);" class="d-inline-block text-white bg-danger clear-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Stage">
-                                                         <span class="material-icons-outlined"> clear </span>
-                                                      </a>
+                                                </div>
+                                                <div class="row mb-3">
+                                                   <div class="col-12 text-right">
+                                                      <a href="javascript:void" class="text-primary border-bottom-blue">Add New Sub Stage</a>
                                                    </div>
                                                 </div>
                                                 <!-- Sub stage -->
-                                                <div class="row align-items-start mb-3 has-sub-tree">
-                                                   <div class="col-2 pl-4 ">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
-                                                   </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Online</option>
-                                                         <option>Offline</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-3 text-right">
-                                                      <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
-                                                         <span class="material-icons-outlined"> delete </span>
-                                                      </a>
-                                                   </div>
-                                                </div>
-                                                <div class="row align-items-start mb-3 has-sub-tree">
-                                                   <div class="col-2 pl-4 ">
-                                                      <span class="form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
-                                                   </div>
-                                                   <div class="col-3">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Online</option>
-                                                         <option>Offline</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-2">
-                                                      <select class="selectpicker form-control border-bottom-form">
-                                                         <option>Yes</option>
-                                                         <option>No</option>
-                                                      </select>
-                                                   </div>
-                                                   <div class="col-3 text-right">
-                                                      <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
-                                                         <span class="material-icons-outlined"> delete </span>
-                                                      </a>
-                                                   </div>
-                                                </div>
                                              </div>
-                                             <div class="row mb-3">
-                                                <div class="col-12 text-right">
-                                                   <a href="javascript:void" class="text-primary border-bottom-blue">Add New Sub Stage</a>
+                                             <div class="card px-3 mt-0 mb-3">
+                                                <div class="position-relative has-tree">
+                                                   <!-- Stage -->
+
+                                                   <div class="row align-items-start my-3">
+                                                      <div class="col-2">
+                                                         <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center font-weight-bold">Stage 2</span>
+                                                      </div>
+                                                      <div class="col-3">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Application Paid</option>
+                                                            <option>Application Paid</option>
+                                                            <option>Application Paid</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Yes</option>
+                                                            <option>No</option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-2">
+                                                         <select class="selectpicker form-control border-bottom-form">
+                                                            <option>Select Score</option>
+                                                            <option> -10 </option>
+                                                            <option> -5 </option>
+                                                            <option> 0 </option>
+                                                            <option> 1 </option>
+                                                            <option> 2 </option>
+                                                            <option> 3 </option>
+                                                            <option> 4 </option>
+                                                            <option> 5 </option>
+                                                         </select>
+                                                      </div>
+                                                      <div class="col-1">
+                                                         <div class="togglebutton mt-2"><label><input type="checkbox" checked=""><span class="toggle"></span></label></div>
+                                                         <a href="javascript:void(0);" class="d-inline-block text-white bg-danger clear-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Stage">
+                                                            <span class="material-icons-outlined"> clear </span>
+                                                         </a>
+                                                      </div>
+                                                   </div>
+                                                   <!-- Sub stage -->
+                                                   <div class="" id="dragSubItem2">
+                                                      <div class="row align-items-start mb-3 has-sub-tree">
+                                                         <div class="col-2 pl-4 ">
+                                                            <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
+                                                         </div>
+                                                         <div class="col-3">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Online</option>
+                                                               <option>Offline</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-3 text-right">
+                                                            <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
+                                                               <span class="material-icons-outlined"> delete </span>
+                                                            </a>
+                                                         </div>
+                                                      </div>
+                                                      <div class="row align-items-start mb-3 has-sub-tree">
+                                                         <div class="col-2 pl-4 ">
+                                                            <span class="sort-handle form-label-bg px-3 py-2 bg-light text-dark d-block text-center ml-3 has-sub-tree-label">Sub Stage</span>
+                                                         </div>
+                                                         <div class="col-3">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Online</option>
+                                                               <option>Offline</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-2">
+                                                            <select class="selectpicker form-control border-bottom-form">
+                                                               <option>Yes</option>
+                                                               <option>No</option>
+                                                            </select>
+                                                         </div>
+                                                         <div class="col-3 text-right">
+                                                            <a href="javascript:void(0);" class="d-inline-block text-secondary hover-effect rounded-circle dlt-btn" data-toggle="tooltip" data-placement="bottom" data-container="body" data-original-title="Delete Sub Stage">
+                                                               <span class="material-icons-outlined"> delete </span>
+                                                            </a>
+                                                         </div>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                   <div class="col-12 text-right">
+                                                      <a href="javascript:void" class="text-primary border-bottom-blue">Add New Sub Stage</a>
+                                                   </div>
                                                 </div>
                                              </div>
                                           </div>
@@ -1185,6 +1194,29 @@
          $(this).addClass('ajax-process');
          setTimeout(function(){$(".save-btn").removeClass('ajax-process');}, 3000);
       });
+   </script>
+   <style>
+      #dragItemBox .sort-handle{position: relative; cursor:move;}
+      #dragItemBox .sort-handle:after{content: ''; width: 13px; height: 28px; position: absolute; left: 3px; top: 3px; background: url('../static/backend/images/drag-handle.png') no-repeat center;}
+      .ghost-drag{border: 2px dashed #ccc; background: #fff; opacity: .6;}
+   </style>
+   <script src="../static/backend/js/plugins/sortable.js"></script>
+   <script>
+      new Sortable(dragItemBox, {
+            animation: 100,
+            handle: '.sort-handle',
+            ghostClass: 'ghost-drag'
+        });
+        new Sortable(dragSubItem,dragSubItem2, {
+            animation: 100,
+            handle: '.sort-handle',
+            ghostClass: 'ghost-drag'
+        });
+      //   new Sortable(dragSubItem2, {
+      //       animation: 100,
+      //       handle: '.sort-handle',
+      //       ghostClass: 'ghost-drag'
+      //   });
    </script>
 
 </body>

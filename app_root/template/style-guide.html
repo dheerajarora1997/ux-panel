@@ -147,6 +147,43 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="jumbotron">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" class="user_permission" data-user-id="{{user_id}}"
+                            name="user_permission" value="individual" {% if user.access_level=="individual"
+                            %} checked="True" {% endif %}>
+                        <span class="custom-btn-span"></span>
+                        <span>sjgdvasdfjdgvfjsdf gdsgf sdkjhfg dsjfhgsd kjfhgsd fkjsdf</span>
+                    </label>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="custom-radio">
+                                <input type="radio" class="user_permission" data-user-id="{{user_id}}"
+                                    name="user_permission" value="individual">
+                                <span class="custom-btn-span"></span>
+                                <span>sjdkhfgsdujyfgds fgsdkjhgsdkfjhsdgfkjdsgf k</span>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <label class="custom-radio">
+                                <input type="radio" class="user_permission" data-user-id="{{user_id}}"
+                                    name="user_permission" value="individual">
+                                <span class="custom-btn-span"></span>
+                                <span>sjdkhfgsdujyfgdsfgsd kjhgsdkfjhsdgfkjdsgf k</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../static/backend/js/core/jquery.min.js"></script>
     <script src="../static/backend/js/core/popper.min.js"></script>
     <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
