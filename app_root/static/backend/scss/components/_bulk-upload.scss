@@ -27,6 +27,13 @@
             display: flex;
             background: none;
             background-color: #f8fbff;
+            &:hover{
+                background: #f2f2f2;
+            }
         }
     }
+}
+
+.back-btn{
+    left: 10px;
 }

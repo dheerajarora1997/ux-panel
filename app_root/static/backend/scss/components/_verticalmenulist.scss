@@ -148,6 +148,10 @@
         content: '\f106';
     }
 
+    & .without-icon[data-toggle="collapse"]:after {
+        content: none !important;
+    }
+
     .list-group {
         flex-grow: 0;
 

@@ -32,6 +32,7 @@
             left: -18px;
         }
 
+        &.pointers-none a,
         .pointers-none>a {
             filter: grayscale(1);
         }

@@ -1,45 +1,48 @@
 $brand-color: #4c79dc !default;
 
 .custom- {
+
     &radio,
     &checkbox {
         cursor: pointer;
         padding-left: 20px;
         position: relative;
+        line-height: 1.6;
+        min-height: 15px;
 
         input {
             position: absolute;
             left: -9999px;
 
             &~.custom-btn-span:before {
-                content: '';
+                content: '\e836';
                 position: absolute;
                 left: 0;
                 top: 0;
-                width: 20px;
-                height: 20px;
-                border: 1px solid #ccc;
-            }
-            &:checked~.custom-btn-span:before{
-                border-color: $brand-color;
-            }
-            &:checked~.custom-btn-span:after {
-                content: '';
-                background: $brand-color;
-                width: 10px;
-                height: 10px;
-                position: absolute;
-                left: 5px;
-                top: 5px;
+                font-size: 18px;
+                font-family: 'Material Icons';
+                line-height: 1.3;
             }
         }
     }
-    &radio{
-        .custom-btn-span{
-            &:before,&:after{
-                border-radius: 100%;
-            }
 
+    &checkbox {
+        input~.custom-btn-span:before {
+            content: '\e835';
+        }
+    }
+
+    &checkbox {
+        input:checked~.custom-btn-span:before {
+            content: '\e834';
+            color: $brand-color;
+        }
+    }
+
+    &radio {
+        input:checked~.custom-btn-span:before {
+            content: '\e837';
+            color: $brand-color;
         }
     }
 }

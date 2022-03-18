@@ -14,8 +14,38 @@
 
     .chat-container {
       height: calc(100vh - 95px);
+
       @media only screen and (max-width: 767px) {
         height: calc(100vh - 206px);
+      }
+    }
+  }
+
+  .chat-resize {
+    display: flex;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+
+    .resize-btn {
+      position: absolute;
+      top: -23px;
+      z-index: -1;
+      background: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span{
+        color: #666;
+        transition: all 1s;
+      }
+      &.toggle span{
+        transform: rotate(180deg);
       }
     }
   }
@@ -24,13 +54,14 @@
 .chat-container {
   width: 100%;
   max-width: 800px;
-  height: calc(100vh - 352px);
+  height: calc(100vh - 396px);
   min-height: 100%;
   margin: 0 auto;
   overflow-y: auto;
+  transition: all 1s;
 
   @media only screen and (max-width: 767px) {
-    height: calc(100vh - 420px);
+    height: calc(100vh - 500px);
   }
 
   ul {
@@ -55,7 +86,8 @@
         p {
           font-size: 100%;
           margin-bottom: 5px;
-          word-break: break-all;
+          word-break: break-word;
+
           &:last-child {
             margin-bottom: 0;
           }
@@ -71,7 +103,7 @@
           left: 23px;
         }
 
-        + .msg {
+        +.msg {
           margin-top: 8px;
         }
       }
@@ -117,6 +149,9 @@
       // box-shadow: 0 0 .2rem rgba(0,0,0,0.125);
     }
   }
+  &.reduce-height{
+    height: calc(100vh - 500px);
+  }
 }
 
 .chat-area {
@@ -135,7 +170,8 @@
     bottom: 0;
     background: #fff;
     cursor: default;
-     i {
+
+    i {
       font-size: 16px;
     }
   }
@@ -152,6 +188,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .cke_reset.cke_contents{
+    transition: all 1s;
+  }
+  &.extend-height{
+    .cke_reset.cke_contents{
+      height: 215px !important;
+      max-height: 215px !important;
+    }
   }
 }
 

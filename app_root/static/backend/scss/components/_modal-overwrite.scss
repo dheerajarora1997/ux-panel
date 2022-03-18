@@ -150,6 +150,16 @@
         right: 10px;
         top: 10px;
     }
+    .left-dropdown-options{
+        position:absolute;
+        left: 0;
+        top: 0;
+        button{
+           &:hover{
+               background: rgba(0,0,0,.02);
+           }
+        }
+    }
     .profile-background{
         background-color: #edf3ff;
     }

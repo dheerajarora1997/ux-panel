@@ -195,6 +195,7 @@ body {
         border-color: #eee;
         box-shadow: none;
         padding: 5px 0;
+        font-weight: 400;
     }
 
     &:hover,
@@ -903,13 +904,7 @@ input {
 
 .cke_reset.cke_contents {
     border: none;
-    max-height: 110px !important;
-}
-
-.has-file {
-    .cke_reset.cke_contents {
-        padding-bottom: 30px;
-    }
+    // max-height: 110px !important;
 }
 
 #cke_editor1 {
@@ -960,6 +955,7 @@ footer ul li {
 
 .btn {
     text-transform: capitalize;
+    font-weight: 500;
 }
 
 .form-control:disabled,
@@ -1067,13 +1063,17 @@ div:not(.select-box) .dropdown.bootstrap-select .dropdown-menu {
             &:after {
                 top: 14px;
                 color: #666;
+                right: auto;
+                left: 10px;
+                width: 21px;
+                height: 21px;
             }
 
             .form-control {
                 border: 1px solid #eee;
                 background: none;
                 height: 30px;
-                padding: 0 0 0 .5rem;
+                padding: 0 0 0 1.75rem;
                 border-radius: 2px;
                 background: none;
             }
@@ -1413,4 +1413,23 @@ input[type="checkbox"] {
         left: 15px;
         color: #666;
     }
+}
+
+.modal-backdrop+.modal-backdrop {
+    display: none;
+}
+
+.label-required {
+    &:after {
+        content: '*';
+        color: red;
+    }
+}
+
+.overflow-y {
+    overflow-y: overlay;
+}
+
+.overflow-x {
+    overflow-x: overlay;
 }

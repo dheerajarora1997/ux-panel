@@ -27,7 +27,7 @@ table th.sorting.sorting_desc:after {
 .grid-table table.table tr td, .grid-table table.table tr th {
   margin: 0;
   background-color: #fff;
-  vertical-align: top; }
+  vertical-align: middle; }
 .grid-table table.table tr td .hover-effect, .grid-table table.table tr th .hover-effect {
   width: 22px;
   height: 22px;
@@ -75,7 +75,7 @@ table th.sorting.sorting_desc:after {
     max-width: 350px;
     width: 350px; }
   .grid-table table.table tr td.has-checkbox input[type="radio"], .grid-table table.table tr td.has-checkbox input[type="checkbox"], .grid-table table.table tr th.has-checkbox input[type="radio"], .grid-table table.table tr th.has-checkbox input[type="checkbox"] {
-    margin-top: 14px;
+    margin-top: 4px;
     margin-bottom: 0; } }
 .grid-table table.table tr th {
   border: 0; }
@@ -85,7 +85,7 @@ table th.sorting.sorting_desc:after {
 .grid-table table.table tbody tr.grid-table-row {
   border-top: 1px solid #eee; }
 .grid-table table.table tbody tr.grid-table-row td {
-  font-weight: 500;
+  font-weight: 400;
   vertical-align: middle; }
 .grid-table table.table tbody tr.grid-table-row td [data-toggle='collapse'] i.fa:before {
   font-size: 1rem;
@@ -100,7 +100,7 @@ table th.sorting.sorting_desc:after {
 .grid-table table.table tbody tr.grid-table-row.has-selected + .collapse {
   opacity: .7; }
 .grid-table table.table tbody tr.grid-table-row.read td {
-  font-weight: 400 !important; }
+  font-weight: 300 !important; }
 .grid-table table.table tbody tr.grid-table-row.read td .badge {
   font-weight: 400 !important; }
 @media only screen and (min-width: 768px) {
@@ -194,6 +194,8 @@ table th.sorting.sorting_desc:after {
   .grid-table table.table tbody tr.grid-table-row:not(:first-child) {
     border-width: 1px 0 0; }
 
+  .grid-table [data-sticky="true"] table {
+    overflow: auto; }
   .grid-table [data-sticky="true"] table thead tr th, .grid-table [data-sticky="true"] table thead tr td {
     position: sticky;
     top: 0; }
@@ -202,17 +204,13 @@ table th.sorting.sorting_desc:after {
     left: 0;
     z-index: 99;
     border-right: none; }
-  .grid-table [data-sticky="true"] table[data-colfix="1"] td:first-child, .grid-table [data-sticky="true"] table[data-colfix="1"] th:first-child {
-    border-right: 1px solid #eee; }
   .grid-table [data-sticky="true"] table[data-last-col="true"] td:last-child, .grid-table [data-sticky="true"] table[data-last-col="true"] th:last-child {
     position: sticky;
     right: 0;
-    z-index: 1;
-    border-left: 1px solid #eee; }
+    z-index: 1; }
   .grid-table [data-sticky="true"] table[data-colfix="2"] td:nth-child(2), .grid-table [data-sticky="true"] table[data-colfix="2"] th:nth-child(2) {
     position: sticky;
-    z-index: 99;
-    border-right: 1px solid #eee; } }
+    z-index: 99; } }
 .table tbody + tbody {
   border-top-color: #ddd; }
 
