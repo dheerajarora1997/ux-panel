@@ -1,0 +1,47 @@
+.grid-table table.table tbody tr.grid-table-row td{
+    font-weight: normal !important;
+ }
+ .custom-file #filename{
+     border:0;
+     width:100%;
+ }
+
+.steps{
+    .h100 {
+    min-height: calc(100vh - 175px);
+    }
+}
+
+.arrow-icon {
+    i,.fa {
+        width: 20px;
+        height: 20px;
+        border: 1px solid $brand-color;
+        border-radius: 50%;
+        padding: 1px;
+        color: $brand-color;
+    }
+}
+
+
+ @media (max-width: 767px){
+    #master-data-detail-popup {
+        .expended-search-wrpper.active {
+            left: -140px !important;;
+        }
+        .modal-header .modal-title {
+            width:calc(100% - 40px);
+        }
+    }
+}
+
+
+#master-data-detail-popup{
+    .expandSearch .search_icon{
+        top:8px;
+    }
+}
+
+#ConfirmPopupArea,#addMasterDataModal{
+    z-index:1053;
+}

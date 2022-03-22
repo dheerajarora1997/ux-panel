@@ -1,11 +1,14 @@
 .plusMinushide,.Whatsapp-business-number-div{
-    .row{
+    .row,.rowSpaceReduce{
         &:first-child{
             .remove-div{
                 display:none!important;
             }
             .add-div{
                 display:none;
+            }
+            .plusMinushideLabel{
+                display:block;
             }
         }
         .add-div{
@@ -17,6 +20,11 @@
             }
             .remove-div{
                 display:inline-block;
+            }
+        }
+        @media (min-width:767px){
+            .plusMinushideLabel{
+                display:none;
             }
         }
     }

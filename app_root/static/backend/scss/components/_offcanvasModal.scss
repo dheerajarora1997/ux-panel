@@ -4,7 +4,10 @@
     &.left,
     &.right {
         .modal-body {
-            height: 100%;
+            max-height:calc(100% - 100px);
+            &.fullHeight{
+                max-height:calc(100% - 0px)!important;
+            }
         }
     }
 

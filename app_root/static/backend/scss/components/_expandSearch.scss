@@ -26,18 +26,18 @@
   -moz-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width:991px) {
     width: 0;
     right: 0;
   }
-  @media only screen and (max-width: 767px) {
-    width: 320px;
-    right: -50px;
+  @media only screen and (max-width: 768px) {
+    width:230px;
+    right:5px;
   }
   &.active {
     z-index: 9;
     overflow: unset;
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 991px) {
       width: 350px;
     }
     @media only screen and (max-width: 767px) {
@@ -45,7 +45,8 @@
       width: 320px;
       padding: 10px;
       top: 40px;
-      right: -50px;
+      left: -100px;
+      right:0;
       background: rgb(252,252,252);
       padding: 10px;
       box-shadow: 0 0 999px rgba(0,0,0,.9);
@@ -77,4 +78,15 @@
 .expanded-dropdown-menu {
   min-width: 100%;
   left: 0 !important;
+}
+
+
+.searchPositionrightTop{
+  position:absolute;
+  right:150px;
+  top:10.5px;
+  z-index:112; 
+  .expandSearch .form-control{
+    max-height:32.5px;
+  }
 }

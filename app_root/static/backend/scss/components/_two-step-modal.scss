@@ -1,6 +1,7 @@
-.step-one-modal{
+.step-one-modal {
     z-index: 1051;
-    .notifyCountUl{
+
+    .notifyCountUl {
         padding: 0;
         margin: 0;
 
@@ -12,32 +13,43 @@
             -moz-border-image: -moz-linear-gradient(right, white, #ddd, #ddd, white) 1 20%;
             border-image: linear-gradient(to right, white 0%, #ddd 40%, #ddd 60%, white 100%) 1 20%;
             padding: 10px;
-          &:hover, &.active{
-              background-color: #f8f9fa;
-          }
-        }
-        .disBtn{
-            vertical-align: middle;
-            .btn{padding: 5px 15px;
-               i{
-                   color: $brand-color;
-               }
-              &:hover{
-                  background-color: transparent;
-              }
+
+            &:hover,
+            &.active {
+                background-color: #f8f9fa;
             }
         }
+
+        .disBtn {
+            vertical-align: middle;
+
+            .btn {
+                padding: 5px 15px;
+
+                i {
+                    color: $brand-color;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+
         .disMobile {
             min-width: 140px;
             vertical-align: middle;
         }
+
         .disAudio {
             min-width: 220px;
             vertical-align: middle;
         }
-        a{
+
+        a {
             color: $brand-color;
-            i{
+
+            i {
                 color: #5f6368;
             }
         }
@@ -48,7 +60,8 @@
             margin-right: 5px;
             position: relative;
             color: $brand-color;
-            i{
+
+            i {
                 color: #4b7bdd;
                 background: #fff;
                 vertical-align: middle;
@@ -59,88 +72,102 @@
                 font-size: 16px;
             }
         }
-        .btn{
-            i{
+
+        .btn {
+            i {
                 color: $color-white;
                 font-size: 13px !important;
                 margin-right: 4px;
             }
         }
+
         audio {
             width: 90%;
             margin: 5px auto 0;
             height: 30px;
         }
-        source{
+
+        source {
             background-color: red;
         }
     }
-    .outbound-list{
-        .disBtn{
-            .btn{
+
+    .outbound-list {
+        .disBtn {
+            .btn {
                 margin-top: 6px;
             }
         }
     }
-    i{
+
+    i {
         font-size: 19px;
     }
+
     .show-all {
         text-decoration: none;
         font-size: 12px;
         font-weight: 400;
         padding: 2px 15px;
-    &:hover{
-        background: $brand-color;
-        border-radius: 20px;
-        color: $color-white;
-    }
+
+        &:hover {
+            background: $brand-color;
+            border-radius: 20px;
+            color: $color-white;
+        }
     }
 }
 
-.step-two-modal{
-    .modal-title{
-        i{
-           color: #4b7bdd;
-           background: #fff;
-           vertical-align: middle;
-           border-radius: 50%;
-           padding: 5px;
-           margin-right: 8px;
-           text-align: center;
-           border: 1px solid #4b7bdd;
-           font-size: 16px !important;
-           }
+.step-two-modal {
+    .modal-title {
+        i {
+            color: #4b7bdd;
+            background: #fff;
+            vertical-align: middle;
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 8px;
+            text-align: center;
+            border: 1px solid #4b7bdd;
+            font-size: 16px !important;
         }
+    }
+
     .modal-content {
         box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .10) !important;
     }
-    .modal-header{
-        .close{
+
+    .modal-header {
+        .close {
             opacity: 1 !important;
         }
-        .material-icons{
+
+        .material-icons {
             font-size: 30px;
             color: $brand-color;
             opacity: 1;
-            &.call-icon{
+
+            &.call-icon {
                 font-size: 16px;
                 line-height: 1;
             }
         }
     }
-    .close_modal_c{
-        z-index:1060!important;
+
+    .close_modal_c {
+        z-index: 1060 !important;
     }
+
     .notification-popup-detail {
         font-size: 14px;
         padding-left: 42px;
     }
 }
 
-.step-one-modal, .step-two-modal{
-    button{
-        &.close_modal{
+.step-one-modal,
+.step-two-modal {
+    button {
+        &.close_modal {
             position: absolute;
             right: 4px;
             top: 8px;
@@ -149,6 +176,7 @@
             cursor: pointer;
         }
     }
+
     .modal-dialog {
         .modal-content {
             box-shadow: 0 15px 24px 0 rgba(0, 0, 0, .10) !important;
@@ -157,11 +185,12 @@
 }
 
 .step-one-modal.widthbound {
-	right:0px !important;
+    right: 0px !important;
     width: 550px !important;
-	z-index:1051;
-	left:auto;
+    z-index: 1051;
+    left: auto;
 }
-.modal-backdrop.show + .modal-backdrop.show{
-    opacity: 0 !important;
+
+.modal-backdrop.show+.modal-backdrop.show {
+    opacity: 1 !important;
 }

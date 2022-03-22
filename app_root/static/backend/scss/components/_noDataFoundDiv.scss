@@ -23,6 +23,9 @@
     &.vh-page-100{
         min-height:calc(100vh - 184px);
     }
+    &.vh-page-100-modal{
+        min-height:calc(100vh - 84px)!important;
+    }
 }
 
 .noDataFoundBlock{

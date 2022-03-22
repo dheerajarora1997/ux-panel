@@ -84,6 +84,12 @@
                 text-align: left;
                 border-top: 1px solid #ddd;
                 box-shadow: 0 -5px 5px -5px #eee;
+//                 position: fixed;
+//                 width: 100%;
+//                 bottom: 0;
+//                 left: 0;
+//                 background-color: #fff;
+//                 z-index: 111;
                 background-color: #fff;
                 z-index: 111;
                 border-radius: 0 0 10px 10px;
@@ -113,8 +119,32 @@
     }
 }
 
+.modal-open {
+    overflow: hidden!important;
+}
+
+.bodybg{
+    background:#f1f3f4;
+}
+.whitebg{
+    background:#fff;
+}
+
+.dropdown-menu-modal{
+    z-index:1065;
+}
+
 .modal-backdrop.show {
     opacity: 1;
+}
+
+
+.modal-backdrop+.modal+.modal-backdrop {
+    z-index: 1052!important;
+}
+
+.modal-backdrop+.modal {
+    z-index: 1053!important;
 }
 
 .ticket-detail-popup.modal {

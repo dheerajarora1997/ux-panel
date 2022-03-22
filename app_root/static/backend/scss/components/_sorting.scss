@@ -1,6 +1,5 @@
 table {
-    th.sorting {
-        padding-right: 15px;
+    th.sorting,.md-sorting,.sorting{
         position: relative;
         cursor: pointer;
 
@@ -12,12 +11,12 @@ table {
             font-size: .7rem;
         }
 
-        &.sorting_asc:after {
+        &.sorting_asc:after,&.md-sorting_asc:after {
             color: #4c79dc;
             content: '\e97b';
         }
 
-        &.sorting_desc:after {
+        &.sorting_desc:after,&.md-sorting_desc:after{
             color: #4c79dc;
             content: '\e97a';
         }

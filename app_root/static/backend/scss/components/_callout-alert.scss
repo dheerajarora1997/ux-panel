@@ -146,4 +146,32 @@
       }
     }
   }
+
+
+  &.danger {
+    @include bg-color(#fff);
+    border: 1px solid #ccc;
+    border-left: 3px solid #ec7371;
+
+    &.rounded {
+      .callout-icon {
+        @include text-color(#ec7371);
+        align-self: self-start;
+      }
+    }
+
+    &.icon-filled {
+      .callout-msg {
+        width: 100%;
+        @include text-color(#333);
+        @include border-color(#ec7371);
+
+      }
+    }
+
+    .callout-msg {
+      line-height: 16px;
+      color: #666;
+    }
+  }
 }

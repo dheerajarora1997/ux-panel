@@ -1,4 +1,4 @@
-.table .badge{
+.table .badge,.custom-badge{
     border-radius: 10px;
     text-transform: capitalize;
     color: #111;
@@ -19,5 +19,30 @@
     }
     &.data-Closed:before{
         color: #65c640;
+    }
+    &.data-schedualed{
+        margin-left:10px;
+        &:before{
+        color:#e49f20;
+        font-size:18px;
+        content:'\e191';
+        font-family:'Material Icons';
+        position: absolute;
+        top: 0;
+        left: -10px;
+        }
+    }
+
+    &.data-excuted{
+        margin-left:10px;
+        &:before{
+        color:#65c640;
+        font-size:18px;
+        content:'\e858';
+        font-family:'Material Icons';
+        position: absolute;
+        top: 0;
+        left: -8px;
+        }
     }
 }

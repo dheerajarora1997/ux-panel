@@ -6,6 +6,8 @@
     background: #fafafa;
     margin-bottom: 0;
     overflow: hidden;
+    border-spacing: 0;
+    border-collapse: separate;
 
     tr {
         margin: 10px 0;
@@ -114,14 +116,23 @@
             th {
                 background: #e0e4e6;
                 font-weight: 600;
+
             }
         }
 
     }
 
+    thead {
+        tr {
+            th {
+                border:0!important;
+            }
+        }
+    }
+
     tbody tr {
         &.grid-table-row {
-            border-top: 1px solid #eee;
+
 
             td {
                 font-weight: 400;
@@ -175,6 +186,7 @@
 
             &:hover td {
                 background: #fcfcfc;
+                border-top: 1px solid #eee;
             }
 
         }
@@ -319,7 +331,7 @@
 @media only screen and (min-width: 768px) {
     .grid-table table.table tbody tr.grid-table-row {
         &:not(:first-child) {
-            border-width: 1px 0 0;
+            border-width: 1px 0 0 0;
         }
     }
 
@@ -340,7 +352,7 @@
         table[data-colfix="2"] th:first-child {
             position: sticky;
             left: 0;
-            z-index: 99;
+            z-index: 11;
             border-right: none;
         }
 
@@ -354,14 +366,14 @@
         table[data-last-col="true"] th:last-child {
             position: sticky;
             right: 0;
-            z-index: 1;
+            z-index: 11;
             // border-left: 1px solid #eee;
         }
 
         table[data-colfix="2"] td:nth-child(2),
         table[data-colfix="2"] th:nth-child(2) {
             position: sticky;
-            z-index: 99;
+            z-index: 11;
             // border-right: 1px solid #eee;
         }
 
