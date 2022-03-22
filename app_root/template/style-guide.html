@@ -15,12 +15,13 @@
     <!-- CSS Files -->
     <link href="../static/backend/css/main.css" rel="stylesheet" />
     <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
-    <link href="../static/backend/css/user-permissions.css" rel="stylesheet" />
+    <!-- <link href="../static/backend/css/user-permissions.css" rel="stylesheet" /> -->
 </head>
 
 <body>
     <div class="jumbotron">
-        <button class="m-2 btn btn-primary">Primary Button</button>
+        <button class="m-2 btn btn-primary" data-toggle="modal" data-target="#purgeRequestDetail">Primary
+            Button</button>
         <button class="m-2 btn btn-secondary">Secondary Button</button>
         <button class="m-2 btn btn-info">Information Button</button>
         <button class="m-2 btn btn-warning">Warning Button</button>
@@ -152,9 +153,8 @@
             <div class="col-sm-6">
                 <div class="jumbotron">
                     <label class="custom-checkbox">
-                        <input type="checkbox" class="user_permission" data-user-id="{{user_id}}"
-                            name="user_permission" value="individual" {% if user.access_level=="individual"
-                            %} checked="True" {% endif %}>
+                        <input type="checkbox" class="user_permission" data-user-id="{{user_id}}" name="user_permission"
+                            value="individual" {% if user.access_level=="individual" %} checked="True" {% endif %}>
                         <span class="custom-btn-span"></span>
                         <span>sjgdvasdfjdgvfjsdf gdsgf sdkjhfg dsjfhgsd kjfhgsd fkjsdf</span>
                     </label>
@@ -184,32 +184,147 @@
             </div>
         </div>
     </div>
+    <div class="modal fade offCanvasModal right" id="purgeRequestDetail">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content h-100">
+                <div class="modal-header border-bottom-blue">
+                    <h5 class="modal-title my-0" id="exampleModalLabel">
+                        Purge Request -
+                        <span class="font-weight-normal">Request id</span>
+                    </h5>
+                    <button type="button" class="close" data-toggle="tooltip" title="Click here to close"
+                        data-placement="left" data-container="body" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                </div>
+                <div class="modal-body p-0">
+                    <div class="d-inline-block w-100" id="purgeDetailsCollapse">
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-md-4">
+                                <div class="sticky-top sticky-menu-setting">
+                                    <div class="setting-menu rounded-0 card my-0">
+                                        <div class="list-group py-0">
+                                            <a href="#request1" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none active">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 1</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request2" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 2</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request3" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 3</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request4" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 4</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request5" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 5</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request6" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 6</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                            <a href="#request7" data-toggle="collapse"
+                                                class="list-group-item list-group-item-action flex-nowrap align-items-start content-none">
+                                                <div class="min-w">
+                                                    <h6 class="my-0">
+                                                        <span class="text-truncate d-block">Request 7</span>
+                                                    </h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-8">
+                                <div class="p-3">
+                                    <div class="collapse show" id="request1" data-toggle="false" data-parent="#purgeDetailsCollapse">Request
+                                        1
+                                    </div>
+                                    <div class="collapse" id="request2" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 2
+                                    </div>
+                                    <div class="collapse" id="request3" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 3
+                                    </div>
+                                    <div class="collapse" id="request4" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 4
+                                    </div>
+                                    <div class="collapse" id="request5" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 5
+                                    </div>
+                                    <div class="collapse" id="request6" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 6
+                                    </div>
+                                    <div class="collapse" id="request7" data-toggle="false" data-parent="#purgeDetailsCollapse">Request 7
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../static/backend/js/core/jquery.min.js"></script>
     <script src="../static/backend/js/core/popper.min.js"></script>
     <script src="../static/backend/js/core/bootstrap-material-design.min.js"></script>
 
-    <!--  Plugins Files  -->
-    <script src="../static/backend/js/plugins/moment.min.js"></script>
-    <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
-    <script src="../static/backend/js/plugins/nouislider.min.js"></script>
+    <script>
+        $('#purgeDetailsCollapse [data-toggle="collapse"]').click(function(){
+            $('#purgeDetailsCollapse [data-toggle="collapse"]').removeClass('active');
+            $('#purgeDetailsCollapse [data-toggle="collapse"]').removeAttr('style');
+            $(this).addClass('active');
+            $('#purgeDetailsCollapse [data-toggle="collapse"].active').css('pointer-events', 'none');
+        });
+    </script>
+
+    <!-- Plugins Files -->
+    <!-- <script src="../static/backend/js/plugins/moment.min.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/nouislider.min.js"></script> -->
     <!-- <script src="../static/backend/js/plugins/ckeditor.js"></script> -->
 
     <!--  Theme JS Files  -->
-    <script src="../static/backend/js/material-kit.js?v=2.0.7"></script>
-    <script src="../static/backend/js/bootstrap-select.js"></script>
+    <!-- <script src="../static/backend/js/material-kit.js?v=2.0.7"></script> -->
+    <!-- <script src="../static/backend/js/bootstrap-select.js"></script> -->
     <!--<script src="https://materializecss.com/bin/materialize.js"></script>-->
 
-    <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script>
+    <!-- <script src="https://cdn.ckeditor.com/4.16.2/basic/ckeditor.js"></script> -->
     <!-- <script src="../static/backend/js/owl.carousel/dist/owl.carousel.js"></script> -->
 
 
-    <script src="../static/backend/js/base/common.js"></script>
-    <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script>
-    <script src="../static/backend/js/plugins/typehead.js"></script>
-    <script src="../static/backend/js/plugins/multiselect.min.js"></script>
-    <script src="../static/backend/js/plugins/transfer.js"></script>
+    <!-- <script src="../static/backend/js/base/common.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/bootstrap-tagsinput.min.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/typehead.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/multiselect.min.js"></script> -->
+    <!-- <script src="../static/backend/js/plugins/transfer.js"></script> -->
 
-    <script>
+    <!-- <script>
         $('.sorting').click(function () {
             $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
             if ($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')) {
@@ -272,13 +387,13 @@
         });
         // $('.chosen-select').chosen();
         $('.tags-input').tagsinput();
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
         $('[data-toggle="tooltip"][data-trigger="hover"]').click(function () {
             $('.tooltip').remove();
         });
-    </script>
-    <script>
+    </script> -->
+    <!-- <script>
 
 
         let tableElement = $('table tbody').html();
@@ -294,7 +409,52 @@
             $('#skeleton-card').hide();
             $('#team-user').show();
         }, 4500);
-    </script>
+    </script> -->
 </body>
 
 </html>
+<!-- <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Collapsible Group Item #1
+          </button>
+        </h2>
+      </div>
+
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+          Some placeholder content for the first accordion panel. This panel is shown by default, thanks to the <code>.show</code> class.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Collapsible Group Item #2
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+          Some placeholder content for the second accordion panel. This panel is hidden by default.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Collapsible Group Item #3
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+          And lastly, the placeholder content for the third and final accordion panel. This panel is hidden by default.
+        </div>
+      </div>
+    </div>
+  </div> -->

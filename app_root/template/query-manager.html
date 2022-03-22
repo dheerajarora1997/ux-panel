@@ -14,10 +14,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- CSS Files -->
    <link href="../static/backend/css/main.css" rel="stylesheet" />
-   <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
    <link href="../static/backend/css/query-manager.css" rel="stylesheet" />
-   <!-- <link href="../static/backend/css/dark-mode.css" rel="stylesheet" /> -->
-   <!--<link href="../static/backend/css/config.css" rel="stylesheet" />-->
 </head>
 
 <body class="dark-mode">
@@ -434,7 +431,9 @@
                <input type="search" name="" id="" class="form-control pl-4" placeholder="Search by ID">
             </div>
          </div>
-         <a href="#filterPopup" class="filter-btn d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle hover-effect" data-toggle="modal">
+         <a href="#filterPopup"
+            class="filter-btn d-flex justify-content-center align-items-center p-1 ml-2 rounded-circle hover-effect"
+            data-toggle="modal">
             <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom" title=""
                data-container="body" title="Filter" data-original-title="Filter"> filter_alt </span>
          </a>
@@ -470,9 +469,11 @@
                                        placeholder="Search by ID">
                                  </div>
                               </div>
-                              <a href="javascript:void(0);" class="d-flex border border-primary p-1 ml-4 rounded-circle">
+                              <a href="javascript:void(0);"
+                                 class="d-flex border border-primary p-1 ml-4 rounded-circle">
                                  <span class="material-icons-outlined" data-toggle="tooltip" data-placement="bottom"
-                                    title="" data-container="body" title="Filter" data-original-title="Filter"> filter_alt
+                                    title="" data-container="body" title="Filter" data-original-title="Filter">
+                                    filter_alt
                                  </span>
                               </a>
                            </div>
@@ -480,154 +481,393 @@
                      </div>
                   </div>
                </div>
-               <div class="carousel-wrap border-card w-100">
-                  <div class="owl-carousel grid-col">
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-primary p-2 active">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Total Tickets</small>
-                                 <i class="lineicon-info small" data-placement="top" data-container="body"
-                                    data-toggle="popover" data-trigger="hover"
-                                    data-content="The total number of tickets received in the time period selected."
-                                    data-original-content="The total number of tickets received in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-total-tickets text-primary font-30"></i>
-                                 </div>
+               <div class="px-3 pb-3">
+                  <div class="row" id="qms_tickets">
+                     <div class="col-12">
+                        <div class="carousel-wrap border-card w-100 bg-white px-0 d-inline-block">
+                           <div class="owl-carousel grid-col">
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="total"
+                                    class="d-inline-block w-100 active get_status" id="total_ticket">
+                                    <div class="grid-card p-2 active">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Total Tickets</small>
+                                          <i class="lineicon-info small" data-placement="top" data-container="body"
+                                             data-toggle="popover" data-trigger="hover"
+                                             data-content="The total number of tickets received in the time period selected."
+                                             data-original-content="The total number of tickets received in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-center">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center total_ticket_count">
+                                                {{total|default:0}}</h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-total-tickets text-primary font-30"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="open"
+                                    class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-open p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Open Tickets</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="The total number of untouched tickets in the time period selected."
+                                             data-original-content="The total number of untouched tickets in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-center">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center open_ticket_count ">
+                                                {{summary.status_count.open|default:0}}
+                                             </h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-open-tickets text-danger font-30"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="in_progress"
+                                    class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-in-progress p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>In Progress Tickets</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."
+                                             data-original-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-cente12">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center in_progress_ticket_count">
+                                                {{summary.status_count.in_progress|default:0}}</h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-inprogress text-warning font-30"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="close"
+                                    class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-closed p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Closed Tickets</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="The total number of tickets resolved or closed in the time period selected."
+                                             data-original-content="The total number of tickets resolved or closed in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-center">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center close_ticket_count">
+                                                {{summary.status_count.close|default:0}}
+                                             </h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-closed-tickets text-success font-30"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="feedback-null"
+                                    class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-closed p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Feedback Not Given</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="Total number tickets for which feedback is not given by the applicant in the time period selected."
+                                             data-original-content="Total number tickets for which feedback is not given by the applicant in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-center">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center null_ticket_count">
+                                                {{summary.feedback_count.no_feedback|default:0}}
+                                             </h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-feedback-not-given text-info font-22"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);" data-status="feedback-satisfied"
+                                    class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-closed p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Positive Feedback</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."
+                                             data-original-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-cente12">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center satisfied_ticket_count">
+                                                {{summary.feedback_count.satisfied|default:0}}</h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-positive-feedback-ticket text-tertiary font-22"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </div>
+                              {% include "../tickets/get_ticket_listing.html" %}
+                              <div class="grid-item">
+                                 <a href="javascript:void(0);" onclick="getData(this);"
+                                    data-status="feedback-unsatisfied" class="d-inline-block w-100 get_status">
+                                    <div class="grid-card status-closed p-2">
+                                       <h3 class="h6 my-0 font-weight-normal text-muted no-wrap text-center">
+                                          <small>Negative Feedback</small>
+                                          <i class="lineicon-info small" data-toggle="popover" data-placement="top"
+                                             data-container="body" data-toggle="popover" data-trigger="hover"
+                                             data-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."
+                                             data-original-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."></i>
+                                       </h3>
+                                       <div class="row no-gutters align-items-cente12">
+                                          <div class="col-12">
+                                             <h4 class="h4 my-0 text-dark text-center unsatisfied_ticket_count">
+                                                {{summary.feedback_count.unsatisfied|default:0}}</h4>
+                                          </div>
+                                          <div class="col-4 text-right justify-content-end align-items-center d-none">
+                                             <i class="lineicon-neg-feedback-ticket text-quaternary font-22"></i>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </a>
                               </div>
                            </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-danger p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Open Tickets</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="The total number of untouched tickets in the time period selected."
-                                    data-original-content="The total number of untouched tickets in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-open-tickets text-danger font-30"></i>
+                        </div>
+                        <div class="grid-table w-100 mt-2" id="tableCollapseParent">
+                           <div class="d-none row align-items-center justify-content-between mb-2">
+                              <div class="col-6 col-sm-4">
+                                 <span class="text-secondary">Total <span
+                                       class="records_text font-weight-bold text-dark">{{total}}</span> Records</span>
+                              </div>
+                              <div class="col-6 col-sm-4">
+                                 <div class="d-flex justify-content-end justify-content-md-start text-center">
+                                    <a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom"
+                                       data-container="body" title="Download" class="pl-3 d-sm-none ">
+                                       <i class="lineicon-download" aria-hidden="true"></i>
+                                    </a>
                                  </div>
                               </div>
-                           </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-warning p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>In Progress Tickets</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."
-                                    data-original-content="The total number of tickets that remained unresolved or in-progress at the end of the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-inprogress text-warning font-30"></i>
-                                 </div>
+                              <div class="col-12 col-sm-4 text-right d-none d-sm-block">
+                                 <a href="javascript:void(0);" onclick="downloadTickets();"
+                                    class="btn btn-primary btn-sm">
+                                    <i class="lineicon-download" aria-hidden="true"></i>
+                                    <span class="font-weight-bold">Download</span>
+                                 </a>
                               </div>
                            </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascripit:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-success p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Closed Tickets</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="The total number of tickets resolved or closed in the time period selected."
-                                    data-original-content="The total number of tickets resolved or closed in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-closed-tickets text-success font-30"></i>
-                                 </div>
+                           <div id="selectionRow" style="display:none;" class="position-relative selection-row">
+                              <div id="selectionDiv" class="text-center position-absolute w-100 selection-count">
+                                 <span id="currentSelectionMessage"></span>
+                                 <span id="selectAllAvailableRecordsLinkSpan"></span>
+                                 &nbsp;<a id="clearSelectionLink" href="javascript:void(0);"
+                                    onclick="clearSelection();">Clear selection</a>
                               </div>
                            </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-info p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Feedback Not Given</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="Total number tickets for which feedback is not given by the applicant in the time period selected."
-                                    data-original-content="Total number tickets for which feedback is not given by the applicant in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-feedback-not-given text-info font-22"></i>
-                                 </div>
-                              </div>
+                           <div class="responsive-table ">
+                              <table class="table table-borderless" data-last-col="true" data-colfix="1"
+                                 data-col-left="200">
+                                 <thead>
+                                    <tr>
+                                       <div style="display:none;">
+                                          <input type="checkbox" class="checkbox-cust " name="select_all"
+                                             value="select_all" id="select_all">
+                                       </div>
+                                       <th class="has-checkbox min-max-30">
+                                          <input type="checkbox" name="select_page_query" id="select_page_query"
+                                             onclick="return selectAllQuery(this);">
+                                       </th>
+                                       <th class="min-max-100 sorting" data-column="id">Ticket ID</th>
+                                       <th class="min-max-150">Name</th>
+                                       <th class="min-max-300">Category</th>
+                                       <th class="min-max-250">Assigned To</th>
+                                       <th class="min-max-100">Status</th>
+                                       <th class="sorting min-max-200" data-column="updated_on">Updated On</th>
+                                       <th class="min-max-75 text-right">Action</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody class="custom-skeleton" id="skeleton-table" style="display: none">
+                                    <tr class="grid-table-row ">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                    <tr class="grid-table-row">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                    <tr class="grid-table-row">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="d-none d-md-table-cell min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75 d-none d-md-table-cell">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                    <tr class="grid-table-row d-none d-md-table-row">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 ">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class=" min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                    <tr class="grid-table-row d-none d-md-table-row">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 ">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class=" min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class=" min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                    <tr class="grid-table-row d-none d-md-table-row">
+                                       <td class="min-max-30">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-150">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-300">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-250 ">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class=" min-max-100">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class=" min-max-200">
+                                          <div class="skeleton-loader description my-0"></div>
+                                       </td>
+                                       <td class="min-max-75">
+                                          <div class="skeleton-loader description my-0 ml-md-auto"></div>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                                 <tbody id="load_tickets_records" class="border-0">
+                                 </tbody>
+                              </table>
                            </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-tertiary p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Positive Feedback</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."
-                                    data-original-content="Total of tickets for which positive feedback is given by the applicant in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-positive-feedback-ticket text-tertiary font-22"></i>
-                                 </div>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                     <div class="grid-item">
-                        <a href="javascript:void(0);" class="d-inline-block w-100">
-                           <div class="bg-white rounded border border-quaternary p-2">
-                              <h3 class="h6 my-0 font-weight-normal text-muted no-wrap">
-                                 <small>Negative Feedback</small>
-                                 <i class="lineicon-info small" data-toggle="popover" data-placement="top"
-                                    data-container="body" data-toggle="popover" data-trigger="hover"
-                                    data-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."
-                                    data-original-content="Total of tickets for which negative feedback is given by the applicant in the time period selected."></i>
-                              </h3>
-                              <div class="row no-gutters align-items-center">
-                                 <div class="col-8">
-                                    <h4 class="h6 my-0 text-dark">216745</h4>
-                                 </div>
-                                 <div class="col-4 text-right d-flex justify-content-end align-items-center">
-                                    <i class="lineicon-neg-feedback-ticket text-quaternary font-22"></i>
-                                 </div>
-                              </div>
-                           </div>
-                        </a>
+                        </div>
                      </div>
                   </div>
                </div>
@@ -642,7 +882,8 @@
                      <div class="col-6 col-sm-4">
                         <div class="d-flex justify-content-end justify-content-md-start text-center">
                            <span class="font-weight-bold">Total 31 Records</span>
-                           <a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom" data-container="body" title="Download" class="pl-3 d-sm-none ">
+                           <a href="javascript:void(0);" data-toggle="tooltip" data-placement="bottom"
+                              data-container="body" title="Download" class="pl-3 d-sm-none ">
                               <i class="lineicon-download" aria-hidden="true"></i>
                            </a>
                         </div>
@@ -700,7 +941,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -761,7 +1003,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -822,7 +1065,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -883,7 +1127,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -944,7 +1189,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -1005,7 +1251,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -1066,7 +1313,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -1127,7 +1375,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -1188,7 +1437,8 @@
                                        <div class="dropdown-menu">
                                           <a href="#detail-popup" data-toggle="modal" class="dropdown-item">View
                                              Details</a>
-                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re Assign</a>
+                                          <a href="#reasign-popup" data-toggle="modal" class="dropdown-item">Re
+                                             Assign</a>
                                           <a href="javascript:void(0);" class="dropdown-item">Mark as unread</a>
                                        </div>
                                     </div>
@@ -1241,9 +1491,9 @@
                         <a href="javascript:void(0);" class="bg-white border inactive" data-toggle="tooltip"
                            data-placement="top" title="" data-container="body" data-original-title="Previous"><i
                               class="fa fa-angle-left" aria-hidden="true"></i></a>
-                        <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip"
-                           data-placement="top" title="" data-container="body" data-original-title="Next"><i
-                              class="fa fa-angle-right" aria-hidden="true"></i></a>
+                        <a href="javascript:void(0);" class="bg-white border" data-toggle="tooltip" data-placement="top"
+                           title="" data-container="body" data-original-title="Next"><i class="fa fa-angle-right"
+                              aria-hidden="true"></i></a>
                      </div>
                   </div>
                </div>
@@ -1466,7 +1716,8 @@
                               <div class="chat-file border-bottom position-absolute bg-white w-100 px-2 py-1 d-none">
                                  <div class="d-flex justify-content-between align-items-center">
                                     <small class="file-name"></small>
-                                    <button class="btn p-0 remove-file bg-white" data-toggle="tooltip" data-placement="left" data-container="body" title="Remove">
+                                    <button class="btn p-0 remove-file bg-white" data-toggle="tooltip"
+                                       data-placement="left" data-container="body" title="Remove">
                                        <i class="text-danger fa fa-trash-o"></i>
                                     </button>
                                  </div>
@@ -1586,16 +1837,16 @@
             </div>
             <div class="modal-body">
                <div class="form-group pt-0">
-                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
-                     title="Select College" data-style="px-2 border">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select College"
+                     data-style="px-2 border">
                      <option value="">college 1</option>
                      <option value="">college 1</option>
                      <option value="">college 1</option>
                   </select>
                </div>
                <div class="form-group pt-0">
-                  <select name="" id="" class="form-control selectpicker" data-live-search="true"
-                     title="Select Form" data-style="px-2 border">
+                  <select name="" id="" class="form-control selectpicker" data-live-search="true" title="Select Form"
+                     data-style="px-2 border">
                      <option value="">Admission</option>
                      <option value="">General</option>
                      <option value="">Technical</option>
@@ -1620,8 +1871,9 @@
             </button>
             <div class="modal-body p-0">
                <!-- <i class="fa fa-spinner fa-spin"></i> -->
-               <iframe class="vimeovideo border-0" src="../static/backend/images/blank.gif" width="100%" height="360" frameborder="0"
-                  allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+               <iframe class="vimeovideo border-0" src="../static/backend/images/blank.gif" width="100%" height="360"
+                  frameborder="0" allow="autoplay; fullscreen" webkitallowfullscreen mozallowfullscreen
+                  allowfullscreen></iframe>
             </div>
          </div>
       </div>
@@ -1823,12 +2075,12 @@
    <script src="../static/custom/js/qms/qms.js"></script>
 
    <script>
-      $('.sorting').click( function(){
+      $('.sorting').click(function () {
          $('.sorting').not(this).removeClass('sorting_asc sorting_desc');
-         if($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')){
+         if ($(this).hasClass('sorting_desc') || $(this).hasClass('sorting_asc')) {
             $(this).toggleClass('sorting_desc sorting_asc');
          }
-         else{
+         else {
             $(this).addClass('sorting_desc');
          }
       });
