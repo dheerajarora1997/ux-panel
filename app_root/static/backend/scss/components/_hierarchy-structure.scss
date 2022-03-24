@@ -21,14 +21,14 @@
         &:before {
             width: 1px;
             left: 30px;
-            top: 60px;
+            top: 55px;
             height: calc(100% - 80px);
         }
 
         &:after {
             width: 18px;
             height: 1px;
-            top: 33px;
+            top: 30px;
             left: -18px;
         }
 
@@ -44,7 +44,7 @@
                 background-color: #fff;
                 position: absolute;
                 left: -18px;
-                top: 34px;
+                top: 31px;
                 height: calc(100% - 42px);
             }
 

@@ -120,8 +120,8 @@ textarea.form-control{
   @include bmd-form-color($warning, $warning, $warning, $input-border-color);
 }
 
-.has-danger {
-  @include bmd-form-color($danger, $danger, $danger, $input-border-color);
+.has-danger.is-focused {
+  @include bmd-form-color($danger, $danger, $danger, $danger);
 }
 
 .has-rose {

@@ -219,3 +219,22 @@
     margin: 0;
   }
 }
+
+.btn-custom{
+  padding:2px 10px!important;
+}
+
+.back {
+  color: #2c5cc5;
+  padding: 1px 8px;
+  font-size: 15px;
+  margin-right:3px;
+  border-radius: 50%;
+  line-height:25px;
+  text-align: center;
+  font-size: 12px;
+  &:hover,&:focus{
+  color:#2c5cc5;
+  background:rgba(0,0,0,0.1);
+  }
+}

@@ -1,0 +1,22 @@
+.drag-box {
+  .sort-handle {
+    position: relative;
+    cursor: move;
+
+    &:after {
+      content: '';
+      width: 13px;
+      height: 28px;
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      background: url('../images/drag-handle.png') no-repeat center;
+    }
+  }
+
+  .ghost-drag {
+    border: 2px dashed #ccc;
+    background: #fff;
+    opacity: .6;
+  }
+}

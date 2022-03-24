@@ -45,3 +45,52 @@
 #ConfirmPopupArea,#addMasterDataModal{
     z-index:1053;
 }
+
+.zindex3{
+    z-index:111!important;
+}
+
+
+#createChildMasterData{
+    margin: 10px 0 0 15px;
+    position: relative;
+
+    #add-child-div{
+        position: relative;
+        z-index: 1;
+        &:before {
+                content: '';
+                width: 1px;
+                height: calc(100% - 17px);
+                position: absolute;
+                display: block;
+                background: #ccc;
+                left: -12px;
+                top: -18px;
+        }
+        &:after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            display: block;
+            background: #ccc;
+            left: -15px;
+            top: -26px;
+            border-radius: 50%;
+        }
+        div.rowSpaceReduce{
+            position: relative;
+            &:after {
+                content: '';
+                width: 13px;
+                height: 1px;
+                background: #ccc;
+                position: absolute;
+                top: 17px;
+                left: -7px;
+                z-index: 0;
+            }
+        }
+}
+}

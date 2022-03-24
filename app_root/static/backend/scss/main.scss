@@ -58,7 +58,7 @@
 //'vendors/bootstrap-tour/bootstrap-tour-standalone.min.css';
 
 // Core Plugins
-@import 'vendors/material-kit/plugins/plugin-datetime-picker';
+@import 'vendors/material-kit/plugins/plugin-datetime-picker', 'vendors/datepicker';
 
 // Sections and  pages
 @import 'vendors/material-kit/responsive',

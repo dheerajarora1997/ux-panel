@@ -91,7 +91,7 @@
         text-align: center;
         .alert-btn-filled{
             background: $primary;
-            border-color: $primary;
+            border: 1px solid $primary;
             color: $white;
         }
         .alert-btn-outline{
@@ -119,6 +119,7 @@
             .alert-btn-filled{
                 background: $warning;
                 color: $white;
+                border: 1px solid;
             }
             .alert-btn-outline{
                 color: $warning;
@@ -145,6 +146,7 @@
             .alert-btn-filled{
                 background: $success;
                 color: $white;
+                border: 1px solid;
             }
             .alert-btn-outline{
                 color: $success;
@@ -172,6 +174,7 @@
             .alert-btn-filled{
                 background: $danger;
                 color: $white;
+                border: 1px solid;
             }
             .alert-btn-outline{
                 color: $danger;

@@ -15,6 +15,11 @@
     font-family: arial;
     font-size: 15px;
     line-height: 1em;
+
+    select{
+      background:transparent;
+      border:0;
+    }
   }
 
   .daterangepicker:before, .daterangepicker:after {
