@@ -474,8 +474,9 @@
       </div>
       <div class="bg-light-info p-3 mb-3 d-flex justify-content-center align-items-center flex-column">
         <div class="profile-section position-relative">
-          <div id="profile-img" class="w-24 h-24 bg-white rounded-circle d-flex justify-content-center align-items-center"
-          style="background-repeat: no-repeat; background-position: center; background-size: cover;">
+          <div id="profile-img"
+            class="w-24 h-24 bg-white rounded-circle d-flex justify-content-center align-items-center"
+            style="background-repeat: no-repeat; background-position: center; background-size: cover;">
             <h3 id="profile-name" class="m-0 h1 font-weight-normal">BR</h3>
           </div>
           <label for="imgInp" class="text-secondary position-absolute cam-icon m-0 cursor-pointer">
@@ -642,7 +643,7 @@
                       </div>
                       <div class="col-3 col-sm-9 col-md-9 col-lg-6">
                         <div class="date-picker">
-                          <input type="text" name="" id="" class="form-control date-range-picker" />
+                          <input type="text" name="" id="" class="form-control date-picker" />
                         </div>
                       </div>
                     </div>
@@ -939,6 +940,7 @@
     <script src="../static/backend/js/plugins/moment.min.js"></script>
     <script src="../static/backend/js/plugins/bootstrap-datetimepicker.js"></script>
     <script src="../static/backend/js/plugins/date-range-picker.js"></script>
+    <script src="../static/backend/js/jquery.datetimepicker.full.js"></script>
     <script>
       $('.selectpicker').selectpicker();
 
@@ -999,6 +1001,14 @@
           document.getElementById("profile-name").style.display = 'none';
         }
       }
+      let dtpInitNew = (timePickerBoolean,formatTime) => {
+        $('input.date-picker').datetimepicker({
+          format: 'd/m/y',
+          formatTime: formatTime,
+          timepicker: timePickerBoolean,
+        });
+      }
+      dtpInitNew(false)
     </script>
 
 </body>
