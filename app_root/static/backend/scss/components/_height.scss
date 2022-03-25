@@ -71,3 +71,41 @@ $height: 99;
         }
     }
 }
+
+// Max Height
+
+$height: 8;
+
+@for $a from 0 through $height {
+    .max-h-#{$a} {
+        max-height: $a / 8 + rem;
+    }
+}
+
+$height: 12;
+
+@for $b from 9 through $height {
+    .max-h-#{$b} {
+        max-height: $b/4 + rem;
+    }
+}
+
+$height: 20;
+
+@for $b from 13 through $height {
+    @if $b%2==0 {
+        .max-h-#{$b} {
+            max-height: $b/4 + rem;
+        }
+    }
+}
+
+$height: 99;
+
+@for $b from 24 through $height {
+    @if $b%4==0 {
+        .max-h-#{$b} {
+            max-height: $b/4 + rem;
+        }
+    }
+}

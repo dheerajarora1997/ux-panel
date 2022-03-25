@@ -891,13 +891,7 @@ input {
 
 .cke_reset.cke_contents {
     border: none;
-    max-height: 110px !important;
-}
-
-.has-file {
-    .cke_reset.cke_contents {
-        padding-bottom: 30px;
-    }
+    // max-height: 110px !important;
 }
 
 #cke_editor1 {

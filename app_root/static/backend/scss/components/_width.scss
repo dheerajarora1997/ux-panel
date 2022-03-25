@@ -77,3 +77,44 @@ $min-width: 99;
         }
     }
 }
+
+
+// Max Width
+
+$max-width: 8;
+
+@for $a from 0 through $max-width {
+    .max-w-#{$a} {
+        max-width: $a / 8 + rem;
+    }
+}
+
+$max-width: 12;
+
+@for $b from 9 through $max-width {
+    .max-w-#{$b} {
+        max-width: $b/4 + rem;
+    }
+}
+
+$max-width: 20;
+
+@for $b from 13 through $max-width {
+    @if $b%2==0 {
+        .max-w-#{$b} {
+
+            max-width: $b/4 + rem;
+        }
+    }
+}
+
+$max-width: 99;
+
+@for $b from 24 through $max-width {
+    @if $b%4==0 {
+        .max-w-#{$b} {
+
+            max-width: $b/4 + rem;
+        }
+    }
+}
