@@ -16,6 +16,9 @@
   .form-control {
     max-height: 30px;
   }
+  .cross-icon{
+    top: 9px;;
+  }
 }
 .expended-search-wrpper {
   height: 0;
@@ -85,7 +88,7 @@
   position:absolute;
   right:150px;
   top:10.5px;
-  z-index:112; 
+  z-index:112;
   .expandSearch .form-control{
     max-height:32.5px;
   }
