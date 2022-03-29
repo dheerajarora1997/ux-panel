@@ -6,16 +6,20 @@ select.multi-select-pill[multiple] {
     option {
         // display: inline-block;
         margin-bottom: 5px;
-        padding: 5px 5px 5px 10px;
+        padding: 5px 5px 5px 24px;
         border-radius: 100px;
         background: #ededed;
         font-size: 80%;
+        white-space: normal;
+        word-break: break-all;
+        text-indent: -14px;
     }
 }
 
-.search-input.muliselect-search{
+.search-input.muliselect-search {
     position: relative;
-    &:before{
+
+    &:before {
         content: '\e8b6';
         font-family: 'Material Icons';
         position: absolute;
@@ -23,7 +27,8 @@ select.multi-select-pill[multiple] {
         left: 5px;
         color: #666;
     }
-    input{
+
+    input {
         padding-left: 22px;
     }
 }
@@ -38,11 +43,9 @@ select.multi-select-pill[multiple] {
     option {
         background: #f1f1f1;
         min-height: 25px;
-        cursor: pointer;
-        word-break: break-all;
-        white-space: normal;
     }
 }
+
 /* MultiSelect Item */
 
 .icon {
@@ -227,6 +230,7 @@ select.multi-select-pill[multiple] {
         display: none;
         padding: 10px;
     }
+
     &-footer {
         display: none;
         padding: 10px;
@@ -279,9 +283,11 @@ select.multi-select-pill[multiple] {
         // padding: 8px 8px 6px 8px;
         text-align: left;
     }
-    &-list-search{
+
+    &-list-search {
         position: relative;
-        &:before{
+
+        &:before {
             position: absolute;
             content: '\e8b6';
             font-family: "Material Icons";
@@ -290,6 +296,7 @@ select.multi-select-pill[multiple] {
             top: 8px;
             z-index: 0;
         }
+
         &-input {
             width: 100%;
             height: 32px;
@@ -297,8 +304,9 @@ select.multi-select-pill[multiple] {
             padding: 5px 20px 4px 8px !important;
             position: relative;
             z-index: 1;
-            border-radius: 0!important;
-            &:focus{
+            border-radius: 0 !important;
+
+            &:focus {
                 border-color: $brand-color !important;
             }
         }
@@ -309,7 +317,8 @@ select.multi-select-pill[multiple] {
         border: 1px solid #ccc;
         border-width: 0 1px;
     }
-    &-list-li{
+
+    &-list-li {
         margin-top: 5px;
     }
 
@@ -339,20 +348,23 @@ select.multi-select-pill[multiple] {
 }
 
 .transfer-double-list-main {
-    .transfer-double-group-{
+    .transfer-double-group- {
         &list-ul {
             list-style: none;
             padding-left: 10px;
             margin: 0;
         }
+
         &list-li {
             margin-top: 5px;
+
             &-ul {
                 list-style: none;
                 margin-left: 5px;
                 padding-left: 15px;
+
                 &-li {
-                  margin-top: 5px;
+                    margin-top: 5px;
                 }
             }
         }
@@ -360,10 +372,11 @@ select.multi-select-pill[multiple] {
 }
 
 
-.transfer-double-selected-list-{
-    &search{
+.transfer-double-selected-list- {
+    &search {
         position: relative;
-        &:before{
+
+        &:before {
             position: absolute;
             content: '\e8b6';
             font-family: "Material Icons";
@@ -372,6 +385,7 @@ select.multi-select-pill[multiple] {
             top: 8px;
             z-index: 0;
         }
+
         &-input {
             width: 100%;
             height: 32px;
@@ -379,33 +393,41 @@ select.multi-select-pill[multiple] {
             padding: 5px 20px 4px 8px !important;
             position: relative;
             z-index: 1;
-            &:focus{
+
+            &:focus {
                 border-color: $brand-color !important;
             }
         }
     }
+
     &content {
         padding: 3px 3px;
         border: 1px solid #ccc;
         border-width: 0 1px;
     }
+
     &main {
         height: 210px;
         overflow-y: auto;
     }
-    &main &ul{
+
+    &main &ul {
         list-style: none;
         padding-left: 5px;
         margin: 0;
 
     }
+
     &main &ul &li {
         margin-top: 5px;
+
         .checkbox-group {
             width: 65%;
+
             input[type="checkbox"] {
                 margin-right: 10px;
             }
+
             input[type="text"] {
                 min-width: 40px;
                 width: 40px;
@@ -424,9 +446,11 @@ select.multi-select-pill[multiple] {
     padding-left: 18px;
     color: #999;
     padding-top: 5px;
-     span {
+
+    span {
         margin-left: 20px;
     }
+
     input {
         min-width: 40px;
         width: 40px;
@@ -434,10 +458,12 @@ select.multi-select-pill[multiple] {
         height: 24px;
         margin-left: 75px;
     }
-     .btn-setting {
+
+    .btn-setting {
         display: inline-block;
         margin-left: 5px;
     }
+
     label {
         margin-left: 10px;
         margin-bottom: 0;
@@ -455,6 +481,7 @@ select.multi-select-pill[multiple] {
     align-items: center;
     justify-content: center;
     background: #e0e0e0;
+
     &+.btn-select-arrow {
         margin-top: 10px;
     }

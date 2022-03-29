@@ -1,4 +1,5 @@
 @import '../components/dropdown-bootstrap-select', '../components/popup-customization';
+
 body {
     font-size: .9rem;
 
@@ -1466,6 +1467,18 @@ input[type="checkbox"] {
             text-align: center;
             display: block;
             margin-right: 2px;
+        }
+    }
+}
+
+.form-group {
+
+    input.form-control,
+    textarea.form-control {
+        &::placeholder{
+            font-size: .75rem !important;
+            color: #9c9c9c !important;
+            font-weight: 500 !important;
         }
     }
 }
