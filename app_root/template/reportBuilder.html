@@ -457,7 +457,7 @@
                                                 No Metrics Added<br>
                                                 Add your Metrics to see here
                                              </p>
-                                             <a class="d-flex align-items-center justify-content-end btn btn-outline-primary btn-sm py-1 px-2 ml-2 toggle" href="javascript:void(0)" onclick="addMenudivshowhide()">
+                                             <a class="d-flex align-items-center justify-content-end btn btn-outline-primary btn-sm py-1 px-2 ml-2 toggle" href="javascript:void(0)" onclick="addMenudivshowhide(this)">
                                                 <span class="material-icons-outlined  fs-19">add</span>
                                                 <span>Add</span>
                                              </a>
@@ -812,12 +812,12 @@
                      </div>
 
                   </div>
-                     <button class="bottombtn text-center pt-2 pb-2  btn-block" type="button">
-                              Apply
-                     </button>
-                  </div>
+                  <button class="bottombtn text-center pt-2 pb-2  btn-block" type="button">
+                           Apply
+                  </button>
                </div>
-
+               <div class="addMenudiv-backdrop"></div>
+            </div>
             </div>
          </div>
       </div>
@@ -998,6 +998,9 @@ $('.selectall').click(function(){
             $('body').append("<div class='addMenudivoverlay'></div>");
          }
    });
+$('.addMenudiv-backdrop').click(function(){
+   $(".addMenudiv").removeClass('active');
+});
 
 
       $('.expended-search-link').click(function () {

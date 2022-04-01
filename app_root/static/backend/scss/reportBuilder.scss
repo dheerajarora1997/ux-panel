@@ -6,14 +6,14 @@
 
 @import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure", "./components/multi-select-pill", "./components/bulk-upload", "components/status", "components/verticalmenulist";
 
-.customSelectMenu{
+.customSelectMenu {
   max-width: 80px;
-  border:0;
+  border: 0;
   padding: 0;
 
-  .btn{
-    border:0!important;
-    padding:0;
+  .btn {
+    border: 0 !important;
+    padding: 0;
   }
 }
 
@@ -22,28 +22,28 @@
   overflow: hidden;
 }
 
-.leftColumnReport{
+.leftColumnReport {
   position: relative;
-  z-index:11;
+  z-index: 11;
 }
 
-.leftColumnReport .card{
-  border-radius:0;
+.leftColumnReport .card {
+  border-radius: 0;
 }
 
 .addmenucontainer {
   position: relative;
 
-      & a.active:after{
-      width: 0;
-      height: 0;
-      border-top: 15px solid transparent;
-      border-right: 15px solid #fff;
-      border-bottom: 15px solid transparent;
-      content: '';
-      position:absolute;
-      right: -30px;
-      }
+  & a.active:after {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #fff;
+    border-bottom: 15px solid transparent;
+    content: '';
+    position: absolute;
+    right: -30px;
+  }
 }
 
 .addMenudiv {
@@ -68,69 +68,86 @@
   border-radius: 10px;
 
 
-&.active {
-  display: block;
-  left: 15px;
-  z-index: 1;
-}
-  .fieldlist{
+  &.active {
+    display: block;
+    left: 15px;
+    z-index: 1;
+  }
+
+  .fieldlist {
     list-style: none;
     margin: 0;
     padding: 0;
 
-    li{
-      padding:5px 10px;
+    li {
+      padding: 5px 10px;
       position: relative;
-      border-top:2px solid #fff;
+      border-top: 2px solid #fff;
 
-      .material-icons{
+      .material-icons {
         display: none;
         position: absolute;
         right: 8px;
-        top:8px;
+        top: 8px;
       }
+
       &.active {
-        .material-icons{
+        .material-icons {
           display: block;
-          color:#4c79dc;
+          color: #4c79dc;
         }
       }
-      &:hover{
+
+      &:hover {
         background: #f2f2f2;
         cursor: pointer;
       }
-      &:first-child{
-        border:0;
+
+      &:first-child {
+        border: 0;
       }
     }
   }
 
-  .bottombtn{
+  .bottombtn {
     border: 0;
-    color:#4c79dc;
-    &:hover{
+    color: #4c79dc;
+
+    &:hover {
       background-color: #4c79dc;
       color: #fff;
       cursor: pointer;
     }
   }
+
+  &.active+&-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .5);
+  }
+
 }
 
 
-.searchWidthicon{
+.searchWidthicon {
   position: relative;
   border: 1px solid #d2d2d2;
-  input[type="text"]{
-    background:none;
-    border:0;
+
+  input[type="text"] {
+    background: none;
+    border: 0;
     padding: 5px 5px 5px 25px;
     height: 30px;
   }
-  .material-icons-outlined{
+
+  .material-icons-outlined {
     position: absolute;
-    left:5px;
-    top:6px;
-    font-size:18px;
+    left: 5px;
+    top: 6px;
+    font-size: 18px;
     color: #ccc;
   }
 }
