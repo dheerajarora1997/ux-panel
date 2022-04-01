@@ -452,7 +452,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12 addmenucontainer">
-                                          <a class="d-flex align-items-center justify-content-end toggle" href="javascript:void(0)" onclick="addMenudivshowhide()">
+                                          <a class="d-flex align-items-center justify-content-end toggle" href="javascript:void(0)">
                                              <span class="material-icons-outlined  fs-19">add</span>
                                              <span>Add</span>
                                           </a>
@@ -497,7 +497,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12 addmenucontainer">
-                                          <a class="d-flex align-items-center justify-content-end toggle"   href="javascript:void(0)" onclick="addMenudivshowhide()">
+                                          <a class="d-flex align-items-center justify-content-end toggle"   href="javascript:void(0)">
                                              <span class="material-icons-outlined  fs-19">add</span>
                                              <span>Add</span>
                                           </a>
@@ -542,7 +542,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12 addmenucontainer">
-                                          <a class="d-flex align-items-center justify-content-end toggle" href="javascript:void(0)" onclick="addMenudivshowhide()">
+                                          <a class="d-flex align-items-center justify-content-end toggle" href="javascript:void(0)">
                                              <span class="material-icons-outlined  fs-19">add</span>
                                              <span>Add</span>
                                           </a>
@@ -587,7 +587,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12">
-                                          <a class="d-flex align-items-center justify-content-end" href="javascript:void(0)" onclick="addMenudivshowhide()">
+                                          <a class="d-flex align-items-center justify-content-end" href="javascript:void(0)">
                                              <span class="material-icons-outlined  fs-19">add</span>
                                              <span>Add</span>
                                           </a>
@@ -975,9 +975,9 @@
    <!-- <script src="../static/custom/js/qms/qms.js"></script> -->
 
    <script>
-$('.fieldlist li').click(function(){
-   $(this).toggleClass('active')
-});
+// $('.fieldlist li').click(function(){
+//    $(this).toggleClass('active')
+// });
 
 $('.selectall').click(function(){
    $(".fieldlist li").addClass('active')
@@ -991,7 +991,7 @@ $('.selectall').click(function(){
 
 
 
-  $('.addmenucontainer > a').click(function () {
+   $('.addmenucontainer > a').click(function () {
          if($(".addMenudiv").hasClass('active')){
                $(this).removeClass('active');
                $(".addMenudiv").removeClass('active');
@@ -1002,7 +1002,7 @@ $('.selectall').click(function(){
             $(".addMenudiv").addClass('active');
             $('body').append("<div class='addMenudivoverlay'></div>");
          }
-});
+   });
 
 
       $('.expended-search-link').click(function () {
