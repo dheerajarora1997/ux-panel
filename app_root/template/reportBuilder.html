@@ -406,6 +406,7 @@
    <div id="main" class="wrapper">
       <div class="main-container  p-3">
          <div class="row no-gutters">
+            <!-- leftColumnReport start-->
             <div class="col-md-3 col-sm-4 leftColumnReport">
                <div class="card m-0 p-3 shadow-none border-right">
                   <div class="form-group">
@@ -453,7 +454,7 @@
                                     <div class="row">
                                        <div class="col-sm-12 addmenucontainer"></div>
                                        <div class="col-sm-12">
-                                             <p class="text-center text-secondary">
+                                             <p class="text-center text-secondary fs-12">
                                                 No Metrics Added<br>
                                                 Add your Metrics to see here
                                              </p>
@@ -560,7 +561,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12">
-                                          <p class="text-center text-secondary">
+                                          <p class="text-center text-secondary  fs-12">
                                              No Columns Added<br>
                                              Add your Columns to see here
                                           </p>
@@ -607,7 +608,7 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-12">
-                                          <p class="text-center text-secondary">
+                                          <p class="text-center text-secondary  fs-12">
                                              No FIlter Added<br>
                                              Add your FIlter to see here
                                           </p>
@@ -630,14 +631,15 @@
                      </div>
                   </div>
 
-                  <div class="d-flex justify-content-end">
-                     <span>Total:</span>
-                     <span>3</span>
+                  <div class="d-flex justify-content-end addmenucontainer">
+                     <a href="javascript:void()" class="togglediv text-secondary">Total</a>
                      <a href="javascript:void()" class="ml-3 togglediv">Sort</a>
                   </div>
                </div>
             </div>
+             <!-- leftColumnReport end-->
 
+             <!-- rightColumnReport start-->
             <div class="col-md-9 col-sm-8 rightColumnReport">
                <div class="p-3 bg-white  shadow-bottom h-100">
                   <div class="row" id="topsection">
@@ -686,11 +688,10 @@
                      <div class="col-sm-6 text-right">
                         <div class="d-flex justify-content-end">
                            <span>View Type: </span>
-                           <select class="form-control selectpicker customSelectMenu" data-actions-box="true" data-selected-text-format="count > 1" data-style="px-2 border"  name="status" id="status" tabindex="-98">
-                              <option value="1">Form 1</option>
-                              <option value="1">Form 2</option>
-                              <option value="1">Form 3</option>
-                              <option value="1">Form 4</option>
+                           <select data-container="body" class="form-control selectpicker customSelectMenu chart" data-selected-text-format="count > 1" data-style="px-2 border" data-width="60px" data-windowPadding="right" name="" id="" >
+                              <option value="1" data-content="<span class='material-icons-outlined'>analytics</span>"></option>
+                              <option value="1" data-content="<span class='material-icons-outlined'>table_chart</span>"></option>
+                              <option value="1" data-content="<span class='material-icons-outlined'>pie_chart</span>"></option>
                            </select>
                         </div>
                      </div>
@@ -702,6 +703,7 @@
 
                </div>
 
+               <!-- addMenuDiv  start here -->
                <div class="addMenudiv">
                   <div class="p-3">
                      <h5 class="my-0 h6 text-dark">Metrics</h5>
@@ -795,15 +797,15 @@
                               <div class="row">
                                     <div class="col-sm-12">
                                           <ul class="nav nav-tabs flex-nowrap config-nav-tabs" data-tabs="tabs">
-                                             <li class="nav-item"><a class="nav-link offsetTop active show"  href="javascript:void(0)"  data-target="#selectedfields" type="button" role="tab" aria-controls="nav-selected" aria-selected="true">Selected</a></li>
-                                             <li class="nav-item"><a class="nav-link offsetTop"  href="javascript:void(0)" data-target="#excutedfields"  type="button" role="tab" aria-controls="nav-excuted" aria-selected="true">Excuted</a></li>
+                                             <li class="nav-item"><a class="nav-link  active show" data-toggle="tab" href="#selectedfields" type="button" role="tab" aria-selected="true">Selected</a></li>
+                                             <li class="nav-item"><a class="nav-link"  data-toggle="tab"  href="#excutedfields"  type="button" role="tab"   aria-selected="true">Excuted</a></li>
                                           </ul>
                                     </div>
                               </div>
                      </div>
 
                      <div class="tab-content">
-                           <div class="tab-pane active " id="selectedfields" role="tabpanel" aria-labelledby="nav-selected-tab">
+                           <div class="tab-pane  show active " id="selectedfields">
                               <div class="row">
                                  <div class="col-sm-12">
                                     <p class="selectall">Select All</p>
@@ -825,11 +827,11 @@
                               </div>
                            </div>
 
-                           <div class="tab-pane" id="excutedfields" role="tabpanel" aria-labelledby="nav-excuted-tab">
+                           <div class="tab-pane " id="excutedfields" role="tabpanel">
                               <div class="row">
                                  <div class="col-sm-12">
+                                    <p class="selectall">Select All</p>
                                     <ul class="fieldlist bg-light">
-                                       <li class="selectall">Select All</li>
                                        <li class="active">
                                           <span>Excuted Count</span>
                                           <span class="material-icons fs-16">
@@ -848,44 +850,68 @@
                            </div>
                      </div>
 
+                  <h6 class="mt-3 mb-2">Sort</h6>
+                  <ul class="nolist nogap sortorder">
+                     <li>
+                        <input type="radio" name="sortBy" id="az">
+                        <label for="az">A-Z</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="sortBy" id="za">
+                        <label for="za">Z-A</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="sortBy" id="desending">
+                        <label for="desending">Value Desending</label>
+                     </li>
+                     <li>
+                        <input type="radio" name="sortBy" id="assending">
+                        <label for="assending">Value Assending </label>
+                     </li>
+                     <li>
+                        <input type="radio" name="sortBy" id="advance">
+                        <label for="advance">Advance</label>
+                     </li>
+                     <li class="pl-3">
+                        <input type="radio" name="sortBy" id="rowSelection">
+                        <label for="rowSelection">Row</label>
+                        <select class="form-control selectpicker" data-actions-box="true" data-selected-text-format="count > 1" data-style="px-2 border" name="status" id="status" tabindex="-98">
+                           <option value="">Counsellor A</option>
+                           <option value="1">Form 1</option>
+                        </select>
 
-<h4 class="mt-3 mb-2"></h4>
-<ul class="nolist nogap sortorder">
-   <li>
-      <input type="radio" name="">
-      <label for="">A-Z</label>
-   </li>
-   <li>
-      <input type="radio" name="">
-      <label for="">Z-A</label>
-   </li>
-   <li>
-      <input type="radio" name="">
-      <label for="">Value Desending</label>
-   </li>
-   <li>
-      <input type="radio" name="">
-      <label for="">Value Assending </label>
-   </li>
-   <li>
-      <input type="radio" name="">
-      <label for="">Advance</label>
-   </li>
+                        <p class="mt-3 mb-0">Column</p>
+                        <select class="form-control selectpicker" data-actions-box="true" data-selected-text-format="count > 1" data-style="px-2 border" name="status" id="status" tabindex="-98">
+                           <option value="">Slect Column</option>
+                           <option value="1">Form 1</option>
+                        </select>
+                     </li>
 
-   <li>
-      <input type="radio" name="">
-      <label for="">Row</label>
-   </li>
+                  </ul>
 
-</ul>
+
+                  <h6 class="mt-3 mb-2">Total</h6>
+                  <ul class="nolist nogap sortorder">
+                        <li>
+                           <input type="checkbox" name="" id="totalRow">
+                           <label for="totalRow">Row</label>
+                        </li>
+                        <li>
+                           <input type="checkbox" name="" id="totalColumn">
+                           <label for="totalColumn">Column</label>
+                        </li>
+                     </ul>
 
                   </div>
                   <button class="bottombtn text-center pt-2 pb-2  btn-block" type="button">
                            Apply
                   </button>
                </div>
+               <!-- addMenuDiv  end here -->
+
                <div class="addMenudiv-backdrop"></div>
             </div>
+              <!-- rightColumnReport end-->
             </div>
          </div>
       </div>
@@ -1038,9 +1064,9 @@
    <!-- <script src="../static/custom/js/qms/qms.js"></script> -->
 
    <script>
-// $('.fieldlist li').click(function(){
-//    $(this).toggleClass('active')
-// });
+$('.fieldlist li').click(function(){
+   $(this).toggleClass('active')
+});
 
 $('.selectall').click(function(){
    $(".fieldlist li").addClass('active')
