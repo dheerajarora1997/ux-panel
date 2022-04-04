@@ -25,6 +25,9 @@
 .leftColumnReport {
   position: relative;
   z-index: 11;
+    max-height: calc(100vh - 115px);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .leftColumnReport .card {
@@ -47,23 +50,15 @@
   }
 }
 
-.addMenudiv-backdrop{
-  display: none;
-}
+
 .addMenudiv {
-  left: -410px;
-  position:fixed;
-  top: 100px;
-  -webkit-transition: left .2s ease;
-  -moz-transition: left .2s ease;
-  -o-transition: left .2s ease;
+  left: -350px;
+  position:absolute;
+  top:15px;
   transition: left .2s ease;
-  -webkit-transition-delay: .1s;
-  -moz-transition-delay: .1s;
-  -o-transition-delay: .1s;
   transition-delay: .1s;
-  width: 400px;
-  max-height: 450px;
+  width:250px;
+  max-height: calc(100vh - 140px);
   overflow: auto;
   z-index: 0;
   box-shadow: 0px 0px 10px 0px rgba(217, 217, 217, 1);
@@ -72,10 +67,12 @@
   border-radius: 10px;
 
 
+
   &.active {
-    display: block;
-    left: 380px;
+    width:350px;
+    left: 15px;
     z-index: 1;
+    opacity: 1;
   }
 
   .fieldlist {
@@ -183,11 +180,11 @@
 }
 
 
-.reportData{
-  max-height: 500px;
+.reportData {
+  height: 100%;
   overflow: auto;
+  max-height: 450px;
 }
-
 
 .nolist{
   list-style: none;
