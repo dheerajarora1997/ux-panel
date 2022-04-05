@@ -25,9 +25,6 @@
 .leftColumnReport {
   position: relative;
   z-index: 11;
-    max-height: calc(100vh - 115px);
-    overflow-y: auto;
-    overflow-x: hidden;
 }
 
 .leftColumnReport .card {
@@ -112,11 +109,13 @@
 
   .bottombtn {
     border: 0;
-    color: #4c79dc;
+    color: #fff;
+    position: sticky;
+    background-color: #4c79dc;
 
     &:hover {
-      background-color: #4c79dc;
-      color: #fff;
+      background-color: #f2f2f2;
+      color: #4c79dc;
       cursor: pointer;
     }
   }
@@ -129,6 +128,12 @@
     left: 0;
     background: rgba(255, 255, 255, .9);
     display: block;
+  }
+  .maxdataScroll {
+    max-height: calc(100vh - 284px);
+    overflow: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
   }
 
 }
@@ -183,7 +188,7 @@
 .reportData {
   height: 100%;
   overflow: auto;
-  max-height: 450px;
+  max-height: 380px;
 }
 
 .nolist{
@@ -212,4 +217,31 @@
     max-width: 100%!important;
     overflow-x:hidden!important;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fullHeight{
+  height: calc(100vh  - 90px);
+}
+
+.maxheight450{
+  max-height: calc(100vh - 270px);
+  overflow: auto;
+  overflow-x: hidden;
 }

@@ -400,6 +400,7 @@
          </div>
       </div>
    </nav>
+
    <!-- Header With Side Nav End-->
 
    <div id="main" class="wrapper">
@@ -426,10 +427,10 @@
                         <div class="row justify-content-center">
                            <div class="col-12 col-sm-12">
                               <div class="card shadow-none mb-3 mt-0">
-                                 <div class="bg-light card-body py-2 px-2 my-0 pt-0">
+                                 <div class="bg-light card-body py-2 px-2 my-0">
                                     <div
                                        class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
-                                       aria-expanded="false" data-toggle="collapse" data-target="#metricsFields"
+                                       aria-expanded="true" data-toggle="collapse" data-target="#metricsFields"
                                        aria-controls="level-metricsFields" role="tablist">
                                        <div class="w-75">
                                           <h5 class="my-0 h6 text-dark">Metrics</h5>
@@ -447,18 +448,18 @@
                                        <div class="fs-12 text-muted lineHeight16">This institute consists of these Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="metricsFields" class="collapse" data-parent="#accordion">
+                                    <div id="metricsFields" class="collapse show" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
                                        <div class="row">
                                           <div class="col-sm-12 addmenucontainer"></div>
                                           <div class="col-sm-12">
-                                                <p class="text-center text-secondary fs-12 lineHeight16">
+                                                <p class="text-center text-secondary fs-12 mt-3 lineHeight16">
                                                    No Metrics Added<br>
                                                    Add your Metrics to see here
                                                 </p>
-                                             <div class="row d-flex justify-content-center">
+                                             <div class="row d-flex justify-content-center mb-3">
                                                 <div class="col-sm-5 col-3 text-center">
                                                       <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-2 ml-2 togglediv" href="javascript:void(0)">
                                                          <span class="material-icons-outlined  fs-16">add</span>
@@ -581,7 +582,7 @@
 
 
                               <div class="card shadow-none mt-0 mb-0">
-                                 <div class="bg-light card-body py-2 px-2 my-0">
+                                 <div class="bg-light card-body py-2 px-2 my-0 pt-0">
                                     <div
                                        class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
                                        aria-expanded="false" data-toggle="collapse" data-target="#filterFields"
@@ -616,8 +617,8 @@
                                              <div class="row d-flex justify-content-center">
                                                 <div class="col-sm-5 col-3 text-center">
                                                    <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-2 ml-2 togglediv" href="javascript:void(0)">
-                                                      <span class="material-icons-outlined  fs-16">add</span>
-                                                      <span class="lineHeight16">Add</span>
+                                                      <span class="material-icons-outlined  fs-19">add</span>
+                                                      <span>Add</span>
                                                    </a>
                                                 </div>
                                              </div>
@@ -631,7 +632,7 @@
                         </div>
                      </div>
 
-                     <div class="d-flex justify-content-end addmenucontainer  mt-3">
+                     <div class="d-flex justify-content-end addmenucontainer mt-3">
                         <a href="javascript:void()" class="togglediv text-secondary">Total</a>
                         <a href="javascript:void()" class="ml-3 togglediv">Sort</a>
                      </div>
@@ -642,7 +643,7 @@
 
              <!-- rightColumnReport start-->
             <div class="col-md-9 col-sm-8 rightColumnReport">
-               <div class="p-3 bg-white  shadow-bottom h-100">
+               <div class="p-3 bg-white  h-100 shadow-bottom">
                   <div class="row" id="topsection">
                      <div class="col-sm-7">
                         <div class="reportName d-flex align-items-center">
@@ -791,117 +792,6 @@
                            </div>
                         </div>
                      </div>
-
-
-
-                     <div class="nav-tabs-navigation inline_tabs mb-3">
-                              <div class="row">
-                                    <div class="col-sm-12">
-                                          <ul class="nav nav-tabs flex-nowrap config-nav-tabs" data-tabs="tabs">
-                                             <li class="nav-item"><a class="nav-link  active show" data-toggle="tab" href="#selectedfields" type="button" role="tab" aria-selected="true">Selected</a></li>
-                                             <li class="nav-item"><a class="nav-link"  data-toggle="tab"  href="#excutedfields"  type="button" role="tab"   aria-selected="true">Excuted</a></li>
-                                          </ul>
-                                    </div>
-                              </div>
-                     </div>
-
-                     <div class="tab-content">
-                           <div class="tab-pane  show active " id="selectedfields">
-                              <div class="row">
-                                 <div class="col-sm-12">
-                                    <p class="selectall">Select All</p>
-                                    <ul class="fieldlist bg-light">
-                                       <li class="active">
-                                          <span>Count</span>
-                                          <span class="material-icons fs-16">
-                                             check_circle
-                                          </span>
-                                       </li>
-                                       <li class="">
-                                          <span>Count</span>
-                                          <span class="material-icons fs-16">
-                                             check_circle
-                                          </span>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <div class="tab-pane " id="excutedfields" role="tabpanel">
-                              <div class="row">
-                                 <div class="col-sm-12">
-                                    <p class="selectall">Select All</p>
-                                    <ul class="fieldlist bg-light">
-                                       <li class="active">
-                                          <span>Excuted Count</span>
-                                          <span class="material-icons fs-16">
-                                             check_circle
-                                          </span>
-                                       </li>
-                                       <li class="">
-                                          <span>Count</span>
-                                          <span class="material-icons fs-16">
-                                             check_circle
-                                          </span>
-                                       </li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                     </div>
-
-                  <h6 class="mt-3 mb-2">Sort</h6>
-                  <ul class="nolist nogap sortorder">
-                     <li>
-                        <input type="radio" name="sortBy" id="az">
-                        <label for="az">A-Z</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="sortBy" id="za">
-                        <label for="za">Z-A</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="sortBy" id="desending">
-                        <label for="desending">Value Desending</label>
-                     </li>
-                     <li>
-                        <input type="radio" name="sortBy" id="assending">
-                        <label for="assending">Value Assending </label>
-                     </li>
-                     <li>
-                        <input type="radio" name="sortBy" id="advance">
-                        <label for="advance">Advance</label>
-                     </li>
-                     <li class="pl-3">
-                        <input type="radio" name="sortBy" id="rowSelection">
-                        <label for="rowSelection">Row</label>
-                        <select class="form-control selectpicker" data-actions-box="true" data-selected-text-format="count > 1" data-style="px-2 border" name="status" id="status" tabindex="-98">
-                           <option value="">Counsellor A</option>
-                           <option value="1">Form 1</option>
-                        </select>
-
-                        <p class="mt-3 mb-0">Column</p>
-                        <select class="form-control selectpicker" data-actions-box="true" data-selected-text-format="count > 1" data-style="px-2 border" name="status" id="status" tabindex="-98">
-                           <option value="">Slect Column</option>
-                           <option value="1">Form 1</option>
-                        </select>
-                     </li>
-
-                  </ul>
-
-
-                  <h6 class="mt-3 mb-2">Total</h6>
-                  <ul class="nolist nogap sortorder">
-                        <li>
-                           <input type="checkbox" name="" id="totalRow">
-                           <label for="totalRow">Row</label>
-                        </li>
-                        <li>
-                           <input type="checkbox" name="" id="totalColumn">
-                           <label for="totalColumn">Column</label>
-                        </li>
-                     </ul>
 
                   </div>
                   <button class="bottombtn text-center pt-2 pb-2  btn-block" type="button">
@@ -1079,25 +969,23 @@ $('.selectall').click(function(){
    }
 });
 
-
-
-   $('.addmenucontainer > a,.togglediv').click(function () {
+$('.addmenucontainer > a,.togglediv').click(function () {
          if($(".addMenudiv").hasClass('active')){
                $(this).removeClass('active');
                $(".addMenudiv").removeClass('active');
-               $("body").css({"overflow" : "auto", "padding-right":"0"});
+              // $("body").css({"overflow" : "auto", "padding-right":"0"});
                $(".addMenudivoverlay").remove();
          }
          else{
             $(".addmenucontainer a").addClass('active');
             $(".addMenudiv").addClass('active');
-            $("body").css({"overflow" : "hidden", "padding-right":"8px"});
+           // $("body").css({"overflow" : "hidden", "padding-right":"8px"});
             $('body').append("<div class='addMenudivoverlay'></div>");
          }
    });
 $('.addMenudiv-backdrop').click(function(){
    $(".addMenudiv").removeClass('active');
-   $("body").css({"overflow" : "auto", "padding-right":"0"});
+   //$("body").css({"overflow" : "auto", "padding-right":"0"});
 });
 
 
