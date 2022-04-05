@@ -1,10 +1,25 @@
-@import 'vendors/material-kit/variables',
+@import
+'vendors/material-kit/variables',
 'abstracts/variables',
 'vendors/material-kit/mixins',
 'abstracts/mixins',
-'vendors/include-media', 'vendors/chosen/main', 'vendors/bootstrap-tagsinput/bootstrap-tagsinput', 'vendors/chosen/main';
+'vendors/include-media',
+'vendors/chosen/main',
+'vendors/bootstrap-tagsinput/bootstrap-tagsinput',
+'vendors/chosen/main';
 
-@import "./components/grid-table", "./components/expandSearch", "./components/border-card", "./components/modal-accordion", "./components/custom-input", "./components/hierarchy-structure", "./components/multi-select-pill", "./components/bulk-upload", "components/status", "components/verticalmenulist";
+@import
+"./components/grid-table",
+ "./components/expandSearch",
+ "./components/border-card",
+ "./components/modal-accordion",
+ "./components/custom-input",
+ "./components/hierarchy-structure",
+ "./components/multi-select-pill",
+ "./components/bulk-upload",
+ "./components/status",
+ "./components/toggletag",
+ "./components/verticalmenulist";
 
 .customSelectMenu {
   max-width: 80px;
@@ -34,17 +49,17 @@
 .addmenucontainer {
   position: relative;
 
-  & a.active:after {
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-right: 15px solid #fff;
-    border-bottom: 15px solid transparent;
-    content: '';
-    position: absolute;
-    right: -35px;
-    top:-50px;
-  }
+  // & a.active:after {
+  //   width: 0;
+  //   height: 0;
+  //   border-top: 15px solid transparent;
+  //   border-right: 15px solid #fff;
+  //   border-bottom: 15px solid transparent;
+  //   content: '';
+  //   position: absolute;
+  //   right: -35px;
+  //   top:-50px;
+  // }
 }
 
 
@@ -209,13 +224,27 @@
 }
 
 .chart{
-  .inner{
-    max-width: 60px;
-    overflow-x:hidden!important;
-  }
+ .dropdown-toggle{
+   width:75px;
+   border:0;
+   color: $primary;
+    .content{
+      display: none;
+    }
+    &:hover,&:focus{
+      color: $primary!important;
+    }
+ }
   .dropdown-menu{
-    max-width: 100%!important;
-    overflow-x:hidden!important;
+    li a span.text{
+      display: flex;
+      align-items: center;
+
+      .material-icons-outlined{
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
   }
 }
 
@@ -235,13 +264,15 @@
 
 
 
+@media(min-width:767px){
+  .fullHeight{
+    height: calc(100vh  - 105px);
+  }
 
-.fullHeight{
-  height: calc(100vh  - 90px);
-}
-
-.maxheight450{
-  max-height: calc(100vh - 270px);
-  overflow: auto;
-  overflow-x: hidden;
+  .maxheight450{
+    max-height: calc(100vh - 292px);
+    overflow: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+  }
 }
