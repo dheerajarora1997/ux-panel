@@ -19,18 +19,9 @@
  "./components/bulk-upload",
  "./components/status",
  "./components/toggletag",
+ "./components/selectPickerNoData",
  "./components/verticalmenulist";
 
-.customSelectMenu {
-  max-width: 80px;
-  border: 0;
-  padding: 0;
-
-  .btn {
-    border: 0 !important;
-    padding: 0;
-  }
-}
 
 
 .rightColumnReport {
@@ -240,9 +231,16 @@
 }
 
 .chart{
+  max-width: 80px;
+  padding: 0;
   border:0!important;
   background-image:none!important;
   max-width: 60px;
+
+  .btn {
+    border: 0 !important;
+    padding: 0;
+  }
  .dropdown-toggle{
    width:60px;
    border:0;
@@ -254,6 +252,48 @@
       color: $primary!important;
     }
  }
+
+
+  .dropdown-menu{
+    li a span.text{
+      display: flex;
+      align-items: center;
+
+      .material-icons-outlined{
+        font-size: 16px;
+        margin-right: 4px;
+      }
+    }
+  }
+}
+
+
+
+.tags{
+  max-width: 80px;
+  padding: 0;
+  border:0!important;
+  background-image:none!important;
+  max-width: 60px;
+
+  .btn {
+    border: 0 !important;
+    padding: 0;
+  }
+ .dropdown-toggle{
+   width:60px;
+   border:0;
+   color: $primary;
+   opacity: 0;
+    .content{
+      display: none;
+    }
+    &:hover,&:focus{
+      color: $primary!important;
+    }
+ }
+
+
   .dropdown-menu{
     li a span.text{
       display: flex;

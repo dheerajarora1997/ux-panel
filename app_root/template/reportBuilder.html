@@ -14,7 +14,6 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
    <!-- CSS Files -->
    <link href="../static/backend/css/main.css" rel="stylesheet" />
-   <link rel="preload" href="../static/backend/css/config.css" as="style" onload="this.rel='stylesheet'">
    <link href="../static/backend/css/reportBuilder.css" rel="stylesheet" />
 </head>
 
@@ -687,7 +686,18 @@
                               data-placement="bottom" data-trigger="hover" title="Rename">
                         </div>
                      </div>
-                     <div class="col-12 col-md-8 pl-0 pl-md-3 d-flex align-items-end justify-content-end">
+                     <div class="col-12 col-md-8 pl-0 pl-md-3 d-flex align-items-end justify-content-end tagsicon">
+                        <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary" data-toggle="tooltip" data-container="body" data-placement="bottom" data-trigger="hover" title="" data-original-title="Tags">
+                           <span class="material-icons-outlined">
+                              local_offer
+                           </span>
+                        </a>
+                        <select data-container="body" class="form-control selectpicker customSelectMenu tags add-elements" data-live-search="true" data-selected-text-format="count > 1" data-dropdown-align-right="true" data-style="px-2 border" data-none-results-text="<span class='text-muted'>Type and Enter on Add button to creat tags</span> {0} <button onclick='buttonClicked()' class='btn btn-sm btn-primary rounded mt-3 '>Add Now</button>">
+                              <option value="">test1</option>
+                              <option value="">test1</option>
+                              <option value="">test1</option>
+                              <option value="">test1</option>
+                        </select>
                         <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary"
                            data-toggle="tooltip" data-container="body" data-placement="bottom" data-trigger="hover"
                            title="Tags">
@@ -814,8 +824,8 @@
                   <div id="accordion2" class="accordion config-accordian maxdataScroll p-2">
                      <div class="row justify-content-center">
                         <div class="col-12 col-sm-12">
-                           <div class="card shadow-none mb-2 mt-0">
-                              <div class="bg-light card-body py-2 px-2 my-0">
+                           <div class="card shadow-none mb-0 mt-0">
+                              <div class="card-body py-2 px-2 my-0">
                                  <div
                                     class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
                                     aria-expanded="false" data-toggle="collapse" data-target="#leadFields"
@@ -853,9 +863,9 @@
                                  </div>
                               </div>
                            </div>
-
+                           <div class="border-bottom text-dark position-relative ml-2 mr-2"></div>
                            <div class="card shadow-none mt-0 mb-2">
-                              <div class="bg-light card-body py-2 px-2 my-0">
+                              <div class="card-body py-2 px-2 my-0">
                                  <div
                                     class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
                                     aria-expanded="false" data-toggle="collapse" data-target="#applicationFields"
