@@ -7,8 +7,12 @@
   white-space: normal;
   min-height: 100px;
   font-size: 85%;
+  text-align: center;
   .btn{
-    background: $primary;
-    color: $white;
+    background: transparent;
+    color: $primary;
+    border-bottom: 1px solid $primary;
+    border-radius: 0 !important;
+    padding-bottom: 0;
   }
 }
