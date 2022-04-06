@@ -440,7 +440,8 @@
                                        </div>
                                        <div class="d-flex ml-auto">
                                           <div>
-                                             <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed "
+                                             <button type="button"
+                                                class="btn btn-link py-0 px-0 arrow-icon collapsed "
                                                 aria-expanded="false" data-toggle="collapse"
                                                 data-target="#metricsFields">
                                                 <span class="fa fa-angle-down" data-toggle="tooltip"
@@ -453,7 +454,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="metricsFields" class="collapse show" data-parent="#accordion">
+                                    <div id="metricsFields" class="collapse left-nav-accordion show" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
@@ -492,7 +493,8 @@
                                        </div>
                                        <div class="d-flex ml-auto">
                                           <div>
-                                             <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed"
+                                             <button type="button"
+                                                class="btn btn-link py-0 px-0 arrow-icon collapsed"
                                                 aria-expanded="false" data-toggle="collapse" data-target="#rowFields">
                                                 <span class="fa fa-angle-down" data-toggle="tooltip"
                                                    data-placement="bottom" data-container="body"
@@ -504,7 +506,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="rowFields" class="collapse" data-parent="#accordion">
+                                    <div id="rowFields" class="collapse left-nav-accordion" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
@@ -553,7 +555,8 @@
                                        </div>
                                        <div class="d-flex ml-auto">
                                           <div>
-                                             <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed"
+                                             <button type="button"
+                                                class="btn btn-link py-0 px-0 arrow-icon collapsed"
                                                 aria-expanded="false" data-toggle="collapse"
                                                 data-target="#columnsFields">
                                                 <span class="fa fa-angle-down" data-toggle="tooltip"
@@ -566,7 +569,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="columnsFields" class="collapse" data-parent="#accordion">
+                                    <div id="columnsFields" class="collapse left-nav-accordion" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
@@ -601,7 +604,8 @@
                                        </div>
                                        <div class="d-flex ml-auto">
                                           <div>
-                                             <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed"
+                                             <button type="button"
+                                                class="btn btn-link py-0 px-0 arrow-icon collapsed"
                                                 aria-expanded="false" data-toggle="collapse"
                                                 data-target="#filterFields">
                                                 <span class="fa fa-angle-down" data-toggle="tooltip"
@@ -614,7 +618,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="filterFields" class="collapse" data-parent="#accordion">
+                                    <div id="filterFields" class="collapse left-nav-accordion" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
@@ -803,7 +807,8 @@
                                     <h5 class="my-0 h6 text-dark">Lead Details</h5>
                                     <div class="d-flex ml-auto">
                                        <div>
-                                          <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed"
+                                          <button type="button"
+                                             class="btn btn-link py-0 px-0 arrow-icon collapsed"
                                              aria-expanded="false" data-toggle="collapse" data-target="#metricsFields">
                                              <span class="fa fa-angle-down" data-toggle="tooltip"
                                                 data-placement="bottom" data-container="body"
@@ -845,7 +850,8 @@
                                     <h5 class="my-0 h6 text-dark">Application</h5>
                                     <div class="d-flex ml-auto">
                                        <div>
-                                          <button type="button" class="btn btn-link py-0 px-0 arrow-icon collapsed"
+                                          <button type="button"
+                                             class="btn btn-link py-0 px-0 arrow-icon collapsed"
                                              aria-expanded="false" data-toggle="collapse" data-target="#rowFields">
                                              <span class="fa fa-angle-down" data-toggle="tooltip"
                                                 data-placement="bottom" data-container="body"
@@ -1173,7 +1179,7 @@
             $(".fieldlist li").addClass('active');
          }
       });
-      $('.collapse').on('hidden.bs.collapse', function () {
+      $('.left-nav-accordion').on('hidden.bs.collapse', function () {
          hideMenuFn();
       });
 
