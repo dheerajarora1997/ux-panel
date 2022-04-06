@@ -157,12 +157,16 @@
 .searchWidthicon {
   position: relative;
   border: 1px solid #d2d2d2;
+  border-radius: 5px;
+  overflow: hidden;
 
   input[type="text"] {
-    background: none;
+    background-image: none;
+    background-color: #fff;
     border: 0;
     padding: 5px 5px 5px 25px;
     height: 30px;
+
   }
 
   .material-icons-outlined {
@@ -185,14 +189,8 @@
   border: 1px solid #fff;
   margin-bottom:3px;
   span{
+  }
 
-  }
-  a.removeList{
-  color: red;
-  position: absolute;
-  top:7px;
-  right:5px;
-  }
   &:hover{
   background-color: #f2f2f2;
   }
@@ -223,9 +221,20 @@
   }
 }
 
+.leftColumnReport{
+  .bg-light{
+    &:hover{
+      background-color: #f3f3f3!important;
+    }
+  }
+}
+
 .chart{
+  border:0!important;
+  background-image:none!important;
+  max-width: 60px;
  .dropdown-toggle{
-   width:75px;
+   width:60px;
    border:0;
    color: $primary;
     .content{
@@ -248,6 +257,44 @@
   }
 }
 
+.favouriteBtn{
+  &.active{
+    .favouriteFilled{
+      color: orange;
+    }
+  }
+}
+
+
+.selectedFilter{
+  background: #a9bfef;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 3px 25px 3px 10px;
+  position: relative;
+}
+
+.remove,.removeList {
+  position: absolute;
+  right: 3px;
+  top: 4px;
+  color: #333;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    color: red;
+    background-color: #f2f2f2;
+  }
+}
+
+.totalSort{
+  position:absolute;
+  bottom: 10px;
+  right: 10px;
+}
 
 
 
