@@ -1,0 +1,14 @@
+.add-elements li.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 10px;
+  word-break: break-all;
+  white-space: normal;
+  min-height: 100px;
+  font-size: 85%;
+  .btn{
+    background: $primary;
+    color: $white;
+  }
+}
