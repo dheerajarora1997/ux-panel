@@ -55,7 +55,7 @@
 
 
 .addMenudiv {
-  left: -350px;
+  left: -375px;
   position:absolute;
   top:15px;
   transition: left .2s ease;
@@ -73,6 +73,12 @@
     left: 15px;
     z-index: 1;
     opacity: 1;
+    @media (max-width:767px){
+      z-index: 11111;
+      max-width: 100%;
+      width: calc(100% - 25px);
+      overflow: auto;
+    }
   }
 
   .fieldlist {
@@ -132,6 +138,16 @@
     left: 0;
     background: rgba(255, 255, 255, .9);
     display: block;
+    @media (max-width:767px){
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        z-index: 11110;
+        background: rgba(255, 255, 255, .9);
+    }
   }
   .maxdataScroll {
     max-height: calc(100vh - 330px);
@@ -198,11 +214,12 @@
   }
 }
 
-
-.reportData {
-  height: 100%;
-  overflow: auto;
-  max-height: 380px;
+@media (min-width:767px){
+  .reportData {
+    height: 100%;
+    overflow: auto;
+    max-height: 380px;
+  }
 }
 
 .nolist{
@@ -317,13 +334,14 @@
 
 
 .selectedFilter{
+  height: 30px;
   border-radius: 5px;
   font-size: 12px;
   padding: 3px 23px 3px 10px;
   position: relative;
   border:1px solid rgba(76 ,121 ,220 ,.2);
   white-space:nowrap;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   color: #4c79dc;
   font-weight: 500;
 }
@@ -350,6 +368,30 @@
   right: 0px;
 }
 
+
+.selectedFilterContainer{
+  height: 44px;
+  overflow: hidden;
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    display: block;
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,.5) 34%, rgba(255,255,255,1) 100%);
+    z-index: 1;
+  }
+  &:before{
+    left:45px;
+  }
+  &:after{
+    right:5px;
+  }
+  &:hover{
+    overflow-x:auto;
+  }
+}
 
 
 
