@@ -405,8 +405,11 @@
    <div id="main" class="wrapper">
       <div class="main-container  p-3 overflow-hidden fullHeight">
          <div class="row no-gutters h-100">
+            <div id="myCanvasNav" class="overlay" onclick="closeNav()">
+               <a href="javascript:void(0)" class="closebtn d-block d-lg-none" onclick="closeNav()">×</a>
+            </div>
             <!-- leftColumnReport start-->
-            <div class="col-md-3 col-sm-4 ">
+            <div class="col-md-3 col-sm-4" id="mobile-slide">
                <div class="leftColumnReport h-100">
                   <div class="card m-0 shadow-none border-right h-100">
                      <div class="form-group p-3 mb-0">
@@ -667,8 +670,11 @@
             <!-- leftColumnReport end-->
 
             <!-- rightColumnReport start-->
-            <div class="col-md-9 col-sm-8 rightColumnReport">
-               <div class="p-3 bg-white  h-100 shadow-bottom">
+            <div class="col-md-9 col-sm-8 bg-white rightColumnReport">
+               <div class="d-block d-lg-none d-flex mob-config-btn">
+                  <a class="" href="javascript:void(0);" onclick="openNav()"><i aria-hidden="true" class="lineicon-73"></i></a>
+               </div>
+               <div class="p-3">
                   <div class="row" id="topsection">
                      <div class="col-sm-4">
                         <div class="reportName d-flex align-items-center form-group pt-0 mb-0">
@@ -699,7 +705,7 @@
                            </a>
 
 
-                           <div class="tagcontainer open">
+                           <div class="tagcontainer">
                               <div class="falseInputTag">
                                  <div class="createtagsbox">
                                     <div class="input text">
@@ -899,10 +905,10 @@
                   </div>
 
                   <div class="reportData row no-gutters align-items-center justify-content-center">
-                     <div class="col-sm-4 text-right">
+                     <div class="col-2 col-sm-4 text-right d-none d-sm-block">
                         <img src="../static/backend/images/no-record.png" alt="no record" class="img-fluid">
                      </div>
-                     <div class="col-sm-6">
+                     <div class="col-10 col-sm-6 py-4">
                         <strong class="text-secondary mb-2 d-block"> Creating a query</strong>
                         <ol class="text-muted pl-4">
                            <li class=" ">Select metrics that you want to measure</li>
