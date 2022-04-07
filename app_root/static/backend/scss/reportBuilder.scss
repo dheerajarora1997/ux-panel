@@ -60,7 +60,7 @@
   top:15px;
   transition: left .2s ease;
   transition-delay: .1s;
-  width:250px;
+  width:350px;
   z-index: 0;
   box-shadow: 0px 0px 10px 0px rgba(217, 217, 217, 1);
   background: #fff;
@@ -70,7 +70,6 @@
 
 
   &.active {
-    width:350px;
     left: 15px;
     z-index: 1;
     opacity: 1;
@@ -159,12 +158,9 @@
   overflow: hidden;
 
   input[type="text"] {
-    background-image: none;
-    background-color: #fff;
-    border: 0;
+    background-color: #fff!important;
     padding: 5px 5px 5px 25px;
     height: 30px;
-
   }
 
   .material-icons-outlined {
@@ -173,6 +169,9 @@
     top: 6px;
     font-size: 18px;
     color: #ccc;
+  }
+  &.is-focused{
+    border-color: #4c79dc;
   }
 }
 
@@ -193,7 +192,7 @@
   }
 
   &:hover{
-  background-color: #d9d9d9;
+  background-color: rgba(0,0,0,.05);
   }
   }
 }
@@ -317,11 +316,16 @@
 
 
 .selectedFilter{
-  background: #a9bfef;
+  background: rgba(169,191,239,.3);
   border-radius: 5px;
   font-size: 12px;
-  padding: 3px 25px 3px 10px;
+  padding: 3px 23px 3px 10px;
   position: relative;
+  border:1px solid rgba(76 ,121 ,220 ,.2);
+  white-space:nowrap;
+  margin-bottom: 15px;
+  color: #4c79dc;
+  font-weight: 500;
 }
 
 .remove,.removeList {
@@ -330,20 +334,20 @@
   top: 4px;
   color: #333;
   border-radius: 50%;
-  padding: 4px;
+  padding: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
   &:hover{
     color: red;
-    background-color: #f2f2f2;
+    background-color: rgba(255,255,255, .8);
   }
 }
 
 .totalSort{
   position:absolute;
   bottom: 10px;
-  right: 10px;
+  right: 0px;
 }
 
 

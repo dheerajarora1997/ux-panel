@@ -410,7 +410,7 @@
                <div class="leftColumnReport h-100">
                   <div class="card m-0 shadow-none border-right h-100">
                      <div class="form-group p-3 mb-0">
-                        <div class="text-dark  pb-md-0 d-block">Dataset</div>
+                        <div class="text-dark  pb-md-0 d-block font-weight-bold">Dataset</div>
                         <select class="form-control selectpicker" data-live-search="true"
                            data-selected-text-format="count > 1" data-style="px-2 border" name="dataset" id=""
                            data-size="6">
@@ -469,8 +469,8 @@
                                                 Add your Metrics to see here
                                              </p>
                                              <div class="row d-flex justify-content-center mb-3">
-                                                <div class="col-sm-5 col-3 text-center">
-                                                   <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-2 ml-2"
+                                                <div class="col-sm-4 col-3 text-center">
+                                                   <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-1"
                                                       href="javascript:void(0)" onclick="showhideMenuDiv(this)">
                                                       <span class="material-icons-outlined  fs-16">add</span>
                                                       <span class="lineHeight16 fs-12">Add</span>
@@ -588,12 +588,12 @@
                                                 Add your Columns to see here
                                              </p>
                                           </div>
-                                          <div class="col-sm-5 col-3 text-center">
-                                             <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-2 ml-2"
-                                                href="javascript:void(0)" onclick="showhideMenuDiv(this)">
-                                                <span class="material-icons-outlined  fs-16">add</span>
-                                                <span class="lineHeight16 fs-12">Add</span>
-                                             </a>
+                                          <div class="col-sm-4 col-3 text-center">
+                                             <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-1"
+                                             href="javascript:void(0)" onclick="showhideMenuDiv(this)">
+                                             <span class="material-icons-outlined  fs-16">add</span>
+                                             <span class="lineHeight16 fs-12">Add</span>
+                                          </a>
                                           </div>
                                        </div>
                                     </div>
@@ -639,12 +639,12 @@
                                                 Add your Filter to see here
                                              </p>
                                           </div>
-                                          <div class="col-sm-5 col-3 text-center">
-                                             <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-2 ml-2"
-                                                href="javascript:void(0)" onclick="showhideMenuDiv(this)">
-                                                <span class="material-icons-outlined  fs-16">add</span>
-                                                <span class="lineHeight16 fs-12">Add</span>
-                                             </a>
+                                          <div class="col-sm-4 col-3 text-center">
+                                             <a class="d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm py-1 px-1"
+                                             href="javascript:void(0)" onclick="showhideMenuDiv(this)">
+                                             <span class="material-icons-outlined  fs-16">add</span>
+                                             <span class="lineHeight16 fs-12">Add</span>
+                                          </a>
                                           </div>
                                        </div>
                                     </div>
@@ -686,19 +686,10 @@
                               data-placement="bottom" data-trigger="hover" title="Rename">
                         </div>
                      </div>
-                     <div class="col-12 col-md-8 pl-0 pl-md-3 d-flex align-items-end justify-content-end tagsicon">
-                        <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary" data-toggle="tooltip" data-container="body" data-placement="bottom" data-trigger="hover" title="" data-original-title="Tags">
-                           <span class="material-icons-outlined">
-                              local_offer
-                           </span>
-                        </a>
-                        <select data-container="body" class="form-control selectpicker customSelectMenu tags add-elements" data-live-search="true" data-selected-text-format="count > 1" data-dropdown-align-right="true" data-style="px-2 border" data-none-results-text="<span class='text-muted'>Type and Enter on Add button to creat tags</span> {0} <button onclick='buttonClicked()' class='btn btn-sm btn-primary rounded mt-3 '>Add Now</button>">
-                              <option value="">test1</option>
-                              <option value="">test1</option>
-                              <option value="">test1</option>
-                              <option value="">test1</option>
-                        </select>
-                        <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary"
+                     <div class="col-12 col-md-8 pl-0 pl-md-3 d-flex align-items-end justify-content-end ">
+
+                        <div class="toggletag tag ">
+                           <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary basicTemplateTag"
                            data-toggle="tooltip" data-container="body" data-placement="bottom" data-trigger="hover"
                            title="Tags">
                            <span class="material-icons-outlined">
@@ -706,14 +697,39 @@
                            </span>
                         </a>
 
-                        <div class="toggletag tag pull-right d-none">
-                           <a href="javascript:void();" data-toggle="tooltip" data-placement="left" data-trigger="hover"
-                              data-container="body" title="" class="pull-right basicTemplateTag" id="tagshow117195"
-                              data-templateid="117195" data-original-title="Show Tags">
-                              <span class="material-icons-outlined">
-                                 local_offer
-                              </span>
-                           </a>
+
+                        <div class="tagcontainer open">
+                           <div class="falseInputTag">
+                             <div class="createtagsbox">
+                               <div class="input text">
+                                 <input type="text" name="search_tag" id="search_tag30595" placeholder="Add or search for existing tag"
+                                   autocomplete="off" maxlength="20" class="auto_complete search_tag">
+                               </div>
+                               <div class="autoloadspan suggesstion-box"></div>
+                                   <input type="hidden" name="tag" id="" class="" value="">
+                             </div>
+                             <div class="createdtaglist">
+                               <div class="norelvent_search">
+                                 <i class="material-icons-outlined ">loyalty</i>
+                                 <span class="text-center">No relevant tags on your search</span>
+                                 <span class="enterTag"></span>
+                                 <a href="javascript:void(0)" style="display:none" class="createnewtag btn btn-fill-blue btn-small radius-20">Create</a>
+
+                               </div>
+                               <div class="border_selected_tag show_tag_list">
+                                    <div class="tag label label-primary remove_tag">
+                                       application
+                                       <a href="javascript:void(0)" class="remove">
+                                             <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                       </a>
+                                    </div>
+                               </div>
+                               <input type="hidden" name="removeTagId" id="" class="removeTagId" value="">
+                             </div>
+                           </div>
+                       </div>
+
+
                         </div>
 
                         <a href="" class="d-flex border-0 p-1 mr-2 ml-2 hover-effect rounded-circle text-secondary"
@@ -739,38 +755,124 @@
 
                   <div class="row">
                      <div class="col-sm-9">
-                        <div class="d-flex align-items-center">
-                           <span class=""> Dashboard Filters:</span>
-                           <a class="d-flex align-items-center justify-content-end btn btn-outline-primary btn-sm py-1 px-2 ml-2"
-                              href="#">
-                              <span class="material-icons-outlined  fs-16">add</span>
-                              <span class="lineHeight16 fs-12">Add</span>
-                           </a>
-                           <div class="selectedFilter ml-2">
-                              Lead Details
-                              <a href="javascript:void(0)" class="fs-12 remove">
-                                 <span class="material-icons-outlined fs-12">
-                                    close
-                                 </span>
+                        <div class="d-flex align-items-center mb-3">
+                              <span class=""> Dashboard Filters:</span>
+                              <a class="d-flex align-items-center justify-content-end btn btn-outline-primary btn-sm py-1 px-2 ml-2"
+                                 href="#">
+                                 <span class="material-icons-outlined  fs-16">add</span>
+                                 <span class="lineHeight16 fs-12">Add</span>
                               </a>
                            </div>
 
-                           <div class="selectedFilter ml-2">
-                              Application Details
-                              <a href="javascript:void(0)" class="fs-12 remove">
-                                 <span class="material-icons-outlined fs-12">
-                                    close
-                                 </span>
-                              </a>
+                           <div class="selectedFilterContainer d-flex align-items-cente overflow-x mb-3">
+                              <div class="stickyleft bg-white pr-2" >
+                                 <div class="position-relative filterCount  mr-2" data-toggle="tooltip" data-placement="bottom" data-container="body" title="Total 5 Filter Added">
+                                    <span class="material-icons-outlined text-secondary"> filter_alt</span>
+                                    <span class="badge bg-danger">10</span>
+                                 </div>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Lead Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                               <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
+                              <div class="selectedFilter ml-2">
+                                 Application Details
+                                 <a href="javascript:void(0)" class="fs-12 remove">
+                                    <span class="material-icons-outlined fs-12">
+                                       close
+                                    </span>
+                                 </a>
+                              </div>
+
                            </div>
-                           <a href="javascript:void(0)"
-                              class=" badge-pill d-inline-block ml-2 py-1 px-2 text-dark small cursor-pointer bg-light-info"
-                              data-content="<ol class='pophover-scroll' style='padding-left:20px;margin:0; max-height:300px; overflow:auto'><li>Dynamics Field</li> <li>Dynamics Field</li> <li>Dynamics Field</li> <li>Dynamics Field</li> <li>Dynamics Field</li></ol>"
-                              data-html="true" data-toggle="popover" data-trigger="focus" data-placement="right"
-                              data-container="body">+5 More</a>
 
-
-                        </div>
                      </div>
                      <div class="col-sm-3 text-md-right">
                         <div class="d-flex justify-content-md-end">
@@ -846,17 +948,17 @@
                                     <div
                                        class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                     </div>
-                                    <div class="row">
+                                    <div class="row mt-3">
                                        <div class="col-sm-12">
                                           <label class="custom-checkbox d-block">
                                              <input type="checkbox" name="" id="totalRow">
                                              <span class="custom-btn-span"></span>
-                                             <span class="text-secondary">Count</span>
+                                             <span class="text-secondary ml-2">Count</span>
                                           </label>
                                           <label class="custom-checkbox d-block">
                                              <input type="checkbox" name="" id="totalRow">
                                              <span class="custom-btn-span"></span>
-                                             <span class="text-secondary">Count</span>
+                                             <span class="text-secondary ml-2">Count</span>
                                           </label>
                                        </div>
                                     </div>
@@ -887,7 +989,7 @@
                                     <div
                                        class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                     </div>
-                                    <div class="row">
+                                    <div class="row mt-3">
                                        <div class="col-sm-12">
                                           <label class="custom-checkbox d-block">
                                              <input type="checkbox" name="" id="totalRow">

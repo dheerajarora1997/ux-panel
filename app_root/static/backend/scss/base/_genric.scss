@@ -1482,3 +1482,38 @@ input[type="checkbox"] {
         }
     }
 }
+
+
+.form-control {
+    background: none !important;
+
+    &:focus {
+        border-color: #4c79dc !important;
+    }
+}
+
+button[data-toggle="collapse"] {
+    &:active,&:hover,&:focus,&:target{
+        background-color: none!important;
+        box-shadow: none!important;
+        border: none!important;
+    }
+}
+
+
+.stickyleft{
+    position:sticky;
+    left:0;
+    z-index: 1;
+}
+
+.filterCount{
+    .badge {
+        position: absolute;
+        border-radius: 50%;
+        padding: 3px 3px;
+        right: -8px;
+        min-width: 15px;
+        text-align: center;
+     }
+}
