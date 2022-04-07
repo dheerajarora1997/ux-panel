@@ -436,7 +436,7 @@
                                  <div class="bg-light card-body py-2 px-2 my-0">
                                     <div
                                        class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
-                                       aria-expanded="true" data-toggle="collapse" data-target="#metricsFields"
+                                       aria-expanded="false" data-toggle="collapse" data-target="#metricsFields"
                                        aria-controls="level-metricsFields" role="tablist">
                                        <div class="w-75">
                                           <h5 class="my-0 h6 text-dark">Metrics</h5>
@@ -459,7 +459,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="metricsFields" class="collapse left-nav-accordion show"
+                                    <div id="metricsFields" class="collapse left-nav-accordion"
                                        data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
@@ -492,7 +492,7 @@
                                  <div class="bg-light card-body py-2 px-2 my-0">
                                     <div
                                        class="d-flex flex-wrap justify-content-md-between align-items-start cursor-pointer collapsed"
-                                       aria-expanded="false" data-toggle="collapse" data-target="#rowFields"
+                                       aria-expanded="true" data-toggle="collapse" data-target="#rowFields"
                                        aria-controls="level-metricsFields" role="tablist">
                                        <div class="w-75">
                                           <h5 class="my-0 h6 text-dark">Row</h5>
@@ -514,7 +514,7 @@
                                           Registration forms
                                           and Widgets.</div>
                                     </div>
-                                    <div id="rowFields" class="collapse left-nav-accordion" data-parent="#accordion">
+                                    <div id="rowFields" class="collapse left-nav-accordion show" data-parent="#accordion">
                                        <div
                                           class="heading-highlight border-bottom text-dark mt-2 mt-lg-0 mb-2 pb-2 position-relative">
                                        </div>
@@ -926,16 +926,16 @@
                <!-- addMenuDiv  start here -->
                <div class="addMenudiv active">
                   <div class="searchbar bg-light p-3">
-                     <h5 class="my-0 h6 text-dark mb-0">Metrics</h5>
+                     <h5 class="my-0 h6 text-dark mb-0">Sort</h5>
                      <div class="fs-12 text-muted lineHeight16 mb-2">This institute consists of these Registration forms
                         and Widgets.</div>
                      <div class="form-group pt-0 searchWidthicon mb-0">
                         <span class="material-icons-outlined">search</span>
-                        <input type="text" class="form-control" placeholder="Search Metrics here..">
+                        <input type="text" class="form-control" placeholder="Search Sort here..">
                      </div>
                   </div>
 
-                  <div id="accordion2" class="accordion config-accordian maxdataScroll p-2">
+                  <div id="accordion2" class="accordion config-accordian maxdataScroll p-2 d-none">
                      <div class="row justify-content-center">
                         <div class="col-12 col-sm-12">
                            <div class="card shadow-none mb-0 mt-0">
@@ -1025,7 +1025,7 @@
 
 
 
-                  <div class="nav-tabs-navigation inline_tabs mb-3 p-3 d-none">
+                  <div class="nav-tabs-navigation inline_tabs  pr-3 pl-3 d-none">
                      <div class="row">
                         <div class="col-sm-12">
                            <ul class="nav nav-tabs flex-nowrap config-nav-tabs" data-tabs="tabs">
@@ -1039,23 +1039,25 @@
                      </div>
                   </div>
 
-                  <div class="tab-content p-3 d-none">
+                  <div class="tab-content p-3 pt-0 d-none">
                      <div class="tab-pane  show active " id="selectedfields">
                         <div class="row">
                            <div class="col-sm-12">
                               <p class="selectall">Select All</p>
                               <ul class="fieldlist bg-light">
                                  <li class="active">
-                                    <span>Count</span>
-                                    <span class="material-icons fs-16">
-                                       check_circle
-                                    </span>
+                                    <label class="custom-checkbox d-block mb-0">
+                                       <input type="checkbox" name="" id="totalRow">
+                                       <span class="custom-btn-span"></span>
+                                       <span class="text-secondary ml-2">Count</span>
+                                    </label>
                                  </li>
                                  <li class="">
-                                    <span>Count</span>
-                                    <span class="material-icons fs-16">
-                                       check_circle
-                                    </span>
+                                    <label class="custom-checkbox d-block mb-0">
+                                       <input type="checkbox" name="" id="totalRow">
+                                       <span class="custom-btn-span"></span>
+                                       <span class="text-secondary ml-2">Count</span>
+                                    </label>
                                  </li>
                               </ul>
                            </div>
@@ -1065,19 +1067,21 @@
                      <div class="tab-pane " id="excutedfields" role="tabpanel">
                         <div class="row">
                            <div class="col-sm-12">
-                              <p class="selectall">Select All</p>
+                              <p class="selectall">Select All Excuted</p>
                               <ul class="fieldlist bg-light">
                                  <li class="active">
-                                    <span>Excuted Count</span>
-                                    <span class="material-icons fs-16">
-                                       check_circle
-                                    </span>
+                                    <label class="custom-checkbox d-block mb-0">
+                                       <input type="checkbox" name="" id="totalRow">
+                                       <span class="custom-btn-span"></span>
+                                       <span class="text-secondary ml-2">Count Excuted</span>
+                                    </label>
                                  </li>
                                  <li class="">
-                                    <span>Count</span>
-                                    <span class="material-icons fs-16">
-                                       check_circle
-                                    </span>
+                                    <label class="custom-checkbox d-block mb-0">
+                                       <input type="checkbox" name="" id="totalRow">
+                                       <span class="custom-btn-span"></span>
+                                       <span class="text-secondary ml-2">Count Excuted</span>
+                                    </label>
                                  </li>
                               </ul>
                            </div>
@@ -1085,8 +1089,7 @@
                      </div>
                   </div>
 
-                  <h6 class="mt-3 mb-2 d-none">Sort</h6>
-                  <div class="nolist nogap sortorder p-3 form-radio d-none">
+                  <div class="nolist nogap sortorder p-3 form-radio maxdataScroll">
                      <label class="custom-radio  d-block">
                         <input type="radio" name="sortBy" id="az">
                         <span class="custom-btn-span">A-Z</span>
@@ -1132,7 +1135,7 @@
                   </div>
 
 
-                  <h6 class="mt-3 mb-2 d-none">Total</h6>
+
                   <div class="nolist nogap sortorder p-3 d-none">
                      <label class="custom-checkbox d-block">
                         <input type="checkbox" name="" id="totalRow">
@@ -1142,7 +1145,22 @@
                      <label class="custom-checkbox  d-block">
                         <input type="checkbox" name="" id="totalColumn">
                         <span class="custom-btn-span">Column</span>
-
+                     </label>
+                     <label class="custom-checkbox  d-block">
+                        <input type="checkbox" name="" id="totalColumn">
+                        <span class="custom-btn-span">Column</span>
+                     </label>
+                     <label class="custom-checkbox  d-block">
+                        <input type="checkbox" name="" id="totalColumn">
+                        <span class="custom-btn-span">Column</span>
+                     </label>
+                     <label class="custom-checkbox  d-block">
+                        <input type="checkbox" name="" id="totalColumn">
+                        <span class="custom-btn-span">Column</span>
+                     </label>
+                     <label class="custom-checkbox  d-block">
+                        <input type="checkbox" name="" id="totalColumn">
+                        <span class="custom-btn-span">Column</span>
                      </label>
                   </div>
 

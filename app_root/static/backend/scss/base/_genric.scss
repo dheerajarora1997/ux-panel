@@ -1484,14 +1484,6 @@ input[type="checkbox"] {
 }
 
 
-.form-control {
-    background: none !important;
-
-    &:focus {
-        border-color: #4c79dc !important;
-    }
-}
-
 button[data-toggle="collapse"] {
     &:active,&:hover,&:focus,&:target{
         background-color: none!important;
